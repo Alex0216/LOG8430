@@ -1,4 +1,4 @@
-package ca.polymtl.log8430.tp1.Controller;
+package ca.polymtl.log8430.tp1.Model;
 
 
 public class FolderNameCommand extends Command {
@@ -17,7 +17,7 @@ public class FolderNameCommand extends Command {
 	@Override
 	public boolean canExecute() {
 		boolean canExecute = true;
-		if(path == null || path.isEmpty()){
+		if(this.path == null || this.path.isEmpty()){
 			canExecute = false;
 		}
 		
