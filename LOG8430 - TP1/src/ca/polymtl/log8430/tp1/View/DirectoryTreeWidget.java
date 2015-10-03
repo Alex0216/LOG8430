@@ -11,6 +11,13 @@ import javax.swing.border.CompoundBorder;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 
+/**
+ * 
+ * @author Alexandre St-Onge, Mathieu Laprise, Julien Bergeron, Mathias Varinot
+ * 
+ * Widget permettant l'affichage d'un repértoire de fichier sous forme d'arbre
+ *
+ */
 public class DirectoryTreeWidget extends JPanel {
 
 	/**

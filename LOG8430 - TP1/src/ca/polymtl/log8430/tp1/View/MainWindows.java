@@ -1,14 +1,12 @@
 package ca.polymtl.log8430.tp1.View;
 
+import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JSplitPane;
-import java.awt.BorderLayout;
 
 public class MainWindows {
-
-	private JFrame frame;
 
 	/**
 	 * Launch the application.
@@ -25,6 +23,8 @@ public class MainWindows {
 			}
 		});
 	}
+
+	private JFrame frame;
 
 	/**
 	 * Create the application.
