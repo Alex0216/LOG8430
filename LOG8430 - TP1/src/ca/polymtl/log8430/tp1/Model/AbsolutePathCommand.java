@@ -21,14 +21,12 @@ public class AbsolutePathCommand extends Command {
 		if(this.m_path == null || this.m_path.isEmpty()){
 			canExecute = false;
 		}
-		
 		return canExecute;
 	}
 
 	@Override
 	public void execute() {
-		// TODO Auto-generated method stub
-		
+		m_result = m_path;
+		this.notifyObservers();
 	}
-
 }

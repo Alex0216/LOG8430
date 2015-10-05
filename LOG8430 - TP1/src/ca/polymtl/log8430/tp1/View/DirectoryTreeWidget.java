@@ -101,7 +101,7 @@ public class DirectoryTreeWidget extends JPanel {
 	public void chooseFolder()
 	{
 		JFileChooser fileChooser = new JFileChooser();
-		fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+		fileChooser.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
 		int returnVal = fileChooser.showOpenDialog(this);
 		if(returnVal == JFileChooser.APPROVE_OPTION)
 		{

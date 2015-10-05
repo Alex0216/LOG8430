@@ -32,7 +32,19 @@ public class FileNameCommand extends Command {
 	@Override
 	public void execute() {
 		// TODO Auto-generated method stub
-		
+		String fileName = m_path;
+		int indexFolder = m_path.lastIndexOf("\\");
+		if(indexFolder != -1)
+		{
+			fileName = m_path.substring(indexFolder+1, m_path.length()); 
+		}
+		int indexType = fileName.lastIndexOf(".");
+		if(indexType != -1)
+		{
+			fileName = fileName.substring(0, indexType);
+		}		
+		System.out.printf(fileName +"\n");
+		m_result = "File name is " + fileName;
 	}
 
 

@@ -7,6 +7,9 @@ import javax.swing.JFrame;
 import javax.swing.JSplitPane;
 
 import ca.polymtl.log8430.tp1.Controller.Executer;
+import ca.polymtl.log8430.tp1.Model.AbsolutePathCommand;
+import ca.polymtl.log8430.tp1.Model.FileNameCommand;
+import ca.polymtl.log8430.tp1.Model.FolderNameCommand;
 
 public class MainWindows {
 
@@ -52,6 +55,9 @@ public class MainWindows {
 		splitPane.setLeftComponent(directoryTreeWidget);
 		
 		CommandListWidget commandListWidget = new CommandListWidget(executer);
+		commandListWidget.addCommand(new AbsolutePathCommand(""));
+		commandListWidget.addCommand(new FileNameCommand(""));
+		commandListWidget.addCommand(new FolderNameCommand(""));
 		splitPane.setRightComponent(commandListWidget);
 	}
 

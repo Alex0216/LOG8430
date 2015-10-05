@@ -30,7 +30,13 @@ public class FolderNameCommand extends Command {
 	@Override
 	public void execute() {
 		// TODO Auto-generated method stub
-		
+		String folderName = m_path;
+		int indexFolder = m_path.lastIndexOf("\\");
+		if(indexFolder != -1)
+		{
+			folderName = m_path.substring(indexFolder+1, m_path.length()); 
+		}
+		System.out.printf(folderName +"\n");
+		m_result = "Folder name is " + folderName;		
 	}
-
 }
