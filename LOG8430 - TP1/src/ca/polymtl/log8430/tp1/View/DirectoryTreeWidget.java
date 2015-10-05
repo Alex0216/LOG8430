@@ -8,6 +8,7 @@ import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.JPanel;
 import javax.swing.JTree;
+import javax.swing.SwingWorker;
 import javax.swing.border.CompoundBorder;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
@@ -19,6 +20,8 @@ import ca.polymtl.log8430.tp1.Controller.Executer;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.File;
+import javax.swing.event.TreeSelectionListener;
+import javax.swing.event.TreeSelectionEvent;
 
 /**
  * 
@@ -44,6 +47,22 @@ public class DirectoryTreeWidget extends JPanel {
 		setLayout(new BorderLayout(10, 10));
 		
 		m_directoryTree = new JTree(new DefaultTreeModel(getDirectoryTree(null, new File("."))));
+		m_directoryTree.addTreeSelectionListener(new TreeSelectionListener() {
+			public void valueChanged(TreeSelectionEvent arg0) {
+				if(m_directoryTree.getSelectionPath() == null)
+					return;
+				
+				String completePath = "";
+				for(Object part : m_directoryTree.getSelectionPath().getPath())
+				{
+					completePath += part.toString() + "\\";
+				}
+				//enlever le dernier \\
+				completePath = completePath.substring(0, completePath.length()-1);
+				
+				m_executer.updatePath(completePath);
+			}
+		});
 		m_directoryTree.setBorder(new CompoundBorder(new LineBorder(new Color(0, 0, 0)), new EmptyBorder(10, 10, 10, 10)));
 		m_directoryTree.setBackground(Color.WHITE);
 		add(m_directoryTree, BorderLayout.CENTER);
@@ -64,6 +83,25 @@ public class DirectoryTreeWidget extends JPanel {
 	{
 		m_executer.updatePath(path);
 		m_directoryTree.setModel(new DefaultTreeModel(getDirectoryTree(null, new File(path))));
+		
+		SwingWorker<DefaultTreeModel, Void> worker = new SwingWorker<DefaultTreeModel, Void>(){
+			@Override
+			public DefaultTreeModel doInBackground()
+			{
+				DefaultTreeModel model = new DefaultTreeModel(getDirectoryTree(null, new File(path)));
+				return model;
+			}
+			
+			@Override
+			protected void done() {
+	           try {
+	               m_directoryTree.setModel(get());
+	           } catch (Exception ignore) {
+	           }
+	       }
+		};
+		
+		worker.execute();
 	}
 	
 	/**
@@ -75,11 +113,16 @@ public class DirectoryTreeWidget extends JPanel {
 	private DefaultMutableTreeNode getDirectoryTree(DefaultMutableTreeNode top, File dir)
 	{
 		
-		DefaultMutableTreeNode currentNode = new DefaultMutableTreeNode(dir.getName());
+		DefaultMutableTreeNode currentNode;
 		
 		if(top != null)//null si c'est le root directory
 		{
+			currentNode = new DefaultMutableTreeNode(dir.getName());
 			top.add(currentNode);
+		}
+		else
+		{
+			currentNode = new DefaultMutableTreeNode(dir.getAbsolutePath());
 		}
 		
 		if(!dir.isDirectory())
