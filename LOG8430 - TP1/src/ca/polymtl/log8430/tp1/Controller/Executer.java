@@ -29,7 +29,8 @@ public class Executer {
 	public int executeAllCommand()
 	{
 		for(Command c : m_listCommand)
-			c.execute();
+			if(c.canExecute())
+				c.execute();
 		return 0;
 	}
 	
