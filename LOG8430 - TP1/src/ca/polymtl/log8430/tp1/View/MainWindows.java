@@ -6,6 +6,8 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JSplitPane;
 
+import ca.polymtl.log8430.tp1.Controller.Executer;
+
 public class MainWindows {
 
 	/**
@@ -44,10 +46,12 @@ public class MainWindows {
 		JSplitPane splitPane = new JSplitPane();
 		frame.getContentPane().add(splitPane, BorderLayout.CENTER);
 		
-		DirectoryTreeWidget directoryTreeWidget = new DirectoryTreeWidget();
+		Executer executer = new Executer();
+		
+		DirectoryTreeWidget directoryTreeWidget = new DirectoryTreeWidget(executer);
 		splitPane.setLeftComponent(directoryTreeWidget);
 		
-		CommandListWidget commandListWidget = new CommandListWidget();
+		CommandListWidget commandListWidget = new CommandListWidget(executer);
 		splitPane.setRightComponent(commandListWidget);
 	}
 

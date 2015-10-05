@@ -16,6 +16,8 @@ import javax.swing.border.LineBorder;
 
 import ca.polymtl.log8430.tp1.Controller.Executer;
 import ca.polymtl.log8430.tp1.Model.Command;
+import java.awt.event.ItemListener;
+import java.awt.event.ItemEvent;
 
 public class CommandListWidget extends JPanel {
 
@@ -25,12 +27,13 @@ public class CommandListWidget extends JPanel {
 	private static final long serialVersionUID = 7471106803594920336L;
 	private JCheckBox chckbxAutoRun;
 	private JPanel m_commandListPanel;
-	private Executer m_executer = new Executer();
+	private Executer m_executer;
 
 	/**
 	 * Create the panel.
 	 */
-	public CommandListWidget() {
+	public CommandListWidget(Executer executer) {
+		m_executer = executer;
 		setLayout(new BorderLayout(0, 0));
 		
 		m_commandListPanel = new JPanel();
@@ -59,6 +62,11 @@ public class CommandListWidget extends JPanel {
 		bottomPanel.add(btnClear, BorderLayout.WEST);
 		
 		chckbxAutoRun = new JCheckBox("AutoRun");
+		chckbxAutoRun.addItemListener(new ItemListener() {
+			public void itemStateChanged(ItemEvent arg0) {
+				m_executer.setAutoRun(chckbxAutoRun.isSelected());
+			}
+		});
 		chckbxAutoRun.setBackground(Color.WHITE);
 		bottomPanel.add(chckbxAutoRun, BorderLayout.EAST);
 
@@ -69,11 +77,6 @@ public class CommandListWidget extends JPanel {
 		CommandWidget commandWidget = new CommandWidget(command);
 		m_commandListPanel.add(commandWidget);
 		m_executer.addCommand(command);
-	}
-	
-	public void updateSelectedPath(String path)
-	{
-		m_executer.updatePath(path, chckbxAutoRun.isSelected());
 	}
 
 }

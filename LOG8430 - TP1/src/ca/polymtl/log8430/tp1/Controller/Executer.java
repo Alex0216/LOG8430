@@ -6,6 +6,7 @@ import ca.polymtl.log8430.tp1.Model.Command;
 public class Executer {
 	
 	ArrayList<Command> m_listCommand;
+	boolean m_autoRun = false;
 	
 	public Executer()
 	{
@@ -40,13 +41,12 @@ public class Executer {
 	public void updatePath(String path) {
 		for(Command c : m_listCommand)
 			c.SetPath(path);
-	}
-	
-	public void updatePath(String path, boolean autoRun)
-	{
-		updatePath(path);
-		if(autoRun)
+		if(m_autoRun)
 			executeAllCommand();
+	}
+
+	public void setAutoRun(boolean selected) {
+		m_autoRun = selected;		
 	}
 
 	
