@@ -43,8 +43,8 @@ public class FileNameCommand extends Command {
 		{
 			fileName = fileName.substring(0, indexType);
 		}		
-		System.out.printf(fileName +"\n");
 		m_result = "File name is " + fileName;
+		this.notifyObservers();
 	}
 
 

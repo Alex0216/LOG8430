@@ -36,7 +36,7 @@ public class FolderNameCommand extends Command {
 		{
 			folderName = m_path.substring(indexFolder+1, m_path.length()); 
 		}
-		System.out.printf(folderName +"\n");
-		m_result = "Folder name is " + folderName;		
+		m_result = "Folder name is " + folderName;	
+		this.notifyObservers();
 	}
 }
