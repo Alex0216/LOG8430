@@ -49,6 +49,7 @@ public class CommandWidget extends JPanel implements Observer {
 			}
 		});
 		add(btnCommand);
+		btnCommand.setEnabled(false);
 		
 		lblResult = new JLabel("");
 		lblResult.setBorder(new LineBorder(new Color(0, 0, 0)));
