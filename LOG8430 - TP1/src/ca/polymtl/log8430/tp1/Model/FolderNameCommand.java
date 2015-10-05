@@ -37,6 +37,7 @@ public class FolderNameCommand extends Command {
 			folderName = m_path.substring(indexFolder+1, m_path.length()); 
 		}
 		m_result = "Folder name is " + folderName;	
+		this.setChanged();
 		this.notifyObservers();
 	}
 }

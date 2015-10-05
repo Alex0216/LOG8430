@@ -12,7 +12,7 @@ public class AbsolutePathCommand extends Command {
 
 	public AbsolutePathCommand(String path) {
 		super(path);
-		this.m_displayName = "Obtenir le chemin aboslu du ficher/dossier";
+		this.m_displayName = "Obtenir le chemin absolu du ficher/dossier";
 	}
 	
 	@Override
@@ -27,6 +27,7 @@ public class AbsolutePathCommand extends Command {
 	@Override
 	public void execute() {
 		m_result = m_path;
+		this.setChanged();
 		this.notifyObservers();
 	}
 }

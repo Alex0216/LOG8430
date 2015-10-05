@@ -28,7 +28,8 @@ public abstract class Command extends Observable{
 	
 	public void clear() {
 		m_result = "";
-		notifyObservers();
+		this.setChanged();
+		this.notifyObservers();
 	}
 	
 	public abstract void execute();
@@ -61,8 +62,7 @@ public abstract class Command extends Observable{
 	{
 		m_path = path;
 		m_result = "";
+		this.setChanged();
 		this.notifyObservers();
-	}
-	
-	
+	}	
 }

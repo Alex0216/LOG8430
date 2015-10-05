@@ -44,6 +44,7 @@ public class FileNameCommand extends Command {
 			fileName = fileName.substring(0, indexType);
 		}		
 		m_result = "File name is " + fileName;
+		this.setChanged();
 		this.notifyObservers();
 	}
 
