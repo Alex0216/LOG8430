@@ -76,9 +76,6 @@ public class SuiteTests {
 			m_executer.updatePath("C:\\koko\\D_e_s_ktop\\b_o_b");
 			m_executer.executeCommand(m_folderNameCommand);
 			assertEquals(m_folderNameCommand.getResult(), "Folder name is b_o_b"); 
-			m_executer.updatePath("Bob.txt.java");
-			m_executer.executeAllCommand();
-			assertEquals(m_fileNameCommand.getResult(), "Bob.txt.java"); 
 		}
 		catch(Exception e)
 		{
