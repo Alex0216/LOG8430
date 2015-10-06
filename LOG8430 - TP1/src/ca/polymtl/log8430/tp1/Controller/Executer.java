@@ -26,17 +26,18 @@ public class Executer {
 		}
 	}
 	
-	public int executeAllCommand()
+	public boolean executeAllCommand()
 	{
+		boolean errorFlag = false;
 		for(Command c : m_listCommand)
 			if(c.canExecute())
-				c.execute();
-		return 0;
+				errorFlag |= c.execute();
+		return errorFlag;
 	}
 	
-	public void executeCommand(Command command) 
+	public boolean executeCommand(Command command) 
 	{
-		command.execute();
+		return command.execute();
 	}
 	
 	public void updatePath(String path) {
@@ -49,7 +50,7 @@ public class Executer {
 	public void setAutoRun(boolean selected) {
 		m_autoRun = selected;		
 	}
-
+	
 	
 
 }

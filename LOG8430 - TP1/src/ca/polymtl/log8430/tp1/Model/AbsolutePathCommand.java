@@ -25,9 +25,13 @@ public class AbsolutePathCommand extends Command {
 	}
 
 	@Override
-	public void execute() {
+	public boolean execute() {
+		if (!canExecute()) {
+			return false;
+		}
 		m_result = m_path;
 		this.setChanged();
 		this.notifyObservers();
+		return true;
 	}
 }

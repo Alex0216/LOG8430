@@ -58,7 +58,6 @@ public class CommandWidget extends JPanel implements Observer {
 
 	}
 
-	@Override
 	public void update(Observable arg0, Object arg1) {
 		lblResult.setText(m_command.getResult());
 		btnCommand.setText(m_command.getDisplayName());
