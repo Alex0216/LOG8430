@@ -30,8 +30,10 @@ public class FileNameCommand extends Command {
 	}
 
 	@Override
-	public void execute() {
-		// TODO Auto-generated method stub
+	public boolean execute() {
+		if (!canExecute()) {
+			return false;
+		}
 		String fileName = m_path;
 		int indexFolder = m_path.lastIndexOf("\\");
 		if(indexFolder != -1)
@@ -46,6 +48,7 @@ public class FileNameCommand extends Command {
 		m_result = "File name is " + fileName;
 		this.setChanged();
 		this.notifyObservers();
+		return true;
 	}
 
 

@@ -28,8 +28,10 @@ public class FolderNameCommand extends Command {
 	}
 
 	@Override
-	public void execute() {
-		// TODO Auto-generated method stub
+	public boolean execute() {
+		if (!canExecute()) {
+			return false;
+		}
 		String folderName = m_path;
 		int indexFolder = m_path.lastIndexOf("\\");
 		if(indexFolder != -1)
@@ -39,5 +41,6 @@ public class FolderNameCommand extends Command {
 		m_result = "Folder name is " + folderName;	
 		this.setChanged();
 		this.notifyObservers();
+		return true;
 	}
 }

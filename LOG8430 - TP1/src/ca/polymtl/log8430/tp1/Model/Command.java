@@ -32,7 +32,7 @@ public abstract class Command extends Observable{
 		this.notifyObservers();
 	}
 	
-	public abstract void execute();
+	public abstract boolean execute();
 	
 	public String getDisplayName()
 	{
