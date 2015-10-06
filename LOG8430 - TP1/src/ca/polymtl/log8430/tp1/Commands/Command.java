@@ -1,4 +1,4 @@
-package ca.polymtl.log8430.tp1.Model;
+package ca.polymtl.log8430.tp1.Commands;
 
 import java.io.File;
 import java.util.Observable;

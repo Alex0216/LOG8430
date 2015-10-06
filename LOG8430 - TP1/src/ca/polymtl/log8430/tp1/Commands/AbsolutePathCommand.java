@@ -8,9 +8,6 @@ package ca.polymtl.log8430.tp1.Commands;
  */
 public class AbsolutePathCommand extends Command {
 
-	public AbsolutePathCommand()
-	{
-	}
 	/**
 	 * Constructeur de la classe AbsolutePathCommand.
 	 * @param path Chemin correspondant au fichier/folder actuel
