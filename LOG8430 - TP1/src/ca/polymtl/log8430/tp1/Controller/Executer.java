@@ -68,7 +68,7 @@ public class Executer {
 	/**
 	 * Met à jour les path de toutes les commandes, et exécute
 	 * toutes les commandes si le mode autoRun est activé.
-	 * @param path
+	 * @param path	Chemin absolu du fichier/folder courant
 	 */
 	public void updatePath(String path) {
 		for(Command c : m_listCommand)

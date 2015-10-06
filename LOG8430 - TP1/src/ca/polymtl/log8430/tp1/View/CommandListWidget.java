@@ -19,6 +19,12 @@ import ca.polymtl.log8430.tp1.Model.Command;
 import java.awt.event.ItemListener;
 import java.awt.event.ItemEvent;
 
+/**
+ * Classe de vue qui correspond à la liste de widgets reliés aux commandes.
+ * Cette classe permet l'ajout de nouvelles commandes.
+ * 
+ * @author Alexandre St-Onge, Mathieu Laprise, Julien Bergeron, Mathias Varinot
+ */
 public class CommandListWidget extends JPanel {
 
 	/**
@@ -30,7 +36,9 @@ public class CommandListWidget extends JPanel {
 	private Executer m_executer;
 
 	/**
-	 * Create the panel.
+	 * Constructeur de la classe CommandListWidget. Cree le panel
+	 * correspondant à la liste de widget des commandes.
+	 * @param executer	Contrôleur qui gère l'exécution spécifiques de commandes.
 	 */
 	public CommandListWidget(Executer executer) {
 		m_executer = executer;
@@ -72,6 +80,10 @@ public class CommandListWidget extends JPanel {
 
 	}
 	
+	/**
+	 * Ajoute une commande à la liste de commande du widget et de l'exécuteur.
+	 * @param command	La nouvelle commande à ajouter.
+	 */
 	public void addCommand(Command command)
 	{
 		CommandWidget commandWidget = new CommandWidget(command);
