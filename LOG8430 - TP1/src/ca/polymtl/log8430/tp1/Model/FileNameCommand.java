@@ -2,22 +2,25 @@ package ca.polymtl.log8430.tp1.Model;
 
 import java.io.File;
 
-import ca.polymtl.log8430.tp1.Model.Command.TYPE;
-
 /**
+ * Implémentation concrète de la classe Command. Cette commande donne le nom du fichier courant.
  * 
  * @author Alexandre St-Onge, Mathieu Laprise, Julien Bergeron, Mathias Varinot
- * 
- * 
- *
  */
 public class FileNameCommand extends Command {
 
+	/**
+	 * Constructeur de la classe FileNameCommand.
+	 * @param path Chemin correspondant au fichier/folder actuel
+	 */
 	public FileNameCommand(String path) {
 		super(path);
 		this.m_displayName = "Obtenir le nom du fichier";
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public boolean canExecute() {
 		boolean canExecute = true;
@@ -33,6 +36,9 @@ public class FileNameCommand extends Command {
 		return canExecute;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public boolean execute() {
 		if (!canExecute()) {

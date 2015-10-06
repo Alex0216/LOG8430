@@ -4,11 +4,9 @@ import java.io.File;
 import java.util.Observable;
 
 /**
+ * Classe abstraite représentant une commande.
  * 
  * @author Alexandre St-Onge, Mathieu Laprise, Julien Bergeron, Mathias Varinot
- * 
- * Classe abstraite représentant une commande.
- *
  */
 public abstract class Command extends Observable{
 
@@ -29,7 +27,11 @@ public abstract class Command extends Observable{
 		this.m_path = path;
 	}
 	
-	
+	/**
+	 * Vérifie si la commande actuelle peut effectuer son 
+	 * exécution selon le path actuel (fichier ou folder).
+	 * @return true si la command peut s'exécuter, sinon false.
+	 */
 	public abstract boolean canExecute();
 	
 	/**
@@ -41,7 +43,11 @@ public abstract class Command extends Observable{
 		this.notifyObservers();
 	}
 	
-	
+	/**
+	 * Exécute la commande selon le path actuel, met à jour le résultat
+	 * et notifie les observers que ce dernier a été changé.
+	 * @return true si la command a réussi l'exécution, sinon false.
+	 */
 	public abstract boolean execute();
 	
 	/**
