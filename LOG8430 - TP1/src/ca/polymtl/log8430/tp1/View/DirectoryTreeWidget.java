@@ -29,14 +29,14 @@ import javax.swing.event.TreeSelectionEvent;
  */
 public class DirectoryTreeWidget extends JPanel {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -7713782190007439530L;
 	private Executer m_executer;
 	private JTree m_directoryTree;
+	
 	/**
-	 * Create the panel.
+	 * Constructeur de la classe DirectoryTreeWidget. Cree le panel
+	 * correspondantaux au directoryTree.
+	 * @param executer	Contrôleur qui gère l'exécution spécifiques de commandes.
 	 */
 	public DirectoryTreeWidget(Executer executer) {
 		m_executer = executer;
@@ -81,7 +81,7 @@ public class DirectoryTreeWidget extends JPanel {
 	 * point d'arborescence pour le UI du directoryTree 
 	 * @param path
 	 */
-	public void setSelectedPath(final String path)
+	public void setSelectedPath(String path)
 	{
 		m_executer.updatePath(path);
 		m_directoryTree.setModel(new DefaultTreeModel(getDirectoryTree(null, new File(path))));
@@ -107,7 +107,7 @@ public class DirectoryTreeWidget extends JPanel {
 	}
 	
 	/**
-	 * Fonction récursive basé sur l'algorithme trouvé à 
+	 * Fonction récursive basée sur l'algorithme trouvé à 
 	 * http://www.java2s.com/Code/Java/File-Input-Output/DisplayafilesysteminaJTreeview.htm
 	 * @param top
 	 * @param dir	
