@@ -8,7 +8,7 @@ import org.junit.Test;
 
 import ca.polymtl.log8430.tp1.Commands.*;
 import ca.polymtl.log8430.tp1.Controller.*;
-public class SuiteTests {
+public class TestsCommandes {
 
 	Executer m_executer;
 	AbsolutePathCommand m_absPathCommand;

@@ -43,11 +43,10 @@ public class DynamicCommandLoader {
                     String classname = files[i].substring(0,files[i].length()-6);
                     try {
                         // Try to create an instance of the object
-                        Object o = Class.forName(pckgname+"."+classname).getDeclaredConstructor(String.class).newInstance("");
+                        Object o = Class.forName(pckgname+"."+classname).getDeclaredConstructor(String.class).newInstance(new String(""));
 
                         if (o instanceof Command) {
                         	commands.add((Command) o);
-                            System.out.println(classname);
                         }
                     } catch (ClassNotFoundException cnfex) {
                         System.err.println(cnfex);
