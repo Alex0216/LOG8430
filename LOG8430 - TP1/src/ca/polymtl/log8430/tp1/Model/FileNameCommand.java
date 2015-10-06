@@ -1,5 +1,9 @@
 package ca.polymtl.log8430.tp1.Model;
 
+import java.io.File;
+
+import ca.polymtl.log8430.tp1.Model.Command.TYPE;
+
 /**
  * 
  * @author Alexandre St-Onge, Mathieu Laprise, Julien Bergeron, Mathias Varinot
@@ -34,18 +38,15 @@ public class FileNameCommand extends Command {
 		if (!canExecute()) {
 			return false;
 		}
-		String fileName = m_path;
-		int indexFolder = m_path.lastIndexOf("\\");
-		if(indexFolder != -1)
-		{
-			fileName = m_path.substring(indexFolder+1, m_path.length()); 
+		
+		File file = new File(m_path);
+
+		if(file.exists()){
+			if(file.isFile()){
+				m_result = "File name is " + file.getName();
+			}
 		}
-		int indexType = fileName.lastIndexOf(".");
-		if(indexType != -1)
-		{
-			fileName = fileName.substring(0, indexType);
-		}		
-		m_result = "File name is " + fileName;
+		
 		this.setChanged();
 		this.notifyObservers();
 		return true;

@@ -1,5 +1,7 @@
 package ca.polymtl.log8430.tp1.Model;
 
+import java.io.File;
+
 /**
  * 
  * @author Alexandre St-Onge, Mathieu Laprise, Julien Bergeron, Mathias Varinot
@@ -32,13 +34,13 @@ public class FolderNameCommand extends Command {
 		if (!canExecute()) {
 			return false;
 		}
-		String folderName = m_path;
-		int indexFolder = m_path.lastIndexOf("\\");
-		if(indexFolder != -1)
-		{
-			folderName = m_path.substring(indexFolder+1, m_path.length()); 
+		File file = new File(m_path);
+
+		if(file.exists()){
+			if(file.isDirectory()){
+				m_result = "Folder name is " + file.getName();
+			}
 		}
-		m_result = "Folder name is " + folderName;	
 		this.setChanged();
 		this.notifyObservers();
 		return true;
