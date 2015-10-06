@@ -73,6 +73,7 @@ public class DirectoryTreeWidget extends JPanel {
 		});
 		btnSelectFileOrFolder.setPreferredSize(new Dimension(131, 50));
 		add(btnSelectFileOrFolder, BorderLayout.SOUTH);
+		setSelectedPath(System.getProperty("user.dir"));
 
 	}
 	
@@ -109,9 +110,9 @@ public class DirectoryTreeWidget extends JPanel {
 	/**
 	 * Fonction récursive basée sur l'algorithme trouvé à 
 	 * http://www.java2s.com/Code/Java/File-Input-Output/DisplayafilesysteminaJTreeview.htm
-	 * @param top
-	 * @param dir	
-	 * @return
+	 * @param top	Le node en haut du directoryTree courant.
+	 * @param dir	Le dossier du directoryTree
+	 * @return		Le node courrant du directoryTree
 	 */
 	private DefaultMutableTreeNode getDirectoryTree(DefaultMutableTreeNode top, File dir)
 	{

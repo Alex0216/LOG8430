@@ -8,12 +8,22 @@ import org.junit.Test;
 
 import ca.polymtl.log8430.tp1.Commands.*;
 import ca.polymtl.log8430.tp1.Controller.*;
+
+/**
+ * Classe de tests s'occupant de tester la fonctionnalité des différentes commandes.
+ * @author Alexandre St-Onge, Mathieu Laprise, Julien Bergeron, Mathias Varinot
+ */
 public class TestsCommandes {
 
 	Executer m_executer;
 	AbsolutePathCommand m_absPathCommand;
 	FileNameCommand m_fileNameCommand;
 	FolderNameCommand m_folderNameCommand;
+	
+	/**
+	 * Initialisation des objets avant l'exécution des tests
+	 * @throws Exception
+	 */
 	@Before
 	public void setUp() throws Exception {
 		m_executer = new Executer();
@@ -26,6 +36,9 @@ public class TestsCommandes {
 	public void tearDown() throws Exception {
 	}
 
+	/**
+	 * Teste si la commande qui retourne le path absolu marche correctement
+	 */
 	@Test
 	public void absolutePathValide()
 	{
@@ -46,6 +59,11 @@ public class TestsCommandes {
 		}
 	}
 	
+	/**
+	 * Teste si la commande qui retourne le nom d'un fichier marche correctement.
+	 * Le test sera un succès si le string résultant correspond à la phrase:
+	 * "File name is " + nomFichier
+	 */
 	@Test
 	public void fileNameValide()
 	{
@@ -57,7 +75,7 @@ public class TestsCommandes {
 			assertEquals(m_fileNameCommand.getResult(), "File name is LOG8430.java"); 
 			m_executer.updatePath("Bob.txt.java");
 			m_executer.executeAllCommand();
-			assertEquals(m_fileNameCommand.getResult(), "Bob.txt.java"); 
+			assertEquals(m_fileNameCommand.getResult(), "File name is Bob.txt.java"); 
 		}
 		catch(Exception e)
 		{
@@ -66,6 +84,11 @@ public class TestsCommandes {
 		}
 	}
 	
+	/**
+	 * Teste si la commande qui retourne le nom d'un folder marche correctement.
+	 * Le test sera un succès si le string résultant correspond à la phrase:
+	 * "Folder name is " + nomFolder
+	 */
 	@Test
 	public void folderNameValide()
 	{
@@ -83,6 +106,11 @@ public class TestsCommandes {
 		}
 	}
 	
+	/**
+	 * Teste si la commande qui retourne le nom d'un folder retourne bien
+	 * une exécution invalide(false) si le le type du path ne correspond
+	 * pas à un folder.
+	 */
 	@Test
 	public void folderNameMauvaisType()
 	{
@@ -99,6 +127,11 @@ public class TestsCommandes {
 		}
 	}
 	
+	/**
+	 * Teste si la commande qui retourne le nom d'un fichier retourne bien
+	 * une exécution invalide(false) si le le type du path ne correspond
+	 * pas à un fichier.
+	 */
 	@Test
 	public void fileNameMauvaisType()
 	{
@@ -115,6 +148,10 @@ public class TestsCommandes {
 		}
 	}
 	
+	/**
+	 * Teste l'exécution de l'ensemble des commandes en simulant
+	 * un "autoRun" 
+	 */
 	@Test
 	public void executeAll()
 	{

@@ -7,13 +7,15 @@ import java.util.ArrayList;
 import javax.swing.JFrame;
 import javax.swing.JSplitPane;
 
-import ca.polymtl.log8430.tp1.Commands.AbsolutePathCommand;
 import ca.polymtl.log8430.tp1.Commands.Command;
 import ca.polymtl.log8430.tp1.Commands.DynamicCommandLoader;
-import ca.polymtl.log8430.tp1.Commands.FileNameCommand;
-import ca.polymtl.log8430.tp1.Commands.FolderNameCommand;
 import ca.polymtl.log8430.tp1.Controller.Executer;
 
+/**
+ * Classe principale du programme, qui contient le MainWindow principal et contient le main.
+ * S'occupe d'initialiser les différents widgets.
+ * @author Alexandre St-Onge, Mathieu Laprise, Julien Bergeron, Mathias Varinot
+ */
 public class MainWindows {
 
 	/**

@@ -10,6 +10,12 @@ import org.junit.Test;
 
 import ca.polymtl.log8430.tp1.Commands.*;
 import ca.polymtl.log8430.tp1.Controller.*;
+
+/**
+ * Classe de tests s'occupant de tester la fonctionnalité du chargeur dynamique
+ * de commandes
+ * @author Alexandre St-Onge, Mathieu Laprise, Julien Bergeron, Mathias Varinot
+ */
 public class TestsClassLoader {
 
 	Executer m_executer;
@@ -17,6 +23,11 @@ public class TestsClassLoader {
 	Command m_fileNameCommand;
 	Command m_folderNameCommand;
 	Command m_absPathCommand;
+	
+	/**
+	 * Initialisation des objets avant l'exécution des tests.
+	 * @throws Exception
+	 */
 	@Before
 	public void setUp() throws Exception {
 		m_executer = new Executer();
@@ -28,19 +39,19 @@ public class TestsClassLoader {
 						m_absPathCommand = commands.get(i);
 				else if (commands.get(i) instanceof FileNameCommand)
 						m_fileNameCommand = commands.get(i);				
-
 				else if (commands.get(i) instanceof FolderNameCommand)
 						m_folderNameCommand = commands.get(i);
 			}
-		}
-		
+		}		
 	}
 
 	@After
 	public void tearDown() throws Exception {
 	}
 
-	// On teste si les classes sont bien loades dynamiquement
+	/**
+	 *  On teste si les commandes sont bien chargées dynamiquement
+	 */
 	@Test
 	public void basicClassesLoadedCorrectly()
 	{
@@ -56,8 +67,11 @@ public class TestsClassLoader {
 			
 		}
 	}
-	// On teste ques les classes loades dynamiquement ont les memes proprietes que les classes normales,
-	// c-a-d qu'ils donnent les bons resultats.
+	
+	/**
+	 *  On teste ques les classes loades dynamiquement ont les memes proprietes que les classes normales,
+	 *  c-a-d qu'ils donnent les bons resultats.
+	 */
 	public void absolutePathValide()
 	{
 		try
@@ -73,9 +87,14 @@ public class TestsClassLoader {
 		catch(Exception e)
 		{
 			e.printStackTrace();
-			
 		}
 	}
+	
+	/**
+	 * Teste si la commande qui retourne le nom d'un fichier marche correctement.
+	 * Le test sera un succès si le string résultant correspond à la phrase:
+	 * "File name is " + nomFichier
+	 */
 	@Test
 	public void fileNameValide()
 	{
@@ -87,7 +106,7 @@ public class TestsClassLoader {
 			assertEquals(m_fileNameCommand.getResult(), "File name is LOG8430.java"); 
 			m_executer.updatePath("Bob.txt.java");
 			m_executer.executeAllCommand();
-			assertEquals(m_fileNameCommand.getResult(), "Bob.txt.java"); 
+			assertEquals(m_fileNameCommand.getResult(), "File name is Bob.txt.java"); 
 		}
 		catch(Exception e)
 		{
@@ -96,6 +115,11 @@ public class TestsClassLoader {
 		}
 	}
 	
+	/**
+	 * Teste si la commande qui retourne le nom d'un folder marche correctement.
+	 * Le test sera un succès si le string résultant correspond à la phrase:
+	 * "Folder name is " + nomFolder
+	 */
 	@Test
 	public void folderNameValide()
 	{
@@ -113,6 +137,11 @@ public class TestsClassLoader {
 		}
 	}
 	
+	/**
+	 * Teste si la commande qui retourne le nom d'un folder retourne bien
+	 * une exécution invalide(false) si le le type du path ne correspond
+	 * pas à un folder.
+	 */
 	@Test
 	public void folderNameMauvaisType()
 	{
@@ -129,6 +158,11 @@ public class TestsClassLoader {
 		}
 	}
 	
+	/**
+	 * Teste si la commande qui retourne le nom d'un fichier retourne bien
+	 * une exécution invalide(false) si le le type du path ne correspond
+	 * pas à un fichier.
+	 */
 	@Test
 	public void fileNameMauvaisType()
 	{
@@ -145,6 +179,10 @@ public class TestsClassLoader {
 		}
 	}
 	
+	/**
+	 * Teste l'exécution de l'ensemble des commandes en simulant
+	 * un "autoRun" 
+	 */
 	@Test
 	public void executeAll()
 	{

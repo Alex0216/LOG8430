@@ -1,7 +1,5 @@
 package ca.polymtl.log8430.tp1.Commands;
 
-import java.io.File;
-
 /**
  * Implémentation concrète de la classe Command. Cette commande donne le nom du folder courant.
  * 
@@ -44,13 +42,13 @@ public class FolderNameCommand extends Command {
 		if (!canExecute()) {
 			return false;
 		}
-		File file = new File(m_path);
-
-		if(file.exists()){
-			if(file.isDirectory()){
-				m_result = "Folder name is " + file.getName();
-			}
-		}
+		int lastIndexOfBackslash = m_path.lastIndexOf("\\");
+		String subString = m_path;
+		if(lastIndexOfBackslash != -1)
+			subString = m_path.substring(lastIndexOfBackslash+1, m_path.length());
+		
+		m_result= "Folder name is " + subString;
+		
 		this.setChanged();
 		this.notifyObservers();
 		return true;
