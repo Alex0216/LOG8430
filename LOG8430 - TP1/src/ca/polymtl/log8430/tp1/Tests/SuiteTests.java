@@ -6,9 +6,8 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import ca.polymtl.log8430.tp1.Model.*;
+import ca.polymtl.log8430.tp1.Commands.*;
 import ca.polymtl.log8430.tp1.Controller.*;
-
 public class SuiteTests {
 
 	Executer m_executer;
@@ -129,6 +128,22 @@ public class SuiteTests {
 			assert(result == false);
 			assertEquals(m_folderNameCommand.getResult(), "Folder name is ffe");
 			assertEquals(m_absPathCommand.getResult(), "C:\\koko\\D_e_s_ktop\\ffe");
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+			
+		}
+	}
+	@Test
+	public void dynamicLoading1()
+	{
+		try
+		{
+		DynamicCommandLoader a = new DynamicCommandLoader();
+		a.find("ca.polymtl.log8430.tp1.Commands");
+		assert(true);
+		
 		}
 		catch(Exception e)
 		{

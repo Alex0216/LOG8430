@@ -1,7 +1,10 @@
 package ca.polymtl.log8430.tp1.Controller;
+import java.net.MalformedURLException;
+import java.net.URISyntaxException;
+import java.net.URL;
 import java.util.ArrayList;
 
-import ca.polymtl.log8430.tp1.Model.Command;
+import ca.polymtl.log8430.tp1.Commands.Command;
 
 /**
  * Classe contrôleur qui s'occupe de mettre à jour les path des commandes,
@@ -16,12 +19,17 @@ public class Executer {
 	
 	/**
 	 * Constructeur de la classe Executer
+	 * @throws URISyntaxException 
+	 * @throws MalformedURLException 
 	 */
 	public Executer()
 	{
 		m_listCommand = new ArrayList<Command>();
+		try{
+		System.out.println(new URL("classpath:ca/polymtl/log8430/tp1/resource.extension").toURI().toString());
+		} catch(Exception e){}
 	}
-	
+
 	/**
 	 * Ajoute une nouvelle commande dans la liste de commandes
 	 * @param command	la nouvelle command à ajouter.

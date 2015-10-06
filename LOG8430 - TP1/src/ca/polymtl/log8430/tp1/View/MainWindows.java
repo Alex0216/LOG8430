@@ -6,10 +6,10 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JSplitPane;
 
+import ca.polymtl.log8430.tp1.Commands.AbsolutePathCommand;
+import ca.polymtl.log8430.tp1.Commands.FileNameCommand;
+import ca.polymtl.log8430.tp1.Commands.FolderNameCommand;
 import ca.polymtl.log8430.tp1.Controller.Executer;
-import ca.polymtl.log8430.tp1.Model.AbsolutePathCommand;
-import ca.polymtl.log8430.tp1.Model.FileNameCommand;
-import ca.polymtl.log8430.tp1.Model.FolderNameCommand;
 
 public class MainWindows {
 

@@ -14,8 +14,9 @@ import javax.swing.border.CompoundBorder;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 
+import ca.polymtl.log8430.tp1.Commands.Command;
 import ca.polymtl.log8430.tp1.Controller.Executer;
-import ca.polymtl.log8430.tp1.Model.Command;
+
 import java.awt.event.ItemListener;
 import java.awt.event.ItemEvent;
 

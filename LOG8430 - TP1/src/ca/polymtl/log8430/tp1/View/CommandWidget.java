@@ -14,7 +14,7 @@ import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 
-import ca.polymtl.log8430.tp1.Model.Command;
+import ca.polymtl.log8430.tp1.Commands.Command;
 
 public class CommandWidget extends JPanel implements Observer {
 

@@ -1,4 +1,4 @@
-package ca.polymtl.log8430.tp1.Model;
+package ca.polymtl.log8430.tp1.Commands;
 
 /**
  * Implémentation concrète de la classe Command. Cette commande donne le chemin
@@ -8,6 +8,9 @@ package ca.polymtl.log8430.tp1.Model;
  */
 public class AbsolutePathCommand extends Command {
 
+	public AbsolutePathCommand()
+	{
+	}
 	/**
 	 * Constructeur de la classe AbsolutePathCommand.
 	 * @param path Chemin correspondant au fichier/folder actuel
