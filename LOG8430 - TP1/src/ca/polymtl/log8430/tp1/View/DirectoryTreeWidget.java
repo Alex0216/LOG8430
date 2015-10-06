@@ -24,11 +24,8 @@ import javax.swing.event.TreeSelectionListener;
 import javax.swing.event.TreeSelectionEvent;
 
 /**
- * 
- * @author Alexandre St-Onge, Mathieu Laprise, Julien Bergeron, Mathias Varinot
- * 
  * Widget permettant l'affichage d'un repértoire de fichier sous forme d'arbre
- *
+ * @author Alexandre St-Onge, Mathieu Laprise, Julien Bergeron, Mathias Varinot
  */
 public class DirectoryTreeWidget extends JPanel {
 
@@ -79,6 +76,11 @@ public class DirectoryTreeWidget extends JPanel {
 
 	}
 	
+	/**
+	 * Met à jour le fichier/folder choisi actuel et le choisi comme
+	 * point d'arborescence pour le UI du directoryTree 
+	 * @param path
+	 */
 	public void setSelectedPath(final String path)
 	{
 		m_executer.updatePath(path);
@@ -105,9 +107,10 @@ public class DirectoryTreeWidget extends JPanel {
 	}
 	
 	/**
-	 * Basé sur l'algorithme trouvé à http://www.java2s.com/Code/Java/File-Input-Output/DisplayafilesysteminaJTreeview.htm
+	 * Fonction récursive basé sur l'algorithme trouvé à 
+	 * http://www.java2s.com/Code/Java/File-Input-Output/DisplayafilesysteminaJTreeview.htm
 	 * @param top
-	 * @param dir
+	 * @param dir	
 	 * @return
 	 */
 	private DefaultMutableTreeNode getDirectoryTree(DefaultMutableTreeNode top, File dir)
@@ -141,6 +144,11 @@ public class DirectoryTreeWidget extends JPanel {
 		return currentNode;
 	}
 	
+	/**
+	 * Ouvre un JFileChoose dans le but de choisir un fichier/folder.
+	 * Le fichier/fodler sélectionné sera le nouveau path et sera pris comme point de
+	 * référence pour le directoryTree.
+	 */
 	public void chooseFolder()
 	{
 		JFileChooser fileChooser = new JFileChooser();
