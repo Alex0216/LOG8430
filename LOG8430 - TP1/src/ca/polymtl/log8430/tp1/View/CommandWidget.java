@@ -65,7 +65,7 @@ public class CommandWidget extends JPanel implements Observer {
 	}
 
 	/**
-	 * Lorsque la commande notifie les observers, cette fonction est appelée,
+	 * Lorsque la commande notify les observers, cette fonction est appelée,
 	 * mettant à jour le UI du bouton et du label résultat. S'occupe aussi de mettre
 	 * enable le bouton si la commande peut s'exécuter par rapport au path actuel.
 	 */
