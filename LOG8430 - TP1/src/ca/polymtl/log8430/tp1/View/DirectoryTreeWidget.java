@@ -81,7 +81,7 @@ public class DirectoryTreeWidget extends JPanel {
 	 * point d'arborescence pour le UI du directoryTree 
 	 * @param path
 	 */
-	public void setSelectedPath(String path)
+	public void setSelectedPath(final String path)
 	{
 		m_executer.updatePath(path);
 		m_directoryTree.setModel(new DefaultTreeModel(getDirectoryTree(null, new File(path))));

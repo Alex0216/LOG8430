@@ -2,11 +2,14 @@ package ca.polymtl.log8430.tp1.View;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.util.ArrayList;
 
 import javax.swing.JFrame;
 import javax.swing.JSplitPane;
 
 import ca.polymtl.log8430.tp1.Commands.AbsolutePathCommand;
+import ca.polymtl.log8430.tp1.Commands.Command;
+import ca.polymtl.log8430.tp1.Commands.DynamicCommandLoader;
 import ca.polymtl.log8430.tp1.Commands.FileNameCommand;
 import ca.polymtl.log8430.tp1.Commands.FolderNameCommand;
 import ca.polymtl.log8430.tp1.Controller.Executer;
@@ -55,9 +58,15 @@ public class MainWindows {
 		splitPane.setLeftComponent(directoryTreeWidget);
 		
 		CommandListWidget commandListWidget = new CommandListWidget(executer);
-		commandListWidget.addCommand(new AbsolutePathCommand(""));
-		commandListWidget.addCommand(new FileNameCommand(""));
-		commandListWidget.addCommand(new FolderNameCommand(""));
+		// Ajoute les commandes dynamiquement dans le dossier ca/polymtl/log8430/tp1/commands du build
+		DynamicCommandLoader loader = new DynamicCommandLoader();
+		ArrayList<Command> commands = loader.load("ca.polymtl.log8430.tp1.Commands");
+		if (commands != null) {
+			for (int i=0;i<commands.size();i++) {
+				commandListWidget.addCommand(commands.get(i));
+			}
+		}
+
 		splitPane.setRightComponent(commandListWidget);
 	}
 

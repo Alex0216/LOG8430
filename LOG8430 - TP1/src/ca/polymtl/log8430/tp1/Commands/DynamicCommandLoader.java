@@ -2,16 +2,19 @@ package ca.polymtl.log8430.tp1.Commands;
 
 import java.io.File;
 import java.io.UnsupportedEncodingException;
+import java.lang.reflect.InvocationTargetException;
 import java.net.URL;
+import java.util.ArrayList;
 
 import sun.misc.Launcher;
 // Source http://www.javaworld.com/article/2077477/learn-java/java-tip-113--identify-subclasses-at-runtime.html
 public class DynamicCommandLoader {
-	public static void find(String pckgname) {
-        // Code from JWhich
+	public ArrayList<Command> load(String pckgname) {
+        // Code from JWhich (source citée plus haut)
         // ======
         // Translate the package name into an absolute path
         String name = new String(pckgname);
+        ArrayList<Command> commands = new ArrayList<Command>();
         if (!name.startsWith("/")) {
             name = "/" + name;
         }        
@@ -21,9 +24,9 @@ public class DynamicCommandLoader {
         URL url = Launcher.class.getResource(name);
         String result = new String("");
         try {
+        	// pour que les paths avec les espaces soient pas transformes en %20
 			result = java.net.URLDecoder.decode(url.getFile(), "UTF-8");
 		} catch (UnsupportedEncodingException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
         File directory = new File(result);
@@ -40,9 +43,10 @@ public class DynamicCommandLoader {
                     String classname = files[i].substring(0,files[i].length()-6);
                     try {
                         // Try to create an instance of the object
-                        Object o = Class.forName(pckgname+"."+classname).newInstance();
+                        Object o = Class.forName(pckgname+"."+classname).getDeclaredConstructor(String.class).newInstance("");
 
                         if (o instanceof Command) {
+                        	commands.add((Command) o);
                             System.out.println(classname);
                         }
                     } catch (ClassNotFoundException cnfex) {
@@ -53,10 +57,21 @@ public class DynamicCommandLoader {
                         // default constructor
                     } catch (IllegalAccessException iaex) {
                         // The class is not public
-                    }
+                    } catch (IllegalArgumentException e) {
+					
+					} catch (InvocationTargetException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					} catch (NoSuchMethodException e) {
+					
+					} catch (SecurityException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
                 }
             }
         }
+		return commands;
     }
 
 }

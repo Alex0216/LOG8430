@@ -135,25 +135,5 @@ public class SuiteTests {
 			
 		}
 	}
-	@Test
-	public void dynamicLoading1()
-	{
-		try
-		{
-		DynamicCommandLoader a = new DynamicCommandLoader();
-		a.find("ca.polymtl.log8430.tp1.Commands");
-		assert(true);
-		
-		}
-		catch(Exception e)
-		{
-			e.printStackTrace();
-			
-		}
-	}
 	
-
-
-
-
 }
