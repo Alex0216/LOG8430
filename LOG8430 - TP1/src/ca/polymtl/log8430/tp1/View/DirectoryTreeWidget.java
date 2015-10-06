@@ -79,7 +79,7 @@ public class DirectoryTreeWidget extends JPanel {
 
 	}
 	
-	public void setSelectedPath(String path)
+	public void setSelectedPath(final String path)
 	{
 		m_executer.updatePath(path);
 		m_directoryTree.setModel(new DefaultTreeModel(getDirectoryTree(null, new File(path))));
