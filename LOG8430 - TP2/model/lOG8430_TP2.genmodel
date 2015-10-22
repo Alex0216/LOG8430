@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/LOG8430 - TP2/src" modelPluginID="LOG8430_-_TP2"
+    modelName="LOG8430_TP2" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>lOG8430_TP2.ecore</foreignModel>
+  <genPackages prefix="LOG8430_TP2" disposableProviderFactory="true" ecorePackage="lOG8430_TP2.ecore#/"/>
+</genmodel:GenModel>
