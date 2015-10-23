@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="TP2" nsURI="http://www.example.org/TP2" nsPrefix="TP2">
+  <eClassifiers xsi:type="ecore:EClass" name="Dossier" eSuperTypes="#//RessourcesLocales">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nomDossier" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Fichier" eSuperTypes="#//RessourcesLocales">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nomFichier" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tailleFichierOctet" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RessourcesDistantes" eSuperTypes="#//Ressources"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Page" eSuperTypes="#//RessourcesDistantes">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nomPage" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="titrePage" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="taillePage" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RessourcesLocales" eSuperTypes="#//Ressources">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="myPermissionMap" upperBound="-1"
+        eType="#//permissionMap" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="permissionMap" instanceClassName="java.util.Map$Entry">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="#//PermissionType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="PermissionType">
+    <eLiterals name="Read"/>
+    <eLiterals name="Write"/>
+    <eLiterals name="ReadAndWrite"/>
+    <eLiterals name="None"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Ressources"/>
+</ecore:EPackage>

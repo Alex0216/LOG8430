@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/TP2/src" modelPluginID="TP2" modelName="TP2" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="7.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>TP2.ecore</foreignModel>
+  <genPackages prefix="TP2" disposableProviderFactory="true" ecorePackage="TP2.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="TP2.ecore#//PermissionType">
+      <genEnumLiterals ecoreEnumLiteral="TP2.ecore#//PermissionType/Read"/>
+      <genEnumLiterals ecoreEnumLiteral="TP2.ecore#//PermissionType/Write"/>
+      <genEnumLiterals ecoreEnumLiteral="TP2.ecore#//PermissionType/ReadAndWrite"/>
+      <genEnumLiterals ecoreEnumLiteral="TP2.ecore#//PermissionType/None"/>
+    </genEnums>
+    <genClasses ecoreClass="TP2.ecore#//Dossier">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TP2.ecore#//Dossier/nomDossier"/>
+    </genClasses>
+    <genClasses ecoreClass="TP2.ecore#//Fichier">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TP2.ecore#//Fichier/nomFichier"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TP2.ecore#//Fichier/tailleFichierOctet"/>
+    </genClasses>
+    <genClasses ecoreClass="TP2.ecore#//RessourcesDistantes"/>
+    <genClasses ecoreClass="TP2.ecore#//Page">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TP2.ecore#//Page/nomPage"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TP2.ecore#//Page/titrePage"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TP2.ecore#//Page/taillePage"/>
+    </genClasses>
+    <genClasses ecoreClass="TP2.ecore#//RessourcesLocales">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TP2.ecore#//RessourcesLocales/myPermissionMap"/>
+    </genClasses>
+    <genClasses ecoreClass="TP2.ecore#//permissionMap">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TP2.ecore#//permissionMap/key"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TP2.ecore#//permissionMap/value"/>
+    </genClasses>
+    <genClasses ecoreClass="TP2.ecore#//Ressources"/>
+  </genPackages>
+</genmodel:GenModel>
