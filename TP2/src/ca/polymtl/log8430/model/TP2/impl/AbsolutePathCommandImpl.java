@@ -164,7 +164,8 @@ public class AbsolutePathCommandImpl extends MinimalEObjectImpl.Container implem
 	 * @generated
 	 */
 	public void execute() {
-		ressource.accept(this);
+		if(ressource != null)
+			ressource.accept(this);
 	}
 
 	/**

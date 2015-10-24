@@ -683,7 +683,7 @@ public class TP2PackageImpl extends EPackageImpl implements TP2Package {
 
 		initEClass(abstractCommandEClass, AbstractCommand.class, "AbstractCommand", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAbstractCommand_CommandName(), ecorePackage.getEString(), "commandName", null, 0, 1, AbstractCommand.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAbstractCommand_Ressource(), this.getRessource(), null, "ressource", null, 1, 1, AbstractCommand.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAbstractCommand_Ressource(), this.getRessource(), null, "ressource", null, 0, 1, AbstractCommand.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAbstractCommand_Result(), ecorePackage.getEString(), "result", null, 0, 1, AbstractCommand.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEOperation(getAbstractCommand__Execute(), null, "execute", 0, 1, IS_UNIQUE, IS_ORDERED);

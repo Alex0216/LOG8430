@@ -164,7 +164,8 @@ public class FileNameCommandImpl extends MinimalEObjectImpl.Container implements
 	 * @generated
 	 */
 	public void execute() {
-		ressource.accept(this);
+		if(ressource != null)
+			ressource.accept(this);
 	}
 
 	/**
