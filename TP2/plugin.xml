@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated TP2 -->
+      <package
+            uri="TP2"
+            class="ca.polymtl.log8430.model.TP2.TP2Package"
+            genModel="model/TP2.genmodel"/>
+   </extension>
+
+</plugin>
