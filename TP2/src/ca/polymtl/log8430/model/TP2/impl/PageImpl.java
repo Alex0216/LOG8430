@@ -5,10 +5,15 @@ package ca.polymtl.log8430.model.TP2.impl;
 import ca.polymtl.log8430.model.TP2.Page;
 import ca.polymtl.log8430.model.TP2.RessourceVisitor;
 import ca.polymtl.log8430.model.TP2.TP2Package;
+
 import java.lang.reflect.InvocationTargetException;
+
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
@@ -265,7 +270,7 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case TP2Package.PAGE___ACCEPT__ABSTRACTCOMMAND:
+			case TP2Package.PAGE___ACCEPT__RESSOURCEVISITOR:
 				accept((RessourceVisitor)arguments.get(0));
 				return null;
 		}

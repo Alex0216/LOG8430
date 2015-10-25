@@ -6,10 +6,15 @@ import ca.polymtl.log8430.model.TP2.Fichier;
 import ca.polymtl.log8430.model.TP2.PermissionType;
 import ca.polymtl.log8430.model.TP2.RessourceVisitor;
 import ca.polymtl.log8430.model.TP2.TP2Package;
+
 import java.lang.reflect.InvocationTargetException;
+
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
@@ -266,7 +271,7 @@ public class FichierImpl extends MinimalEObjectImpl.Container implements Fichier
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case TP2Package.FICHIER___ACCEPT__ABSTRACTCOMMAND:
+			case TP2Package.FICHIER___ACCEPT__RESSOURCEVISITOR:
 				accept((RessourceVisitor)arguments.get(0));
 				return null;
 		}

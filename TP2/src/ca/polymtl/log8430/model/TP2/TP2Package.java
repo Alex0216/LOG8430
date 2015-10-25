@@ -84,7 +84,7 @@ public interface TP2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESSOURCE___ACCEPT__ABSTRACTCOMMAND = 0;
+	int RESSOURCE___ACCEPT__RESSOURCEVISITOR = 0;
 
 	/**
 	 * The number of operations of the '<em>Ressource</em>' class.
@@ -130,7 +130,7 @@ public interface TP2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESSOURCES_LOCALE___ACCEPT__ABSTRACTCOMMAND = RESSOURCE___ACCEPT__ABSTRACTCOMMAND;
+	int RESSOURCES_LOCALE___ACCEPT__RESSOURCEVISITOR = RESSOURCE___ACCEPT__RESSOURCEVISITOR;
 
 	/**
 	 * The number of operations of the '<em>Ressources Locale</em>' class.
@@ -194,7 +194,7 @@ public interface TP2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOSSIER___ACCEPT__ABSTRACTCOMMAND = RESSOURCES_LOCALE___ACCEPT__ABSTRACTCOMMAND;
+	int DOSSIER___ACCEPT__RESSOURCEVISITOR = RESSOURCES_LOCALE___ACCEPT__RESSOURCEVISITOR;
 
 	/**
 	 * The number of operations of the '<em>Dossier</em>' class.
@@ -258,7 +258,7 @@ public interface TP2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FICHIER___ACCEPT__ABSTRACTCOMMAND = RESSOURCES_LOCALE___ACCEPT__ABSTRACTCOMMAND;
+	int FICHIER___ACCEPT__RESSOURCEVISITOR = RESSOURCES_LOCALE___ACCEPT__RESSOURCEVISITOR;
 
 	/**
 	 * The number of operations of the '<em>Fichier</em>' class.
@@ -295,7 +295,7 @@ public interface TP2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESSOURCES_DISTANTE___ACCEPT__ABSTRACTCOMMAND = RESSOURCE___ACCEPT__ABSTRACTCOMMAND;
+	int RESSOURCES_DISTANTE___ACCEPT__RESSOURCEVISITOR = RESSOURCE___ACCEPT__RESSOURCEVISITOR;
 
 	/**
 	 * The number of operations of the '<em>Ressources Distante</em>' class.
@@ -359,7 +359,7 @@ public interface TP2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAGE___ACCEPT__ABSTRACTCOMMAND = RESSOURCES_DISTANTE___ACCEPT__ABSTRACTCOMMAND;
+	int PAGE___ACCEPT__RESSOURCEVISITOR = RESSOURCES_DISTANTE___ACCEPT__RESSOURCEVISITOR;
 
 	/**
 	 * The number of operations of the '<em>Page</em>' class.
@@ -490,13 +490,22 @@ public interface TP2Package extends EPackage {
 	int MASTER___EXECUTE_COMMAND__ABSTRACTCOMMAND = 2;
 
 	/**
+	 * The operation id for the '<em>Add Command</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MASTER___ADD_COMMAND__ABSTRACTCOMMAND = 3;
+
+	/**
 	 * The number of operations of the '<em>Master</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MASTER_OPERATION_COUNT = 3;
+	int MASTER_OPERATION_COUNT = 4;
 
 	/**
 	 * The meta object id for the '{@link ca.polymtl.log8430.model.TP2.RessourceVisitor <em>Ressource Visitor</em>}' class.
@@ -1101,7 +1110,7 @@ public interface TP2Package extends EPackage {
 	 * @see ca.polymtl.log8430.model.TP2.Ressource#accept(ca.polymtl.log8430.model.TP2.RessourceVisitor)
 	 * @generated
 	 */
-	EOperation getRessource__Accept__AbstractCommand();
+	EOperation getRessource__Accept__RessourceVisitor();
 
 	/**
 	 * Returns the meta object for class '{@link ca.polymtl.log8430.model.TP2.AbstractCommand <em>Abstract Command</em>}'.
@@ -1205,6 +1214,16 @@ public interface TP2Package extends EPackage {
 	 * @generated
 	 */
 	EOperation getMaster__ExecuteCommand__AbstractCommand();
+
+	/**
+	 * Returns the meta object for the '{@link ca.polymtl.log8430.model.TP2.Master#addCommand(ca.polymtl.log8430.model.TP2.AbstractCommand) <em>Add Command</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Add Command</em>' operation.
+	 * @see ca.polymtl.log8430.model.TP2.Master#addCommand(ca.polymtl.log8430.model.TP2.AbstractCommand)
+	 * @generated
+	 */
+	EOperation getMaster__AddCommand__AbstractCommand();
 
 	/**
 	 * Returns the meta object for class '{@link ca.polymtl.log8430.model.TP2.FileNameCommand <em>File Name Command</em>}'.
@@ -1460,7 +1479,7 @@ public interface TP2Package extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation RESSOURCE___ACCEPT__ABSTRACTCOMMAND = eINSTANCE.getRessource__Accept__AbstractCommand();
+		EOperation RESSOURCE___ACCEPT__RESSOURCEVISITOR = eINSTANCE.getRessource__Accept__RessourceVisitor();
 
 		/**
 		 * The meta object literal for the '{@link ca.polymtl.log8430.model.TP2.AbstractCommand <em>Abstract Command</em>}' class.
@@ -1545,6 +1564,14 @@ public interface TP2Package extends EPackage {
 		 * @generated
 		 */
 		EOperation MASTER___EXECUTE_COMMAND__ABSTRACTCOMMAND = eINSTANCE.getMaster__ExecuteCommand__AbstractCommand();
+
+		/**
+		 * The meta object literal for the '<em><b>Add Command</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation MASTER___ADD_COMMAND__ABSTRACTCOMMAND = eINSTANCE.getMaster__AddCommand__AbstractCommand();
 
 		/**
 		 * The meta object literal for the '{@link ca.polymtl.log8430.model.TP2.impl.FileNameCommandImpl <em>File Name Command</em>}' class.

@@ -80,34 +80,37 @@ public class MasterImpl extends MinimalEObjectImpl.Container implements Master {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	public void clear() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		for(AbstractCommand c : commands){
+			c.clear();
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	public void executeAll() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		for(AbstractCommand c : commands){
+			c.execute();
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	public void executeCommand(AbstractCommand command) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		command.execute();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 */
+	public void addCommand(AbstractCommand command) {
+		getCommands().add(command);
 	}
 
 	/**
@@ -200,6 +203,9 @@ public class MasterImpl extends MinimalEObjectImpl.Container implements Master {
 				return null;
 			case TP2Package.MASTER___EXECUTE_COMMAND__ABSTRACTCOMMAND:
 				executeCommand((AbstractCommand)arguments.get(0));
+				return null;
+			case TP2Package.MASTER___ADD_COMMAND__ABSTRACTCOMMAND:
+				addCommand((AbstractCommand)arguments.get(0));
 				return null;
 		}
 		return super.eInvoke(operationID, arguments);

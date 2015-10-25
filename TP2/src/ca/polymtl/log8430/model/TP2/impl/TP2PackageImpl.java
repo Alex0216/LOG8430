@@ -317,7 +317,7 @@ public class TP2PackageImpl extends EPackageImpl implements TP2Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getRessource__Accept__AbstractCommand() {
+	public EOperation getRessource__Accept__RessourceVisitor() {
 		return ressourceEClass.getEOperations().get(0);
 	}
 
@@ -409,6 +409,15 @@ public class TP2PackageImpl extends EPackageImpl implements TP2Package {
 	 */
 	public EOperation getMaster__ExecuteCommand__AbstractCommand() {
 		return masterEClass.getEOperations().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getMaster__AddCommand__AbstractCommand() {
+		return masterEClass.getEOperations().get(3);
 	}
 
 	/**
@@ -548,7 +557,7 @@ public class TP2PackageImpl extends EPackageImpl implements TP2Package {
 		createEAttribute(ressourcesLocaleEClass, RESSOURCES_LOCALE__PERMISSION);
 
 		ressourceEClass = createEClass(RESSOURCE);
-		createEOperation(ressourceEClass, RESSOURCE___ACCEPT__ABSTRACTCOMMAND);
+		createEOperation(ressourceEClass, RESSOURCE___ACCEPT__RESSOURCEVISITOR);
 
 		abstractCommandEClass = createEClass(ABSTRACT_COMMAND);
 		createEAttribute(abstractCommandEClass, ABSTRACT_COMMAND__COMMAND_NAME);
@@ -561,6 +570,7 @@ public class TP2PackageImpl extends EPackageImpl implements TP2Package {
 		createEOperation(masterEClass, MASTER___CLEAR);
 		createEOperation(masterEClass, MASTER___EXECUTE_ALL);
 		createEOperation(masterEClass, MASTER___EXECUTE_COMMAND__ABSTRACTCOMMAND);
+		createEOperation(masterEClass, MASTER___ADD_COMMAND__ABSTRACTCOMMAND);
 
 		fileNameCommandEClass = createEClass(FILE_NAME_COMMAND);
 
@@ -638,7 +648,7 @@ public class TP2PackageImpl extends EPackageImpl implements TP2Package {
 
 		initEClass(ressourceEClass, Ressource.class, "Ressource", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		EOperation op = initEOperation(getRessource__Accept__AbstractCommand(), null, "accept", 0, 1, IS_UNIQUE, IS_ORDERED);
+		EOperation op = initEOperation(getRessource__Accept__RessourceVisitor(), null, "accept", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getRessourceVisitor(), "commandVisitor", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(abstractCommandEClass, AbstractCommand.class, "AbstractCommand", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -657,6 +667,9 @@ public class TP2PackageImpl extends EPackageImpl implements TP2Package {
 		initEOperation(getMaster__ExecuteAll(), null, "executeAll", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = initEOperation(getMaster__ExecuteCommand__AbstractCommand(), null, "executeCommand", 0, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getAbstractCommand(), "command", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getMaster__AddCommand__AbstractCommand(), null, "addCommand", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getAbstractCommand(), "command", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(fileNameCommandEClass, FileNameCommand.class, "FileNameCommand", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

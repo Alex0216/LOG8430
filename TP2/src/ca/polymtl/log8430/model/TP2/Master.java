@@ -63,4 +63,12 @@ public interface Master extends EObject {
 	 */
 	void executeCommand(AbstractCommand command);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	void addCommand(AbstractCommand command);
+
 } // Master
