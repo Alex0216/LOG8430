@@ -344,17 +344,8 @@ public class TP2PackageImpl extends EPackageImpl implements TP2Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getAbstractCommand_Ressource() {
-		return (EReference)abstractCommandEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getAbstractCommand_Result() {
-		return (EAttribute)abstractCommandEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)abstractCommandEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -364,42 +355,6 @@ public class TP2PackageImpl extends EPackageImpl implements TP2Package {
 	 */
 	public EOperation getAbstractCommand__Execute() {
 		return abstractCommandEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getAbstractCommand__IsRessourceSupported() {
-		return abstractCommandEClass.getEOperations().get(-1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getAbstractCommand__Visit__Fichier() {
-		return abstractCommandEClass.getEOperations().get(-1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getAbstractCommand__Visit__Dossier() {
-		return abstractCommandEClass.getEOperations().get(-1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getAbstractCommand__Visit__Page() {
-		return abstractCommandEClass.getEOperations().get(-1);
 	}
 
 	/**
@@ -490,6 +445,15 @@ public class TP2PackageImpl extends EPackageImpl implements TP2Package {
 	 */
 	public EClass getRessourceVisitor() {
 		return ressourceVisitorEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getRessourceVisitor_Ressource() {
+		return (EReference)ressourceVisitorEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -588,14 +552,9 @@ public class TP2PackageImpl extends EPackageImpl implements TP2Package {
 
 		abstractCommandEClass = createEClass(ABSTRACT_COMMAND);
 		createEAttribute(abstractCommandEClass, ABSTRACT_COMMAND__COMMAND_NAME);
-		createEReference(abstractCommandEClass, ABSTRACT_COMMAND__RESSOURCE);
 		createEAttribute(abstractCommandEClass, ABSTRACT_COMMAND__RESULT);
 		createEOperation(abstractCommandEClass, ABSTRACT_COMMAND___EXECUTE);
 		createEOperation(abstractCommandEClass, ABSTRACT_COMMAND___CLEAR);
-		createEOperation(abstractCommandEClass, ABSTRACT_COMMAND___IS_RESSOURCE_SUPPORTED);
-		createEOperation(abstractCommandEClass, ABSTRACT_COMMAND___VISIT__FICHIER);
-		createEOperation(abstractCommandEClass, ABSTRACT_COMMAND___VISIT__DOSSIER);
-		createEOperation(abstractCommandEClass, ABSTRACT_COMMAND___VISIT__PAGE);
 
 		masterEClass = createEClass(MASTER);
 		createEReference(masterEClass, MASTER__COMMANDS);
@@ -610,6 +569,7 @@ public class TP2PackageImpl extends EPackageImpl implements TP2Package {
 		absolutePathCommandEClass = createEClass(ABSOLUTE_PATH_COMMAND);
 
 		ressourceVisitorEClass = createEClass(RESSOURCE_VISITOR);
+		createEReference(ressourceVisitorEClass, RESSOURCE_VISITOR__RESSOURCE);
 		createEOperation(ressourceVisitorEClass, RESSOURCE_VISITOR___IS_RESSOURCE_SUPPORTED);
 		createEOperation(ressourceVisitorEClass, RESSOURCE_VISITOR___VISIT__FICHIER);
 		createEOperation(ressourceVisitorEClass, RESSOURCE_VISITOR___VISIT__DOSSIER);
@@ -679,27 +639,15 @@ public class TP2PackageImpl extends EPackageImpl implements TP2Package {
 		initEClass(ressourceEClass, Ressource.class, "Ressource", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		EOperation op = initEOperation(getRessource__Accept__AbstractCommand(), null, "accept", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, this.getAbstractCommand(), "commandVisitor", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getRessourceVisitor(), "commandVisitor", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(abstractCommandEClass, AbstractCommand.class, "AbstractCommand", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAbstractCommand_CommandName(), ecorePackage.getEString(), "commandName", null, 0, 1, AbstractCommand.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAbstractCommand_Ressource(), this.getRessource(), null, "ressource", null, 0, 1, AbstractCommand.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAbstractCommand_Result(), ecorePackage.getEString(), "result", null, 0, 1, AbstractCommand.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEOperation(getAbstractCommand__Execute(), null, "execute", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEOperation(getAbstractCommand__Clear(), null, "clear", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		initEOperation(getAbstractCommand__IsRessourceSupported(), ecorePackage.getEBoolean(), "isRessourceSupported", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = initEOperation(getAbstractCommand__Visit__Fichier(), null, "visit", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, this.getFichier(), "fichier", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = initEOperation(getAbstractCommand__Visit__Dossier(), null, "visit", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, this.getDossier(), "dossier", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = initEOperation(getAbstractCommand__Visit__Page(), null, "visit", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, this.getPage(), "page", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(masterEClass, Master.class, "Master", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMaster_Commands(), this.getAbstractCommand(), null, "commands", null, 0, -1, Master.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -718,6 +666,7 @@ public class TP2PackageImpl extends EPackageImpl implements TP2Package {
 		initEClass(absolutePathCommandEClass, AbsolutePathCommand.class, "AbsolutePathCommand", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(ressourceVisitorEClass, RessourceVisitor.class, "RessourceVisitor", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getRessourceVisitor_Ressource(), this.getRessource(), null, "ressource", null, 0, 1, RessourceVisitor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEOperation(getRessourceVisitor__IsRessourceSupported(), ecorePackage.getEBoolean(), "isRessourceSupported", 0, 1, IS_UNIQUE, IS_ORDERED);
 

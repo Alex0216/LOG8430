@@ -31,7 +31,7 @@
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="body" value="commandVisitor.visit(this);"/>
       </eAnnotations>
-      <eParameters name="commandVisitor" eType="#//AbstractCommand"/>
+      <eParameters name="commandVisitor" eType="#//RessourceVisitor"/>
     </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AbstractCommand" abstract="true" interface="true">
@@ -46,7 +46,6 @@
       </eAnnotations>
     </eOperations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="commandName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ressource" eType="#//Ressource"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="result" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Master">
@@ -73,5 +72,6 @@
     <eOperations name="visit">
       <eParameters name="page" eType="#//Page"/>
     </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ressource" eType="#//Ressource"/>
   </eClassifiers>
 </ecore:EPackage>

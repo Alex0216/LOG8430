@@ -10,10 +10,14 @@ import ca.polymtl.log8430.model.TP2.Ressource;
 import ca.polymtl.log8430.model.TP2.TP2Package;
 
 import java.lang.reflect.InvocationTargetException;
+
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
@@ -25,8 +29,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link ca.polymtl.log8430.model.TP2.impl.FileNameCommandImpl#getCommandName <em>Command Name</em>}</li>
- *   <li>{@link ca.polymtl.log8430.model.TP2.impl.FileNameCommandImpl#getRessource <em>Ressource</em>}</li>
  *   <li>{@link ca.polymtl.log8430.model.TP2.impl.FileNameCommandImpl#getResult <em>Result</em>}</li>
+ *   <li>{@link ca.polymtl.log8430.model.TP2.impl.FileNameCommandImpl#getRessource <em>Ressource</em>}</li>
  * </ul>
  * </p>
  *
@@ -42,6 +46,7 @@ public class FileNameCommandImpl extends MinimalEObjectImpl.Container implements
 	 * @ordered
 	 */
 	protected static final String COMMAND_NAME_EDEFAULT = null;
+
 	/**
 	 * The cached value of the '{@link #getCommandName() <em>Command Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -51,15 +56,6 @@ public class FileNameCommandImpl extends MinimalEObjectImpl.Container implements
 	 * @ordered
 	 */
 	protected String commandName = COMMAND_NAME_EDEFAULT;
-	/**
-	 * The cached value of the '{@link #getRessource() <em>Ressource</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRessource()
-	 * @generated
-	 * @ordered
-	 */
-	protected Ressource ressource;
 
 	/**
 	 * The default value of the '{@link #getResult() <em>Result</em>}' attribute.
@@ -70,6 +66,7 @@ public class FileNameCommandImpl extends MinimalEObjectImpl.Container implements
 	 * @ordered
 	 */
 	protected static final String RESULT_EDEFAULT = null;
+
 	/**
 	 * The cached value of the '{@link #getResult() <em>Result</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -79,6 +76,16 @@ public class FileNameCommandImpl extends MinimalEObjectImpl.Container implements
 	 * @ordered
 	 */
 	protected String result = RESULT_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getRessource() <em>Ressource</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRessource()
+	 * @generated
+	 * @ordered
+	 */
+	protected Ressource ressource;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -125,6 +132,27 @@ public class FileNameCommandImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getResult() {
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setResult(String newResult) {
+		String oldResult = result;
+		result = newResult;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TP2Package.FILE_NAME_COMMAND__RESULT, oldResult, result));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Ressource getRessource() {
 		if (ressource != null && ressource.eIsProxy()) {
 			InternalEObject oldRessource = (InternalEObject)ressource;
@@ -156,37 +184,6 @@ public class FileNameCommandImpl extends MinimalEObjectImpl.Container implements
 		ressource = newRessource;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TP2Package.FILE_NAME_COMMAND__RESSOURCE, oldRessource, ressource));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void execute() {
-		if(ressource != null)
-			ressource.accept(this);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getResult() {
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setResult(String newResult) {
-		String oldResult = result;
-		result = newResult;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TP2Package.FILE_NAME_COMMAND__RESULT, oldResult, result));
 	}
 
 	/**
@@ -238,6 +235,16 @@ public class FileNameCommandImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public void execute() {
+		if(ressource != null)
+			ressource.accept(this);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public void clear() {
 		result = "";
 	}
@@ -252,11 +259,11 @@ public class FileNameCommandImpl extends MinimalEObjectImpl.Container implements
 		switch (featureID) {
 			case TP2Package.FILE_NAME_COMMAND__COMMAND_NAME:
 				return getCommandName();
+			case TP2Package.FILE_NAME_COMMAND__RESULT:
+				return getResult();
 			case TP2Package.FILE_NAME_COMMAND__RESSOURCE:
 				if (resolve) return getRessource();
 				return basicGetRessource();
-			case TP2Package.FILE_NAME_COMMAND__RESULT:
-				return getResult();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -272,11 +279,11 @@ public class FileNameCommandImpl extends MinimalEObjectImpl.Container implements
 			case TP2Package.FILE_NAME_COMMAND__COMMAND_NAME:
 				setCommandName((String)newValue);
 				return;
-			case TP2Package.FILE_NAME_COMMAND__RESSOURCE:
-				setRessource((Ressource)newValue);
-				return;
 			case TP2Package.FILE_NAME_COMMAND__RESULT:
 				setResult((String)newValue);
+				return;
+			case TP2Package.FILE_NAME_COMMAND__RESSOURCE:
+				setRessource((Ressource)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -293,11 +300,11 @@ public class FileNameCommandImpl extends MinimalEObjectImpl.Container implements
 			case TP2Package.FILE_NAME_COMMAND__COMMAND_NAME:
 				setCommandName(COMMAND_NAME_EDEFAULT);
 				return;
-			case TP2Package.FILE_NAME_COMMAND__RESSOURCE:
-				setRessource((Ressource)null);
-				return;
 			case TP2Package.FILE_NAME_COMMAND__RESULT:
 				setResult(RESULT_EDEFAULT);
+				return;
+			case TP2Package.FILE_NAME_COMMAND__RESSOURCE:
+				setRessource((Ressource)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -313,10 +320,10 @@ public class FileNameCommandImpl extends MinimalEObjectImpl.Container implements
 		switch (featureID) {
 			case TP2Package.FILE_NAME_COMMAND__COMMAND_NAME:
 				return COMMAND_NAME_EDEFAULT == null ? commandName != null : !COMMAND_NAME_EDEFAULT.equals(commandName);
-			case TP2Package.FILE_NAME_COMMAND__RESSOURCE:
-				return ressource != null;
 			case TP2Package.FILE_NAME_COMMAND__RESULT:
 				return RESULT_EDEFAULT == null ? result != null : !RESULT_EDEFAULT.equals(result);
+			case TP2Package.FILE_NAME_COMMAND__RESSOURCE:
+				return ressource != null;
 		}
 		return super.eIsSet(featureID);
 	}

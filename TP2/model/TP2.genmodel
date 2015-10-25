@@ -36,20 +36,9 @@
     </genClasses>
     <genClasses ecoreClass="TP2.ecore#//AbstractCommand">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TP2.ecore#//AbstractCommand/commandName"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TP2.ecore#//AbstractCommand/ressource"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TP2.ecore#//AbstractCommand/result"/>
       <genOperations ecoreOperation="TP2.ecore#//AbstractCommand/execute"/>
       <genOperations ecoreOperation="TP2.ecore#//AbstractCommand/clear"/>
-      <genOperations ecoreOperation="TP2.ecore#//RessourceVisitor/isRessourceSupported"/>
-      <genOperations ecoreOperation="TP2.ecore#//RessourceVisitor/visit">
-        <genParameters ecoreParameter="TP2.ecore#//RessourceVisitor/visit/fichier"/>
-      </genOperations>
-      <genOperations ecoreOperation="TP2.ecore#//RessourceVisitor/visit.1">
-        <genParameters ecoreParameter="TP2.ecore#//RessourceVisitor/visit.1/dossier"/>
-      </genOperations>
-      <genOperations ecoreOperation="TP2.ecore#//RessourceVisitor/visit.2">
-        <genParameters ecoreParameter="TP2.ecore#//RessourceVisitor/visit.2/page"/>
-      </genOperations>
     </genClasses>
     <genClasses ecoreClass="TP2.ecore#//Master">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TP2.ecore#//Master/commands"/>
@@ -63,6 +52,7 @@
     <genClasses ecoreClass="TP2.ecore#//FolderNameCommand"/>
     <genClasses ecoreClass="TP2.ecore#//AbsolutePathCommand"/>
     <genClasses image="false" ecoreClass="TP2.ecore#//RessourceVisitor">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TP2.ecore#//RessourceVisitor/ressource"/>
       <genOperations ecoreOperation="TP2.ecore#//RessourceVisitor/isRessourceSupported"/>
       <genOperations ecoreOperation="TP2.ecore#//RessourceVisitor/visit">
         <genParameters ecoreParameter="TP2.ecore#//RessourceVisitor/visit/fichier"/>

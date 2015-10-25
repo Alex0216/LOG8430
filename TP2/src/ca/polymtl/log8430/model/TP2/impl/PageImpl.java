@@ -2,18 +2,13 @@
  */
 package ca.polymtl.log8430.model.TP2.impl;
 
-import ca.polymtl.log8430.model.TP2.AbstractCommand;
 import ca.polymtl.log8430.model.TP2.Page;
+import ca.polymtl.log8430.model.TP2.RessourceVisitor;
 import ca.polymtl.log8430.model.TP2.TP2Package;
-
 import java.lang.reflect.InvocationTargetException;
-
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
@@ -180,7 +175,7 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void accept(final AbstractCommand commandVisitor) {
+	public void accept(final RessourceVisitor commandVisitor) {
 		commandVisitor.visit(this);
 	}
 
@@ -271,7 +266,7 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
 			case TP2Package.PAGE___ACCEPT__ABSTRACTCOMMAND:
-				accept((AbstractCommand)arguments.get(0));
+				accept((RessourceVisitor)arguments.get(0));
 				return null;
 		}
 		return super.eInvoke(operationID, arguments);

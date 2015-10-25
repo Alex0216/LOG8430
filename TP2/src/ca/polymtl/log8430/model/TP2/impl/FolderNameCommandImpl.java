@@ -10,13 +10,14 @@ import ca.polymtl.log8430.model.TP2.Ressource;
 import ca.polymtl.log8430.model.TP2.TP2Package;
 
 import java.lang.reflect.InvocationTargetException;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
@@ -28,8 +29,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link ca.polymtl.log8430.model.TP2.impl.FolderNameCommandImpl#getCommandName <em>Command Name</em>}</li>
- *   <li>{@link ca.polymtl.log8430.model.TP2.impl.FolderNameCommandImpl#getRessource <em>Ressource</em>}</li>
  *   <li>{@link ca.polymtl.log8430.model.TP2.impl.FolderNameCommandImpl#getResult <em>Result</em>}</li>
+ *   <li>{@link ca.polymtl.log8430.model.TP2.impl.FolderNameCommandImpl#getRessource <em>Ressource</em>}</li>
  * </ul>
  * </p>
  *
@@ -45,6 +46,7 @@ public class FolderNameCommandImpl extends MinimalEObjectImpl.Container implemen
 	 * @ordered
 	 */
 	protected static final String COMMAND_NAME_EDEFAULT = null;
+
 	/**
 	 * The cached value of the '{@link #getCommandName() <em>Command Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -54,15 +56,6 @@ public class FolderNameCommandImpl extends MinimalEObjectImpl.Container implemen
 	 * @ordered
 	 */
 	protected String commandName = COMMAND_NAME_EDEFAULT;
-	/**
-	 * The cached value of the '{@link #getRessource() <em>Ressource</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRessource()
-	 * @generated
-	 * @ordered
-	 */
-	protected Ressource ressource;
 
 	/**
 	 * The default value of the '{@link #getResult() <em>Result</em>}' attribute.
@@ -73,6 +66,7 @@ public class FolderNameCommandImpl extends MinimalEObjectImpl.Container implemen
 	 * @ordered
 	 */
 	protected static final String RESULT_EDEFAULT = null;
+
 	/**
 	 * The cached value of the '{@link #getResult() <em>Result</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -82,6 +76,16 @@ public class FolderNameCommandImpl extends MinimalEObjectImpl.Container implemen
 	 * @ordered
 	 */
 	protected String result = RESULT_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getRessource() <em>Ressource</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRessource()
+	 * @generated
+	 * @ordered
+	 */
+	protected Ressource ressource;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -128,6 +132,27 @@ public class FolderNameCommandImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getResult() {
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setResult(String newResult) {
+		String oldResult = result;
+		result = newResult;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TP2Package.FOLDER_NAME_COMMAND__RESULT, oldResult, result));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Ressource getRessource() {
 		if (ressource != null && ressource.eIsProxy()) {
 			InternalEObject oldRessource = (InternalEObject)ressource;
@@ -166,66 +191,53 @@ public class FolderNameCommandImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isRessourceSupported() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void visit(Fichier fichier) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void visit(Dossier dossier) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void visit(Page page) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public void execute() {
 		if(ressource != null)
 			ressource.accept(this);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getResult() {
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setResult(String newResult) {
-		String oldResult = result;
-		result = newResult;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TP2Package.FOLDER_NAME_COMMAND__RESULT, oldResult, result));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 */
-	public boolean isRessourceSupported() {
-		if(ressource != null){
-			return ressource.getClass() == Dossier.class;
-		}
-		return false;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 */
-	public void visit(Fichier fichier) {
-		this.setResult("");
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 */
-	public void visit(Dossier dossier) {
-		Path folder = Paths.get(dossier.getNom());
-		this.setResult(folder.getFileName().toString());
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 */
-	public void visit(Page page) {
-		this.setResult("");
 	}
 
 	/**
@@ -247,11 +259,11 @@ public class FolderNameCommandImpl extends MinimalEObjectImpl.Container implemen
 		switch (featureID) {
 			case TP2Package.FOLDER_NAME_COMMAND__COMMAND_NAME:
 				return getCommandName();
+			case TP2Package.FOLDER_NAME_COMMAND__RESULT:
+				return getResult();
 			case TP2Package.FOLDER_NAME_COMMAND__RESSOURCE:
 				if (resolve) return getRessource();
 				return basicGetRessource();
-			case TP2Package.FOLDER_NAME_COMMAND__RESULT:
-				return getResult();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -267,11 +279,11 @@ public class FolderNameCommandImpl extends MinimalEObjectImpl.Container implemen
 			case TP2Package.FOLDER_NAME_COMMAND__COMMAND_NAME:
 				setCommandName((String)newValue);
 				return;
-			case TP2Package.FOLDER_NAME_COMMAND__RESSOURCE:
-				setRessource((Ressource)newValue);
-				return;
 			case TP2Package.FOLDER_NAME_COMMAND__RESULT:
 				setResult((String)newValue);
+				return;
+			case TP2Package.FOLDER_NAME_COMMAND__RESSOURCE:
+				setRessource((Ressource)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -288,11 +300,11 @@ public class FolderNameCommandImpl extends MinimalEObjectImpl.Container implemen
 			case TP2Package.FOLDER_NAME_COMMAND__COMMAND_NAME:
 				setCommandName(COMMAND_NAME_EDEFAULT);
 				return;
-			case TP2Package.FOLDER_NAME_COMMAND__RESSOURCE:
-				setRessource((Ressource)null);
-				return;
 			case TP2Package.FOLDER_NAME_COMMAND__RESULT:
 				setResult(RESULT_EDEFAULT);
+				return;
+			case TP2Package.FOLDER_NAME_COMMAND__RESSOURCE:
+				setRessource((Ressource)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -308,10 +320,10 @@ public class FolderNameCommandImpl extends MinimalEObjectImpl.Container implemen
 		switch (featureID) {
 			case TP2Package.FOLDER_NAME_COMMAND__COMMAND_NAME:
 				return COMMAND_NAME_EDEFAULT == null ? commandName != null : !COMMAND_NAME_EDEFAULT.equals(commandName);
-			case TP2Package.FOLDER_NAME_COMMAND__RESSOURCE:
-				return ressource != null;
 			case TP2Package.FOLDER_NAME_COMMAND__RESULT:
 				return RESULT_EDEFAULT == null ? result != null : !RESULT_EDEFAULT.equals(result);
+			case TP2Package.FOLDER_NAME_COMMAND__RESSOURCE:
+				return ressource != null;
 		}
 		return super.eIsSet(featureID);
 	}
