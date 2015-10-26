@@ -125,31 +125,18 @@ public class TP2Switch<T> extends Switch<T> {
 			case TP2Package.FILE_NAME_COMMAND: {
 				FileNameCommand fileNameCommand = (FileNameCommand)theEObject;
 				T result = caseFileNameCommand(fileNameCommand);
-				if (result == null) result = caseRessourceVisitor(fileNameCommand);
-				if (result == null) result = caseAbstractCommand(fileNameCommand);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case TP2Package.FOLDER_NAME_COMMAND: {
 				FolderNameCommand folderNameCommand = (FolderNameCommand)theEObject;
 				T result = caseFolderNameCommand(folderNameCommand);
-				if (result == null) result = caseRessourceVisitor(folderNameCommand);
-				if (result == null) result = caseAbstractCommand(folderNameCommand);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case TP2Package.ABSOLUTE_PATH_COMMAND: {
 				AbsolutePathCommand absolutePathCommand = (AbsolutePathCommand)theEObject;
 				T result = caseAbsolutePathCommand(absolutePathCommand);
-				if (result == null) result = caseRessourceVisitor(absolutePathCommand);
-				if (result == null) result = caseAbstractCommand(absolutePathCommand);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case TP2Package.RESSOURCE_VISITOR: {
-				RessourceVisitor ressourceVisitor = (RessourceVisitor)theEObject;
-				T result = caseRessourceVisitor(ressourceVisitor);
-				if (result == null) result = caseAbstractCommand(ressourceVisitor);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -319,21 +306,6 @@ public class TP2Switch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseAbsolutePathCommand(AbsolutePathCommand object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Ressource Visitor</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Ressource Visitor</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseRessourceVisitor(RessourceVisitor object) {
 		return null;
 	}
 

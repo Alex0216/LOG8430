@@ -21,6 +21,6 @@ public interface Ressource extends EObject {
 	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='commandVisitor.visit(this);'"
 	 * @generated
 	 */
-	void accept(RessourceVisitor commandVisitor);
+	void accept(AbstractCommand commandVisitor);
 
 } // Ressource

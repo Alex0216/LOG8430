@@ -2,6 +2,8 @@
  */
 package ca.polymtl.log8430.model.TP2;
 
+import org.eclipse.emf.ecore.EObject;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -13,5 +15,5 @@ package ca.polymtl.log8430.model.TP2;
  * @model
  * @generated
  */
-public interface FolderNameCommand extends RessourceVisitor {
+public interface FolderNameCommand extends EObject {
 } // FolderNameCommand

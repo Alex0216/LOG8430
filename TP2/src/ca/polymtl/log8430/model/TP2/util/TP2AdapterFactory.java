@@ -112,10 +112,6 @@ public class TP2AdapterFactory extends AdapterFactoryImpl {
 				return createAbsolutePathCommandAdapter();
 			}
 			@Override
-			public Adapter caseRessourceVisitor(RessourceVisitor object) {
-				return createRessourceVisitorAdapter();
-			}
-			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -286,20 +282,6 @@ public class TP2AdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createAbsolutePathCommandAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link ca.polymtl.log8430.model.TP2.RessourceVisitor <em>Ressource Visitor</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see ca.polymtl.log8430.model.TP2.RessourceVisitor
-	 * @generated
-	 */
-	public Adapter createRessourceVisitorAdapter() {
 		return null;
 	}
 

@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link ca.polymtl.log8430.model.TP2.Master#getCommands <em>Commands</em>}</li>
+ *   <li>{@link ca.polymtl.log8430.model.TP2.Master#isAutoRun <em>Auto Run</em>}</li>
  * </ul>
  * </p>
  *
@@ -40,9 +41,25 @@ public interface Master extends EObject {
 	EList<AbstractCommand> getCommands();
 
 	/**
+	 * Returns the value of the '<em><b>Auto Run</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Auto Run</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Auto Run</em>' attribute.
+	 * @see #setAutoRun(boolean)
+	 * @see ca.polymtl.log8430.model.TP2.TP2Package#getMaster_AutoRun()
+	 * @model
+	 * @generated
+	 */
+	boolean isAutoRun();
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='for(AbstractCommand c: commands){\r\n\tc.clear();\r\n}'"
 	 * @generated
 	 */
 	void clear();
@@ -50,7 +67,7 @@ public interface Master extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='for(AbstractCommand c: commands){\r\n\t\t\tc.execute();\r\n\t\t}'"
 	 * @generated
 	 */
 	void executeAll();
@@ -58,7 +75,7 @@ public interface Master extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='command.execute();'"
 	 * @generated
 	 */
 	void executeCommand(AbstractCommand command);
@@ -74,17 +91,19 @@ public interface Master extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='for(AbstractCommand c: commands){\r\n\tc.setRessource(ressource);\r\n\tif(isAutoRun()){\r\n\t\tc.execute();\r\n\t}\r\n}'"
 	 * @generated
 	 */
 	void updateRessource(Ressource ressource);
 
 	/**
+	 * Sets the value of the '{@link ca.polymtl.log8430.model.TP2.Master#isAutoRun <em>Auto Run</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @param value the new value of the '<em>Auto Run</em>' attribute.
+	 * @see #isAutoRun()
 	 * @generated
 	 */
-	void setAutoRun(boolean autorun);
+	void setAutoRun(boolean value);
 
 } // Master

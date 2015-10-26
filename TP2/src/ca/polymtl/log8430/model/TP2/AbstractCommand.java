@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link ca.polymtl.log8430.model.TP2.AbstractCommand#getCommandName <em>Command Name</em>}</li>
  *   <li>{@link ca.polymtl.log8430.model.TP2.AbstractCommand#getResult <em>Result</em>}</li>
+ *   <li>{@link ca.polymtl.log8430.model.TP2.AbstractCommand#getRessource <em>Ressource</em>}</li>
  * </ul>
  * </p>
  *
@@ -75,6 +76,32 @@ public interface AbstractCommand extends EObject {
 	void setResult(String value);
 
 	/**
+	 * Returns the value of the '<em><b>Ressource</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Ressource</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Ressource</em>' reference.
+	 * @see #setRessource(Ressource)
+	 * @see ca.polymtl.log8430.model.TP2.TP2Package#getAbstractCommand_Ressource()
+	 * @model
+	 * @generated
+	 */
+	Ressource getRessource();
+
+	/**
+	 * Sets the value of the '{@link ca.polymtl.log8430.model.TP2.AbstractCommand#getRessource <em>Ressource</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Ressource</em>' reference.
+	 * @see #getRessource()
+	 * @generated
+	 */
+	void setRessource(Ressource value);
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='if(ressource != null)\r\n\tressource.accept(this);'"
@@ -97,5 +124,37 @@ public interface AbstractCommand extends EObject {
 	 * @generated
 	 */
 	boolean canExecute();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation"
+	 * @generated
+	 */
+	boolean isRessourceSupported();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	void visit(Fichier fichier);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	void visit(Dossier dossier);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	void visit(Page page);
 
 } // AbstractCommand

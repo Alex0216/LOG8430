@@ -399,13 +399,22 @@ public interface TP2Package extends EPackage {
 	int ABSTRACT_COMMAND__RESULT = 1;
 
 	/**
+	 * The feature id for the '<em><b>Ressource</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_COMMAND__RESSOURCE = 2;
+
+	/**
 	 * The number of structural features of the '<em>Abstract Command</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_COMMAND_FEATURE_COUNT = 2;
+	int ABSTRACT_COMMAND_FEATURE_COUNT = 3;
 
 	/**
 	 * The operation id for the '<em>Execute</em>' operation.
@@ -435,13 +444,49 @@ public interface TP2Package extends EPackage {
 	int ABSTRACT_COMMAND___CAN_EXECUTE = 2;
 
 	/**
+	 * The operation id for the '<em>Is Ressource Supported</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_COMMAND___IS_RESSOURCE_SUPPORTED = 3;
+
+	/**
+	 * The operation id for the '<em>Visit</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_COMMAND___VISIT__FICHIER = 4;
+
+	/**
+	 * The operation id for the '<em>Visit</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_COMMAND___VISIT__DOSSIER = 5;
+
+	/**
+	 * The operation id for the '<em>Visit</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_COMMAND___VISIT__PAGE = 6;
+
+	/**
 	 * The number of operations of the '<em>Abstract Command</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_COMMAND_OPERATION_COUNT = 3;
+	int ABSTRACT_COMMAND_OPERATION_COUNT = 7;
 
 	/**
 	 * The meta object id for the '{@link ca.polymtl.log8430.model.TP2.impl.MasterImpl <em>Master</em>}' class.
@@ -463,13 +508,22 @@ public interface TP2Package extends EPackage {
 	int MASTER__COMMANDS = 0;
 
 	/**
+	 * The feature id for the '<em><b>Auto Run</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MASTER__AUTO_RUN = 1;
+
+	/**
 	 * The number of structural features of the '<em>Master</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MASTER_FEATURE_COUNT = 1;
+	int MASTER_FEATURE_COUNT = 2;
 
 	/**
 	 * The operation id for the '<em>Clear</em>' operation.
@@ -517,140 +571,13 @@ public interface TP2Package extends EPackage {
 	int MASTER___UPDATE_RESSOURCE__RESSOURCE = 4;
 
 	/**
-	 * The operation id for the '<em>Set Auto Run</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MASTER___SET_AUTO_RUN__BOOLEAN = 5;
-
-	/**
 	 * The number of operations of the '<em>Master</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MASTER_OPERATION_COUNT = 6;
-
-	/**
-	 * The meta object id for the '{@link ca.polymtl.log8430.model.TP2.RessourceVisitor <em>Ressource Visitor</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see ca.polymtl.log8430.model.TP2.RessourceVisitor
-	 * @see ca.polymtl.log8430.model.TP2.impl.TP2PackageImpl#getRessourceVisitor()
-	 * @generated
-	 */
-	int RESSOURCE_VISITOR = 11;
-
-	/**
-	 * The feature id for the '<em><b>Command Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RESSOURCE_VISITOR__COMMAND_NAME = ABSTRACT_COMMAND__COMMAND_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Result</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RESSOURCE_VISITOR__RESULT = ABSTRACT_COMMAND__RESULT;
-
-	/**
-	 * The feature id for the '<em><b>Ressource</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RESSOURCE_VISITOR__RESSOURCE = ABSTRACT_COMMAND_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Ressource Visitor</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RESSOURCE_VISITOR_FEATURE_COUNT = ABSTRACT_COMMAND_FEATURE_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Execute</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RESSOURCE_VISITOR___EXECUTE = ABSTRACT_COMMAND___EXECUTE;
-
-	/**
-	 * The operation id for the '<em>Clear</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RESSOURCE_VISITOR___CLEAR = ABSTRACT_COMMAND___CLEAR;
-
-	/**
-	 * The operation id for the '<em>Can Execute</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RESSOURCE_VISITOR___CAN_EXECUTE = ABSTRACT_COMMAND___CAN_EXECUTE;
-
-	/**
-	 * The operation id for the '<em>Is Ressource Supported</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RESSOURCE_VISITOR___IS_RESSOURCE_SUPPORTED = ABSTRACT_COMMAND_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Visit</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RESSOURCE_VISITOR___VISIT__FICHIER = ABSTRACT_COMMAND_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Visit</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RESSOURCE_VISITOR___VISIT__DOSSIER = ABSTRACT_COMMAND_OPERATION_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Visit</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RESSOURCE_VISITOR___VISIT__PAGE = ABSTRACT_COMMAND_OPERATION_COUNT + 3;
-
-	/**
-	 * The number of operations of the '<em>Ressource Visitor</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RESSOURCE_VISITOR_OPERATION_COUNT = ABSTRACT_COMMAND_OPERATION_COUNT + 4;
+	int MASTER_OPERATION_COUNT = 5;
 
 	/**
 	 * The meta object id for the '{@link ca.polymtl.log8430.model.TP2.impl.FileNameCommandImpl <em>File Name Command</em>}' class.
@@ -663,103 +590,13 @@ public interface TP2Package extends EPackage {
 	int FILE_NAME_COMMAND = 8;
 
 	/**
-	 * The feature id for the '<em><b>Command Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FILE_NAME_COMMAND__COMMAND_NAME = RESSOURCE_VISITOR__COMMAND_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Result</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FILE_NAME_COMMAND__RESULT = RESSOURCE_VISITOR__RESULT;
-
-	/**
-	 * The feature id for the '<em><b>Ressource</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FILE_NAME_COMMAND__RESSOURCE = RESSOURCE_VISITOR__RESSOURCE;
-
-	/**
 	 * The number of structural features of the '<em>File Name Command</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FILE_NAME_COMMAND_FEATURE_COUNT = RESSOURCE_VISITOR_FEATURE_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Execute</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FILE_NAME_COMMAND___EXECUTE = RESSOURCE_VISITOR___EXECUTE;
-
-	/**
-	 * The operation id for the '<em>Clear</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FILE_NAME_COMMAND___CLEAR = RESSOURCE_VISITOR___CLEAR;
-
-	/**
-	 * The operation id for the '<em>Can Execute</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FILE_NAME_COMMAND___CAN_EXECUTE = RESSOURCE_VISITOR___CAN_EXECUTE;
-
-	/**
-	 * The operation id for the '<em>Is Ressource Supported</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FILE_NAME_COMMAND___IS_RESSOURCE_SUPPORTED = RESSOURCE_VISITOR___IS_RESSOURCE_SUPPORTED;
-
-	/**
-	 * The operation id for the '<em>Visit</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FILE_NAME_COMMAND___VISIT__FICHIER = RESSOURCE_VISITOR___VISIT__FICHIER;
-
-	/**
-	 * The operation id for the '<em>Visit</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FILE_NAME_COMMAND___VISIT__DOSSIER = RESSOURCE_VISITOR___VISIT__DOSSIER;
-
-	/**
-	 * The operation id for the '<em>Visit</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FILE_NAME_COMMAND___VISIT__PAGE = RESSOURCE_VISITOR___VISIT__PAGE;
+	int FILE_NAME_COMMAND_FEATURE_COUNT = 0;
 
 	/**
 	 * The number of operations of the '<em>File Name Command</em>' class.
@@ -768,7 +605,7 @@ public interface TP2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FILE_NAME_COMMAND_OPERATION_COUNT = RESSOURCE_VISITOR_OPERATION_COUNT + 0;
+	int FILE_NAME_COMMAND_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link ca.polymtl.log8430.model.TP2.impl.FolderNameCommandImpl <em>Folder Name Command</em>}' class.
@@ -781,103 +618,13 @@ public interface TP2Package extends EPackage {
 	int FOLDER_NAME_COMMAND = 9;
 
 	/**
-	 * The feature id for the '<em><b>Command Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FOLDER_NAME_COMMAND__COMMAND_NAME = RESSOURCE_VISITOR__COMMAND_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Result</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FOLDER_NAME_COMMAND__RESULT = RESSOURCE_VISITOR__RESULT;
-
-	/**
-	 * The feature id for the '<em><b>Ressource</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FOLDER_NAME_COMMAND__RESSOURCE = RESSOURCE_VISITOR__RESSOURCE;
-
-	/**
 	 * The number of structural features of the '<em>Folder Name Command</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FOLDER_NAME_COMMAND_FEATURE_COUNT = RESSOURCE_VISITOR_FEATURE_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Execute</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FOLDER_NAME_COMMAND___EXECUTE = RESSOURCE_VISITOR___EXECUTE;
-
-	/**
-	 * The operation id for the '<em>Clear</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FOLDER_NAME_COMMAND___CLEAR = RESSOURCE_VISITOR___CLEAR;
-
-	/**
-	 * The operation id for the '<em>Can Execute</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FOLDER_NAME_COMMAND___CAN_EXECUTE = RESSOURCE_VISITOR___CAN_EXECUTE;
-
-	/**
-	 * The operation id for the '<em>Is Ressource Supported</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FOLDER_NAME_COMMAND___IS_RESSOURCE_SUPPORTED = RESSOURCE_VISITOR___IS_RESSOURCE_SUPPORTED;
-
-	/**
-	 * The operation id for the '<em>Visit</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FOLDER_NAME_COMMAND___VISIT__FICHIER = RESSOURCE_VISITOR___VISIT__FICHIER;
-
-	/**
-	 * The operation id for the '<em>Visit</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FOLDER_NAME_COMMAND___VISIT__DOSSIER = RESSOURCE_VISITOR___VISIT__DOSSIER;
-
-	/**
-	 * The operation id for the '<em>Visit</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FOLDER_NAME_COMMAND___VISIT__PAGE = RESSOURCE_VISITOR___VISIT__PAGE;
+	int FOLDER_NAME_COMMAND_FEATURE_COUNT = 0;
 
 	/**
 	 * The number of operations of the '<em>Folder Name Command</em>' class.
@@ -886,7 +633,7 @@ public interface TP2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FOLDER_NAME_COMMAND_OPERATION_COUNT = RESSOURCE_VISITOR_OPERATION_COUNT + 0;
+	int FOLDER_NAME_COMMAND_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link ca.polymtl.log8430.model.TP2.impl.AbsolutePathCommandImpl <em>Absolute Path Command</em>}' class.
@@ -899,103 +646,13 @@ public interface TP2Package extends EPackage {
 	int ABSOLUTE_PATH_COMMAND = 10;
 
 	/**
-	 * The feature id for the '<em><b>Command Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSOLUTE_PATH_COMMAND__COMMAND_NAME = RESSOURCE_VISITOR__COMMAND_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Result</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSOLUTE_PATH_COMMAND__RESULT = RESSOURCE_VISITOR__RESULT;
-
-	/**
-	 * The feature id for the '<em><b>Ressource</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSOLUTE_PATH_COMMAND__RESSOURCE = RESSOURCE_VISITOR__RESSOURCE;
-
-	/**
 	 * The number of structural features of the '<em>Absolute Path Command</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ABSOLUTE_PATH_COMMAND_FEATURE_COUNT = RESSOURCE_VISITOR_FEATURE_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Execute</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSOLUTE_PATH_COMMAND___EXECUTE = RESSOURCE_VISITOR___EXECUTE;
-
-	/**
-	 * The operation id for the '<em>Clear</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSOLUTE_PATH_COMMAND___CLEAR = RESSOURCE_VISITOR___CLEAR;
-
-	/**
-	 * The operation id for the '<em>Can Execute</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSOLUTE_PATH_COMMAND___CAN_EXECUTE = RESSOURCE_VISITOR___CAN_EXECUTE;
-
-	/**
-	 * The operation id for the '<em>Is Ressource Supported</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSOLUTE_PATH_COMMAND___IS_RESSOURCE_SUPPORTED = RESSOURCE_VISITOR___IS_RESSOURCE_SUPPORTED;
-
-	/**
-	 * The operation id for the '<em>Visit</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSOLUTE_PATH_COMMAND___VISIT__FICHIER = RESSOURCE_VISITOR___VISIT__FICHIER;
-
-	/**
-	 * The operation id for the '<em>Visit</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSOLUTE_PATH_COMMAND___VISIT__DOSSIER = RESSOURCE_VISITOR___VISIT__DOSSIER;
-
-	/**
-	 * The operation id for the '<em>Visit</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSOLUTE_PATH_COMMAND___VISIT__PAGE = RESSOURCE_VISITOR___VISIT__PAGE;
+	int ABSOLUTE_PATH_COMMAND_FEATURE_COUNT = 0;
 
 	/**
 	 * The number of operations of the '<em>Absolute Path Command</em>' class.
@@ -1004,7 +661,7 @@ public interface TP2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSOLUTE_PATH_COMMAND_OPERATION_COUNT = RESSOURCE_VISITOR_OPERATION_COUNT + 0;
+	int ABSOLUTE_PATH_COMMAND_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link ca.polymtl.log8430.model.TP2.PermissionType <em>Permission Type</em>}' enum.
@@ -1014,7 +671,7 @@ public interface TP2Package extends EPackage {
 	 * @see ca.polymtl.log8430.model.TP2.impl.TP2PackageImpl#getPermissionType()
 	 * @generated
 	 */
-	int PERMISSION_TYPE = 12;
+	int PERMISSION_TYPE = 11;
 
 
 	/**
@@ -1166,11 +823,11 @@ public interface TP2Package extends EPackage {
 	EClass getRessource();
 
 	/**
-	 * Returns the meta object for the '{@link ca.polymtl.log8430.model.TP2.Ressource#accept(ca.polymtl.log8430.model.TP2.RessourceVisitor) <em>Accept</em>}' operation.
+	 * Returns the meta object for the '{@link ca.polymtl.log8430.model.TP2.Ressource#accept(ca.polymtl.log8430.model.TP2.AbstractCommand) <em>Accept</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Accept</em>' operation.
-	 * @see ca.polymtl.log8430.model.TP2.Ressource#accept(ca.polymtl.log8430.model.TP2.RessourceVisitor)
+	 * @see ca.polymtl.log8430.model.TP2.Ressource#accept(ca.polymtl.log8430.model.TP2.AbstractCommand)
 	 * @generated
 	 */
 	EOperation getRessource__Accept__RessourceVisitor();
@@ -1208,6 +865,17 @@ public interface TP2Package extends EPackage {
 	EAttribute getAbstractCommand_Result();
 
 	/**
+	 * Returns the meta object for the reference '{@link ca.polymtl.log8430.model.TP2.AbstractCommand#getRessource <em>Ressource</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Ressource</em>'.
+	 * @see ca.polymtl.log8430.model.TP2.AbstractCommand#getRessource()
+	 * @see #getAbstractCommand()
+	 * @generated
+	 */
+	EReference getAbstractCommand_Ressource();
+
+	/**
 	 * Returns the meta object for the '{@link ca.polymtl.log8430.model.TP2.AbstractCommand#execute() <em>Execute</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1238,6 +906,46 @@ public interface TP2Package extends EPackage {
 	EOperation getAbstractCommand__CanExecute();
 
 	/**
+	 * Returns the meta object for the '{@link ca.polymtl.log8430.model.TP2.AbstractCommand#isRessourceSupported() <em>Is Ressource Supported</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Is Ressource Supported</em>' operation.
+	 * @see ca.polymtl.log8430.model.TP2.AbstractCommand#isRessourceSupported()
+	 * @generated
+	 */
+	EOperation getAbstractCommand__IsRessourceSupported();
+
+	/**
+	 * Returns the meta object for the '{@link ca.polymtl.log8430.model.TP2.AbstractCommand#visit(ca.polymtl.log8430.model.TP2.Fichier) <em>Visit</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Visit</em>' operation.
+	 * @see ca.polymtl.log8430.model.TP2.AbstractCommand#visit(ca.polymtl.log8430.model.TP2.Fichier)
+	 * @generated
+	 */
+	EOperation getAbstractCommand__Visit__Fichier();
+
+	/**
+	 * Returns the meta object for the '{@link ca.polymtl.log8430.model.TP2.AbstractCommand#visit(ca.polymtl.log8430.model.TP2.Dossier) <em>Visit</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Visit</em>' operation.
+	 * @see ca.polymtl.log8430.model.TP2.AbstractCommand#visit(ca.polymtl.log8430.model.TP2.Dossier)
+	 * @generated
+	 */
+	EOperation getAbstractCommand__Visit__Dossier();
+
+	/**
+	 * Returns the meta object for the '{@link ca.polymtl.log8430.model.TP2.AbstractCommand#visit(ca.polymtl.log8430.model.TP2.Page) <em>Visit</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Visit</em>' operation.
+	 * @see ca.polymtl.log8430.model.TP2.AbstractCommand#visit(ca.polymtl.log8430.model.TP2.Page)
+	 * @generated
+	 */
+	EOperation getAbstractCommand__Visit__Page();
+
+	/**
 	 * Returns the meta object for class '{@link ca.polymtl.log8430.model.TP2.Master <em>Master</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1257,6 +965,17 @@ public interface TP2Package extends EPackage {
 	 * @generated
 	 */
 	EReference getMaster_Commands();
+
+	/**
+	 * Returns the meta object for the attribute '{@link ca.polymtl.log8430.model.TP2.Master#isAutoRun <em>Auto Run</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Auto Run</em>'.
+	 * @see ca.polymtl.log8430.model.TP2.Master#isAutoRun()
+	 * @see #getMaster()
+	 * @generated
+	 */
+	EAttribute getMaster_AutoRun();
 
 	/**
 	 * Returns the meta object for the '{@link ca.polymtl.log8430.model.TP2.Master#clear() <em>Clear</em>}' operation.
@@ -1309,16 +1028,6 @@ public interface TP2Package extends EPackage {
 	EOperation getMaster__UpdateRessource__Ressource();
 
 	/**
-	 * Returns the meta object for the '{@link ca.polymtl.log8430.model.TP2.Master#setAutoRun(boolean) <em>Set Auto Run</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Set Auto Run</em>' operation.
-	 * @see ca.polymtl.log8430.model.TP2.Master#setAutoRun(boolean)
-	 * @generated
-	 */
-	EOperation getMaster__SetAutoRun__boolean();
-
-	/**
 	 * Returns the meta object for class '{@link ca.polymtl.log8430.model.TP2.FileNameCommand <em>File Name Command</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1347,67 +1056,6 @@ public interface TP2Package extends EPackage {
 	 * @generated
 	 */
 	EClass getAbsolutePathCommand();
-
-	/**
-	 * Returns the meta object for class '{@link ca.polymtl.log8430.model.TP2.RessourceVisitor <em>Ressource Visitor</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Ressource Visitor</em>'.
-	 * @see ca.polymtl.log8430.model.TP2.RessourceVisitor
-	 * @generated
-	 */
-	EClass getRessourceVisitor();
-
-	/**
-	 * Returns the meta object for the reference '{@link ca.polymtl.log8430.model.TP2.RessourceVisitor#getRessource <em>Ressource</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Ressource</em>'.
-	 * @see ca.polymtl.log8430.model.TP2.RessourceVisitor#getRessource()
-	 * @see #getRessourceVisitor()
-	 * @generated
-	 */
-	EReference getRessourceVisitor_Ressource();
-
-	/**
-	 * Returns the meta object for the '{@link ca.polymtl.log8430.model.TP2.RessourceVisitor#isRessourceSupported() <em>Is Ressource Supported</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Ressource Supported</em>' operation.
-	 * @see ca.polymtl.log8430.model.TP2.RessourceVisitor#isRessourceSupported()
-	 * @generated
-	 */
-	EOperation getRessourceVisitor__IsRessourceSupported();
-
-	/**
-	 * Returns the meta object for the '{@link ca.polymtl.log8430.model.TP2.RessourceVisitor#visit(ca.polymtl.log8430.model.TP2.Fichier) <em>Visit</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Visit</em>' operation.
-	 * @see ca.polymtl.log8430.model.TP2.RessourceVisitor#visit(ca.polymtl.log8430.model.TP2.Fichier)
-	 * @generated
-	 */
-	EOperation getRessourceVisitor__Visit__Fichier();
-
-	/**
-	 * Returns the meta object for the '{@link ca.polymtl.log8430.model.TP2.RessourceVisitor#visit(ca.polymtl.log8430.model.TP2.Dossier) <em>Visit</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Visit</em>' operation.
-	 * @see ca.polymtl.log8430.model.TP2.RessourceVisitor#visit(ca.polymtl.log8430.model.TP2.Dossier)
-	 * @generated
-	 */
-	EOperation getRessourceVisitor__Visit__Dossier();
-
-	/**
-	 * Returns the meta object for the '{@link ca.polymtl.log8430.model.TP2.RessourceVisitor#visit(ca.polymtl.log8430.model.TP2.Page) <em>Visit</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Visit</em>' operation.
-	 * @see ca.polymtl.log8430.model.TP2.RessourceVisitor#visit(ca.polymtl.log8430.model.TP2.Page)
-	 * @generated
-	 */
-	EOperation getRessourceVisitor__Visit__Page();
 
 	/**
 	 * Returns the meta object for enum '{@link ca.polymtl.log8430.model.TP2.PermissionType <em>Permission Type</em>}'.
@@ -1601,6 +1249,14 @@ public interface TP2Package extends EPackage {
 		EAttribute ABSTRACT_COMMAND__RESULT = eINSTANCE.getAbstractCommand_Result();
 
 		/**
+		 * The meta object literal for the '<em><b>Ressource</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ABSTRACT_COMMAND__RESSOURCE = eINSTANCE.getAbstractCommand_Ressource();
+
+		/**
 		 * The meta object literal for the '<em><b>Execute</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1625,6 +1281,38 @@ public interface TP2Package extends EPackage {
 		EOperation ABSTRACT_COMMAND___CAN_EXECUTE = eINSTANCE.getAbstractCommand__CanExecute();
 
 		/**
+		 * The meta object literal for the '<em><b>Is Ressource Supported</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ABSTRACT_COMMAND___IS_RESSOURCE_SUPPORTED = eINSTANCE.getAbstractCommand__IsRessourceSupported();
+
+		/**
+		 * The meta object literal for the '<em><b>Visit</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ABSTRACT_COMMAND___VISIT__FICHIER = eINSTANCE.getAbstractCommand__Visit__Fichier();
+
+		/**
+		 * The meta object literal for the '<em><b>Visit</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ABSTRACT_COMMAND___VISIT__DOSSIER = eINSTANCE.getAbstractCommand__Visit__Dossier();
+
+		/**
+		 * The meta object literal for the '<em><b>Visit</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ABSTRACT_COMMAND___VISIT__PAGE = eINSTANCE.getAbstractCommand__Visit__Page();
+
+		/**
 		 * The meta object literal for the '{@link ca.polymtl.log8430.model.TP2.impl.MasterImpl <em>Master</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1641,6 +1329,14 @@ public interface TP2Package extends EPackage {
 		 * @generated
 		 */
 		EReference MASTER__COMMANDS = eINSTANCE.getMaster_Commands();
+
+		/**
+		 * The meta object literal for the '<em><b>Auto Run</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MASTER__AUTO_RUN = eINSTANCE.getMaster_AutoRun();
 
 		/**
 		 * The meta object literal for the '<em><b>Clear</b></em>' operation.
@@ -1683,14 +1379,6 @@ public interface TP2Package extends EPackage {
 		EOperation MASTER___UPDATE_RESSOURCE__RESSOURCE = eINSTANCE.getMaster__UpdateRessource__Ressource();
 
 		/**
-		 * The meta object literal for the '<em><b>Set Auto Run</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation MASTER___SET_AUTO_RUN__BOOLEAN = eINSTANCE.getMaster__SetAutoRun__boolean();
-
-		/**
 		 * The meta object literal for the '{@link ca.polymtl.log8430.model.TP2.impl.FileNameCommandImpl <em>File Name Command</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1719,56 +1407,6 @@ public interface TP2Package extends EPackage {
 		 * @generated
 		 */
 		EClass ABSOLUTE_PATH_COMMAND = eINSTANCE.getAbsolutePathCommand();
-
-		/**
-		 * The meta object literal for the '{@link ca.polymtl.log8430.model.TP2.RessourceVisitor <em>Ressource Visitor</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see ca.polymtl.log8430.model.TP2.RessourceVisitor
-		 * @see ca.polymtl.log8430.model.TP2.impl.TP2PackageImpl#getRessourceVisitor()
-		 * @generated
-		 */
-		EClass RESSOURCE_VISITOR = eINSTANCE.getRessourceVisitor();
-
-		/**
-		 * The meta object literal for the '<em><b>Ressource</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference RESSOURCE_VISITOR__RESSOURCE = eINSTANCE.getRessourceVisitor_Ressource();
-
-		/**
-		 * The meta object literal for the '<em><b>Is Ressource Supported</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation RESSOURCE_VISITOR___IS_RESSOURCE_SUPPORTED = eINSTANCE.getRessourceVisitor__IsRessourceSupported();
-
-		/**
-		 * The meta object literal for the '<em><b>Visit</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation RESSOURCE_VISITOR___VISIT__FICHIER = eINSTANCE.getRessourceVisitor__Visit__Fichier();
-
-		/**
-		 * The meta object literal for the '<em><b>Visit</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation RESSOURCE_VISITOR___VISIT__DOSSIER = eINSTANCE.getRessourceVisitor__Visit__Dossier();
-
-		/**
-		 * The meta object literal for the '<em><b>Visit</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation RESSOURCE_VISITOR___VISIT__PAGE = eINSTANCE.getRessourceVisitor__Visit__Page();
 
 		/**
 		 * The meta object literal for the '{@link ca.polymtl.log8430.model.TP2.PermissionType <em>Permission Type</em>}' enum.
