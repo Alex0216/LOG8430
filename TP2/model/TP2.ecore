@@ -90,7 +90,7 @@
         eType="#//AbstractCommand" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="AutoRun" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="FileNameCommand"/>
-  <eClassifiers xsi:type="ecore:EClass" name="FolderNameCommand"/>
-  <eClassifiers xsi:type="ecore:EClass" name="AbsolutePathCommand"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FileNameCommand" eSuperTypes="#//AbstractCommand"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FolderNameCommand" eSuperTypes="#//AbstractCommand"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AbsolutePathCommand" eSuperTypes="#//AbstractCommand"/>
 </ecore:EPackage>

@@ -307,7 +307,7 @@ public class TP2PackageImpl extends EPackageImpl implements TP2Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getRessource__Accept__RessourceVisitor() {
+	public EOperation getRessource__Accept__AbstractCommand() {
 		return ressourceEClass.getEOperations().get(0);
 	}
 
@@ -565,7 +565,7 @@ public class TP2PackageImpl extends EPackageImpl implements TP2Package {
 		createEAttribute(ressourcesLocaleEClass, RESSOURCES_LOCALE__PERMISSION);
 
 		ressourceEClass = createEClass(RESSOURCE);
-		createEOperation(ressourceEClass, RESSOURCE___ACCEPT__RESSOURCEVISITOR);
+		createEOperation(ressourceEClass, RESSOURCE___ACCEPT__ABSTRACTCOMMAND);
 
 		abstractCommandEClass = createEClass(ABSTRACT_COMMAND);
 		createEAttribute(abstractCommandEClass, ABSTRACT_COMMAND__COMMAND_NAME);
@@ -631,6 +631,9 @@ public class TP2PackageImpl extends EPackageImpl implements TP2Package {
 		ressourcesDistanteEClass.getESuperTypes().add(this.getRessource());
 		pageEClass.getESuperTypes().add(this.getRessourcesDistante());
 		ressourcesLocaleEClass.getESuperTypes().add(this.getRessource());
+		fileNameCommandEClass.getESuperTypes().add(this.getAbstractCommand());
+		folderNameCommandEClass.getESuperTypes().add(this.getAbstractCommand());
+		absolutePathCommandEClass.getESuperTypes().add(this.getAbstractCommand());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(dossierEClass, Dossier.class, "Dossier", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -653,7 +656,7 @@ public class TP2PackageImpl extends EPackageImpl implements TP2Package {
 
 		initEClass(ressourceEClass, Ressource.class, "Ressource", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		EOperation op = initEOperation(getRessource__Accept__RessourceVisitor(), null, "accept", 0, 1, IS_UNIQUE, IS_ORDERED);
+		EOperation op = initEOperation(getRessource__Accept__AbstractCommand(), null, "accept", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getAbstractCommand(), "commandVisitor", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(abstractCommandEClass, AbstractCommand.class, "AbstractCommand", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

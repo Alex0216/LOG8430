@@ -84,7 +84,7 @@ public interface TP2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESSOURCE___ACCEPT__RESSOURCEVISITOR = 0;
+	int RESSOURCE___ACCEPT__ABSTRACTCOMMAND = 0;
 
 	/**
 	 * The number of operations of the '<em>Ressource</em>' class.
@@ -130,7 +130,7 @@ public interface TP2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESSOURCES_LOCALE___ACCEPT__RESSOURCEVISITOR = RESSOURCE___ACCEPT__RESSOURCEVISITOR;
+	int RESSOURCES_LOCALE___ACCEPT__ABSTRACTCOMMAND = RESSOURCE___ACCEPT__ABSTRACTCOMMAND;
 
 	/**
 	 * The number of operations of the '<em>Ressources Locale</em>' class.
@@ -194,7 +194,7 @@ public interface TP2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOSSIER___ACCEPT__RESSOURCEVISITOR = RESSOURCES_LOCALE___ACCEPT__RESSOURCEVISITOR;
+	int DOSSIER___ACCEPT__ABSTRACTCOMMAND = RESSOURCES_LOCALE___ACCEPT__ABSTRACTCOMMAND;
 
 	/**
 	 * The number of operations of the '<em>Dossier</em>' class.
@@ -258,7 +258,7 @@ public interface TP2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FICHIER___ACCEPT__RESSOURCEVISITOR = RESSOURCES_LOCALE___ACCEPT__RESSOURCEVISITOR;
+	int FICHIER___ACCEPT__ABSTRACTCOMMAND = RESSOURCES_LOCALE___ACCEPT__ABSTRACTCOMMAND;
 
 	/**
 	 * The number of operations of the '<em>Fichier</em>' class.
@@ -295,7 +295,7 @@ public interface TP2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESSOURCES_DISTANTE___ACCEPT__RESSOURCEVISITOR = RESSOURCE___ACCEPT__RESSOURCEVISITOR;
+	int RESSOURCES_DISTANTE___ACCEPT__ABSTRACTCOMMAND = RESSOURCE___ACCEPT__ABSTRACTCOMMAND;
 
 	/**
 	 * The number of operations of the '<em>Ressources Distante</em>' class.
@@ -359,7 +359,7 @@ public interface TP2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAGE___ACCEPT__RESSOURCEVISITOR = RESSOURCES_DISTANTE___ACCEPT__RESSOURCEVISITOR;
+	int PAGE___ACCEPT__ABSTRACTCOMMAND = RESSOURCES_DISTANTE___ACCEPT__ABSTRACTCOMMAND;
 
 	/**
 	 * The number of operations of the '<em>Page</em>' class.
@@ -590,13 +590,103 @@ public interface TP2Package extends EPackage {
 	int FILE_NAME_COMMAND = 8;
 
 	/**
+	 * The feature id for the '<em><b>Command Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILE_NAME_COMMAND__COMMAND_NAME = ABSTRACT_COMMAND__COMMAND_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Result</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILE_NAME_COMMAND__RESULT = ABSTRACT_COMMAND__RESULT;
+
+	/**
+	 * The feature id for the '<em><b>Ressource</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILE_NAME_COMMAND__RESSOURCE = ABSTRACT_COMMAND__RESSOURCE;
+
+	/**
 	 * The number of structural features of the '<em>File Name Command</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FILE_NAME_COMMAND_FEATURE_COUNT = 0;
+	int FILE_NAME_COMMAND_FEATURE_COUNT = ABSTRACT_COMMAND_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Execute</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILE_NAME_COMMAND___EXECUTE = ABSTRACT_COMMAND___EXECUTE;
+
+	/**
+	 * The operation id for the '<em>Clear</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILE_NAME_COMMAND___CLEAR = ABSTRACT_COMMAND___CLEAR;
+
+	/**
+	 * The operation id for the '<em>Can Execute</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILE_NAME_COMMAND___CAN_EXECUTE = ABSTRACT_COMMAND___CAN_EXECUTE;
+
+	/**
+	 * The operation id for the '<em>Is Ressource Supported</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILE_NAME_COMMAND___IS_RESSOURCE_SUPPORTED = ABSTRACT_COMMAND___IS_RESSOURCE_SUPPORTED;
+
+	/**
+	 * The operation id for the '<em>Visit</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILE_NAME_COMMAND___VISIT__FICHIER = ABSTRACT_COMMAND___VISIT__FICHIER;
+
+	/**
+	 * The operation id for the '<em>Visit</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILE_NAME_COMMAND___VISIT__DOSSIER = ABSTRACT_COMMAND___VISIT__DOSSIER;
+
+	/**
+	 * The operation id for the '<em>Visit</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILE_NAME_COMMAND___VISIT__PAGE = ABSTRACT_COMMAND___VISIT__PAGE;
 
 	/**
 	 * The number of operations of the '<em>File Name Command</em>' class.
@@ -605,7 +695,7 @@ public interface TP2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FILE_NAME_COMMAND_OPERATION_COUNT = 0;
+	int FILE_NAME_COMMAND_OPERATION_COUNT = ABSTRACT_COMMAND_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link ca.polymtl.log8430.model.TP2.impl.FolderNameCommandImpl <em>Folder Name Command</em>}' class.
@@ -618,13 +708,103 @@ public interface TP2Package extends EPackage {
 	int FOLDER_NAME_COMMAND = 9;
 
 	/**
+	 * The feature id for the '<em><b>Command Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FOLDER_NAME_COMMAND__COMMAND_NAME = ABSTRACT_COMMAND__COMMAND_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Result</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FOLDER_NAME_COMMAND__RESULT = ABSTRACT_COMMAND__RESULT;
+
+	/**
+	 * The feature id for the '<em><b>Ressource</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FOLDER_NAME_COMMAND__RESSOURCE = ABSTRACT_COMMAND__RESSOURCE;
+
+	/**
 	 * The number of structural features of the '<em>Folder Name Command</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FOLDER_NAME_COMMAND_FEATURE_COUNT = 0;
+	int FOLDER_NAME_COMMAND_FEATURE_COUNT = ABSTRACT_COMMAND_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Execute</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FOLDER_NAME_COMMAND___EXECUTE = ABSTRACT_COMMAND___EXECUTE;
+
+	/**
+	 * The operation id for the '<em>Clear</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FOLDER_NAME_COMMAND___CLEAR = ABSTRACT_COMMAND___CLEAR;
+
+	/**
+	 * The operation id for the '<em>Can Execute</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FOLDER_NAME_COMMAND___CAN_EXECUTE = ABSTRACT_COMMAND___CAN_EXECUTE;
+
+	/**
+	 * The operation id for the '<em>Is Ressource Supported</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FOLDER_NAME_COMMAND___IS_RESSOURCE_SUPPORTED = ABSTRACT_COMMAND___IS_RESSOURCE_SUPPORTED;
+
+	/**
+	 * The operation id for the '<em>Visit</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FOLDER_NAME_COMMAND___VISIT__FICHIER = ABSTRACT_COMMAND___VISIT__FICHIER;
+
+	/**
+	 * The operation id for the '<em>Visit</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FOLDER_NAME_COMMAND___VISIT__DOSSIER = ABSTRACT_COMMAND___VISIT__DOSSIER;
+
+	/**
+	 * The operation id for the '<em>Visit</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FOLDER_NAME_COMMAND___VISIT__PAGE = ABSTRACT_COMMAND___VISIT__PAGE;
 
 	/**
 	 * The number of operations of the '<em>Folder Name Command</em>' class.
@@ -633,7 +813,7 @@ public interface TP2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FOLDER_NAME_COMMAND_OPERATION_COUNT = 0;
+	int FOLDER_NAME_COMMAND_OPERATION_COUNT = ABSTRACT_COMMAND_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link ca.polymtl.log8430.model.TP2.impl.AbsolutePathCommandImpl <em>Absolute Path Command</em>}' class.
@@ -646,13 +826,103 @@ public interface TP2Package extends EPackage {
 	int ABSOLUTE_PATH_COMMAND = 10;
 
 	/**
+	 * The feature id for the '<em><b>Command Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSOLUTE_PATH_COMMAND__COMMAND_NAME = ABSTRACT_COMMAND__COMMAND_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Result</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSOLUTE_PATH_COMMAND__RESULT = ABSTRACT_COMMAND__RESULT;
+
+	/**
+	 * The feature id for the '<em><b>Ressource</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSOLUTE_PATH_COMMAND__RESSOURCE = ABSTRACT_COMMAND__RESSOURCE;
+
+	/**
 	 * The number of structural features of the '<em>Absolute Path Command</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ABSOLUTE_PATH_COMMAND_FEATURE_COUNT = 0;
+	int ABSOLUTE_PATH_COMMAND_FEATURE_COUNT = ABSTRACT_COMMAND_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Execute</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSOLUTE_PATH_COMMAND___EXECUTE = ABSTRACT_COMMAND___EXECUTE;
+
+	/**
+	 * The operation id for the '<em>Clear</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSOLUTE_PATH_COMMAND___CLEAR = ABSTRACT_COMMAND___CLEAR;
+
+	/**
+	 * The operation id for the '<em>Can Execute</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSOLUTE_PATH_COMMAND___CAN_EXECUTE = ABSTRACT_COMMAND___CAN_EXECUTE;
+
+	/**
+	 * The operation id for the '<em>Is Ressource Supported</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSOLUTE_PATH_COMMAND___IS_RESSOURCE_SUPPORTED = ABSTRACT_COMMAND___IS_RESSOURCE_SUPPORTED;
+
+	/**
+	 * The operation id for the '<em>Visit</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSOLUTE_PATH_COMMAND___VISIT__FICHIER = ABSTRACT_COMMAND___VISIT__FICHIER;
+
+	/**
+	 * The operation id for the '<em>Visit</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSOLUTE_PATH_COMMAND___VISIT__DOSSIER = ABSTRACT_COMMAND___VISIT__DOSSIER;
+
+	/**
+	 * The operation id for the '<em>Visit</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSOLUTE_PATH_COMMAND___VISIT__PAGE = ABSTRACT_COMMAND___VISIT__PAGE;
 
 	/**
 	 * The number of operations of the '<em>Absolute Path Command</em>' class.
@@ -661,7 +931,7 @@ public interface TP2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSOLUTE_PATH_COMMAND_OPERATION_COUNT = 0;
+	int ABSOLUTE_PATH_COMMAND_OPERATION_COUNT = ABSTRACT_COMMAND_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link ca.polymtl.log8430.model.TP2.PermissionType <em>Permission Type</em>}' enum.
@@ -830,7 +1100,7 @@ public interface TP2Package extends EPackage {
 	 * @see ca.polymtl.log8430.model.TP2.Ressource#accept(ca.polymtl.log8430.model.TP2.AbstractCommand)
 	 * @generated
 	 */
-	EOperation getRessource__Accept__RessourceVisitor();
+	EOperation getRessource__Accept__AbstractCommand();
 
 	/**
 	 * Returns the meta object for class '{@link ca.polymtl.log8430.model.TP2.AbstractCommand <em>Abstract Command</em>}'.
@@ -1220,7 +1490,7 @@ public interface TP2Package extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation RESSOURCE___ACCEPT__RESSOURCEVISITOR = eINSTANCE.getRessource__Accept__RessourceVisitor();
+		EOperation RESSOURCE___ACCEPT__ABSTRACTCOMMAND = eINSTANCE.getRessource__Accept__AbstractCommand();
 
 		/**
 		 * The meta object literal for the '{@link ca.polymtl.log8430.model.TP2.AbstractCommand <em>Abstract Command</em>}' class.

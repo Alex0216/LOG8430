@@ -266,7 +266,7 @@ public class FichierImpl extends MinimalEObjectImpl.Container implements Fichier
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case TP2Package.FICHIER___ACCEPT__RESSOURCEVISITOR:
+			case TP2Package.FICHIER___ACCEPT__ABSTRACTCOMMAND:
 				accept((AbstractCommand)arguments.get(0));
 				return null;
 		}

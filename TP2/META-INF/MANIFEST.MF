@@ -11,5 +11,5 @@ Export-Package: ca.polymtl.log8430.model.TP2,
  ca.polymtl.log8430.model.TP2.impl,
  ca.polymtl.log8430.model.TP2.util
 Require-Bundle: org.eclipse.core.runtime,
- org.eclipse.emf.ecore
+ org.eclipse.emf.ecore;visibility:=reexport
 Bundle-ActivationPolicy: lazy

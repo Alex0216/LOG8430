@@ -2,9 +2,6 @@
  */
 package ca.polymtl.log8430.model.TP2;
 
-import org.eclipse.emf.ecore.EObject;
-
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Absolute Path Command</b></em>'.
@@ -15,5 +12,5 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface AbsolutePathCommand extends EObject {
+public interface AbsolutePathCommand extends AbstractCommand {
 } // AbsolutePathCommand

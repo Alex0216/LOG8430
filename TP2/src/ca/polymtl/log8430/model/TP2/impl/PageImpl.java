@@ -265,7 +265,7 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case TP2Package.PAGE___ACCEPT__RESSOURCEVISITOR:
+			case TP2Package.PAGE___ACCEPT__ABSTRACTCOMMAND:
 				accept((AbstractCommand)arguments.get(0));
 				return null;
 		}

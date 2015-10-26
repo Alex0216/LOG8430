@@ -125,18 +125,21 @@ public class TP2Switch<T> extends Switch<T> {
 			case TP2Package.FILE_NAME_COMMAND: {
 				FileNameCommand fileNameCommand = (FileNameCommand)theEObject;
 				T result = caseFileNameCommand(fileNameCommand);
+				if (result == null) result = caseAbstractCommand(fileNameCommand);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case TP2Package.FOLDER_NAME_COMMAND: {
 				FolderNameCommand folderNameCommand = (FolderNameCommand)theEObject;
 				T result = caseFolderNameCommand(folderNameCommand);
+				if (result == null) result = caseAbstractCommand(folderNameCommand);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case TP2Package.ABSOLUTE_PATH_COMMAND: {
 				AbsolutePathCommand absolutePathCommand = (AbsolutePathCommand)theEObject;
 				T result = caseAbsolutePathCommand(absolutePathCommand);
+				if (result == null) result = caseAbstractCommand(absolutePathCommand);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

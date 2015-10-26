@@ -266,7 +266,7 @@ public class DossierImpl extends MinimalEObjectImpl.Container implements Dossier
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case TP2Package.DOSSIER___ACCEPT__RESSOURCEVISITOR:
+			case TP2Package.DOSSIER___ACCEPT__ABSTRACTCOMMAND:
 				accept((AbstractCommand)arguments.get(0));
 				return null;
 		}
