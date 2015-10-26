@@ -3,12 +3,8 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="TP2" nsURI="TP2" nsPrefix="TP2">
   <eClassifiers xsi:type="ecore:EClass" name="Dossier" eSuperTypes="#//RessourcesLocale">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nombreEnfant" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nom" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Fichier" eSuperTypes="#//RessourcesLocale">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tailleFichierOctet" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nom" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Fichier" eSuperTypes="#//RessourcesLocale"/>
   <eClassifiers xsi:type="ecore:EClass" name="RessourcesDistante" abstract="true"
       interface="true" eSuperTypes="#//Ressource"/>
   <eClassifiers xsi:type="ecore:EClass" name="Page" eSuperTypes="#//RessourcesDistante">
@@ -19,6 +15,9 @@
   <eClassifiers xsi:type="ecore:EClass" name="RessourcesLocale" abstract="true" interface="true"
       eSuperTypes="#//Ressource">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="permission" eType="#//PermissionType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nom" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tailleOctet" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="cheminAbsolu" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="PermissionType">
     <eLiterals name="Read"/>
