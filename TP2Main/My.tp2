@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TP2:Master xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TP2="TP2">
-  <commands xsi:type="TP2:FileNameCommand"/>
-  <commands xsi:type="TP2:FolderNameCommand"/>
-  <commands xsi:type="TP2:AbsolutePathCommand"/>
+  <commands xsi:type="TP2:FileNameCommand" commandName="File Name"/>
+  <commands xsi:type="TP2:FolderNameCommand" commandName="Folder Name"/>
+  <commands xsi:type="TP2:AbsolutePathCommand" commandName="Absolute Path"/>
 </TP2:Master>

@@ -15,6 +15,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 
 import ca.polymtl.log8430.model.TP2.*;
+import ca.polymtl.log8430.tp1.View.CommandWidget;
 
 import java.awt.event.ItemListener;
 import java.awt.event.ItemEvent;
@@ -50,6 +51,10 @@ public class CommandListWidget extends JPanel {
 		add(m_commandListPanel, BorderLayout.CENTER);
 		m_commandListPanel.setLayout(new GridLayout(0, 1, 10, 10));
 		
+		for(AbstractCommand c : m_executer.getCommands()){
+			addCommand(c);
+		}
+		
 		JPanel bottomPanel = new JPanel();
 		bottomPanel.setBackground(Color.WHITE);
 		bottomPanel.setBorder(new CompoundBorder(new LineBorder(new Color(192, 192, 192)), new EmptyBorder(10, 20, 10, 20)));
@@ -81,14 +86,13 @@ public class CommandListWidget extends JPanel {
 	}
 	
 	/**
-	 * Ajoute une commande à la liste de commande du widget et de l'exécuteur.
+	 * Ajoute une commande à la liste de commande du widget
 	 * @param command	La nouvelle commande à ajouter.
 	 */
 	public void addCommand(AbstractCommand command)
 	{
 		CommandWidget commandWidget = new CommandWidget(command);
 		m_commandListPanel.add(commandWidget);
-		m_executer.addCommand(command);
 	}
 
 }
