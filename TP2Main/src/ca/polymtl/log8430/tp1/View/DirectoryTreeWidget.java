@@ -18,24 +18,31 @@ import javax.swing.tree.DefaultTreeModel;
 import ca.polymtl.log8430.model.TP2.Dossier;
 import ca.polymtl.log8430.model.TP2.Fichier;
 import ca.polymtl.log8430.model.TP2.Master;
-
-
-
-
+import ca.polymtl.log8430.model.TP2.Page;
 import ca.polymtl.log8430.model.TP2.PermissionType;
 import ca.polymtl.log8430.model.TP2.RessourcesLocale;
 import ca.polymtl.log8430.model.TP2.TP2Factory;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLConnection;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
 import javax.swing.event.TreeSelectionListener;
 import javax.swing.event.TreeSelectionEvent;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
+
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 /**
  * Widget permettant l'affichage d'un repértoire de fichier sous forme d'arbre
@@ -46,6 +53,7 @@ public class DirectoryTreeWidget extends JPanel {
 	private static final long serialVersionUID = -7713782190007439530L;
 	private Master m_executer;
 	private JTree m_directoryTree;
+	private JTextField uriTextField;
 	
 	/**
 	 * Constructeur de la classe DirectoryTreeWidget. Cree le panel
@@ -87,8 +95,50 @@ public class DirectoryTreeWidget extends JPanel {
 		});
 		btnSelectFileOrFolder.setPreferredSize(new Dimension(131, 50));
 		add(btnSelectFileOrFolder, BorderLayout.SOUTH);
+		
+		JPanel panel = new JPanel();
+		add(panel, BorderLayout.NORTH);
+		panel.setLayout(new BorderLayout(0, 0));
+		
+		uriTextField = new JTextField();
+		uriTextField.setHorizontalAlignment(SwingConstants.CENTER);
+		panel.add(uriTextField);
+		uriTextField.setColumns(10);
+		
+		JButton btnCharger = new JButton("Charger");
+		btnCharger.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				updateUri();
+			}
+		});
+		panel.add(btnCharger, BorderLayout.EAST);
 		setSelectedPath(System.getProperty("user.dir"));
 
+	}
+	
+	/**
+	 * Charge l'URI indiquer dans le textField
+	 */
+	private void updateUri() {
+		String uri = uriTextField.getText();
+		
+		Page page = TP2Factory.eINSTANCE.createPage();
+		
+		try {
+			URL url = new URL(uri);
+			page.setNom(url.getFile());
+			BufferedReader in = new BufferedReader(
+			        new InputStreamReader(url.openStream()));
+			URLConnection conn = url.openConnection();
+			page.setTaillePage(conn.getContentLength());
+			
+		} catch (IOException e) {
+			page.setNom(uri);
+			page.setTaillePage(-1);
+			page.setTitrePage("erreur");
+		}
+		
+		
 	}
 	
 	/**
