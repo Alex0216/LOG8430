@@ -254,6 +254,17 @@ public class FileNameCommandImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean canExecute() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -353,6 +364,8 @@ public class FileNameCommandImpl extends MinimalEObjectImpl.Container implements
 			case TP2Package.FILE_NAME_COMMAND___CLEAR:
 				clear();
 				return null;
+			case TP2Package.FILE_NAME_COMMAND___CAN_EXECUTE:
+				return canExecute();
 		}
 		return super.eInvoke(operationID, arguments);
 	}

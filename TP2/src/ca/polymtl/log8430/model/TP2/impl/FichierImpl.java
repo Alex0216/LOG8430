@@ -62,7 +62,7 @@ public class FichierImpl extends MinimalEObjectImpl.Container implements Fichier
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int TAILLE_FICHIER_OCTET_EDEFAULT = 0;
+	protected static final long TAILLE_FICHIER_OCTET_EDEFAULT = 0L;
 
 	/**
 	 * The cached value of the '{@link #getTailleFichierOctet() <em>Taille Fichier Octet</em>}' attribute.
@@ -72,7 +72,7 @@ public class FichierImpl extends MinimalEObjectImpl.Container implements Fichier
 	 * @generated
 	 * @ordered
 	 */
-	protected int tailleFichierOctet = TAILLE_FICHIER_OCTET_EDEFAULT;
+	protected long tailleFichierOctet = TAILLE_FICHIER_OCTET_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getNom() <em>Nom</em>}' attribute.
@@ -139,7 +139,7 @@ public class FichierImpl extends MinimalEObjectImpl.Container implements Fichier
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public int getTailleFichierOctet() {
+	public long getTailleFichierOctet() {
 		return tailleFichierOctet;
 	}
 
@@ -148,8 +148,8 @@ public class FichierImpl extends MinimalEObjectImpl.Container implements Fichier
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setTailleFichierOctet(int newTailleFichierOctet) {
-		int oldTailleFichierOctet = tailleFichierOctet;
+	public void setTailleFichierOctet(long newTailleFichierOctet) {
+		long oldTailleFichierOctet = tailleFichierOctet;
 		tailleFichierOctet = newTailleFichierOctet;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TP2Package.FICHIER__TAILLE_FICHIER_OCTET, oldTailleFichierOctet, tailleFichierOctet));
@@ -215,7 +215,7 @@ public class FichierImpl extends MinimalEObjectImpl.Container implements Fichier
 				setPermission((PermissionType)newValue);
 				return;
 			case TP2Package.FICHIER__TAILLE_FICHIER_OCTET:
-				setTailleFichierOctet((Integer)newValue);
+				setTailleFichierOctet((Long)newValue);
 				return;
 			case TP2Package.FICHIER__NOM:
 				setNom((String)newValue);

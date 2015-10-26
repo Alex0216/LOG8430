@@ -4,6 +4,7 @@ package ca.polymtl.log8430.model.TP2.impl;
 
 import ca.polymtl.log8430.model.TP2.AbstractCommand;
 import ca.polymtl.log8430.model.TP2.Master;
+import ca.polymtl.log8430.model.TP2.Ressource;
 import ca.polymtl.log8430.model.TP2.TP2Package;
 
 import java.lang.reflect.InvocationTargetException;
@@ -126,6 +127,28 @@ public class MasterImpl extends MinimalEObjectImpl.Container implements Master {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public void updateRessource(Ressource ressource) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAutoRun(boolean autorun) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -214,6 +237,12 @@ public class MasterImpl extends MinimalEObjectImpl.Container implements Master {
 				return null;
 			case TP2Package.MASTER___ADD_COMMAND__ABSTRACTCOMMAND:
 				addCommand((AbstractCommand)arguments.get(0));
+				return null;
+			case TP2Package.MASTER___UPDATE_RESSOURCE__RESSOURCE:
+				updateRessource((Ressource)arguments.get(0));
+				return null;
+			case TP2Package.MASTER___SET_AUTO_RUN__BOOLEAN:
+				setAutoRun((Boolean)arguments.get(0));
 				return null;
 		}
 		return super.eInvoke(operationID, arguments);

@@ -426,13 +426,22 @@ public interface TP2Package extends EPackage {
 	int ABSTRACT_COMMAND___CLEAR = 1;
 
 	/**
+	 * The operation id for the '<em>Can Execute</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_COMMAND___CAN_EXECUTE = 2;
+
+	/**
 	 * The number of operations of the '<em>Abstract Command</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_COMMAND_OPERATION_COUNT = 2;
+	int ABSTRACT_COMMAND_OPERATION_COUNT = 3;
 
 	/**
 	 * The meta object id for the '{@link ca.polymtl.log8430.model.TP2.impl.MasterImpl <em>Master</em>}' class.
@@ -499,13 +508,31 @@ public interface TP2Package extends EPackage {
 	int MASTER___ADD_COMMAND__ABSTRACTCOMMAND = 3;
 
 	/**
+	 * The operation id for the '<em>Update Ressource</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MASTER___UPDATE_RESSOURCE__RESSOURCE = 4;
+
+	/**
+	 * The operation id for the '<em>Set Auto Run</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MASTER___SET_AUTO_RUN__BOOLEAN = 5;
+
+	/**
 	 * The number of operations of the '<em>Master</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MASTER_OPERATION_COUNT = 4;
+	int MASTER_OPERATION_COUNT = 6;
 
 	/**
 	 * The meta object id for the '{@link ca.polymtl.log8430.model.TP2.RessourceVisitor <em>Ressource Visitor</em>}' class.
@@ -570,6 +597,15 @@ public interface TP2Package extends EPackage {
 	 * @ordered
 	 */
 	int RESSOURCE_VISITOR___CLEAR = ABSTRACT_COMMAND___CLEAR;
+
+	/**
+	 * The operation id for the '<em>Can Execute</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESSOURCE_VISITOR___CAN_EXECUTE = ABSTRACT_COMMAND___CAN_EXECUTE;
 
 	/**
 	 * The operation id for the '<em>Is Ressource Supported</em>' operation.
@@ -681,6 +717,15 @@ public interface TP2Package extends EPackage {
 	int FILE_NAME_COMMAND___CLEAR = RESSOURCE_VISITOR___CLEAR;
 
 	/**
+	 * The operation id for the '<em>Can Execute</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILE_NAME_COMMAND___CAN_EXECUTE = RESSOURCE_VISITOR___CAN_EXECUTE;
+
+	/**
 	 * The operation id for the '<em>Is Ressource Supported</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -790,6 +835,15 @@ public interface TP2Package extends EPackage {
 	int FOLDER_NAME_COMMAND___CLEAR = RESSOURCE_VISITOR___CLEAR;
 
 	/**
+	 * The operation id for the '<em>Can Execute</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FOLDER_NAME_COMMAND___CAN_EXECUTE = RESSOURCE_VISITOR___CAN_EXECUTE;
+
+	/**
 	 * The operation id for the '<em>Is Ressource Supported</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -897,6 +951,15 @@ public interface TP2Package extends EPackage {
 	 * @ordered
 	 */
 	int ABSOLUTE_PATH_COMMAND___CLEAR = RESSOURCE_VISITOR___CLEAR;
+
+	/**
+	 * The operation id for the '<em>Can Execute</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSOLUTE_PATH_COMMAND___CAN_EXECUTE = RESSOURCE_VISITOR___CAN_EXECUTE;
 
 	/**
 	 * The operation id for the '<em>Is Ressource Supported</em>' operation.
@@ -1165,6 +1228,16 @@ public interface TP2Package extends EPackage {
 	EOperation getAbstractCommand__Clear();
 
 	/**
+	 * Returns the meta object for the '{@link ca.polymtl.log8430.model.TP2.AbstractCommand#canExecute() <em>Can Execute</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Can Execute</em>' operation.
+	 * @see ca.polymtl.log8430.model.TP2.AbstractCommand#canExecute()
+	 * @generated
+	 */
+	EOperation getAbstractCommand__CanExecute();
+
+	/**
 	 * Returns the meta object for class '{@link ca.polymtl.log8430.model.TP2.Master <em>Master</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1224,6 +1297,26 @@ public interface TP2Package extends EPackage {
 	 * @generated
 	 */
 	EOperation getMaster__AddCommand__AbstractCommand();
+
+	/**
+	 * Returns the meta object for the '{@link ca.polymtl.log8430.model.TP2.Master#updateRessource(ca.polymtl.log8430.model.TP2.Ressource) <em>Update Ressource</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Update Ressource</em>' operation.
+	 * @see ca.polymtl.log8430.model.TP2.Master#updateRessource(ca.polymtl.log8430.model.TP2.Ressource)
+	 * @generated
+	 */
+	EOperation getMaster__UpdateRessource__Ressource();
+
+	/**
+	 * Returns the meta object for the '{@link ca.polymtl.log8430.model.TP2.Master#setAutoRun(boolean) <em>Set Auto Run</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Set Auto Run</em>' operation.
+	 * @see ca.polymtl.log8430.model.TP2.Master#setAutoRun(boolean)
+	 * @generated
+	 */
+	EOperation getMaster__SetAutoRun__boolean();
 
 	/**
 	 * Returns the meta object for class '{@link ca.polymtl.log8430.model.TP2.FileNameCommand <em>File Name Command</em>}'.
@@ -1524,6 +1617,14 @@ public interface TP2Package extends EPackage {
 		EOperation ABSTRACT_COMMAND___CLEAR = eINSTANCE.getAbstractCommand__Clear();
 
 		/**
+		 * The meta object literal for the '<em><b>Can Execute</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ABSTRACT_COMMAND___CAN_EXECUTE = eINSTANCE.getAbstractCommand__CanExecute();
+
+		/**
 		 * The meta object literal for the '{@link ca.polymtl.log8430.model.TP2.impl.MasterImpl <em>Master</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1572,6 +1673,22 @@ public interface TP2Package extends EPackage {
 		 * @generated
 		 */
 		EOperation MASTER___ADD_COMMAND__ABSTRACTCOMMAND = eINSTANCE.getMaster__AddCommand__AbstractCommand();
+
+		/**
+		 * The meta object literal for the '<em><b>Update Ressource</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation MASTER___UPDATE_RESSOURCE__RESSOURCE = eINSTANCE.getMaster__UpdateRessource__Ressource();
+
+		/**
+		 * The meta object literal for the '<em><b>Set Auto Run</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation MASTER___SET_AUTO_RUN__BOOLEAN = eINSTANCE.getMaster__SetAutoRun__boolean();
 
 		/**
 		 * The meta object literal for the '{@link ca.polymtl.log8430.model.TP2.impl.FileNameCommandImpl <em>File Name Command</em>}' class.

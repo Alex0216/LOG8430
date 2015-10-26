@@ -90,4 +90,12 @@ public interface AbstractCommand extends EObject {
 	 */
 	void clear();
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	boolean canExecute();
+
 } // AbstractCommand

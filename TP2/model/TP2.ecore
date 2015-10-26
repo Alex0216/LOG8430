@@ -6,7 +6,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nom" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Fichier" eSuperTypes="#//RessourcesLocale">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tailleFichierOctet" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tailleFichierOctet" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nom" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RessourcesDistante" abstract="true"
@@ -45,6 +45,7 @@
         <details key="body" value="result = &quot;&quot;;"/>
       </eAnnotations>
     </eOperations>
+    <eOperations name="canExecute" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="commandName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="result" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
@@ -57,8 +58,8 @@
     <eOperations name="addCommand">
       <eParameters name="command" eType="#//AbstractCommand"/>
     </eOperations>
-    <eOperations name="updatePath">
-      <eParameters name="path" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eOperations name="updateRessource">
+      <eParameters name="ressource" eType="#//Ressource"/>
     </eOperations>
     <eOperations name="setAutoRun">
       <eParameters name="autorun" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>

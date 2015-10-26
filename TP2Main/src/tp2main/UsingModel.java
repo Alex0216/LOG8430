@@ -25,7 +25,7 @@ public class UsingModel {
 	}
 
 	
-	public Master loadContent(String file){
+	public static Master loadContent(String file){
 		// Register the XMI resource factory for the .tp2 extension
 
 	    Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;

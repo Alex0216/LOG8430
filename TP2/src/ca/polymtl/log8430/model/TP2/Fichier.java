@@ -30,12 +30,12 @@ public interface Fichier extends RessourcesLocale {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Taille Fichier Octet</em>' attribute.
-	 * @see #setTailleFichierOctet(int)
+	 * @see #setTailleFichierOctet(long)
 	 * @see ca.polymtl.log8430.model.TP2.TP2Package#getFichier_TailleFichierOctet()
 	 * @model
 	 * @generated
 	 */
-	int getTailleFichierOctet();
+	long getTailleFichierOctet();
 
 	/**
 	 * Sets the value of the '{@link ca.polymtl.log8430.model.TP2.Fichier#getTailleFichierOctet <em>Taille Fichier Octet</em>}' attribute.
@@ -45,7 +45,7 @@ public interface Fichier extends RessourcesLocale {
 	 * @see #getTailleFichierOctet()
 	 * @generated
 	 */
-	void setTailleFichierOctet(int value);
+	void setTailleFichierOctet(long value);
 
 	/**
 	 * Returns the value of the '<em><b>Nom</b></em>' attribute.
