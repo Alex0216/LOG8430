@@ -444,13 +444,13 @@ public interface TP2Package extends EPackage {
 	int ABSTRACT_COMMAND___CAN_EXECUTE = 2;
 
 	/**
-	 * The operation id for the '<em>Is Ressource Supported</em>' operation.
+	 * The operation id for the '<em>Visit</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_COMMAND___IS_RESSOURCE_SUPPORTED = 3;
+	int ABSTRACT_COMMAND___VISIT__FICHIER = 3;
 
 	/**
 	 * The operation id for the '<em>Visit</em>' operation.
@@ -459,7 +459,7 @@ public interface TP2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_COMMAND___VISIT__FICHIER = 4;
+	int ABSTRACT_COMMAND___VISIT__DOSSIER = 4;
 
 	/**
 	 * The operation id for the '<em>Visit</em>' operation.
@@ -468,16 +468,7 @@ public interface TP2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_COMMAND___VISIT__DOSSIER = 5;
-
-	/**
-	 * The operation id for the '<em>Visit</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSTRACT_COMMAND___VISIT__PAGE = 6;
+	int ABSTRACT_COMMAND___VISIT__PAGE = 5;
 
 	/**
 	 * The number of operations of the '<em>Abstract Command</em>' class.
@@ -486,7 +477,7 @@ public interface TP2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_COMMAND_OPERATION_COUNT = 7;
+	int ABSTRACT_COMMAND_OPERATION_COUNT = 6;
 
 	/**
 	 * The meta object id for the '{@link ca.polymtl.log8430.model.TP2.impl.MasterImpl <em>Master</em>}' class.
@@ -653,15 +644,6 @@ public interface TP2Package extends EPackage {
 	int FILE_NAME_COMMAND___CAN_EXECUTE = ABSTRACT_COMMAND___CAN_EXECUTE;
 
 	/**
-	 * The operation id for the '<em>Is Ressource Supported</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FILE_NAME_COMMAND___IS_RESSOURCE_SUPPORTED = ABSTRACT_COMMAND___IS_RESSOURCE_SUPPORTED;
-
-	/**
 	 * The operation id for the '<em>Visit</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -771,15 +753,6 @@ public interface TP2Package extends EPackage {
 	int FOLDER_NAME_COMMAND___CAN_EXECUTE = ABSTRACT_COMMAND___CAN_EXECUTE;
 
 	/**
-	 * The operation id for the '<em>Is Ressource Supported</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FOLDER_NAME_COMMAND___IS_RESSOURCE_SUPPORTED = ABSTRACT_COMMAND___IS_RESSOURCE_SUPPORTED;
-
-	/**
 	 * The operation id for the '<em>Visit</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -887,15 +860,6 @@ public interface TP2Package extends EPackage {
 	 * @ordered
 	 */
 	int ABSOLUTE_PATH_COMMAND___CAN_EXECUTE = ABSTRACT_COMMAND___CAN_EXECUTE;
-
-	/**
-	 * The operation id for the '<em>Is Ressource Supported</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSOLUTE_PATH_COMMAND___IS_RESSOURCE_SUPPORTED = ABSTRACT_COMMAND___IS_RESSOURCE_SUPPORTED;
 
 	/**
 	 * The operation id for the '<em>Visit</em>' operation.
@@ -1174,16 +1138,6 @@ public interface TP2Package extends EPackage {
 	 * @generated
 	 */
 	EOperation getAbstractCommand__CanExecute();
-
-	/**
-	 * Returns the meta object for the '{@link ca.polymtl.log8430.model.TP2.AbstractCommand#isRessourceSupported() <em>Is Ressource Supported</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Ressource Supported</em>' operation.
-	 * @see ca.polymtl.log8430.model.TP2.AbstractCommand#isRessourceSupported()
-	 * @generated
-	 */
-	EOperation getAbstractCommand__IsRessourceSupported();
 
 	/**
 	 * Returns the meta object for the '{@link ca.polymtl.log8430.model.TP2.AbstractCommand#visit(ca.polymtl.log8430.model.TP2.Fichier) <em>Visit</em>}' operation.
@@ -1549,14 +1503,6 @@ public interface TP2Package extends EPackage {
 		 * @generated
 		 */
 		EOperation ABSTRACT_COMMAND___CAN_EXECUTE = eINSTANCE.getAbstractCommand__CanExecute();
-
-		/**
-		 * The meta object literal for the '<em><b>Is Ressource Supported</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ABSTRACT_COMMAND___IS_RESSOURCE_SUPPORTED = eINSTANCE.getAbstractCommand__IsRessourceSupported();
 
 		/**
 		 * The meta object literal for the '<em><b>Visit</b></em>' operation.
