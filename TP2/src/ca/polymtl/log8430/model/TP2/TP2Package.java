@@ -87,22 +87,13 @@ public interface TP2Package extends EPackage {
 	int RESSOURCE__TAILLE_OCTET = 1;
 
 	/**
-	 * The feature id for the '<em><b>Chemin Absolu</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RESSOURCE__CHEMIN_ABSOLU = 2;
-
-	/**
 	 * The number of structural features of the '<em>Ressource</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RESSOURCE_FEATURE_COUNT = 3;
+	int RESSOURCE_FEATURE_COUNT = 2;
 
 	/**
 	 * The operation id for the '<em>Accept</em>' operation.
@@ -151,15 +142,6 @@ public interface TP2Package extends EPackage {
 	int RESSOURCES_LOCALE__TAILLE_OCTET = RESSOURCE__TAILLE_OCTET;
 
 	/**
-	 * The feature id for the '<em><b>Chemin Absolu</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RESSOURCES_LOCALE__CHEMIN_ABSOLU = RESSOURCE__CHEMIN_ABSOLU;
-
-	/**
 	 * The feature id for the '<em><b>Permission</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -169,13 +151,22 @@ public interface TP2Package extends EPackage {
 	int RESSOURCES_LOCALE__PERMISSION = RESSOURCE_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Chemin Absolu</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESSOURCES_LOCALE__CHEMIN_ABSOLU = RESSOURCE_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Ressources Locale</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RESSOURCES_LOCALE_FEATURE_COUNT = RESSOURCE_FEATURE_COUNT + 1;
+	int RESSOURCES_LOCALE_FEATURE_COUNT = RESSOURCE_FEATURE_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>Accept</em>' operation.
@@ -224,15 +215,6 @@ public interface TP2Package extends EPackage {
 	int DOSSIER__TAILLE_OCTET = RESSOURCES_LOCALE__TAILLE_OCTET;
 
 	/**
-	 * The feature id for the '<em><b>Chemin Absolu</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DOSSIER__CHEMIN_ABSOLU = RESSOURCES_LOCALE__CHEMIN_ABSOLU;
-
-	/**
 	 * The feature id for the '<em><b>Permission</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -240,6 +222,15 @@ public interface TP2Package extends EPackage {
 	 * @ordered
 	 */
 	int DOSSIER__PERMISSION = RESSOURCES_LOCALE__PERMISSION;
+
+	/**
+	 * The feature id for the '<em><b>Chemin Absolu</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DOSSIER__CHEMIN_ABSOLU = RESSOURCES_LOCALE__CHEMIN_ABSOLU;
 
 	/**
 	 * The feature id for the '<em><b>Nombre Enfant</b></em>' attribute.
@@ -306,15 +297,6 @@ public interface TP2Package extends EPackage {
 	int FICHIER__TAILLE_OCTET = RESSOURCES_LOCALE__TAILLE_OCTET;
 
 	/**
-	 * The feature id for the '<em><b>Chemin Absolu</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FICHIER__CHEMIN_ABSOLU = RESSOURCES_LOCALE__CHEMIN_ABSOLU;
-
-	/**
 	 * The feature id for the '<em><b>Permission</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -322,6 +304,15 @@ public interface TP2Package extends EPackage {
 	 * @ordered
 	 */
 	int FICHIER__PERMISSION = RESSOURCES_LOCALE__PERMISSION;
+
+	/**
+	 * The feature id for the '<em><b>Chemin Absolu</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FICHIER__CHEMIN_ABSOLU = RESSOURCES_LOCALE__CHEMIN_ABSOLU;
 
 	/**
 	 * The number of structural features of the '<em>Fichier</em>' class.
@@ -379,15 +370,6 @@ public interface TP2Package extends EPackage {
 	int RESSOURCES_DISTANTE__TAILLE_OCTET = RESSOURCE__TAILLE_OCTET;
 
 	/**
-	 * The feature id for the '<em><b>Chemin Absolu</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RESSOURCES_DISTANTE__CHEMIN_ABSOLU = RESSOURCE__CHEMIN_ABSOLU;
-
-	/**
 	 * The number of structural features of the '<em>Ressources Distante</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -443,15 +425,6 @@ public interface TP2Package extends EPackage {
 	int PAGE__TAILLE_OCTET = RESSOURCES_DISTANTE__TAILLE_OCTET;
 
 	/**
-	 * The feature id for the '<em><b>Chemin Absolu</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAGE__CHEMIN_ABSOLU = RESSOURCES_DISTANTE__CHEMIN_ABSOLU;
-
-	/**
 	 * The feature id for the '<em><b>Titre Page</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -470,13 +443,22 @@ public interface TP2Package extends EPackage {
 	int PAGE__TAILLE_PAGE = RESSOURCES_DISTANTE_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>URL</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAGE__URL = RESSOURCES_DISTANTE_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Page</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PAGE_FEATURE_COUNT = RESSOURCES_DISTANTE_FEATURE_COUNT + 2;
+	int PAGE_FEATURE_COUNT = RESSOURCES_DISTANTE_FEATURE_COUNT + 3;
 
 	/**
 	 * The operation id for the '<em>Accept</em>' operation.
@@ -1015,6 +997,333 @@ public interface TP2Package extends EPackage {
 	int ABSOLUTE_PATH_COMMAND_OPERATION_COUNT = ABSTRACT_COMMAND_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link ca.polymtl.log8430.model.TP2.impl.TailleCommandImpl <em>Taille Command</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ca.polymtl.log8430.model.TP2.impl.TailleCommandImpl
+	 * @see ca.polymtl.log8430.model.TP2.impl.TP2PackageImpl#getTailleCommand()
+	 * @generated
+	 */
+	int TAILLE_COMMAND = 11;
+
+	/**
+	 * The feature id for the '<em><b>Command Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TAILLE_COMMAND__COMMAND_NAME = ABSTRACT_COMMAND__COMMAND_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Result</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TAILLE_COMMAND__RESULT = ABSTRACT_COMMAND__RESULT;
+
+	/**
+	 * The feature id for the '<em><b>Ressource</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TAILLE_COMMAND__RESSOURCE = ABSTRACT_COMMAND__RESSOURCE;
+
+	/**
+	 * The number of structural features of the '<em>Taille Command</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TAILLE_COMMAND_FEATURE_COUNT = ABSTRACT_COMMAND_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Execute</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TAILLE_COMMAND___EXECUTE = ABSTRACT_COMMAND___EXECUTE;
+
+	/**
+	 * The operation id for the '<em>Clear</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TAILLE_COMMAND___CLEAR = ABSTRACT_COMMAND___CLEAR;
+
+	/**
+	 * The operation id for the '<em>Can Execute</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TAILLE_COMMAND___CAN_EXECUTE = ABSTRACT_COMMAND___CAN_EXECUTE;
+
+	/**
+	 * The operation id for the '<em>Visit</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TAILLE_COMMAND___VISIT__FICHIER = ABSTRACT_COMMAND___VISIT__FICHIER;
+
+	/**
+	 * The operation id for the '<em>Visit</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TAILLE_COMMAND___VISIT__DOSSIER = ABSTRACT_COMMAND___VISIT__DOSSIER;
+
+	/**
+	 * The operation id for the '<em>Visit</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TAILLE_COMMAND___VISIT__PAGE = ABSTRACT_COMMAND___VISIT__PAGE;
+
+	/**
+	 * The number of operations of the '<em>Taille Command</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TAILLE_COMMAND_OPERATION_COUNT = ABSTRACT_COMMAND_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link ca.polymtl.log8430.model.TP2.impl.PermissionCommandImpl <em>Permission Command</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ca.polymtl.log8430.model.TP2.impl.PermissionCommandImpl
+	 * @see ca.polymtl.log8430.model.TP2.impl.TP2PackageImpl#getPermissionCommand()
+	 * @generated
+	 */
+	int PERMISSION_COMMAND = 12;
+
+	/**
+	 * The feature id for the '<em><b>Command Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERMISSION_COMMAND__COMMAND_NAME = ABSTRACT_COMMAND__COMMAND_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Result</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERMISSION_COMMAND__RESULT = ABSTRACT_COMMAND__RESULT;
+
+	/**
+	 * The feature id for the '<em><b>Ressource</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERMISSION_COMMAND__RESSOURCE = ABSTRACT_COMMAND__RESSOURCE;
+
+	/**
+	 * The number of structural features of the '<em>Permission Command</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERMISSION_COMMAND_FEATURE_COUNT = ABSTRACT_COMMAND_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Execute</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERMISSION_COMMAND___EXECUTE = ABSTRACT_COMMAND___EXECUTE;
+
+	/**
+	 * The operation id for the '<em>Clear</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERMISSION_COMMAND___CLEAR = ABSTRACT_COMMAND___CLEAR;
+
+	/**
+	 * The operation id for the '<em>Can Execute</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERMISSION_COMMAND___CAN_EXECUTE = ABSTRACT_COMMAND___CAN_EXECUTE;
+
+	/**
+	 * The operation id for the '<em>Visit</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERMISSION_COMMAND___VISIT__FICHIER = ABSTRACT_COMMAND___VISIT__FICHIER;
+
+	/**
+	 * The operation id for the '<em>Visit</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERMISSION_COMMAND___VISIT__DOSSIER = ABSTRACT_COMMAND___VISIT__DOSSIER;
+
+	/**
+	 * The operation id for the '<em>Visit</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERMISSION_COMMAND___VISIT__PAGE = ABSTRACT_COMMAND___VISIT__PAGE;
+
+	/**
+	 * The number of operations of the '<em>Permission Command</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERMISSION_COMMAND_OPERATION_COUNT = ABSTRACT_COMMAND_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link ca.polymtl.log8430.model.TP2.impl.NbEnfantCommandImpl <em>Nb Enfant Command</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ca.polymtl.log8430.model.TP2.impl.NbEnfantCommandImpl
+	 * @see ca.polymtl.log8430.model.TP2.impl.TP2PackageImpl#getNbEnfantCommand()
+	 * @generated
+	 */
+	int NB_ENFANT_COMMAND = 13;
+
+	/**
+	 * The feature id for the '<em><b>Command Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NB_ENFANT_COMMAND__COMMAND_NAME = ABSTRACT_COMMAND__COMMAND_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Result</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NB_ENFANT_COMMAND__RESULT = ABSTRACT_COMMAND__RESULT;
+
+	/**
+	 * The feature id for the '<em><b>Ressource</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NB_ENFANT_COMMAND__RESSOURCE = ABSTRACT_COMMAND__RESSOURCE;
+
+	/**
+	 * The number of structural features of the '<em>Nb Enfant Command</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NB_ENFANT_COMMAND_FEATURE_COUNT = ABSTRACT_COMMAND_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Execute</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NB_ENFANT_COMMAND___EXECUTE = ABSTRACT_COMMAND___EXECUTE;
+
+	/**
+	 * The operation id for the '<em>Clear</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NB_ENFANT_COMMAND___CLEAR = ABSTRACT_COMMAND___CLEAR;
+
+	/**
+	 * The operation id for the '<em>Can Execute</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NB_ENFANT_COMMAND___CAN_EXECUTE = ABSTRACT_COMMAND___CAN_EXECUTE;
+
+	/**
+	 * The operation id for the '<em>Visit</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NB_ENFANT_COMMAND___VISIT__FICHIER = ABSTRACT_COMMAND___VISIT__FICHIER;
+
+	/**
+	 * The operation id for the '<em>Visit</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NB_ENFANT_COMMAND___VISIT__DOSSIER = ABSTRACT_COMMAND___VISIT__DOSSIER;
+
+	/**
+	 * The operation id for the '<em>Visit</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NB_ENFANT_COMMAND___VISIT__PAGE = ABSTRACT_COMMAND___VISIT__PAGE;
+
+	/**
+	 * The number of operations of the '<em>Nb Enfant Command</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NB_ENFANT_COMMAND_OPERATION_COUNT = ABSTRACT_COMMAND_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link ca.polymtl.log8430.model.TP2.PermissionType <em>Permission Type</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1022,7 +1331,7 @@ public interface TP2Package extends EPackage {
 	 * @see ca.polymtl.log8430.model.TP2.impl.TP2PackageImpl#getPermissionType()
 	 * @generated
 	 */
-	int PERMISSION_TYPE = 11;
+	int PERMISSION_TYPE = 14;
 
 
 	/**
@@ -1099,6 +1408,17 @@ public interface TP2Package extends EPackage {
 	EAttribute getPage_TaillePage();
 
 	/**
+	 * Returns the meta object for the attribute '{@link ca.polymtl.log8430.model.TP2.Page#getURL <em>URL</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>URL</em>'.
+	 * @see ca.polymtl.log8430.model.TP2.Page#getURL()
+	 * @see #getPage()
+	 * @generated
+	 */
+	EAttribute getPage_URL();
+
+	/**
 	 * Returns the meta object for class '{@link ca.polymtl.log8430.model.TP2.RessourcesLocale <em>Ressources Locale</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1118,6 +1438,17 @@ public interface TP2Package extends EPackage {
 	 * @generated
 	 */
 	EAttribute getRessourcesLocale_Permission();
+
+	/**
+	 * Returns the meta object for the attribute '{@link ca.polymtl.log8430.model.TP2.RessourcesLocale#getCheminAbsolu <em>Chemin Absolu</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Chemin Absolu</em>'.
+	 * @see ca.polymtl.log8430.model.TP2.RessourcesLocale#getCheminAbsolu()
+	 * @see #getRessourcesLocale()
+	 * @generated
+	 */
+	EAttribute getRessourcesLocale_CheminAbsolu();
 
 	/**
 	 * Returns the meta object for class '{@link ca.polymtl.log8430.model.TP2.Ressource <em>Ressource</em>}'.
@@ -1150,17 +1481,6 @@ public interface TP2Package extends EPackage {
 	 * @generated
 	 */
 	EAttribute getRessource_TailleOctet();
-
-	/**
-	 * Returns the meta object for the attribute '{@link ca.polymtl.log8430.model.TP2.Ressource#getCheminAbsolu <em>Chemin Absolu</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Chemin Absolu</em>'.
-	 * @see ca.polymtl.log8430.model.TP2.Ressource#getCheminAbsolu()
-	 * @see #getRessource()
-	 * @generated
-	 */
-	EAttribute getRessource_CheminAbsolu();
 
 	/**
 	 * Returns the meta object for the '{@link ca.polymtl.log8430.model.TP2.Ressource#accept(ca.polymtl.log8430.model.TP2.AbstractCommand) <em>Accept</em>}' operation.
@@ -1378,6 +1698,36 @@ public interface TP2Package extends EPackage {
 	EClass getAbsolutePathCommand();
 
 	/**
+	 * Returns the meta object for class '{@link ca.polymtl.log8430.model.TP2.TailleCommand <em>Taille Command</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Taille Command</em>'.
+	 * @see ca.polymtl.log8430.model.TP2.TailleCommand
+	 * @generated
+	 */
+	EClass getTailleCommand();
+
+	/**
+	 * Returns the meta object for class '{@link ca.polymtl.log8430.model.TP2.PermissionCommand <em>Permission Command</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Permission Command</em>'.
+	 * @see ca.polymtl.log8430.model.TP2.PermissionCommand
+	 * @generated
+	 */
+	EClass getPermissionCommand();
+
+	/**
+	 * Returns the meta object for class '{@link ca.polymtl.log8430.model.TP2.NbEnfantCommand <em>Nb Enfant Command</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Nb Enfant Command</em>'.
+	 * @see ca.polymtl.log8430.model.TP2.NbEnfantCommand
+	 * @generated
+	 */
+	EClass getNbEnfantCommand();
+
+	/**
 	 * Returns the meta object for enum '{@link ca.polymtl.log8430.model.TP2.PermissionType <em>Permission Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1475,6 +1825,14 @@ public interface TP2Package extends EPackage {
 		EAttribute PAGE__TAILLE_PAGE = eINSTANCE.getPage_TaillePage();
 
 		/**
+		 * The meta object literal for the '<em><b>URL</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PAGE__URL = eINSTANCE.getPage_URL();
+
+		/**
 		 * The meta object literal for the '{@link ca.polymtl.log8430.model.TP2.RessourcesLocale <em>Ressources Locale</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1491,6 +1849,14 @@ public interface TP2Package extends EPackage {
 		 * @generated
 		 */
 		EAttribute RESSOURCES_LOCALE__PERMISSION = eINSTANCE.getRessourcesLocale_Permission();
+
+		/**
+		 * The meta object literal for the '<em><b>Chemin Absolu</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute RESSOURCES_LOCALE__CHEMIN_ABSOLU = eINSTANCE.getRessourcesLocale_CheminAbsolu();
 
 		/**
 		 * The meta object literal for the '{@link ca.polymtl.log8430.model.TP2.Ressource <em>Ressource</em>}' class.
@@ -1517,14 +1883,6 @@ public interface TP2Package extends EPackage {
 		 * @generated
 		 */
 		EAttribute RESSOURCE__TAILLE_OCTET = eINSTANCE.getRessource_TailleOctet();
-
-		/**
-		 * The meta object literal for the '<em><b>Chemin Absolu</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute RESSOURCE__CHEMIN_ABSOLU = eINSTANCE.getRessource_CheminAbsolu();
 
 		/**
 		 * The meta object literal for the '<em><b>Accept</b></em>' operation.
@@ -1703,6 +2061,36 @@ public interface TP2Package extends EPackage {
 		 * @generated
 		 */
 		EClass ABSOLUTE_PATH_COMMAND = eINSTANCE.getAbsolutePathCommand();
+
+		/**
+		 * The meta object literal for the '{@link ca.polymtl.log8430.model.TP2.impl.TailleCommandImpl <em>Taille Command</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see ca.polymtl.log8430.model.TP2.impl.TailleCommandImpl
+		 * @see ca.polymtl.log8430.model.TP2.impl.TP2PackageImpl#getTailleCommand()
+		 * @generated
+		 */
+		EClass TAILLE_COMMAND = eINSTANCE.getTailleCommand();
+
+		/**
+		 * The meta object literal for the '{@link ca.polymtl.log8430.model.TP2.impl.PermissionCommandImpl <em>Permission Command</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see ca.polymtl.log8430.model.TP2.impl.PermissionCommandImpl
+		 * @see ca.polymtl.log8430.model.TP2.impl.TP2PackageImpl#getPermissionCommand()
+		 * @generated
+		 */
+		EClass PERMISSION_COMMAND = eINSTANCE.getPermissionCommand();
+
+		/**
+		 * The meta object literal for the '{@link ca.polymtl.log8430.model.TP2.impl.NbEnfantCommandImpl <em>Nb Enfant Command</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see ca.polymtl.log8430.model.TP2.impl.NbEnfantCommandImpl
+		 * @see ca.polymtl.log8430.model.TP2.impl.TP2PackageImpl#getNbEnfantCommand()
+		 * @generated
+		 */
+		EClass NB_ENFANT_COMMAND = eINSTANCE.getNbEnfantCommand();
 
 		/**
 		 * The meta object literal for the '{@link ca.polymtl.log8430.model.TP2.PermissionType <em>Permission Type</em>}' enum.

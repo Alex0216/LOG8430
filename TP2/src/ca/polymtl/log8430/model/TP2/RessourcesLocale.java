@@ -12,6 +12,7 @@ package ca.polymtl.log8430.model.TP2;
  * The following features are supported:
  * <ul>
  *   <li>{@link ca.polymtl.log8430.model.TP2.RessourcesLocale#getPermission <em>Permission</em>}</li>
+ *   <li>{@link ca.polymtl.log8430.model.TP2.RessourcesLocale#getCheminAbsolu <em>Chemin Absolu</em>}</li>
  * </ul>
  * </p>
  *
@@ -48,5 +49,31 @@ public interface RessourcesLocale extends Ressource {
 	 * @generated
 	 */
 	void setPermission(PermissionType value);
+
+	/**
+	 * Returns the value of the '<em><b>Chemin Absolu</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Chemin Absolu</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Chemin Absolu</em>' attribute.
+	 * @see #setCheminAbsolu(String)
+	 * @see ca.polymtl.log8430.model.TP2.TP2Package#getRessourcesLocale_CheminAbsolu()
+	 * @model
+	 * @generated
+	 */
+	String getCheminAbsolu();
+
+	/**
+	 * Sets the value of the '{@link ca.polymtl.log8430.model.TP2.RessourcesLocale#getCheminAbsolu <em>Chemin Absolu</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Chemin Absolu</em>' attribute.
+	 * @see #getCheminAbsolu()
+	 * @generated
+	 */
+	void setCheminAbsolu(String value);
 
 } // RessourcesLocale

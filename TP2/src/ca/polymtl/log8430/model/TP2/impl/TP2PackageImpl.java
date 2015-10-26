@@ -9,13 +9,16 @@ import ca.polymtl.log8430.model.TP2.Fichier;
 import ca.polymtl.log8430.model.TP2.FileNameCommand;
 import ca.polymtl.log8430.model.TP2.FolderNameCommand;
 import ca.polymtl.log8430.model.TP2.Master;
+import ca.polymtl.log8430.model.TP2.NbEnfantCommand;
 import ca.polymtl.log8430.model.TP2.Page;
+import ca.polymtl.log8430.model.TP2.PermissionCommand;
 import ca.polymtl.log8430.model.TP2.PermissionType;
 import ca.polymtl.log8430.model.TP2.Ressource;
 import ca.polymtl.log8430.model.TP2.RessourcesDistante;
 import ca.polymtl.log8430.model.TP2.RessourcesLocale;
 import ca.polymtl.log8430.model.TP2.TP2Factory;
 import ca.polymtl.log8430.model.TP2.TP2Package;
+import ca.polymtl.log8430.model.TP2.TailleCommand;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
@@ -107,6 +110,27 @@ public class TP2PackageImpl extends EPackageImpl implements TP2Package {
 	 * @generated
 	 */
 	private EClass absolutePathCommandEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass tailleCommandEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass permissionCommandEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass nbEnfantCommandEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -244,6 +268,15 @@ public class TP2PackageImpl extends EPackageImpl implements TP2Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getPage_URL() {
+		return (EAttribute)pageEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getRessourcesLocale() {
 		return ressourcesLocaleEClass;
 	}
@@ -255,6 +288,15 @@ public class TP2PackageImpl extends EPackageImpl implements TP2Package {
 	 */
 	public EAttribute getRessourcesLocale_Permission() {
 		return (EAttribute)ressourcesLocaleEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getRessourcesLocale_CheminAbsolu() {
+		return (EAttribute)ressourcesLocaleEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -282,15 +324,6 @@ public class TP2PackageImpl extends EPackageImpl implements TP2Package {
 	 */
 	public EAttribute getRessource_TailleOctet() {
 		return (EAttribute)ressourceEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getRessource_CheminAbsolu() {
-		return (EAttribute)ressourceEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -487,6 +520,33 @@ public class TP2PackageImpl extends EPackageImpl implements TP2Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getTailleCommand() {
+		return tailleCommandEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getPermissionCommand() {
+		return permissionCommandEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getNbEnfantCommand() {
+		return nbEnfantCommandEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getPermissionType() {
 		return permissionTypeEEnum;
 	}
@@ -529,14 +589,15 @@ public class TP2PackageImpl extends EPackageImpl implements TP2Package {
 		pageEClass = createEClass(PAGE);
 		createEAttribute(pageEClass, PAGE__TITRE_PAGE);
 		createEAttribute(pageEClass, PAGE__TAILLE_PAGE);
+		createEAttribute(pageEClass, PAGE__URL);
 
 		ressourcesLocaleEClass = createEClass(RESSOURCES_LOCALE);
 		createEAttribute(ressourcesLocaleEClass, RESSOURCES_LOCALE__PERMISSION);
+		createEAttribute(ressourcesLocaleEClass, RESSOURCES_LOCALE__CHEMIN_ABSOLU);
 
 		ressourceEClass = createEClass(RESSOURCE);
 		createEAttribute(ressourceEClass, RESSOURCE__NOM);
 		createEAttribute(ressourceEClass, RESSOURCE__TAILLE_OCTET);
-		createEAttribute(ressourceEClass, RESSOURCE__CHEMIN_ABSOLU);
 		createEOperation(ressourceEClass, RESSOURCE___ACCEPT__ABSTRACTCOMMAND);
 
 		abstractCommandEClass = createEClass(ABSTRACT_COMMAND);
@@ -563,6 +624,12 @@ public class TP2PackageImpl extends EPackageImpl implements TP2Package {
 		folderNameCommandEClass = createEClass(FOLDER_NAME_COMMAND);
 
 		absolutePathCommandEClass = createEClass(ABSOLUTE_PATH_COMMAND);
+
+		tailleCommandEClass = createEClass(TAILLE_COMMAND);
+
+		permissionCommandEClass = createEClass(PERMISSION_COMMAND);
+
+		nbEnfantCommandEClass = createEClass(NB_ENFANT_COMMAND);
 
 		// Create enums
 		permissionTypeEEnum = createEEnum(PERMISSION_TYPE);
@@ -604,6 +671,9 @@ public class TP2PackageImpl extends EPackageImpl implements TP2Package {
 		fileNameCommandEClass.getESuperTypes().add(this.getAbstractCommand());
 		folderNameCommandEClass.getESuperTypes().add(this.getAbstractCommand());
 		absolutePathCommandEClass.getESuperTypes().add(this.getAbstractCommand());
+		tailleCommandEClass.getESuperTypes().add(this.getAbstractCommand());
+		permissionCommandEClass.getESuperTypes().add(this.getAbstractCommand());
+		nbEnfantCommandEClass.getESuperTypes().add(this.getAbstractCommand());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(dossierEClass, Dossier.class, "Dossier", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -616,14 +686,15 @@ public class TP2PackageImpl extends EPackageImpl implements TP2Package {
 		initEClass(pageEClass, Page.class, "Page", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPage_TitrePage(), ecorePackage.getEString(), "titrePage", null, 0, 1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPage_TaillePage(), ecorePackage.getEInt(), "taillePage", null, 0, 1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPage_URL(), ecorePackage.getEString(), "URL", null, 0, 1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(ressourcesLocaleEClass, RessourcesLocale.class, "RessourcesLocale", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRessourcesLocale_Permission(), this.getPermissionType(), "permission", null, 0, 1, RessourcesLocale.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRessourcesLocale_CheminAbsolu(), ecorePackage.getEString(), "cheminAbsolu", null, 0, 1, RessourcesLocale.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(ressourceEClass, Ressource.class, "Ressource", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRessource_Nom(), ecorePackage.getEString(), "nom", null, 0, 1, Ressource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRessource_TailleOctet(), ecorePackage.getELong(), "tailleOctet", null, 0, 1, Ressource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getRessource_CheminAbsolu(), ecorePackage.getEString(), "cheminAbsolu", null, 0, 1, Ressource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		EOperation op = initEOperation(getRessource__Accept__AbstractCommand(), null, "accept", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getAbstractCommand(), "commandVisitor", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -667,6 +738,12 @@ public class TP2PackageImpl extends EPackageImpl implements TP2Package {
 		initEClass(folderNameCommandEClass, FolderNameCommand.class, "FolderNameCommand", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(absolutePathCommandEClass, AbsolutePathCommand.class, "AbsolutePathCommand", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(tailleCommandEClass, TailleCommand.class, "TailleCommand", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(permissionCommandEClass, PermissionCommand.class, "PermissionCommand", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(nbEnfantCommandEClass, NbEnfantCommand.class, "NbEnfantCommand", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Initialize enums and add enum literals
 		initEEnum(permissionTypeEEnum, PermissionType.class, "PermissionType");

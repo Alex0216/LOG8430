@@ -64,6 +64,9 @@ public class TP2FactoryImpl extends EFactoryImpl implements TP2Factory {
 			case TP2Package.FILE_NAME_COMMAND: return createFileNameCommand();
 			case TP2Package.FOLDER_NAME_COMMAND: return createFolderNameCommand();
 			case TP2Package.ABSOLUTE_PATH_COMMAND: return createAbsolutePathCommand();
+			case TP2Package.TAILLE_COMMAND: return createTailleCommand();
+			case TP2Package.PERMISSION_COMMAND: return createPermissionCommand();
+			case TP2Package.NB_ENFANT_COMMAND: return createNbEnfantCommand();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -167,6 +170,36 @@ public class TP2FactoryImpl extends EFactoryImpl implements TP2Factory {
 	public AbsolutePathCommand createAbsolutePathCommand() {
 		AbsolutePathCommandImpl absolutePathCommand = new AbsolutePathCommandImpl();
 		return absolutePathCommand;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TailleCommand createTailleCommand() {
+		TailleCommandImpl tailleCommand = new TailleCommandImpl();
+		return tailleCommand;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PermissionCommand createPermissionCommand() {
+		PermissionCommandImpl permissionCommand = new PermissionCommandImpl();
+		return permissionCommand;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NbEnfantCommand createNbEnfantCommand() {
+		NbEnfantCommandImpl nbEnfantCommand = new NbEnfantCommandImpl();
+		return nbEnfantCommand;
 	}
 
 	/**

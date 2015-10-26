@@ -21,9 +21,9 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <ul>
  *   <li>{@link ca.polymtl.log8430.model.TP2.impl.PageImpl#getNom <em>Nom</em>}</li>
  *   <li>{@link ca.polymtl.log8430.model.TP2.impl.PageImpl#getTailleOctet <em>Taille Octet</em>}</li>
- *   <li>{@link ca.polymtl.log8430.model.TP2.impl.PageImpl#getCheminAbsolu <em>Chemin Absolu</em>}</li>
  *   <li>{@link ca.polymtl.log8430.model.TP2.impl.PageImpl#getTitrePage <em>Titre Page</em>}</li>
  *   <li>{@link ca.polymtl.log8430.model.TP2.impl.PageImpl#getTaillePage <em>Taille Page</em>}</li>
+ *   <li>{@link ca.polymtl.log8430.model.TP2.impl.PageImpl#getURL <em>URL</em>}</li>
  * </ul>
  * </p>
  *
@@ -71,26 +71,6 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 	protected long tailleOctet = TAILLE_OCTET_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getCheminAbsolu() <em>Chemin Absolu</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCheminAbsolu()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CHEMIN_ABSOLU_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getCheminAbsolu() <em>Chemin Absolu</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCheminAbsolu()
-	 * @generated
-	 * @ordered
-	 */
-	protected String cheminAbsolu = CHEMIN_ABSOLU_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getTitrePage() <em>Titre Page</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -129,6 +109,26 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 	 * @ordered
 	 */
 	protected int taillePage = TAILLE_PAGE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getURL() <em>URL</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getURL()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String URL_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getURL() <em>URL</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getURL()
+	 * @generated
+	 * @ordered
+	 */
+	protected String url = URL_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -196,6 +196,27 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getURL() {
+		return url;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setURL(String newURL) {
+		String oldURL = url;
+		url = newURL;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TP2Package.PAGE__URL, oldURL, url));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getNom() {
 		return nom;
 	}
@@ -238,27 +259,6 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getCheminAbsolu() {
-		return cheminAbsolu;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setCheminAbsolu(String newCheminAbsolu) {
-		String oldCheminAbsolu = cheminAbsolu;
-		cheminAbsolu = newCheminAbsolu;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TP2Package.PAGE__CHEMIN_ABSOLU, oldCheminAbsolu, cheminAbsolu));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public void accept(final AbstractCommand commandVisitor) {
 		commandVisitor.visit(this);
 	}
@@ -275,12 +275,12 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 				return getNom();
 			case TP2Package.PAGE__TAILLE_OCTET:
 				return getTailleOctet();
-			case TP2Package.PAGE__CHEMIN_ABSOLU:
-				return getCheminAbsolu();
 			case TP2Package.PAGE__TITRE_PAGE:
 				return getTitrePage();
 			case TP2Package.PAGE__TAILLE_PAGE:
 				return getTaillePage();
+			case TP2Package.PAGE__URL:
+				return getURL();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -299,14 +299,14 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 			case TP2Package.PAGE__TAILLE_OCTET:
 				setTailleOctet((Long)newValue);
 				return;
-			case TP2Package.PAGE__CHEMIN_ABSOLU:
-				setCheminAbsolu((String)newValue);
-				return;
 			case TP2Package.PAGE__TITRE_PAGE:
 				setTitrePage((String)newValue);
 				return;
 			case TP2Package.PAGE__TAILLE_PAGE:
 				setTaillePage((Integer)newValue);
+				return;
+			case TP2Package.PAGE__URL:
+				setURL((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -326,14 +326,14 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 			case TP2Package.PAGE__TAILLE_OCTET:
 				setTailleOctet(TAILLE_OCTET_EDEFAULT);
 				return;
-			case TP2Package.PAGE__CHEMIN_ABSOLU:
-				setCheminAbsolu(CHEMIN_ABSOLU_EDEFAULT);
-				return;
 			case TP2Package.PAGE__TITRE_PAGE:
 				setTitrePage(TITRE_PAGE_EDEFAULT);
 				return;
 			case TP2Package.PAGE__TAILLE_PAGE:
 				setTaillePage(TAILLE_PAGE_EDEFAULT);
+				return;
+			case TP2Package.PAGE__URL:
+				setURL(URL_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -351,12 +351,12 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 				return NOM_EDEFAULT == null ? nom != null : !NOM_EDEFAULT.equals(nom);
 			case TP2Package.PAGE__TAILLE_OCTET:
 				return tailleOctet != TAILLE_OCTET_EDEFAULT;
-			case TP2Package.PAGE__CHEMIN_ABSOLU:
-				return CHEMIN_ABSOLU_EDEFAULT == null ? cheminAbsolu != null : !CHEMIN_ABSOLU_EDEFAULT.equals(cheminAbsolu);
 			case TP2Package.PAGE__TITRE_PAGE:
 				return TITRE_PAGE_EDEFAULT == null ? titrePage != null : !TITRE_PAGE_EDEFAULT.equals(titrePage);
 			case TP2Package.PAGE__TAILLE_PAGE:
 				return taillePage != TAILLE_PAGE_EDEFAULT;
+			case TP2Package.PAGE__URL:
+				return URL_EDEFAULT == null ? url != null : !URL_EDEFAULT.equals(url);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -390,12 +390,12 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 		result.append(nom);
 		result.append(", tailleOctet: ");
 		result.append(tailleOctet);
-		result.append(", cheminAbsolu: ");
-		result.append(cheminAbsolu);
 		result.append(", titrePage: ");
 		result.append(titrePage);
 		result.append(", taillePage: ");
 		result.append(taillePage);
+		result.append(", URL: ");
+		result.append(url);
 		result.append(')');
 		return result.toString();
 	}

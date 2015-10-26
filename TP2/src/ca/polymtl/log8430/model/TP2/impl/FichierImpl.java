@@ -22,8 +22,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <ul>
  *   <li>{@link ca.polymtl.log8430.model.TP2.impl.FichierImpl#getNom <em>Nom</em>}</li>
  *   <li>{@link ca.polymtl.log8430.model.TP2.impl.FichierImpl#getTailleOctet <em>Taille Octet</em>}</li>
- *   <li>{@link ca.polymtl.log8430.model.TP2.impl.FichierImpl#getCheminAbsolu <em>Chemin Absolu</em>}</li>
  *   <li>{@link ca.polymtl.log8430.model.TP2.impl.FichierImpl#getPermission <em>Permission</em>}</li>
+ *   <li>{@link ca.polymtl.log8430.model.TP2.impl.FichierImpl#getCheminAbsolu <em>Chemin Absolu</em>}</li>
  * </ul>
  * </p>
  *
@@ -71,26 +71,6 @@ public class FichierImpl extends MinimalEObjectImpl.Container implements Fichier
 	protected long tailleOctet = TAILLE_OCTET_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getCheminAbsolu() <em>Chemin Absolu</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCheminAbsolu()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CHEMIN_ABSOLU_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getCheminAbsolu() <em>Chemin Absolu</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCheminAbsolu()
-	 * @generated
-	 * @ordered
-	 */
-	protected String cheminAbsolu = CHEMIN_ABSOLU_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getPermission() <em>Permission</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -109,6 +89,26 @@ public class FichierImpl extends MinimalEObjectImpl.Container implements Fichier
 	 * @ordered
 	 */
 	protected PermissionType permission = PERMISSION_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getCheminAbsolu() <em>Chemin Absolu</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCheminAbsolu()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String CHEMIN_ABSOLU_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getCheminAbsolu() <em>Chemin Absolu</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCheminAbsolu()
+	 * @generated
+	 * @ordered
+	 */
+	protected String cheminAbsolu = CHEMIN_ABSOLU_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -234,10 +234,10 @@ public class FichierImpl extends MinimalEObjectImpl.Container implements Fichier
 				return getNom();
 			case TP2Package.FICHIER__TAILLE_OCTET:
 				return getTailleOctet();
-			case TP2Package.FICHIER__CHEMIN_ABSOLU:
-				return getCheminAbsolu();
 			case TP2Package.FICHIER__PERMISSION:
 				return getPermission();
+			case TP2Package.FICHIER__CHEMIN_ABSOLU:
+				return getCheminAbsolu();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -256,11 +256,11 @@ public class FichierImpl extends MinimalEObjectImpl.Container implements Fichier
 			case TP2Package.FICHIER__TAILLE_OCTET:
 				setTailleOctet((Long)newValue);
 				return;
-			case TP2Package.FICHIER__CHEMIN_ABSOLU:
-				setCheminAbsolu((String)newValue);
-				return;
 			case TP2Package.FICHIER__PERMISSION:
 				setPermission((PermissionType)newValue);
+				return;
+			case TP2Package.FICHIER__CHEMIN_ABSOLU:
+				setCheminAbsolu((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -280,11 +280,11 @@ public class FichierImpl extends MinimalEObjectImpl.Container implements Fichier
 			case TP2Package.FICHIER__TAILLE_OCTET:
 				setTailleOctet(TAILLE_OCTET_EDEFAULT);
 				return;
-			case TP2Package.FICHIER__CHEMIN_ABSOLU:
-				setCheminAbsolu(CHEMIN_ABSOLU_EDEFAULT);
-				return;
 			case TP2Package.FICHIER__PERMISSION:
 				setPermission(PERMISSION_EDEFAULT);
+				return;
+			case TP2Package.FICHIER__CHEMIN_ABSOLU:
+				setCheminAbsolu(CHEMIN_ABSOLU_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -302,10 +302,10 @@ public class FichierImpl extends MinimalEObjectImpl.Container implements Fichier
 				return NOM_EDEFAULT == null ? nom != null : !NOM_EDEFAULT.equals(nom);
 			case TP2Package.FICHIER__TAILLE_OCTET:
 				return tailleOctet != TAILLE_OCTET_EDEFAULT;
-			case TP2Package.FICHIER__CHEMIN_ABSOLU:
-				return CHEMIN_ABSOLU_EDEFAULT == null ? cheminAbsolu != null : !CHEMIN_ABSOLU_EDEFAULT.equals(cheminAbsolu);
 			case TP2Package.FICHIER__PERMISSION:
 				return permission != PERMISSION_EDEFAULT;
+			case TP2Package.FICHIER__CHEMIN_ABSOLU:
+				return CHEMIN_ABSOLU_EDEFAULT == null ? cheminAbsolu != null : !CHEMIN_ABSOLU_EDEFAULT.equals(cheminAbsolu);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -339,10 +339,10 @@ public class FichierImpl extends MinimalEObjectImpl.Container implements Fichier
 		result.append(nom);
 		result.append(", tailleOctet: ");
 		result.append(tailleOctet);
-		result.append(", cheminAbsolu: ");
-		result.append(cheminAbsolu);
 		result.append(", permission: ");
 		result.append(permission);
+		result.append(", cheminAbsolu: ");
+		result.append(cheminAbsolu);
 		result.append(')');
 		return result.toString();
 	}

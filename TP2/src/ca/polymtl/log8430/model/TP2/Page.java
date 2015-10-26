@@ -13,6 +13,7 @@ package ca.polymtl.log8430.model.TP2;
  * <ul>
  *   <li>{@link ca.polymtl.log8430.model.TP2.Page#getTitrePage <em>Titre Page</em>}</li>
  *   <li>{@link ca.polymtl.log8430.model.TP2.Page#getTaillePage <em>Taille Page</em>}</li>
+ *   <li>{@link ca.polymtl.log8430.model.TP2.Page#getURL <em>URL</em>}</li>
  * </ul>
  * </p>
  *
@@ -72,5 +73,31 @@ public interface Page extends RessourcesDistante {
 	 * @generated
 	 */
 	void setTaillePage(int value);
+
+	/**
+	 * Returns the value of the '<em><b>URL</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>URL</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>URL</em>' attribute.
+	 * @see #setURL(String)
+	 * @see ca.polymtl.log8430.model.TP2.TP2Package#getPage_URL()
+	 * @model
+	 * @generated
+	 */
+	String getURL();
+
+	/**
+	 * Sets the value of the '{@link ca.polymtl.log8430.model.TP2.Page#getURL <em>URL</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>URL</em>' attribute.
+	 * @see #getURL()
+	 * @generated
+	 */
+	void setURL(String value);
 
 } // Page

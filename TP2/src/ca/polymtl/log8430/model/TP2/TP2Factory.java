@@ -85,6 +85,33 @@ public interface TP2Factory extends EFactory {
 	AbsolutePathCommand createAbsolutePathCommand();
 
 	/**
+	 * Returns a new object of class '<em>Taille Command</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Taille Command</em>'.
+	 * @generated
+	 */
+	TailleCommand createTailleCommand();
+
+	/**
+	 * Returns a new object of class '<em>Permission Command</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Permission Command</em>'.
+	 * @generated
+	 */
+	PermissionCommand createPermissionCommand();
+
+	/**
+	 * Returns a new object of class '<em>Nb Enfant Command</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Nb Enfant Command</em>'.
+	 * @generated
+	 */
+	NbEnfantCommand createNbEnfantCommand();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

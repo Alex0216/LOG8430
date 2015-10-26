@@ -14,7 +14,6 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link ca.polymtl.log8430.model.TP2.Ressource#getNom <em>Nom</em>}</li>
  *   <li>{@link ca.polymtl.log8430.model.TP2.Ressource#getTailleOctet <em>Taille Octet</em>}</li>
- *   <li>{@link ca.polymtl.log8430.model.TP2.Ressource#getCheminAbsolu <em>Chemin Absolu</em>}</li>
  * </ul>
  * </p>
  *
@@ -74,32 +73,6 @@ public interface Ressource extends EObject {
 	 * @generated
 	 */
 	void setTailleOctet(long value);
-
-	/**
-	 * Returns the value of the '<em><b>Chemin Absolu</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Chemin Absolu</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Chemin Absolu</em>' attribute.
-	 * @see #setCheminAbsolu(String)
-	 * @see ca.polymtl.log8430.model.TP2.TP2Package#getRessource_CheminAbsolu()
-	 * @model
-	 * @generated
-	 */
-	String getCheminAbsolu();
-
-	/**
-	 * Sets the value of the '{@link ca.polymtl.log8430.model.TP2.Ressource#getCheminAbsolu <em>Chemin Absolu</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Chemin Absolu</em>' attribute.
-	 * @see #getCheminAbsolu()
-	 * @generated
-	 */
-	void setCheminAbsolu(String value);
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -22,8 +22,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <ul>
  *   <li>{@link ca.polymtl.log8430.model.TP2.impl.DossierImpl#getNom <em>Nom</em>}</li>
  *   <li>{@link ca.polymtl.log8430.model.TP2.impl.DossierImpl#getTailleOctet <em>Taille Octet</em>}</li>
- *   <li>{@link ca.polymtl.log8430.model.TP2.impl.DossierImpl#getCheminAbsolu <em>Chemin Absolu</em>}</li>
  *   <li>{@link ca.polymtl.log8430.model.TP2.impl.DossierImpl#getPermission <em>Permission</em>}</li>
+ *   <li>{@link ca.polymtl.log8430.model.TP2.impl.DossierImpl#getCheminAbsolu <em>Chemin Absolu</em>}</li>
  *   <li>{@link ca.polymtl.log8430.model.TP2.impl.DossierImpl#getNombreEnfant <em>Nombre Enfant</em>}</li>
  * </ul>
  * </p>
@@ -72,26 +72,6 @@ public class DossierImpl extends MinimalEObjectImpl.Container implements Dossier
 	protected long tailleOctet = TAILLE_OCTET_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getCheminAbsolu() <em>Chemin Absolu</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCheminAbsolu()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CHEMIN_ABSOLU_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getCheminAbsolu() <em>Chemin Absolu</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCheminAbsolu()
-	 * @generated
-	 * @ordered
-	 */
-	protected String cheminAbsolu = CHEMIN_ABSOLU_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getPermission() <em>Permission</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -110,6 +90,26 @@ public class DossierImpl extends MinimalEObjectImpl.Container implements Dossier
 	 * @ordered
 	 */
 	protected PermissionType permission = PERMISSION_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getCheminAbsolu() <em>Chemin Absolu</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCheminAbsolu()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String CHEMIN_ABSOLU_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getCheminAbsolu() <em>Chemin Absolu</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCheminAbsolu()
+	 * @generated
+	 * @ordered
+	 */
+	protected String cheminAbsolu = CHEMIN_ABSOLU_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getNombreEnfant() <em>Nombre Enfant</em>}' attribute.
@@ -276,10 +276,10 @@ public class DossierImpl extends MinimalEObjectImpl.Container implements Dossier
 				return getNom();
 			case TP2Package.DOSSIER__TAILLE_OCTET:
 				return getTailleOctet();
-			case TP2Package.DOSSIER__CHEMIN_ABSOLU:
-				return getCheminAbsolu();
 			case TP2Package.DOSSIER__PERMISSION:
 				return getPermission();
+			case TP2Package.DOSSIER__CHEMIN_ABSOLU:
+				return getCheminAbsolu();
 			case TP2Package.DOSSIER__NOMBRE_ENFANT:
 				return getNombreEnfant();
 		}
@@ -300,11 +300,11 @@ public class DossierImpl extends MinimalEObjectImpl.Container implements Dossier
 			case TP2Package.DOSSIER__TAILLE_OCTET:
 				setTailleOctet((Long)newValue);
 				return;
-			case TP2Package.DOSSIER__CHEMIN_ABSOLU:
-				setCheminAbsolu((String)newValue);
-				return;
 			case TP2Package.DOSSIER__PERMISSION:
 				setPermission((PermissionType)newValue);
+				return;
+			case TP2Package.DOSSIER__CHEMIN_ABSOLU:
+				setCheminAbsolu((String)newValue);
 				return;
 			case TP2Package.DOSSIER__NOMBRE_ENFANT:
 				setNombreEnfant((Integer)newValue);
@@ -327,11 +327,11 @@ public class DossierImpl extends MinimalEObjectImpl.Container implements Dossier
 			case TP2Package.DOSSIER__TAILLE_OCTET:
 				setTailleOctet(TAILLE_OCTET_EDEFAULT);
 				return;
-			case TP2Package.DOSSIER__CHEMIN_ABSOLU:
-				setCheminAbsolu(CHEMIN_ABSOLU_EDEFAULT);
-				return;
 			case TP2Package.DOSSIER__PERMISSION:
 				setPermission(PERMISSION_EDEFAULT);
+				return;
+			case TP2Package.DOSSIER__CHEMIN_ABSOLU:
+				setCheminAbsolu(CHEMIN_ABSOLU_EDEFAULT);
 				return;
 			case TP2Package.DOSSIER__NOMBRE_ENFANT:
 				setNombreEnfant(NOMBRE_ENFANT_EDEFAULT);
@@ -352,10 +352,10 @@ public class DossierImpl extends MinimalEObjectImpl.Container implements Dossier
 				return NOM_EDEFAULT == null ? nom != null : !NOM_EDEFAULT.equals(nom);
 			case TP2Package.DOSSIER__TAILLE_OCTET:
 				return tailleOctet != TAILLE_OCTET_EDEFAULT;
-			case TP2Package.DOSSIER__CHEMIN_ABSOLU:
-				return CHEMIN_ABSOLU_EDEFAULT == null ? cheminAbsolu != null : !CHEMIN_ABSOLU_EDEFAULT.equals(cheminAbsolu);
 			case TP2Package.DOSSIER__PERMISSION:
 				return permission != PERMISSION_EDEFAULT;
+			case TP2Package.DOSSIER__CHEMIN_ABSOLU:
+				return CHEMIN_ABSOLU_EDEFAULT == null ? cheminAbsolu != null : !CHEMIN_ABSOLU_EDEFAULT.equals(cheminAbsolu);
 			case TP2Package.DOSSIER__NOMBRE_ENFANT:
 				return nombreEnfant != NOMBRE_ENFANT_EDEFAULT;
 		}
@@ -391,10 +391,10 @@ public class DossierImpl extends MinimalEObjectImpl.Container implements Dossier
 		result.append(nom);
 		result.append(", tailleOctet: ");
 		result.append(tailleOctet);
-		result.append(", cheminAbsolu: ");
-		result.append(cheminAbsolu);
 		result.append(", permission: ");
 		result.append(permission);
+		result.append(", cheminAbsolu: ");
+		result.append(cheminAbsolu);
 		result.append(", nombreEnfant: ");
 		result.append(nombreEnfant);
 		result.append(')');
