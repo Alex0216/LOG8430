@@ -57,6 +57,12 @@
     <eOperations name="addCommand">
       <eParameters name="command" eType="#//AbstractCommand"/>
     </eOperations>
+    <eOperations name="updatePath">
+      <eParameters name="path" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eOperations name="setAutoRun">
+      <eParameters name="autorun" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="commands" upperBound="-1"
         eType="#//AbstractCommand" containment="true"/>
   </eClassifiers>
