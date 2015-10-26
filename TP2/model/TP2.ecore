@@ -76,9 +76,6 @@
       </eAnnotations>
       <eParameters name="command" eType="#//AbstractCommand"/>
     </eOperations>
-    <eOperations name="addCommand">
-      <eParameters name="command" eType="#//AbstractCommand"/>
-    </eOperations>
     <eOperations name="updateRessource">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="body" value="for(AbstractCommand c: commands){&#xD;&#xA;&#x9;c.setRessource(ressource);&#xD;&#xA;&#x9;if(isAutoRun()){&#xD;&#xA;&#x9;&#x9;c.execute();&#xD;&#xA;&#x9;}&#xD;&#xA;}"/>
