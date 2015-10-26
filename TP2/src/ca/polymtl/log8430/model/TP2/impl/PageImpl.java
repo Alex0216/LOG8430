@@ -19,15 +19,77 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link ca.polymtl.log8430.model.TP2.impl.PageImpl#getNom <em>Nom</em>}</li>
+ *   <li>{@link ca.polymtl.log8430.model.TP2.impl.PageImpl#getTailleOctet <em>Taille Octet</em>}</li>
+ *   <li>{@link ca.polymtl.log8430.model.TP2.impl.PageImpl#getCheminAbsolu <em>Chemin Absolu</em>}</li>
  *   <li>{@link ca.polymtl.log8430.model.TP2.impl.PageImpl#getTitrePage <em>Titre Page</em>}</li>
  *   <li>{@link ca.polymtl.log8430.model.TP2.impl.PageImpl#getTaillePage <em>Taille Page</em>}</li>
- *   <li>{@link ca.polymtl.log8430.model.TP2.impl.PageImpl#getNom <em>Nom</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
 public class PageImpl extends MinimalEObjectImpl.Container implements Page {
+	/**
+	 * The default value of the '{@link #getNom() <em>Nom</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNom()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NOM_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getNom() <em>Nom</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNom()
+	 * @generated
+	 * @ordered
+	 */
+	protected String nom = NOM_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getTailleOctet() <em>Taille Octet</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTailleOctet()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final long TAILLE_OCTET_EDEFAULT = 0L;
+
+	/**
+	 * The cached value of the '{@link #getTailleOctet() <em>Taille Octet</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTailleOctet()
+	 * @generated
+	 * @ordered
+	 */
+	protected long tailleOctet = TAILLE_OCTET_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getCheminAbsolu() <em>Chemin Absolu</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCheminAbsolu()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String CHEMIN_ABSOLU_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getCheminAbsolu() <em>Chemin Absolu</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCheminAbsolu()
+	 * @generated
+	 * @ordered
+	 */
+	protected String cheminAbsolu = CHEMIN_ABSOLU_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #getTitrePage() <em>Titre Page</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -67,26 +129,6 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 	 * @ordered
 	 */
 	protected int taillePage = TAILLE_PAGE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getNom() <em>Nom</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getNom()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String NOM_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getNom() <em>Nom</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getNom()
-	 * @generated
-	 * @ordered
-	 */
-	protected String nom = NOM_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -175,6 +217,48 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public long getTailleOctet() {
+		return tailleOctet;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTailleOctet(long newTailleOctet) {
+		long oldTailleOctet = tailleOctet;
+		tailleOctet = newTailleOctet;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TP2Package.PAGE__TAILLE_OCTET, oldTailleOctet, tailleOctet));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getCheminAbsolu() {
+		return cheminAbsolu;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setCheminAbsolu(String newCheminAbsolu) {
+		String oldCheminAbsolu = cheminAbsolu;
+		cheminAbsolu = newCheminAbsolu;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TP2Package.PAGE__CHEMIN_ABSOLU, oldCheminAbsolu, cheminAbsolu));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public void accept(final AbstractCommand commandVisitor) {
 		commandVisitor.visit(this);
 	}
@@ -187,12 +271,16 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case TP2Package.PAGE__NOM:
+				return getNom();
+			case TP2Package.PAGE__TAILLE_OCTET:
+				return getTailleOctet();
+			case TP2Package.PAGE__CHEMIN_ABSOLU:
+				return getCheminAbsolu();
 			case TP2Package.PAGE__TITRE_PAGE:
 				return getTitrePage();
 			case TP2Package.PAGE__TAILLE_PAGE:
 				return getTaillePage();
-			case TP2Package.PAGE__NOM:
-				return getNom();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -205,14 +293,20 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case TP2Package.PAGE__NOM:
+				setNom((String)newValue);
+				return;
+			case TP2Package.PAGE__TAILLE_OCTET:
+				setTailleOctet((Long)newValue);
+				return;
+			case TP2Package.PAGE__CHEMIN_ABSOLU:
+				setCheminAbsolu((String)newValue);
+				return;
 			case TP2Package.PAGE__TITRE_PAGE:
 				setTitrePage((String)newValue);
 				return;
 			case TP2Package.PAGE__TAILLE_PAGE:
 				setTaillePage((Integer)newValue);
-				return;
-			case TP2Package.PAGE__NOM:
-				setNom((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -226,14 +320,20 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case TP2Package.PAGE__NOM:
+				setNom(NOM_EDEFAULT);
+				return;
+			case TP2Package.PAGE__TAILLE_OCTET:
+				setTailleOctet(TAILLE_OCTET_EDEFAULT);
+				return;
+			case TP2Package.PAGE__CHEMIN_ABSOLU:
+				setCheminAbsolu(CHEMIN_ABSOLU_EDEFAULT);
+				return;
 			case TP2Package.PAGE__TITRE_PAGE:
 				setTitrePage(TITRE_PAGE_EDEFAULT);
 				return;
 			case TP2Package.PAGE__TAILLE_PAGE:
 				setTaillePage(TAILLE_PAGE_EDEFAULT);
-				return;
-			case TP2Package.PAGE__NOM:
-				setNom(NOM_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -247,12 +347,16 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case TP2Package.PAGE__NOM:
+				return NOM_EDEFAULT == null ? nom != null : !NOM_EDEFAULT.equals(nom);
+			case TP2Package.PAGE__TAILLE_OCTET:
+				return tailleOctet != TAILLE_OCTET_EDEFAULT;
+			case TP2Package.PAGE__CHEMIN_ABSOLU:
+				return CHEMIN_ABSOLU_EDEFAULT == null ? cheminAbsolu != null : !CHEMIN_ABSOLU_EDEFAULT.equals(cheminAbsolu);
 			case TP2Package.PAGE__TITRE_PAGE:
 				return TITRE_PAGE_EDEFAULT == null ? titrePage != null : !TITRE_PAGE_EDEFAULT.equals(titrePage);
 			case TP2Package.PAGE__TAILLE_PAGE:
 				return taillePage != TAILLE_PAGE_EDEFAULT;
-			case TP2Package.PAGE__NOM:
-				return NOM_EDEFAULT == null ? nom != null : !NOM_EDEFAULT.equals(nom);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -282,12 +386,16 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (titrePage: ");
+		result.append(" (nom: ");
+		result.append(nom);
+		result.append(", tailleOctet: ");
+		result.append(tailleOctet);
+		result.append(", cheminAbsolu: ");
+		result.append(cheminAbsolu);
+		result.append(", titrePage: ");
 		result.append(titrePage);
 		result.append(", taillePage: ");
 		result.append(taillePage);
-		result.append(", nom: ");
-		result.append(nom);
 		result.append(')');
 		return result.toString();
 	}

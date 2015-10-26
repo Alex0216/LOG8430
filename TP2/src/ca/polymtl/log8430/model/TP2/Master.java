@@ -83,14 +83,6 @@ public interface Master extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	void addCommand(AbstractCommand command);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='for(AbstractCommand c: commands){\r\n\tc.setRessource(ressource);\r\n\tif(isAutoRun()){\r\n\t\tc.execute();\r\n\t}\r\n}'"
 	 * @generated
 	 */

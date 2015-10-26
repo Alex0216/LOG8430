@@ -145,17 +145,6 @@ public class MasterImpl extends MinimalEObjectImpl.Container implements Master {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void addCommand(AbstractCommand command) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public void updateRessource(final Ressource ressource) {
 		for(AbstractCommand c: commands){
 			c.setRessource(ressource);
@@ -277,9 +266,6 @@ public class MasterImpl extends MinimalEObjectImpl.Container implements Master {
 				return null;
 			case TP2Package.MASTER___EXECUTE_COMMAND__ABSTRACTCOMMAND:
 				executeCommand((AbstractCommand)arguments.get(0));
-				return null;
-			case TP2Package.MASTER___ADD_COMMAND__ABSTRACTCOMMAND:
-				addCommand((AbstractCommand)arguments.get(0));
 				return null;
 			case TP2Package.MASTER___UPDATE_RESSOURCE__RESSOURCE:
 				updateRessource((Ressource)arguments.get(0));

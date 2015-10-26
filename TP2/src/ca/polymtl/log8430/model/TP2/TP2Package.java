@@ -69,13 +69,40 @@ public interface TP2Package extends EPackage {
 	int RESSOURCE = 5;
 
 	/**
+	 * The feature id for the '<em><b>Nom</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESSOURCE__NOM = 0;
+
+	/**
+	 * The feature id for the '<em><b>Taille Octet</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESSOURCE__TAILLE_OCTET = 1;
+
+	/**
+	 * The feature id for the '<em><b>Chemin Absolu</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESSOURCE__CHEMIN_ABSOLU = 2;
+
+	/**
 	 * The number of structural features of the '<em>Ressource</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RESSOURCE_FEATURE_COUNT = 0;
+	int RESSOURCE_FEATURE_COUNT = 3;
 
 	/**
 	 * The operation id for the '<em>Accept</em>' operation.
@@ -104,6 +131,33 @@ public interface TP2Package extends EPackage {
 	 * @generated
 	 */
 	int RESSOURCES_LOCALE = 4;
+
+	/**
+	 * The feature id for the '<em><b>Nom</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESSOURCES_LOCALE__NOM = RESSOURCE__NOM;
+
+	/**
+	 * The feature id for the '<em><b>Taille Octet</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESSOURCES_LOCALE__TAILLE_OCTET = RESSOURCE__TAILLE_OCTET;
+
+	/**
+	 * The feature id for the '<em><b>Chemin Absolu</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESSOURCES_LOCALE__CHEMIN_ABSOLU = RESSOURCE__CHEMIN_ABSOLU;
 
 	/**
 	 * The feature id for the '<em><b>Permission</b></em>' attribute.
@@ -152,6 +206,33 @@ public interface TP2Package extends EPackage {
 	int DOSSIER = 0;
 
 	/**
+	 * The feature id for the '<em><b>Nom</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DOSSIER__NOM = RESSOURCES_LOCALE__NOM;
+
+	/**
+	 * The feature id for the '<em><b>Taille Octet</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DOSSIER__TAILLE_OCTET = RESSOURCES_LOCALE__TAILLE_OCTET;
+
+	/**
+	 * The feature id for the '<em><b>Chemin Absolu</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DOSSIER__CHEMIN_ABSOLU = RESSOURCES_LOCALE__CHEMIN_ABSOLU;
+
+	/**
 	 * The feature id for the '<em><b>Permission</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -170,22 +251,13 @@ public interface TP2Package extends EPackage {
 	int DOSSIER__NOMBRE_ENFANT = RESSOURCES_LOCALE_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Nom</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DOSSIER__NOM = RESSOURCES_LOCALE_FEATURE_COUNT + 1;
-
-	/**
 	 * The number of structural features of the '<em>Dossier</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DOSSIER_FEATURE_COUNT = RESSOURCES_LOCALE_FEATURE_COUNT + 2;
+	int DOSSIER_FEATURE_COUNT = RESSOURCES_LOCALE_FEATURE_COUNT + 1;
 
 	/**
 	 * The operation id for the '<em>Accept</em>' operation.
@@ -216,6 +288,33 @@ public interface TP2Package extends EPackage {
 	int FICHIER = 1;
 
 	/**
+	 * The feature id for the '<em><b>Nom</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FICHIER__NOM = RESSOURCES_LOCALE__NOM;
+
+	/**
+	 * The feature id for the '<em><b>Taille Octet</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FICHIER__TAILLE_OCTET = RESSOURCES_LOCALE__TAILLE_OCTET;
+
+	/**
+	 * The feature id for the '<em><b>Chemin Absolu</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FICHIER__CHEMIN_ABSOLU = RESSOURCES_LOCALE__CHEMIN_ABSOLU;
+
+	/**
 	 * The feature id for the '<em><b>Permission</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -225,31 +324,13 @@ public interface TP2Package extends EPackage {
 	int FICHIER__PERMISSION = RESSOURCES_LOCALE__PERMISSION;
 
 	/**
-	 * The feature id for the '<em><b>Taille Fichier Octet</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FICHIER__TAILLE_FICHIER_OCTET = RESSOURCES_LOCALE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Nom</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FICHIER__NOM = RESSOURCES_LOCALE_FEATURE_COUNT + 1;
-
-	/**
 	 * The number of structural features of the '<em>Fichier</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FICHIER_FEATURE_COUNT = RESSOURCES_LOCALE_FEATURE_COUNT + 2;
+	int FICHIER_FEATURE_COUNT = RESSOURCES_LOCALE_FEATURE_COUNT + 0;
 
 	/**
 	 * The operation id for the '<em>Accept</em>' operation.
@@ -278,6 +359,33 @@ public interface TP2Package extends EPackage {
 	 * @generated
 	 */
 	int RESSOURCES_DISTANTE = 2;
+
+	/**
+	 * The feature id for the '<em><b>Nom</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESSOURCES_DISTANTE__NOM = RESSOURCE__NOM;
+
+	/**
+	 * The feature id for the '<em><b>Taille Octet</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESSOURCES_DISTANTE__TAILLE_OCTET = RESSOURCE__TAILLE_OCTET;
+
+	/**
+	 * The feature id for the '<em><b>Chemin Absolu</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESSOURCES_DISTANTE__CHEMIN_ABSOLU = RESSOURCE__CHEMIN_ABSOLU;
 
 	/**
 	 * The number of structural features of the '<em>Ressources Distante</em>' class.
@@ -317,6 +425,33 @@ public interface TP2Package extends EPackage {
 	int PAGE = 3;
 
 	/**
+	 * The feature id for the '<em><b>Nom</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAGE__NOM = RESSOURCES_DISTANTE__NOM;
+
+	/**
+	 * The feature id for the '<em><b>Taille Octet</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAGE__TAILLE_OCTET = RESSOURCES_DISTANTE__TAILLE_OCTET;
+
+	/**
+	 * The feature id for the '<em><b>Chemin Absolu</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAGE__CHEMIN_ABSOLU = RESSOURCES_DISTANTE__CHEMIN_ABSOLU;
+
+	/**
 	 * The feature id for the '<em><b>Titre Page</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -335,22 +470,13 @@ public interface TP2Package extends EPackage {
 	int PAGE__TAILLE_PAGE = RESSOURCES_DISTANTE_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Nom</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAGE__NOM = RESSOURCES_DISTANTE_FEATURE_COUNT + 2;
-
-	/**
 	 * The number of structural features of the '<em>Page</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PAGE_FEATURE_COUNT = RESSOURCES_DISTANTE_FEATURE_COUNT + 3;
+	int PAGE_FEATURE_COUNT = RESSOURCES_DISTANTE_FEATURE_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>Accept</em>' operation.
@@ -544,22 +670,13 @@ public interface TP2Package extends EPackage {
 	int MASTER___EXECUTE_COMMAND__ABSTRACTCOMMAND = 2;
 
 	/**
-	 * The operation id for the '<em>Add Command</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MASTER___ADD_COMMAND__ABSTRACTCOMMAND = 3;
-
-	/**
 	 * The operation id for the '<em>Update Ressource</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MASTER___UPDATE_RESSOURCE__RESSOURCE = 4;
+	int MASTER___UPDATE_RESSOURCE__RESSOURCE = 3;
 
 	/**
 	 * The number of operations of the '<em>Master</em>' class.
@@ -568,7 +685,7 @@ public interface TP2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MASTER_OPERATION_COUNT = 5;
+	int MASTER_OPERATION_COUNT = 4;
 
 	/**
 	 * The meta object id for the '{@link ca.polymtl.log8430.model.TP2.impl.FileNameCommandImpl <em>File Name Command</em>}' class.
@@ -930,17 +1047,6 @@ public interface TP2Package extends EPackage {
 	EAttribute getDossier_NombreEnfant();
 
 	/**
-	 * Returns the meta object for the attribute '{@link ca.polymtl.log8430.model.TP2.Dossier#getNom <em>Nom</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Nom</em>'.
-	 * @see ca.polymtl.log8430.model.TP2.Dossier#getNom()
-	 * @see #getDossier()
-	 * @generated
-	 */
-	EAttribute getDossier_Nom();
-
-	/**
 	 * Returns the meta object for class '{@link ca.polymtl.log8430.model.TP2.Fichier <em>Fichier</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -949,28 +1055,6 @@ public interface TP2Package extends EPackage {
 	 * @generated
 	 */
 	EClass getFichier();
-
-	/**
-	 * Returns the meta object for the attribute '{@link ca.polymtl.log8430.model.TP2.Fichier#getTailleFichierOctet <em>Taille Fichier Octet</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Taille Fichier Octet</em>'.
-	 * @see ca.polymtl.log8430.model.TP2.Fichier#getTailleFichierOctet()
-	 * @see #getFichier()
-	 * @generated
-	 */
-	EAttribute getFichier_TailleFichierOctet();
-
-	/**
-	 * Returns the meta object for the attribute '{@link ca.polymtl.log8430.model.TP2.Fichier#getNom <em>Nom</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Nom</em>'.
-	 * @see ca.polymtl.log8430.model.TP2.Fichier#getNom()
-	 * @see #getFichier()
-	 * @generated
-	 */
-	EAttribute getFichier_Nom();
 
 	/**
 	 * Returns the meta object for class '{@link ca.polymtl.log8430.model.TP2.RessourcesDistante <em>Ressources Distante</em>}'.
@@ -1015,17 +1099,6 @@ public interface TP2Package extends EPackage {
 	EAttribute getPage_TaillePage();
 
 	/**
-	 * Returns the meta object for the attribute '{@link ca.polymtl.log8430.model.TP2.Page#getNom <em>Nom</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Nom</em>'.
-	 * @see ca.polymtl.log8430.model.TP2.Page#getNom()
-	 * @see #getPage()
-	 * @generated
-	 */
-	EAttribute getPage_Nom();
-
-	/**
 	 * Returns the meta object for class '{@link ca.polymtl.log8430.model.TP2.RessourcesLocale <em>Ressources Locale</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1055,6 +1128,39 @@ public interface TP2Package extends EPackage {
 	 * @generated
 	 */
 	EClass getRessource();
+
+	/**
+	 * Returns the meta object for the attribute '{@link ca.polymtl.log8430.model.TP2.Ressource#getNom <em>Nom</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Nom</em>'.
+	 * @see ca.polymtl.log8430.model.TP2.Ressource#getNom()
+	 * @see #getRessource()
+	 * @generated
+	 */
+	EAttribute getRessource_Nom();
+
+	/**
+	 * Returns the meta object for the attribute '{@link ca.polymtl.log8430.model.TP2.Ressource#getTailleOctet <em>Taille Octet</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Taille Octet</em>'.
+	 * @see ca.polymtl.log8430.model.TP2.Ressource#getTailleOctet()
+	 * @see #getRessource()
+	 * @generated
+	 */
+	EAttribute getRessource_TailleOctet();
+
+	/**
+	 * Returns the meta object for the attribute '{@link ca.polymtl.log8430.model.TP2.Ressource#getCheminAbsolu <em>Chemin Absolu</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Chemin Absolu</em>'.
+	 * @see ca.polymtl.log8430.model.TP2.Ressource#getCheminAbsolu()
+	 * @see #getRessource()
+	 * @generated
+	 */
+	EAttribute getRessource_CheminAbsolu();
 
 	/**
 	 * Returns the meta object for the '{@link ca.polymtl.log8430.model.TP2.Ressource#accept(ca.polymtl.log8430.model.TP2.AbstractCommand) <em>Accept</em>}' operation.
@@ -1232,16 +1338,6 @@ public interface TP2Package extends EPackage {
 	EOperation getMaster__ExecuteCommand__AbstractCommand();
 
 	/**
-	 * Returns the meta object for the '{@link ca.polymtl.log8430.model.TP2.Master#addCommand(ca.polymtl.log8430.model.TP2.AbstractCommand) <em>Add Command</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Add Command</em>' operation.
-	 * @see ca.polymtl.log8430.model.TP2.Master#addCommand(ca.polymtl.log8430.model.TP2.AbstractCommand)
-	 * @generated
-	 */
-	EOperation getMaster__AddCommand__AbstractCommand();
-
-	/**
 	 * Returns the meta object for the '{@link ca.polymtl.log8430.model.TP2.Master#updateRessource(ca.polymtl.log8430.model.TP2.Ressource) <em>Update Ressource</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1333,14 +1429,6 @@ public interface TP2Package extends EPackage {
 		EAttribute DOSSIER__NOMBRE_ENFANT = eINSTANCE.getDossier_NombreEnfant();
 
 		/**
-		 * The meta object literal for the '<em><b>Nom</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute DOSSIER__NOM = eINSTANCE.getDossier_Nom();
-
-		/**
 		 * The meta object literal for the '{@link ca.polymtl.log8430.model.TP2.impl.FichierImpl <em>Fichier</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1349,22 +1437,6 @@ public interface TP2Package extends EPackage {
 		 * @generated
 		 */
 		EClass FICHIER = eINSTANCE.getFichier();
-
-		/**
-		 * The meta object literal for the '<em><b>Taille Fichier Octet</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute FICHIER__TAILLE_FICHIER_OCTET = eINSTANCE.getFichier_TailleFichierOctet();
-
-		/**
-		 * The meta object literal for the '<em><b>Nom</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute FICHIER__NOM = eINSTANCE.getFichier_Nom();
 
 		/**
 		 * The meta object literal for the '{@link ca.polymtl.log8430.model.TP2.RessourcesDistante <em>Ressources Distante</em>}' class.
@@ -1403,14 +1475,6 @@ public interface TP2Package extends EPackage {
 		EAttribute PAGE__TAILLE_PAGE = eINSTANCE.getPage_TaillePage();
 
 		/**
-		 * The meta object literal for the '<em><b>Nom</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute PAGE__NOM = eINSTANCE.getPage_Nom();
-
-		/**
 		 * The meta object literal for the '{@link ca.polymtl.log8430.model.TP2.RessourcesLocale <em>Ressources Locale</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1437,6 +1501,30 @@ public interface TP2Package extends EPackage {
 		 * @generated
 		 */
 		EClass RESSOURCE = eINSTANCE.getRessource();
+
+		/**
+		 * The meta object literal for the '<em><b>Nom</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute RESSOURCE__NOM = eINSTANCE.getRessource_Nom();
+
+		/**
+		 * The meta object literal for the '<em><b>Taille Octet</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute RESSOURCE__TAILLE_OCTET = eINSTANCE.getRessource_TailleOctet();
+
+		/**
+		 * The meta object literal for the '<em><b>Chemin Absolu</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute RESSOURCE__CHEMIN_ABSOLU = eINSTANCE.getRessource_CheminAbsolu();
 
 		/**
 		 * The meta object literal for the '<em><b>Accept</b></em>' operation.
@@ -1577,14 +1665,6 @@ public interface TP2Package extends EPackage {
 		 * @generated
 		 */
 		EOperation MASTER___EXECUTE_COMMAND__ABSTRACTCOMMAND = eINSTANCE.getMaster__ExecuteCommand__AbstractCommand();
-
-		/**
-		 * The meta object literal for the '<em><b>Add Command</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation MASTER___ADD_COMMAND__ABSTRACTCOMMAND = eINSTANCE.getMaster__AddCommand__AbstractCommand();
 
 		/**
 		 * The meta object literal for the '<em><b>Update Ressource</b></em>' operation.

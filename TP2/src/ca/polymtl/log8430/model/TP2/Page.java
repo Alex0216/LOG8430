@@ -13,7 +13,6 @@ package ca.polymtl.log8430.model.TP2;
  * <ul>
  *   <li>{@link ca.polymtl.log8430.model.TP2.Page#getTitrePage <em>Titre Page</em>}</li>
  *   <li>{@link ca.polymtl.log8430.model.TP2.Page#getTaillePage <em>Taille Page</em>}</li>
- *   <li>{@link ca.polymtl.log8430.model.TP2.Page#getNom <em>Nom</em>}</li>
  * </ul>
  * </p>
  *
@@ -73,31 +72,5 @@ public interface Page extends RessourcesDistante {
 	 * @generated
 	 */
 	void setTaillePage(int value);
-
-	/**
-	 * Returns the value of the '<em><b>Nom</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Nom</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Nom</em>' attribute.
-	 * @see #setNom(String)
-	 * @see ca.polymtl.log8430.model.TP2.TP2Package#getPage_Nom()
-	 * @model
-	 * @generated
-	 */
-	String getNom();
-
-	/**
-	 * Sets the value of the '{@link ca.polymtl.log8430.model.TP2.Page#getNom <em>Nom</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Nom</em>' attribute.
-	 * @see #getNom()
-	 * @generated
-	 */
-	void setNom(String value);
 
 } // Page

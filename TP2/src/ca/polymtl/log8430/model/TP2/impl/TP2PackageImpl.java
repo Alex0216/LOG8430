@@ -199,35 +199,8 @@ public class TP2PackageImpl extends EPackageImpl implements TP2Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getDossier_Nom() {
-		return (EAttribute)dossierEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getFichier() {
 		return fichierEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getFichier_TailleFichierOctet() {
-		return (EAttribute)fichierEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getFichier_Nom() {
-		return (EAttribute)fichierEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -271,15 +244,6 @@ public class TP2PackageImpl extends EPackageImpl implements TP2Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPage_Nom() {
-		return (EAttribute)pageEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getRessourcesLocale() {
 		return ressourcesLocaleEClass;
 	}
@@ -300,6 +264,33 @@ public class TP2PackageImpl extends EPackageImpl implements TP2Package {
 	 */
 	public EClass getRessource() {
 		return ressourceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getRessource_Nom() {
+		return (EAttribute)ressourceEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getRessource_TailleOctet() {
+		return (EAttribute)ressourceEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getRessource_CheminAbsolu() {
+		return (EAttribute)ressourceEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -460,17 +451,8 @@ public class TP2PackageImpl extends EPackageImpl implements TP2Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getMaster__AddCommand__AbstractCommand() {
-		return masterEClass.getEOperations().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EOperation getMaster__UpdateRessource__Ressource() {
-		return masterEClass.getEOperations().get(4);
+		return masterEClass.getEOperations().get(3);
 	}
 
 	/**
@@ -539,23 +521,22 @@ public class TP2PackageImpl extends EPackageImpl implements TP2Package {
 		// Create classes and their features
 		dossierEClass = createEClass(DOSSIER);
 		createEAttribute(dossierEClass, DOSSIER__NOMBRE_ENFANT);
-		createEAttribute(dossierEClass, DOSSIER__NOM);
 
 		fichierEClass = createEClass(FICHIER);
-		createEAttribute(fichierEClass, FICHIER__TAILLE_FICHIER_OCTET);
-		createEAttribute(fichierEClass, FICHIER__NOM);
 
 		ressourcesDistanteEClass = createEClass(RESSOURCES_DISTANTE);
 
 		pageEClass = createEClass(PAGE);
 		createEAttribute(pageEClass, PAGE__TITRE_PAGE);
 		createEAttribute(pageEClass, PAGE__TAILLE_PAGE);
-		createEAttribute(pageEClass, PAGE__NOM);
 
 		ressourcesLocaleEClass = createEClass(RESSOURCES_LOCALE);
 		createEAttribute(ressourcesLocaleEClass, RESSOURCES_LOCALE__PERMISSION);
 
 		ressourceEClass = createEClass(RESSOURCE);
+		createEAttribute(ressourceEClass, RESSOURCE__NOM);
+		createEAttribute(ressourceEClass, RESSOURCE__TAILLE_OCTET);
+		createEAttribute(ressourceEClass, RESSOURCE__CHEMIN_ABSOLU);
 		createEOperation(ressourceEClass, RESSOURCE___ACCEPT__ABSTRACTCOMMAND);
 
 		abstractCommandEClass = createEClass(ABSTRACT_COMMAND);
@@ -575,7 +556,6 @@ public class TP2PackageImpl extends EPackageImpl implements TP2Package {
 		createEOperation(masterEClass, MASTER___CLEAR);
 		createEOperation(masterEClass, MASTER___EXECUTE_ALL);
 		createEOperation(masterEClass, MASTER___EXECUTE_COMMAND__ABSTRACTCOMMAND);
-		createEOperation(masterEClass, MASTER___ADD_COMMAND__ABSTRACTCOMMAND);
 		createEOperation(masterEClass, MASTER___UPDATE_RESSOURCE__RESSOURCE);
 
 		fileNameCommandEClass = createEClass(FILE_NAME_COMMAND);
@@ -628,23 +608,22 @@ public class TP2PackageImpl extends EPackageImpl implements TP2Package {
 		// Initialize classes, features, and operations; add parameters
 		initEClass(dossierEClass, Dossier.class, "Dossier", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDossier_NombreEnfant(), ecorePackage.getEInt(), "nombreEnfant", null, 0, 1, Dossier.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getDossier_Nom(), ecorePackage.getEString(), "nom", null, 0, 1, Dossier.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(fichierEClass, Fichier.class, "Fichier", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getFichier_TailleFichierOctet(), ecorePackage.getELong(), "tailleFichierOctet", null, 0, 1, Fichier.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getFichier_Nom(), ecorePackage.getEString(), "nom", null, 0, 1, Fichier.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(ressourcesDistanteEClass, RessourcesDistante.class, "RessourcesDistante", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(pageEClass, Page.class, "Page", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPage_TitrePage(), ecorePackage.getEString(), "titrePage", null, 0, 1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPage_TaillePage(), ecorePackage.getEInt(), "taillePage", null, 0, 1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPage_Nom(), ecorePackage.getEString(), "nom", null, 0, 1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(ressourcesLocaleEClass, RessourcesLocale.class, "RessourcesLocale", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRessourcesLocale_Permission(), this.getPermissionType(), "permission", null, 0, 1, RessourcesLocale.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(ressourceEClass, Ressource.class, "Ressource", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getRessource_Nom(), ecorePackage.getEString(), "nom", null, 0, 1, Ressource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRessource_TailleOctet(), ecorePackage.getELong(), "tailleOctet", null, 0, 1, Ressource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRessource_CheminAbsolu(), ecorePackage.getEString(), "cheminAbsolu", null, 0, 1, Ressource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		EOperation op = initEOperation(getRessource__Accept__AbstractCommand(), null, "accept", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getAbstractCommand(), "commandVisitor", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -678,9 +657,6 @@ public class TP2PackageImpl extends EPackageImpl implements TP2Package {
 		initEOperation(getMaster__ExecuteAll(), null, "executeAll", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = initEOperation(getMaster__ExecuteCommand__AbstractCommand(), null, "executeCommand", 0, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, this.getAbstractCommand(), "command", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = initEOperation(getMaster__AddCommand__AbstractCommand(), null, "addCommand", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getAbstractCommand(), "command", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = initEOperation(getMaster__UpdateRessource__Ressource(), null, "updateRessource", 0, 1, IS_UNIQUE, IS_ORDERED);
