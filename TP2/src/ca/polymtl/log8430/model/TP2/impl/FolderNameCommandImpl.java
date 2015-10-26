@@ -212,17 +212,6 @@ public class FolderNameCommandImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isRessourceSupported() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public void visit(Fichier fichier) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -346,8 +335,6 @@ public class FolderNameCommandImpl extends MinimalEObjectImpl.Container implemen
 				return null;
 			case TP2Package.FOLDER_NAME_COMMAND___CAN_EXECUTE:
 				return canExecute();
-			case TP2Package.FOLDER_NAME_COMMAND___IS_RESSOURCE_SUPPORTED:
-				return isRessourceSupported();
 			case TP2Package.FOLDER_NAME_COMMAND___VISIT__FICHIER:
 				visit((Fichier)arguments.get(0));
 				return null;

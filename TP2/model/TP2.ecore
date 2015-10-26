@@ -46,7 +46,6 @@
       </eAnnotations>
     </eOperations>
     <eOperations name="canExecute" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-    <eOperations name="isRessourceSupported" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eOperations name="visit">
       <eParameters name="fichier" eType="#//Fichier"/>
     </eOperations>

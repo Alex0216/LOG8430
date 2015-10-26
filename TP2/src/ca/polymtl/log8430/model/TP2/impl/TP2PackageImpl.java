@@ -379,7 +379,7 @@ public class TP2PackageImpl extends EPackageImpl implements TP2Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getAbstractCommand__IsRessourceSupported() {
+	public EOperation getAbstractCommand__Visit__Fichier() {
 		return abstractCommandEClass.getEOperations().get(3);
 	}
 
@@ -388,7 +388,7 @@ public class TP2PackageImpl extends EPackageImpl implements TP2Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getAbstractCommand__Visit__Fichier() {
+	public EOperation getAbstractCommand__Visit__Dossier() {
 		return abstractCommandEClass.getEOperations().get(4);
 	}
 
@@ -397,17 +397,8 @@ public class TP2PackageImpl extends EPackageImpl implements TP2Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getAbstractCommand__Visit__Dossier() {
-		return abstractCommandEClass.getEOperations().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EOperation getAbstractCommand__Visit__Page() {
-		return abstractCommandEClass.getEOperations().get(6);
+		return abstractCommandEClass.getEOperations().get(5);
 	}
 
 	/**
@@ -574,7 +565,6 @@ public class TP2PackageImpl extends EPackageImpl implements TP2Package {
 		createEOperation(abstractCommandEClass, ABSTRACT_COMMAND___EXECUTE);
 		createEOperation(abstractCommandEClass, ABSTRACT_COMMAND___CLEAR);
 		createEOperation(abstractCommandEClass, ABSTRACT_COMMAND___CAN_EXECUTE);
-		createEOperation(abstractCommandEClass, ABSTRACT_COMMAND___IS_RESSOURCE_SUPPORTED);
 		createEOperation(abstractCommandEClass, ABSTRACT_COMMAND___VISIT__FICHIER);
 		createEOperation(abstractCommandEClass, ABSTRACT_COMMAND___VISIT__DOSSIER);
 		createEOperation(abstractCommandEClass, ABSTRACT_COMMAND___VISIT__PAGE);
@@ -669,8 +659,6 @@ public class TP2PackageImpl extends EPackageImpl implements TP2Package {
 		initEOperation(getAbstractCommand__Clear(), null, "clear", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEOperation(getAbstractCommand__CanExecute(), ecorePackage.getEBoolean(), "canExecute", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		initEOperation(getAbstractCommand__IsRessourceSupported(), ecorePackage.getEBoolean(), "isRessourceSupported", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = initEOperation(getAbstractCommand__Visit__Fichier(), null, "visit", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getFichier(), "fichier", 0, 1, IS_UNIQUE, IS_ORDERED);
