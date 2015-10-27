@@ -36,7 +36,10 @@ public class Executer {
 	 */
 	public void addCommand(Command command)
 	{
-		m_listCommand.add(command);
+		if(command != null)
+		{
+			m_listCommand.add(command);
+		}
 	}
 	
 	/**
@@ -70,7 +73,11 @@ public class Executer {
 	 */
 	public boolean executeCommand(Command command) 
 	{
-		return command.execute();
+		if(command != null)
+		{
+			return command.execute();
+		}
+		return false;
 	}
 
 	/**

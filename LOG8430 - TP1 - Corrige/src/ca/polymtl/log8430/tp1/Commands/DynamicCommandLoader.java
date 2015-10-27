@@ -7,8 +7,19 @@ import java.net.URL;
 import java.util.ArrayList;
 
 import sun.misc.Launcher;
-// Source http://www.javaworld.com/article/2077477/learn-java/java-tip-113--identify-subclasses-at-runtime.html
+
+/**
+ * Classe qui permet le chargement dynamique de commandes
+ * Source de l'implementation : http://www.javaworld.com/article/2077477/learn-java/java-tip-113--identify-subclasses-at-runtime.html
+ * @author Alexandre St-Onge, Mathieu Laprise, Julien Bergeron, Mathias Varinot
+ */
 public class DynamicCommandLoader {
+	/**
+	 * Fonction qui permet de charger dynamiquement les commandes selon
+	 * le nom du package passé en paramètre
+	 * @param pckgname	Le nom du package contenant les commandes
+	 * @return			La liste de toutes les commandes
+	 */
 	public ArrayList<Command> load(String pckgname) {
         // Code from JWhich (source citée plus haut)
         // ======

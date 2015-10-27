@@ -28,7 +28,5 @@ public class TestsCommandes extends AbstractTest{
 		m_folderNameCommand = new FolderNameCommand(null);
 	}
 
-	@After
-	public void tearDown() throws Exception {
-	}
+	
 }

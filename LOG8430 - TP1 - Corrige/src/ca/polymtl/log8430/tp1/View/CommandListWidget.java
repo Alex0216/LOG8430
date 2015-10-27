@@ -73,7 +73,10 @@ public class CommandListWidget extends JPanel {
 		chckbxAutoRun = new JCheckBox("AutoRun");
 		chckbxAutoRun.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent arg0) {
-				m_executer.setAutoRun(chckbxAutoRun.isSelected());
+				if(m_executer != null)
+				{
+					m_executer.setAutoRun(chckbxAutoRun.isSelected());
+				}
 			}
 		});
 		chckbxAutoRun.setBackground(Color.WHITE);
@@ -87,9 +90,12 @@ public class CommandListWidget extends JPanel {
 	 */
 	public void addCommand(Command command)
 	{
-		CommandWidget commandWidget = new CommandWidget(command);
-		m_commandListPanel.add(commandWidget);
-		m_executer.addCommand(command);
+		if(command != null)
+		{
+			CommandWidget commandWidget = new CommandWidget(command);
+			m_commandListPanel.add(commandWidget);
+			m_executer.addCommand(command);
+		}
 	}
 
 }

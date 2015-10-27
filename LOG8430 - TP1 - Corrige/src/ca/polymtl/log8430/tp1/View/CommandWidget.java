@@ -38,8 +38,10 @@ public class CommandWidget extends JPanel implements Observer {
 	public CommandWidget(Command command) {
 		
 		m_command = command;
-		
-		m_command.addObserver(this);
+		if(m_command != null)
+		{
+			m_command.addObserver(this);
+		}
 		setBorder(new EmptyBorder(10, 10, 10, 10));
 		setBackground(Color.WHITE);
 		setLayout(new GridLayout(0, 2, 10, 0));
@@ -71,9 +73,12 @@ public class CommandWidget extends JPanel implements Observer {
 	 * enable le bouton si la commande peut s'exécuter par rapport au path actuel.
 	 */
 	public void update(Observable arg0, Object arg1) {
-		lblResult.setText(m_command.getResult());
-		btnCommand.setText(m_command.getDisplayName());
-		btnCommand.setEnabled(m_command.canExecute());
+		if(m_command != null)
+		{
+			lblResult.setText(m_command.getResult());
+			btnCommand.setText(m_command.getDisplayName());
+			btnCommand.setEnabled(m_command.canExecute());
+		}
 	}
 
 }

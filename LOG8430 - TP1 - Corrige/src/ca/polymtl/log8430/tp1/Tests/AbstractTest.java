@@ -23,7 +23,7 @@ public abstract class AbstractTest {
 	 *  c-a-d qu'ils donnent les bons resultats.
 	 */
 	@Test
-	public void absolutePathValide()
+	public void absolutePathValid()
 	{
 		try
 		{
@@ -47,7 +47,7 @@ public abstract class AbstractTest {
 	 * "File name is " + nomFichier
 	 */
 	@Test
-	public void fileNameValide()
+	public void fileNameValid()
 	{
 		try
 		{
@@ -72,7 +72,7 @@ public abstract class AbstractTest {
 	 * "Folder name is " + nomFolder
 	 */
 	@Test
-	public void folderNameValide()
+	public void folderNameValid()
 	{
 		try
 		{
@@ -92,7 +92,7 @@ public abstract class AbstractTest {
 	 * Teste si les commandes marchent correctement après un executeAllCommand
 	 */
 	@Test
-	public void executeAllCommandValide()
+	public void executeAllCommandValid()
 	{
 		try
 		{
@@ -123,7 +123,7 @@ public abstract class AbstractTest {
 	 * pas à un folder.
 	 */
 	@Test
-	public void folderNameMauvaisType()
+	public void folderNameWrongType()
 	{
 		try
 		{
@@ -144,7 +144,7 @@ public abstract class AbstractTest {
 	 * pas à un fichier.
 	 */
 	@Test
-	public void fileNameMauvaisType()
+	public void fileNameWrongType()
 	{
 		try
 		{

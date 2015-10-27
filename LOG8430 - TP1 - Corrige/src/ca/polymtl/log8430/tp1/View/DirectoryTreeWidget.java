@@ -56,8 +56,10 @@ public class DirectoryTreeWidget extends JPanel {
 				}
 				//enlever le dernier \\
 				completePath = completePath.substring(0, completePath.length()-1);
-				
-				m_executer.updatePath(completePath);
+				if(m_executer != null)
+				{
+					m_executer.updatePath(completePath);
+				}
 			}
 		});
 		m_directoryTree.setBorder(new CompoundBorder(new LineBorder(new Color(0, 0, 0)), new EmptyBorder(10, 10, 10, 10)));
@@ -84,7 +86,10 @@ public class DirectoryTreeWidget extends JPanel {
 	 */
 	public void setSelectedPath(final String path)
 	{
-		m_executer.updatePath(path);
+		if(m_executer != null)
+		{
+			m_executer.updatePath(path);
+		}
 		m_directoryTree.setModel(new DefaultTreeModel(getDirectoryTree(null, new File(path))));
 		
 		SwingWorker<DefaultTreeModel, Void> worker = new SwingWorker<DefaultTreeModel, Void>(){
@@ -112,7 +117,7 @@ public class DirectoryTreeWidget extends JPanel {
 	 * http://www.java2s.com/Code/Java/File-Input-Output/DisplayafilesysteminaJTreeview.htm
 	 * @param top	Le node en haut du directoryTree courant.
 	 * @param dir	Le dossier du directoryTree
-	 * @return		Le node courrant du directoryTree
+	 * @return		Le node courant du directoryTree
 	 */
 	private DefaultMutableTreeNode getDirectoryTree(DefaultMutableTreeNode top, File dir)
 	{
@@ -129,16 +134,19 @@ public class DirectoryTreeWidget extends JPanel {
 			currentNode = new DefaultMutableTreeNode(dir.getAbsolutePath());
 		}
 		
-		if(!dir.isDirectory())
-			return currentNode;
-		
-		
-		if(dir.listFiles() != null)
+		if(dir != null)
 		{
-			for(File f : dir.listFiles())
+			if(!dir.isDirectory())
+				return currentNode;
+			
+			
+			if(dir.listFiles() != null)
 			{
-				if(f.canRead())
-					getDirectoryTree(currentNode, f);
+				for(File f : dir.listFiles())
+				{
+					if(f.canRead())
+						getDirectoryTree(currentNode, f);
+				}
 			}
 		}
 		

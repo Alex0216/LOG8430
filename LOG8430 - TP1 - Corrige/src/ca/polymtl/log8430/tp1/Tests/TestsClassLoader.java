@@ -43,9 +43,7 @@ public class TestsClassLoader extends AbstractTest{
 		}		
 	}
 
-	@After
-	public void tearDown() throws Exception {
-	}
+	
 
 	/**
 	 *  On teste si les commandes sont bien chargées dynamiquement
@@ -80,8 +78,7 @@ public class TestsClassLoader extends AbstractTest{
 		}
 		catch(Exception e)
 		{
-			e.printStackTrace();
-			
+			e.printStackTrace();			
 		}
 	}
 }
