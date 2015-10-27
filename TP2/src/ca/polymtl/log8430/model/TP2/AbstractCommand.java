@@ -86,7 +86,7 @@ public interface AbstractCommand extends EObject {
 	 * @return the value of the '<em>Ressource</em>' reference.
 	 * @see #setRessource(Ressource)
 	 * @see ca.polymtl.log8430.model.TP2.TP2Package#getAbstractCommand_Ressource()
-	 * @model
+	 * @model transient="true"
 	 * @generated
 	 */
 	Ressource getRessource();
@@ -100,14 +100,6 @@ public interface AbstractCommand extends EObject {
 	 * @generated
 	 */
 	void setRessource(Ressource value);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='if(ressource != null)\r\n\tressource.accept(this);'"
-	 * @generated
-	 */
-	void execute();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -148,5 +140,13 @@ public interface AbstractCommand extends EObject {
 	 * @generated
 	 */
 	void visit(Page page);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='if(ressource != null)\r\n\tressource.accept(this);'"
+	 * @generated
+	 */
+	void execute();
 
 } // AbstractCommand

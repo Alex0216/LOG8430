@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link ca.polymtl.log8430.model.TP2.Master#getCommands <em>Commands</em>}</li>
  *   <li>{@link ca.polymtl.log8430.model.TP2.Master#isAutoRun <em>Auto Run</em>}</li>
+ *   <li>{@link ca.polymtl.log8430.model.TP2.Master#getRessource <em>Ressource</em>}</li>
  * </ul>
  * </p>
  *
@@ -83,7 +84,7 @@ public interface Master extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='for(AbstractCommand c: commands){\r\n\tc.setRessource(ressource);\r\n}\r\nif(isAutoRun()){\r\n\texecuteAll();\r\n}'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='for(AbstractCommand c: commands){\r\n\tc.setRessource(ressource);\r\n}\r\nif(isAutoRun()){\r\n\texecuteAll();\r\n}\r\n\r\nsetRessource(ressource);'"
 	 * @generated
 	 */
 	void updateRessource(Ressource ressource);
@@ -97,5 +98,31 @@ public interface Master extends EObject {
 	 * @generated
 	 */
 	void setAutoRun(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Ressource</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Ressource</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Ressource</em>' containment reference.
+	 * @see #setRessource(Ressource)
+	 * @see ca.polymtl.log8430.model.TP2.TP2Package#getMaster_Ressource()
+	 * @model containment="true"
+	 * @generated
+	 */
+	Ressource getRessource();
+
+	/**
+	 * Sets the value of the '{@link ca.polymtl.log8430.model.TP2.Master#getRessource <em>Ressource</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Ressource</em>' containment reference.
+	 * @see #getRessource()
+	 * @generated
+	 */
+	void setRessource(Ressource value);
 
 } // Master

@@ -319,9 +319,6 @@ public class AbsolutePathCommandImpl extends MinimalEObjectImpl.Container implem
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case TP2Package.ABSOLUTE_PATH_COMMAND___EXECUTE:
-				execute();
-				return null;
 			case TP2Package.ABSOLUTE_PATH_COMMAND___CLEAR:
 				clear();
 				return null;
@@ -335,6 +332,9 @@ public class AbsolutePathCommandImpl extends MinimalEObjectImpl.Container implem
 				return null;
 			case TP2Package.ABSOLUTE_PATH_COMMAND___VISIT__PAGE:
 				visit((Page)arguments.get(0));
+				return null;
+			case TP2Package.ABSOLUTE_PATH_COMMAND___EXECUTE:
+				execute();
 				return null;
 		}
 		return super.eInvoke(operationID, arguments);

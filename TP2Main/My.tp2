@@ -1,9 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TP2:Master xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TP2="TP2">
-  <commands xsi:type="TP2:FileNameCommand" commandName="File Name"/>
-  <commands xsi:type="TP2:FolderNameCommand" commandName="Folder Name"/>
-  <commands xsi:type="TP2:AbsolutePathCommand" commandName="Absolute Path"/>
-  <commands xsi:type="TP2:TailleCommand" commandName="Taille"/>
-  <commands xsi:type="TP2:PermissionCommand" commandName="Permission"/>
-  <commands xsi:type="TP2:NbEnfantCommand" commandName="Nombre enfants"/>
+<?xml version="1.0" encoding="ASCII"?>
+<TP2:Master xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TP2="TP2" AutoRun="true">
+  <commands xsi:type="TP2:FileNameCommand" commandName="File Name" result=""/>
+  <commands xsi:type="TP2:FolderNameCommand" commandName="Folder Name" result=""/>
+  <commands xsi:type="TP2:AbsolutePathCommand" commandName="Absolute Path" result="https://www.google.ca"/>
+  <commands xsi:type="TP2:TailleCommand" commandName="Taille" result="-1"/>
+  <commands xsi:type="TP2:PermissionCommand" commandName="Permission" result=""/>
+  <commands xsi:type="TP2:NbEnfantCommand" commandName="Nombre enfants" result=""/>
+  <ressource xsi:type="TP2:Page" nom="" taillePage="-1" URL="https://www.google.ca"/>
 </TP2:Master>

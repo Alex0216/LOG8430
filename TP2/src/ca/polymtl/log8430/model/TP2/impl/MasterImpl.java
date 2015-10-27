@@ -6,22 +6,15 @@ import ca.polymtl.log8430.model.TP2.AbstractCommand;
 import ca.polymtl.log8430.model.TP2.Master;
 import ca.polymtl.log8430.model.TP2.Ressource;
 import ca.polymtl.log8430.model.TP2.TP2Package;
-
 import java.lang.reflect.InvocationTargetException;
-
 import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -34,6 +27,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link ca.polymtl.log8430.model.TP2.impl.MasterImpl#getCommands <em>Commands</em>}</li>
  *   <li>{@link ca.polymtl.log8430.model.TP2.impl.MasterImpl#isAutoRun <em>Auto Run</em>}</li>
+ *   <li>{@link ca.polymtl.log8430.model.TP2.impl.MasterImpl#getRessource <em>Ressource</em>}</li>
  * </ul>
  * </p>
  *
@@ -68,6 +62,16 @@ public class MasterImpl extends MinimalEObjectImpl.Container implements Master {
 	 * @ordered
 	 */
 	protected boolean autoRun = AUTO_RUN_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getRessource() <em>Ressource</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRessource()
+	 * @generated
+	 * @ordered
+	 */
+	protected Ressource ressource;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -154,6 +158,8 @@ public class MasterImpl extends MinimalEObjectImpl.Container implements Master {
 		if(isAutoRun()){
 			executeAll();
 		}
+		
+		setRessource(ressource);
 	}
 
 	/**
@@ -173,11 +179,56 @@ public class MasterImpl extends MinimalEObjectImpl.Container implements Master {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Ressource getRessource() {
+		return ressource;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetRessource(Ressource newRessource, NotificationChain msgs) {
+		Ressource oldRessource = ressource;
+		ressource = newRessource;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, TP2Package.MASTER__RESSOURCE, oldRessource, newRessource);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setRessource(Ressource newRessource) {
+		if (newRessource != ressource) {
+			NotificationChain msgs = null;
+			if (ressource != null)
+				msgs = ((InternalEObject)ressource).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - TP2Package.MASTER__RESSOURCE, null, msgs);
+			if (newRessource != null)
+				msgs = ((InternalEObject)newRessource).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - TP2Package.MASTER__RESSOURCE, null, msgs);
+			msgs = basicSetRessource(newRessource, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TP2Package.MASTER__RESSOURCE, newRessource, newRessource));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case TP2Package.MASTER__COMMANDS:
 				return ((InternalEList<?>)getCommands()).basicRemove(otherEnd, msgs);
+			case TP2Package.MASTER__RESSOURCE:
+				return basicSetRessource(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -194,6 +245,8 @@ public class MasterImpl extends MinimalEObjectImpl.Container implements Master {
 				return getCommands();
 			case TP2Package.MASTER__AUTO_RUN:
 				return isAutoRun();
+			case TP2Package.MASTER__RESSOURCE:
+				return getRessource();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -214,6 +267,9 @@ public class MasterImpl extends MinimalEObjectImpl.Container implements Master {
 			case TP2Package.MASTER__AUTO_RUN:
 				setAutoRun((Boolean)newValue);
 				return;
+			case TP2Package.MASTER__RESSOURCE:
+				setRessource((Ressource)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -232,6 +288,9 @@ public class MasterImpl extends MinimalEObjectImpl.Container implements Master {
 			case TP2Package.MASTER__AUTO_RUN:
 				setAutoRun(AUTO_RUN_EDEFAULT);
 				return;
+			case TP2Package.MASTER__RESSOURCE:
+				setRessource((Ressource)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -248,6 +307,8 @@ public class MasterImpl extends MinimalEObjectImpl.Container implements Master {
 				return commands != null && !commands.isEmpty();
 			case TP2Package.MASTER__AUTO_RUN:
 				return autoRun != AUTO_RUN_EDEFAULT;
+			case TP2Package.MASTER__RESSOURCE:
+				return ressource != null;
 		}
 		return super.eIsSet(featureID);
 	}

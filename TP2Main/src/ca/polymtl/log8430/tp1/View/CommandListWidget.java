@@ -95,4 +95,13 @@ public class CommandListWidget extends JPanel {
 		m_commandListPanel.add(commandWidget);
 	}
 
+	public void updateMaster(Master m_executer2) {
+		m_executer = m_executer2;
+		chckbxAutoRun.setSelected(m_executer.isAutoRun());
+		m_commandListPanel.removeAll();
+		for(AbstractCommand c : m_executer.getCommands()){
+			addCommand(c);
+		}		
+	}
+
 }

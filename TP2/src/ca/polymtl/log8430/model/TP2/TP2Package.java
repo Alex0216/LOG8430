@@ -525,22 +525,13 @@ public interface TP2Package extends EPackage {
 	int ABSTRACT_COMMAND_FEATURE_COUNT = 3;
 
 	/**
-	 * The operation id for the '<em>Execute</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSTRACT_COMMAND___EXECUTE = 0;
-
-	/**
 	 * The operation id for the '<em>Clear</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_COMMAND___CLEAR = 1;
+	int ABSTRACT_COMMAND___CLEAR = 0;
 
 	/**
 	 * The operation id for the '<em>Can Execute</em>' operation.
@@ -549,7 +540,7 @@ public interface TP2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_COMMAND___CAN_EXECUTE = 2;
+	int ABSTRACT_COMMAND___CAN_EXECUTE = 1;
 
 	/**
 	 * The operation id for the '<em>Visit</em>' operation.
@@ -558,7 +549,7 @@ public interface TP2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_COMMAND___VISIT__FICHIER = 3;
+	int ABSTRACT_COMMAND___VISIT__FICHIER = 2;
 
 	/**
 	 * The operation id for the '<em>Visit</em>' operation.
@@ -567,7 +558,7 @@ public interface TP2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_COMMAND___VISIT__DOSSIER = 4;
+	int ABSTRACT_COMMAND___VISIT__DOSSIER = 3;
 
 	/**
 	 * The operation id for the '<em>Visit</em>' operation.
@@ -576,7 +567,16 @@ public interface TP2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_COMMAND___VISIT__PAGE = 5;
+	int ABSTRACT_COMMAND___VISIT__PAGE = 4;
+
+	/**
+	 * The operation id for the '<em>Execute</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_COMMAND___EXECUTE = 5;
 
 	/**
 	 * The number of operations of the '<em>Abstract Command</em>' class.
@@ -616,13 +616,22 @@ public interface TP2Package extends EPackage {
 	int MASTER__AUTO_RUN = 1;
 
 	/**
+	 * The feature id for the '<em><b>Ressource</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MASTER__RESSOURCE = 2;
+
+	/**
 	 * The number of structural features of the '<em>Master</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MASTER_FEATURE_COUNT = 2;
+	int MASTER_FEATURE_COUNT = 3;
 
 	/**
 	 * The operation id for the '<em>Clear</em>' operation.
@@ -716,15 +725,6 @@ public interface TP2Package extends EPackage {
 	int FILE_NAME_COMMAND_FEATURE_COUNT = ABSTRACT_COMMAND_FEATURE_COUNT + 0;
 
 	/**
-	 * The operation id for the '<em>Execute</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FILE_NAME_COMMAND___EXECUTE = ABSTRACT_COMMAND___EXECUTE;
-
-	/**
 	 * The operation id for the '<em>Clear</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -768,6 +768,15 @@ public interface TP2Package extends EPackage {
 	 * @ordered
 	 */
 	int FILE_NAME_COMMAND___VISIT__PAGE = ABSTRACT_COMMAND___VISIT__PAGE;
+
+	/**
+	 * The operation id for the '<em>Execute</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FILE_NAME_COMMAND___EXECUTE = ABSTRACT_COMMAND___EXECUTE;
 
 	/**
 	 * The number of operations of the '<em>File Name Command</em>' class.
@@ -825,15 +834,6 @@ public interface TP2Package extends EPackage {
 	int FOLDER_NAME_COMMAND_FEATURE_COUNT = ABSTRACT_COMMAND_FEATURE_COUNT + 0;
 
 	/**
-	 * The operation id for the '<em>Execute</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FOLDER_NAME_COMMAND___EXECUTE = ABSTRACT_COMMAND___EXECUTE;
-
-	/**
 	 * The operation id for the '<em>Clear</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -877,6 +877,15 @@ public interface TP2Package extends EPackage {
 	 * @ordered
 	 */
 	int FOLDER_NAME_COMMAND___VISIT__PAGE = ABSTRACT_COMMAND___VISIT__PAGE;
+
+	/**
+	 * The operation id for the '<em>Execute</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FOLDER_NAME_COMMAND___EXECUTE = ABSTRACT_COMMAND___EXECUTE;
 
 	/**
 	 * The number of operations of the '<em>Folder Name Command</em>' class.
@@ -934,15 +943,6 @@ public interface TP2Package extends EPackage {
 	int ABSOLUTE_PATH_COMMAND_FEATURE_COUNT = ABSTRACT_COMMAND_FEATURE_COUNT + 0;
 
 	/**
-	 * The operation id for the '<em>Execute</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSOLUTE_PATH_COMMAND___EXECUTE = ABSTRACT_COMMAND___EXECUTE;
-
-	/**
 	 * The operation id for the '<em>Clear</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -986,6 +986,15 @@ public interface TP2Package extends EPackage {
 	 * @ordered
 	 */
 	int ABSOLUTE_PATH_COMMAND___VISIT__PAGE = ABSTRACT_COMMAND___VISIT__PAGE;
+
+	/**
+	 * The operation id for the '<em>Execute</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSOLUTE_PATH_COMMAND___EXECUTE = ABSTRACT_COMMAND___EXECUTE;
 
 	/**
 	 * The number of operations of the '<em>Absolute Path Command</em>' class.
@@ -1043,15 +1052,6 @@ public interface TP2Package extends EPackage {
 	int TAILLE_COMMAND_FEATURE_COUNT = ABSTRACT_COMMAND_FEATURE_COUNT + 0;
 
 	/**
-	 * The operation id for the '<em>Execute</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TAILLE_COMMAND___EXECUTE = ABSTRACT_COMMAND___EXECUTE;
-
-	/**
 	 * The operation id for the '<em>Clear</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1095,6 +1095,15 @@ public interface TP2Package extends EPackage {
 	 * @ordered
 	 */
 	int TAILLE_COMMAND___VISIT__PAGE = ABSTRACT_COMMAND___VISIT__PAGE;
+
+	/**
+	 * The operation id for the '<em>Execute</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TAILLE_COMMAND___EXECUTE = ABSTRACT_COMMAND___EXECUTE;
 
 	/**
 	 * The number of operations of the '<em>Taille Command</em>' class.
@@ -1152,15 +1161,6 @@ public interface TP2Package extends EPackage {
 	int PERMISSION_COMMAND_FEATURE_COUNT = ABSTRACT_COMMAND_FEATURE_COUNT + 0;
 
 	/**
-	 * The operation id for the '<em>Execute</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PERMISSION_COMMAND___EXECUTE = ABSTRACT_COMMAND___EXECUTE;
-
-	/**
 	 * The operation id for the '<em>Clear</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1204,6 +1204,15 @@ public interface TP2Package extends EPackage {
 	 * @ordered
 	 */
 	int PERMISSION_COMMAND___VISIT__PAGE = ABSTRACT_COMMAND___VISIT__PAGE;
+
+	/**
+	 * The operation id for the '<em>Execute</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERMISSION_COMMAND___EXECUTE = ABSTRACT_COMMAND___EXECUTE;
 
 	/**
 	 * The number of operations of the '<em>Permission Command</em>' class.
@@ -1261,15 +1270,6 @@ public interface TP2Package extends EPackage {
 	int NB_ENFANT_COMMAND_FEATURE_COUNT = ABSTRACT_COMMAND_FEATURE_COUNT + 0;
 
 	/**
-	 * The operation id for the '<em>Execute</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NB_ENFANT_COMMAND___EXECUTE = ABSTRACT_COMMAND___EXECUTE;
-
-	/**
 	 * The operation id for the '<em>Clear</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1313,6 +1313,15 @@ public interface TP2Package extends EPackage {
 	 * @ordered
 	 */
 	int NB_ENFANT_COMMAND___VISIT__PAGE = ABSTRACT_COMMAND___VISIT__PAGE;
+
+	/**
+	 * The operation id for the '<em>Execute</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NB_ENFANT_COMMAND___EXECUTE = ABSTRACT_COMMAND___EXECUTE;
 
 	/**
 	 * The number of operations of the '<em>Nb Enfant Command</em>' class.
@@ -1626,6 +1635,17 @@ public interface TP2Package extends EPackage {
 	 * @generated
 	 */
 	EAttribute getMaster_AutoRun();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link ca.polymtl.log8430.model.TP2.Master#getRessource <em>Ressource</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Ressource</em>'.
+	 * @see ca.polymtl.log8430.model.TP2.Master#getRessource()
+	 * @see #getMaster()
+	 * @generated
+	 */
+	EReference getMaster_Ressource();
 
 	/**
 	 * Returns the meta object for the '{@link ca.polymtl.log8430.model.TP2.Master#clear() <em>Clear</em>}' operation.
@@ -1999,6 +2019,14 @@ public interface TP2Package extends EPackage {
 		 * @generated
 		 */
 		EAttribute MASTER__AUTO_RUN = eINSTANCE.getMaster_AutoRun();
+
+		/**
+		 * The meta object literal for the '<em><b>Ressource</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MASTER__RESSOURCE = eINSTANCE.getMaster_Ressource();
 
 		/**
 		 * The meta object literal for the '<em><b>Clear</b></em>' operation.

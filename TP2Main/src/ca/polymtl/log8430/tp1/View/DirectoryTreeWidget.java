@@ -20,6 +20,7 @@ import ca.polymtl.log8430.model.TP2.Fichier;
 import ca.polymtl.log8430.model.TP2.Master;
 import ca.polymtl.log8430.model.TP2.Page;
 import ca.polymtl.log8430.model.TP2.PermissionType;
+import ca.polymtl.log8430.model.TP2.Ressource;
 import ca.polymtl.log8430.model.TP2.RessourcesLocale;
 import ca.polymtl.log8430.model.TP2.TP2Factory;
 
@@ -252,6 +253,17 @@ public class DirectoryTreeWidget extends JPanel {
 		
 		m_executer.clear();
 		m_executer.updateRessource(res);
+	}
+
+	public void updateMaster(Master m_executer2) {
+		m_executer = m_executer2;
+		Ressource res = m_executer.getRessource();
+		if(res instanceof Page){
+			uriTextField.setText(((Page)res).getURL());
+		} else if(res instanceof RessourcesLocale){
+			setSelectedPath(((RessourcesLocale)res).getCheminAbsolu());
+		}
+		
 	}
 
 }

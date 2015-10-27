@@ -2,6 +2,7 @@ package ca.polymtl.log8430.tp1.View;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 
 import javax.swing.JFrame;
@@ -10,7 +11,17 @@ import javax.swing.JSplitPane;
 import tp2main.UsingModel;
 import ca.polymtl.log8430.model.TP2.Master;
 import ca.polymtl.log8430.model.TP2.TP2Package;
+
 import java.awt.Dimension;
+
+import javax.swing.JFileChooser;
+import javax.swing.JToolBar;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import javax.swing.JMenu;
+
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 
 /**
@@ -19,7 +30,11 @@ import java.awt.Dimension;
  * @author Alexandre St-Onge, Mathieu Laprise, Julien Bergeron, Mathias Varinot
  */
 public class MainWindows {
-
+	
+	Master m_executer;
+	CommandListWidget m_commandListWidget;
+	DirectoryTreeWidget m_directoryTreeWidget;
+	
 	/**
 	 * Launch the application.
 	 */
@@ -58,15 +73,64 @@ public class MainWindows {
 		JSplitPane splitPane = new JSplitPane();
 		frame.getContentPane().add(splitPane, BorderLayout.CENTER);
 		
-		Master executer = UsingModel.loadContent("My.tp2");
+		m_executer = UsingModel.loadContent("My.tp2");
 		
-		DirectoryTreeWidget directoryTreeWidget = new DirectoryTreeWidget(executer);
-		splitPane.setLeftComponent(directoryTreeWidget);
+		m_directoryTreeWidget = new DirectoryTreeWidget(m_executer);
+		splitPane.setLeftComponent(m_directoryTreeWidget);
 		
-		CommandListWidget commandListWidget = new CommandListWidget(executer);
+		m_commandListWidget = new CommandListWidget(m_executer);
 		
-
-		splitPane.setRightComponent(commandListWidget);
+		splitPane.setRightComponent(m_commandListWidget);
+		
+		JMenuBar menuBar = new JMenuBar();
+		frame.setJMenuBar(menuBar);
+		
+		JMenu mnFile = new JMenu("File");
+		menuBar.add(mnFile);
+		
+		JMenuItem mntmNewMenuItem = new JMenuItem("Save");
+		mntmNewMenuItem.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				saveModel();
+			}
+		});
+		mnFile.add(mntmNewMenuItem);
+		
+		JMenuItem mntmLoad = new JMenuItem("Load");
+		mntmLoad.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				loadModel();
+			}
+		});
+		mnFile.add(mntmLoad);
+	}
+	
+	private void saveModel(){
+		JFileChooser fileChooser = new JFileChooser();
+		
+		int returnVal = fileChooser.showSaveDialog(this.frame);
+		if(returnVal == JFileChooser.APPROVE_OPTION)
+		{
+			String path = fileChooser.getSelectedFile().getAbsolutePath();
+			if(!path.endsWith(".tp2")){
+				path += ".tp2";
+			}
+			UsingModel.saveContent(path, m_executer);
+		}
+	}
+	
+	private void loadModel(){
+		JFileChooser fileChooser = new JFileChooser();
+		fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
+		int returnVal = fileChooser.showOpenDialog(this.frame);
+		if(returnVal == JFileChooser.APPROVE_OPTION)
+		{
+			m_executer = UsingModel.loadContent(fileChooser.getSelectedFile().getAbsolutePath());
+			m_commandListWidget.updateMaster(m_executer);
+			m_directoryTreeWidget.updateMaster(m_executer);
+			m_executer.clear();
+			m_executer.updateRessource(m_executer.getRessource());
+		}
 	}
 
 }

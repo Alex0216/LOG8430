@@ -8,16 +8,11 @@ import ca.polymtl.log8430.model.TP2.Page;
 import ca.polymtl.log8430.model.TP2.PermissionCommand;
 import ca.polymtl.log8430.model.TP2.Ressource;
 import ca.polymtl.log8430.model.TP2.TP2Package;
-
 import java.lang.reflect.InvocationTargetException;
-
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
@@ -334,9 +329,6 @@ public class PermissionCommandImpl extends MinimalEObjectImpl.Container implemen
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case TP2Package.PERMISSION_COMMAND___EXECUTE:
-				execute();
-				return null;
 			case TP2Package.PERMISSION_COMMAND___CLEAR:
 				clear();
 				return null;
@@ -350,6 +342,9 @@ public class PermissionCommandImpl extends MinimalEObjectImpl.Container implemen
 				return null;
 			case TP2Package.PERMISSION_COMMAND___VISIT__PAGE:
 				visit((Page)arguments.get(0));
+				return null;
+			case TP2Package.PERMISSION_COMMAND___EXECUTE:
+				execute();
 				return null;
 		}
 		return super.eInvoke(operationID, arguments);

@@ -8,10 +8,8 @@ import ca.polymtl.log8430.model.TP2.FolderNameCommand;
 import ca.polymtl.log8430.model.TP2.Page;
 import ca.polymtl.log8430.model.TP2.Ressource;
 import ca.polymtl.log8430.model.TP2.TP2Package;
-
 import java.lang.reflect.InvocationTargetException;
 import java.nio.file.Paths;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
@@ -329,9 +327,6 @@ public class FolderNameCommandImpl extends MinimalEObjectImpl.Container implemen
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case TP2Package.FOLDER_NAME_COMMAND___EXECUTE:
-				execute();
-				return null;
 			case TP2Package.FOLDER_NAME_COMMAND___CLEAR:
 				clear();
 				return null;
@@ -345,6 +340,9 @@ public class FolderNameCommandImpl extends MinimalEObjectImpl.Container implemen
 				return null;
 			case TP2Package.FOLDER_NAME_COMMAND___VISIT__PAGE:
 				visit((Page)arguments.get(0));
+				return null;
+			case TP2Package.FOLDER_NAME_COMMAND___EXECUTE:
+				execute();
 				return null;
 		}
 		return super.eInvoke(operationID, arguments);

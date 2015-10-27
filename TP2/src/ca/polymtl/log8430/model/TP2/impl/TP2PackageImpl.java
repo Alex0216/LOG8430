@@ -377,7 +377,7 @@ public class TP2PackageImpl extends EPackageImpl implements TP2Package {
 	 * @generated
 	 */
 	public EOperation getAbstractCommand__Execute() {
-		return abstractCommandEClass.getEOperations().get(0);
+		return abstractCommandEClass.getEOperations().get(5);
 	}
 
 	/**
@@ -386,7 +386,7 @@ public class TP2PackageImpl extends EPackageImpl implements TP2Package {
 	 * @generated
 	 */
 	public EOperation getAbstractCommand__Clear() {
-		return abstractCommandEClass.getEOperations().get(1);
+		return abstractCommandEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -395,7 +395,7 @@ public class TP2PackageImpl extends EPackageImpl implements TP2Package {
 	 * @generated
 	 */
 	public EOperation getAbstractCommand__CanExecute() {
-		return abstractCommandEClass.getEOperations().get(2);
+		return abstractCommandEClass.getEOperations().get(1);
 	}
 
 	/**
@@ -404,7 +404,7 @@ public class TP2PackageImpl extends EPackageImpl implements TP2Package {
 	 * @generated
 	 */
 	public EOperation getAbstractCommand__Visit__Fichier() {
-		return abstractCommandEClass.getEOperations().get(3);
+		return abstractCommandEClass.getEOperations().get(2);
 	}
 
 	/**
@@ -413,7 +413,7 @@ public class TP2PackageImpl extends EPackageImpl implements TP2Package {
 	 * @generated
 	 */
 	public EOperation getAbstractCommand__Visit__Dossier() {
-		return abstractCommandEClass.getEOperations().get(4);
+		return abstractCommandEClass.getEOperations().get(3);
 	}
 
 	/**
@@ -422,7 +422,7 @@ public class TP2PackageImpl extends EPackageImpl implements TP2Package {
 	 * @generated
 	 */
 	public EOperation getAbstractCommand__Visit__Page() {
-		return abstractCommandEClass.getEOperations().get(5);
+		return abstractCommandEClass.getEOperations().get(4);
 	}
 
 	/**
@@ -450,6 +450,15 @@ public class TP2PackageImpl extends EPackageImpl implements TP2Package {
 	 */
 	public EAttribute getMaster_AutoRun() {
 		return (EAttribute)masterEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getMaster_Ressource() {
+		return (EReference)masterEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -604,16 +613,17 @@ public class TP2PackageImpl extends EPackageImpl implements TP2Package {
 		createEAttribute(abstractCommandEClass, ABSTRACT_COMMAND__COMMAND_NAME);
 		createEAttribute(abstractCommandEClass, ABSTRACT_COMMAND__RESULT);
 		createEReference(abstractCommandEClass, ABSTRACT_COMMAND__RESSOURCE);
-		createEOperation(abstractCommandEClass, ABSTRACT_COMMAND___EXECUTE);
 		createEOperation(abstractCommandEClass, ABSTRACT_COMMAND___CLEAR);
 		createEOperation(abstractCommandEClass, ABSTRACT_COMMAND___CAN_EXECUTE);
 		createEOperation(abstractCommandEClass, ABSTRACT_COMMAND___VISIT__FICHIER);
 		createEOperation(abstractCommandEClass, ABSTRACT_COMMAND___VISIT__DOSSIER);
 		createEOperation(abstractCommandEClass, ABSTRACT_COMMAND___VISIT__PAGE);
+		createEOperation(abstractCommandEClass, ABSTRACT_COMMAND___EXECUTE);
 
 		masterEClass = createEClass(MASTER);
 		createEReference(masterEClass, MASTER__COMMANDS);
 		createEAttribute(masterEClass, MASTER__AUTO_RUN);
+		createEReference(masterEClass, MASTER__RESSOURCE);
 		createEOperation(masterEClass, MASTER___CLEAR);
 		createEOperation(masterEClass, MASTER___EXECUTE_ALL);
 		createEOperation(masterEClass, MASTER___EXECUTE_COMMAND__ABSTRACTCOMMAND);
@@ -702,9 +712,7 @@ public class TP2PackageImpl extends EPackageImpl implements TP2Package {
 		initEClass(abstractCommandEClass, AbstractCommand.class, "AbstractCommand", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAbstractCommand_CommandName(), ecorePackage.getEString(), "commandName", null, 0, 1, AbstractCommand.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAbstractCommand_Result(), ecorePackage.getEString(), "result", null, 0, 1, AbstractCommand.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAbstractCommand_Ressource(), this.getRessource(), null, "ressource", null, 0, 1, AbstractCommand.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEOperation(getAbstractCommand__Execute(), null, "execute", 0, 1, IS_UNIQUE, IS_ORDERED);
+		initEReference(getAbstractCommand_Ressource(), this.getRessource(), null, "ressource", null, 0, 1, AbstractCommand.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEOperation(getAbstractCommand__Clear(), null, "clear", 0, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -719,9 +727,12 @@ public class TP2PackageImpl extends EPackageImpl implements TP2Package {
 		op = initEOperation(getAbstractCommand__Visit__Page(), null, "visit", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getPage(), "page", 0, 1, IS_UNIQUE, IS_ORDERED);
 
+		initEOperation(getAbstractCommand__Execute(), null, "execute", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(masterEClass, Master.class, "Master", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMaster_Commands(), this.getAbstractCommand(), null, "commands", null, 0, -1, Master.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMaster_AutoRun(), ecorePackage.getEBoolean(), "AutoRun", null, 0, 1, Master.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMaster_Ressource(), this.getRessource(), null, "ressource", null, 0, 1, Master.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEOperation(getMaster__Clear(), null, "clear", 0, 1, IS_UNIQUE, IS_ORDERED);
 
