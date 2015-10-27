@@ -74,7 +74,7 @@ public class CommandListWidget extends JPanel {
 		btnClear.setPreferredSize(new Dimension(89, 50));
 		bottomPanel.add(btnClear, BorderLayout.WEST);
 		
-		chckbxAutoRun = new JCheckBox("AutoRun");
+		chckbxAutoRun = new JCheckBox("AutoRun",true);
 		chckbxAutoRun.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent arg0) {
 				m_executer.setAutoRun(chckbxAutoRun.isSelected());
