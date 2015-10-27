@@ -16,9 +16,15 @@ import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
 import ca.polymtl.log8430.model.TP2.Master;
 import ca.polymtl.log8430.model.TP2.TP2Package;
-
+/**
+ * Classe qui fait le loading et saving du modele en XML
+ * @author Alexandre St-Onge, Mathieu Laprise, Julien Bergeron, Mathias Varinot
+ */
 public class UsingModel {
-	
+	/**
+	 * Importer un modele
+	 * @param file nom du fichier
+	 */
 	public static Master loadContent(String file){
 		// Register the XMI resource factory for the .tp2 extension
 
@@ -36,7 +42,11 @@ public class UsingModel {
 	    return (Master) resource.getContents().get(0);
 	}
 
-
+	/**
+	 * Sauvegarder le modele
+	 * @param file nom du fichier
+	 * @param m_executer instance vers l'algorithme maitre
+	 */
 	public static void saveContent(String absolutePath, Master m_executer) {
 		
 		Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
