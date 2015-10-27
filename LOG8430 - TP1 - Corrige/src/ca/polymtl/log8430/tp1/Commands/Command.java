@@ -15,7 +15,7 @@ public abstract class Command extends Observable{
 	}
 	protected String m_displayName;
 	protected String m_path;
-	protected String m_result;
+	private String m_result;
 	
 	/**
 	 * Constructeur de la classe abstraite Command.
