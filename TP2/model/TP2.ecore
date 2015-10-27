@@ -41,7 +41,7 @@
     </eOperations>
     <eOperations name="clear">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="body" value="result = &quot;&quot;;"/>
+        <details key="body" value="setResult(&quot;&quot;);"/>
       </eAnnotations>
     </eOperations>
     <eOperations name="canExecute" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
@@ -66,7 +66,7 @@
     </eOperations>
     <eOperations name="executeAll">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="body" value="for(AbstractCommand c: commands){&#xD;&#xA;&#x9;&#x9;&#x9;c.execute();&#xD;&#xA;&#x9;&#x9;}"/>
+        <details key="body" value="for(AbstractCommand c: commands){&#xD;&#xA;&#x9;if(c.canExecute()){&#xD;&#xA;&#x9;&#x9;c.execute();&#xD;&#xA;&#x9;}&#x9;&#x9;&#xD;&#xA;}"/>
       </eAnnotations>
     </eOperations>
     <eOperations name="executeCommand" ordered="false">
@@ -77,7 +77,7 @@
     </eOperations>
     <eOperations name="updateRessource">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="body" value="for(AbstractCommand c: commands){&#xD;&#xA;&#x9;c.setRessource(ressource);&#xD;&#xA;&#x9;if(isAutoRun()){&#xD;&#xA;&#x9;&#x9;c.execute();&#xD;&#xA;&#x9;}&#xD;&#xA;}"/>
+        <details key="body" value="for(AbstractCommand c: commands){&#xD;&#xA;&#x9;c.setRessource(ressource);&#xD;&#xA;}&#xD;&#xA;if(isAutoRun()){&#xD;&#xA;&#x9;executeAll();&#xD;&#xA;}"/>
       </eAnnotations>
       <eParameters name="ressource" eType="#//Ressource"/>
     </eOperations>

@@ -202,7 +202,7 @@ public class PermissionCommandImpl extends MinimalEObjectImpl.Container implemen
 	 * @generated
 	 */
 	public void clear() {
-		result = "";
+		setResult("");
 	}
 
 	/**
@@ -211,7 +211,7 @@ public class PermissionCommandImpl extends MinimalEObjectImpl.Container implemen
 	 * @generated NOT
 	 */
 	public boolean canExecute() {
-		if ((this instanceof Dossier) || (this instanceof Fichier))
+		if ((ressource instanceof Dossier) || (ressource instanceof Fichier))
 			return true;
 		else 
 			return false;
@@ -224,7 +224,7 @@ public class PermissionCommandImpl extends MinimalEObjectImpl.Container implemen
 	 * @generated NOT
 	 */
 	public void visit(Fichier fichier) {
-		result = fichier.getPermission().name();
+		setResult(fichier.getPermission().name());
 	}
 
 	/**
@@ -233,7 +233,7 @@ public class PermissionCommandImpl extends MinimalEObjectImpl.Container implemen
 	 * @generated NOT
 	 */
 	public void visit(Dossier dossier) {
-		result = dossier.getPermission().name();
+		setResult(dossier.getPermission().name());
 	}
 
 	/**

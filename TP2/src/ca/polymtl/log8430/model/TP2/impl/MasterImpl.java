@@ -127,8 +127,10 @@ public class MasterImpl extends MinimalEObjectImpl.Container implements Master {
 	 */
 	public void executeAll() {
 		for(AbstractCommand c: commands){
-					c.execute();
-				}
+			if(c.canExecute()){
+				c.execute();
+			}		
+		}
 	}
 
 	/**
@@ -148,9 +150,9 @@ public class MasterImpl extends MinimalEObjectImpl.Container implements Master {
 	public void updateRessource(final Ressource ressource) {
 		for(AbstractCommand c: commands){
 			c.setRessource(ressource);
-			if(isAutoRun()){
-				c.execute();
-			}
+		}
+		if(isAutoRun()){
+			executeAll();
 		}
 	}
 

@@ -112,7 +112,7 @@ public interface AbstractCommand extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='result = \"\";'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='setResult(\"\");'"
 	 * @generated
 	 */
 	void clear();

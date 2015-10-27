@@ -3,4 +3,7 @@
   <commands xsi:type="TP2:FileNameCommand" commandName="File Name"/>
   <commands xsi:type="TP2:FolderNameCommand" commandName="Folder Name"/>
   <commands xsi:type="TP2:AbsolutePathCommand" commandName="Absolute Path"/>
+  <commands xsi:type="TP2:TailleCommand" commandName="Taille"/>
+  <commands xsi:type="TP2:PermissionCommand" commandName="Permission"/>
+  <commands xsi:type="TP2:NbEnfantCommand" commandName="Nombre enfants"/>
 </TP2:Master>

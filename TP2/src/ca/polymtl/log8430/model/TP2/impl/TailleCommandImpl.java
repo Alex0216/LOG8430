@@ -202,7 +202,7 @@ public class TailleCommandImpl extends MinimalEObjectImpl.Container implements T
 	 * @generated
 	 */
 	public void clear() {
-		result = "";
+		setResult("");
 	}
 
 	/**
@@ -211,7 +211,7 @@ public class TailleCommandImpl extends MinimalEObjectImpl.Container implements T
 	 * @generated NOT
 	 */
 	public boolean canExecute() {
-		return true;
+		return (ressource instanceof Dossier || ressource instanceof Page);
 	}
 
 	/**
@@ -220,7 +220,7 @@ public class TailleCommandImpl extends MinimalEObjectImpl.Container implements T
 	 * @generated NOT
 	 */
 	public void visit(Fichier fichier) {
-		result = fichier.getTailleOctet();
+		setResult(String.valueOf(fichier.getTailleOctet()));
 	}
 
 	/**
@@ -229,7 +229,7 @@ public class TailleCommandImpl extends MinimalEObjectImpl.Container implements T
 	 * @generated NOT
 	 */
 	public void visit(Dossier dossier) {
-		result = dossier.getTailleOctet();
+		setResult(String.valueOf(dossier.getTailleOctet()));
 	}
 
 	/**
@@ -238,7 +238,7 @@ public class TailleCommandImpl extends MinimalEObjectImpl.Container implements T
 	 * @generated NOT
 	 */
 	public void visit(Page page) {
-		result = page.getTaillePage();
+		this.setResult(String.valueOf(page.getTaillePage()));
 	}
 
 	/**

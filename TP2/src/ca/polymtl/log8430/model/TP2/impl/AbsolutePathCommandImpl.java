@@ -193,7 +193,7 @@ public class AbsolutePathCommandImpl extends MinimalEObjectImpl.Container implem
 	 * @generated
 	 */
 	public void clear() {
-		result = "";
+		setResult("");
 	}
 
 	/**
@@ -211,7 +211,7 @@ public class AbsolutePathCommandImpl extends MinimalEObjectImpl.Container implem
 	 * @generated NOT
 	 */
 	public void visit(Fichier fichier) {
-		result = fichier.getCheminAbsolu();
+		setResult(fichier.getCheminAbsolu());
 	}
 
 	/**
@@ -220,7 +220,7 @@ public class AbsolutePathCommandImpl extends MinimalEObjectImpl.Container implem
 	 * @generated NOT
 	 */
 	public void visit(Dossier dossier) {
-		result = dossier.getCheminAbsolu();
+		setResult(dossier.getCheminAbsolu());
 	}
 
 	/**
@@ -229,7 +229,7 @@ public class AbsolutePathCommandImpl extends MinimalEObjectImpl.Container implem
 	 * @generated NOT
 	 */
 	public void visit(Page page) {
-		result = page.getURL();
+		setResult(page.getURL());
 	}
 
 	/**

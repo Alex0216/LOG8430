@@ -202,7 +202,7 @@ public class NbEnfantCommandImpl extends MinimalEObjectImpl.Container implements
 	 * @generated
 	 */
 	public void clear() {
-		result = "";
+		setResult("");
 	}
 
 	/**
@@ -211,7 +211,7 @@ public class NbEnfantCommandImpl extends MinimalEObjectImpl.Container implements
 	 * @generated NOT
 	 */
 	public boolean canExecute() {
-		if (this instanceof Dossier)
+		if (ressource instanceof Dossier)
 			return true;
 		else 
 			return false;
@@ -234,7 +234,7 @@ public class NbEnfantCommandImpl extends MinimalEObjectImpl.Container implements
 	 * @generated NOT
 	 */
 	public void visit(Dossier dossier) {
-		result = "" + dossier.getNombreEnfant();
+		setResult(String.valueOf(dossier.getNombreEnfant()));
 	}
 
 	/**

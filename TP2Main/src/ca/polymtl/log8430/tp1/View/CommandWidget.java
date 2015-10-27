@@ -58,7 +58,7 @@ public class CommandWidget extends JPanel {
 		btnCommand.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				if(m_command != null)
+				if(m_command != null && btnCommand.isEnabled())
 				{
 					m_command.execute();
 				}

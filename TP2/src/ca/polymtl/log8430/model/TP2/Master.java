@@ -67,7 +67,7 @@ public interface Master extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='for(AbstractCommand c: commands){\r\n\t\t\tc.execute();\r\n\t\t}'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='for(AbstractCommand c: commands){\r\n\tif(c.canExecute()){\r\n\t\tc.execute();\r\n\t}\t\t\r\n}'"
 	 * @generated
 	 */
 	void executeAll();
@@ -83,7 +83,7 @@ public interface Master extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='for(AbstractCommand c: commands){\r\n\tc.setRessource(ressource);\r\n\tif(isAutoRun()){\r\n\t\tc.execute();\r\n\t}\r\n}'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='for(AbstractCommand c: commands){\r\n\tc.setRessource(ressource);\r\n}\r\nif(isAutoRun()){\r\n\texecuteAll();\r\n}'"
 	 * @generated
 	 */
 	void updateRessource(Ressource ressource);

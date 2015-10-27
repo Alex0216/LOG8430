@@ -8,7 +8,10 @@ import ca.polymtl.log8430.model.TP2.FolderNameCommand;
 import ca.polymtl.log8430.model.TP2.Page;
 import ca.polymtl.log8430.model.TP2.Ressource;
 import ca.polymtl.log8430.model.TP2.TP2Package;
+
 import java.lang.reflect.InvocationTargetException;
+import java.nio.file.Paths;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
@@ -193,7 +196,7 @@ public class FolderNameCommandImpl extends MinimalEObjectImpl.Container implemen
 	 * @generated
 	 */
 	public void clear() {
-		result = "";
+		setResult("");
 	}
 
 	/**
@@ -202,7 +205,7 @@ public class FolderNameCommandImpl extends MinimalEObjectImpl.Container implemen
 	 * @generated NOT
 	 */
 	public boolean canExecute() {
-		if (this instanceof Dossier)
+		if (ressource instanceof Dossier)
 			return true;
 		else
 			return false;
@@ -225,7 +228,7 @@ public class FolderNameCommandImpl extends MinimalEObjectImpl.Container implemen
 	 * @generated NOT
 	 */
 	public void visit(Dossier dossier) {
-		result = dossier.getNom();
+		setResult(Paths.get(dossier.getCheminAbsolu()).getFileName().toString());
 	}
 
 	/**

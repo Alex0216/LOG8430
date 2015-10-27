@@ -10,6 +10,7 @@ import javax.swing.JSplitPane;
 import tp2main.UsingModel;
 import ca.polymtl.log8430.model.TP2.Master;
 import ca.polymtl.log8430.model.TP2.TP2Package;
+import java.awt.Dimension;
 
 
 /**
@@ -50,6 +51,7 @@ public class MainWindows {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.setMinimumSize(new Dimension(700, 400));
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		

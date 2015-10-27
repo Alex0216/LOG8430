@@ -126,17 +126,20 @@ public class DirectoryTreeWidget extends JPanel {
 		try {
 			URL url = new URL(uri);
 			page.setNom(url.getFile());
+			page.setURL(uri);
 			BufferedReader in = new BufferedReader(
 			        new InputStreamReader(url.openStream()));
 			URLConnection conn = url.openConnection();
 			page.setTaillePage(conn.getContentLength());
 			
 		} catch (IOException e) {
-			page.setNom(uri);
+			page.setURL(uri);
 			page.setTaillePage(-1);
 			page.setTitrePage("erreur");
 		}
 		
+		m_executer.clear();
+		m_executer.updateRessource(page);
 		
 	}
 	
@@ -229,24 +232,25 @@ public class DirectoryTreeWidget extends JPanel {
 		RessourcesLocale res;
 		if(Files.isDirectory(path)){
 			Dossier dos = TP2Factory.eINSTANCE.createDossier();
-			dos.setNom(completePath);
+			dos.setCheminAbsolu(completePath);
 			dos.setPermission(PermissionType.READ_AND_WRITE);
 			dos.setNombreEnfant(path.toFile().list().length);
 			
 			res = dos;
 		} else {
 			Fichier fichier = TP2Factory.eINSTANCE.createFichier();
-			fichier.setNom(completePath);
+			fichier.setCheminAbsolu(completePath);
 			fichier.setPermission(PermissionType.READ_AND_WRITE);
 			try {
-				fichier.setTailleFichierOctet(Files.size(path));
+				fichier.setTailleOctet(Files.size(path));
 			} catch (IOException e) {
-				fichier.setTailleFichierOctet(-1);
+				fichier.setTailleOctet(-1);
 			}
 			
 			res = fichier;
 		}
 		
+		m_executer.clear();
 		m_executer.updateRessource(res);
 	}
 
