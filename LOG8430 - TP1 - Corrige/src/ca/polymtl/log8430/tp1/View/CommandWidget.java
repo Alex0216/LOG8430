@@ -52,7 +52,14 @@ public class CommandWidget extends JPanel implements Observer {
 			public void mouseClicked(MouseEvent e) {
 				if(m_command != null)
 				{
-					m_command.execute();
+					try
+					{
+						m_command.execute();
+					}
+					catch(Exception ex)
+					{
+						System.out.println("Error while executing the command" + ex.getMessage());
+					}
 				}
 			}
 		});

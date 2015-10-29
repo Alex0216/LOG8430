@@ -33,11 +33,11 @@ public class AbsolutePathCommand extends Command {
 	 * {@inheritDoc}
 	 */
 	@Override
-	public boolean execute() {
+	public String execute() throws Exception{
 		if (!canExecute()) {
-			return false;
+			throw new Exception("Cannot execute Absolute path command");
 		}
 		setResultAndNotify(m_path);
-		return true;
+		return getResult();
 	}
 }

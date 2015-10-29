@@ -55,29 +55,46 @@ public class Executer {
 	
 	/**
 	 * Exécute toutes les commandes existantes dans la liste de commande qui peuvent s'exécuter selon le type du path.
-	 * @return true si toutes les commandes qui peuvent s'exécuter ont réussi l'exécution, sinon false.
 	 */
-	public boolean executeAllCommand()
+	public void executeAllCommand() throws Exception
 	{
-		boolean errorFlag = false;
+		int errorCount = 0;
+		
 		for(Command c : m_listCommand)
-			if(c.canExecute())
-				errorFlag |= !c.execute();
-		return !errorFlag;
+		{
+				try
+				{
+					c.execute();
+				}
+				catch (Exception e)
+				{
+					// Do not throw right now. We want to execute all Commands first.
+					errorCount++;
+				}
+		}
+		
+		if(errorCount == 1)
+		{
+			throw new Exception("One exception");
+		}
+		else if(errorCount > 1)
+		{
+			throw new Exception("Multiple exceptions");
+		}
 	}
 	
 	/**
 	 * Exécute une commande spécifique passée en paramètre.
 	 * @param command	La commande à exécuter
-	 * @return			true si la commande a réssi l'exécution, sinon false.
+	 * @return			Le resultat de l'exécution
 	 */
-	public boolean executeCommand(Command command) 
+	public String executeCommand(Command command) throws Exception 
 	{
 		if(command != null)
 		{
 			return command.execute();
 		}
-		return false;
+		return null;
 	}
 
 	/**
@@ -89,7 +106,18 @@ public class Executer {
 		for(Command c : m_listCommand)
 			c.SetPath(path);
 		if(m_autoRun)
-			executeAllCommand();
+		{
+			try
+			{
+				executeAllCommand();
+			}
+			catch(Exception e)
+			{
+				
+			}
+
+		}
+
 	}
 
 	/**

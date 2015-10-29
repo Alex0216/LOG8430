@@ -48,7 +48,7 @@ public abstract class Command extends Observable{
 	 * et notifie les observers que ce dernier a été changé.
 	 * @return true si la command a réussi l'exécution, sinon false.
 	 */
-	public abstract boolean execute();
+	public abstract String execute() throws Exception;
 	
 	/**
 	 * Retourne la fonctionnalité de la commande

@@ -1,10 +1,16 @@
 package ca.polymtl.log8430.tp1.Tests;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
+import java.io.File;
+
+import org.junit.Before;
 import org.junit.Test;
 
+import ca.polymtl.log8430.tp1.Commands.AbsolutePathCommand;
 import ca.polymtl.log8430.tp1.Commands.Command;
+import ca.polymtl.log8430.tp1.Commands.FileNameCommand;
+import ca.polymtl.log8430.tp1.Commands.FolderNameCommand;
 import ca.polymtl.log8430.tp1.Controller.Executer;
 
 /**
@@ -17,6 +23,24 @@ public abstract class AbstractTest {
 	Command m_folderNameCommand;
 	Command m_absPathCommand;
 	Executer m_executer;
+	String m_rootPath;
+	
+	/**
+	 * Initialisation des objets avant l'exécution des tests
+	 * @throws Exception
+	 */
+	@Before
+	public void setUp() throws Exception {
+		
+		try
+		{
+			m_rootPath = System.getProperty("user.dir");
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
 	
 	/**
 	 *  On teste ques les classes loades dynamiquement ont les memes proprietes que les classes normales,
@@ -28,12 +52,29 @@ public abstract class AbstractTest {
 		try
 		{
 			m_executer.addCommand(m_absPathCommand);
-			m_executer.updatePath("C:\\Users\\Mathieu\\Desktop\\LOG8430");
-			m_executer.executeCommand(m_absPathCommand);
-			assertEquals(m_absPathCommand.getResult(), "C:\\Users\\Mathieu\\Desktop\\LOG8430"); 
-			m_executer.updatePath("C:\\Users\\Mathieu\\Desktop\\LOG8430.java");
-			m_executer.executeCommand(m_absPathCommand);
-			assertEquals(m_absPathCommand.getResult(), "C:\\Users\\Mathieu\\Desktop\\LOG8430.java");  
+			m_executer.updatePath(m_rootPath + "\\LOG8430");
+			try
+			{
+				m_executer.executeCommand(m_absPathCommand);
+				assertEquals(m_absPathCommand.getResult(), m_rootPath + "\\LOG8430");
+			}
+			catch (Exception e)
+			{
+				fail("Test shouldn't have thrown an exception");
+			}
+			
+ 
+			m_executer.updatePath(m_rootPath + "\\LOG8430.java");
+			try
+			{
+				m_executer.executeCommand(m_absPathCommand);
+				assertEquals(m_absPathCommand.getResult(), m_rootPath + "\\LOG8430.java");  
+			}
+			catch (Exception e)
+			{
+				fail("Test shouldn't have thrown an exception");
+			}
+
 		}
 		catch(Exception e)
 		{
@@ -52,12 +93,27 @@ public abstract class AbstractTest {
 		try
 		{
 			m_executer.addCommand(m_fileNameCommand);
-			m_executer.updatePath("C:\\Users\\Mathieu.arg\\Desktop\\LOG8430.java");
-			m_executer.executeCommand(m_fileNameCommand);
-			assertEquals(m_fileNameCommand.getResult(), "File name is LOG8430.java"); 
+			m_executer.updatePath(m_rootPath + "\\LOG8430.java");
+			try
+			{
+				m_executer.executeCommand(m_fileNameCommand);
+				assertEquals(m_fileNameCommand.getResult(), "File name is LOG8430.java"); 
+			}
+			catch (Exception e)
+			{
+				fail("It is a file, it should have passed.");
+			}
+			
 			m_executer.updatePath("Bob.txt.java");
-			m_executer.executeCommand(m_fileNameCommand);
-			assertEquals(m_fileNameCommand.getResult(), "File name is Bob.txt.java");
+			try
+			{
+				m_executer.executeCommand(m_fileNameCommand);
+				fail("It is a file, it should have passed.");
+			}
+			catch (Exception e)
+			{
+				// Test pass
+			}
 		}
 		catch(Exception e)
 		{
@@ -77,9 +133,16 @@ public abstract class AbstractTest {
 		try
 		{
 			m_executer.addCommand(m_folderNameCommand);
-			m_executer.updatePath("C:\\koko\\D_e_s_ktop\\b_o_b");
-			m_executer.executeCommand(m_folderNameCommand);
-			assertEquals(m_folderNameCommand.getResult(), "Folder name is b_o_b"); 
+			m_executer.updatePath(m_rootPath + "\\b_o_b");
+			try
+			{
+				m_executer.executeCommand(m_folderNameCommand);
+				assertEquals(m_folderNameCommand.getResult(), "Folder name is b_o_b"); 
+			}
+			catch(Exception e)
+			{
+				fail("Command should have passed. The folder is valid");
+			}
 		}
 		catch(Exception e)
 		{
@@ -99,16 +162,30 @@ public abstract class AbstractTest {
 			m_executer.addCommand(m_absPathCommand);
 			m_executer.addCommand(m_fileNameCommand);
 			m_executer.addCommand(m_folderNameCommand);
-			m_executer.updatePath("C:\\Users\\Mathieu\\Desktop\\LOG8430.java");
-			boolean result = m_executer.executeAllCommand();
-			assert(result == false);
-			assertEquals(m_absPathCommand.getResult(), "C:\\Users\\Mathieu\\Desktop\\LOG8430.java"); 
+			m_executer.updatePath(m_rootPath + "\\LOG8430.java");
+			try
+			{
+				m_executer.executeAllCommand();
+				fail("Not all command were executed");
+			}
+			catch(Exception e)
+			{
+				// Test pass
+			}
+			assertEquals(m_absPathCommand.getResult(), m_rootPath + "\\LOG8430.java"); 
 			assertEquals(m_fileNameCommand.getResult(), "File name is LOG8430.java");
 			
-			m_executer.updatePath("C:\\Users\\Mathieu\\Desktop\\LOG8430");
-			result = m_executer.executeAllCommand();
-			assert(result == false);
-			assertEquals(m_absPathCommand.getResult(), "C:\\Users\\Mathieu\\Desktop\\LOG8430"); 
+			m_executer.updatePath(m_rootPath + "\\LOG8430");
+			try
+			{
+				m_executer.executeAllCommand();
+				fail("Not all command should have been executed");
+			}
+			catch(Exception e)
+			{
+				// Test pass
+			}
+			assertEquals(m_absPathCommand.getResult(), m_rootPath + "\\LOG8430"); 
 			assertEquals(m_folderNameCommand.getResult(), "Folder name is LOG8430");
 		}
 		catch(Exception e)
@@ -128,8 +205,16 @@ public abstract class AbstractTest {
 		try
 		{
 			m_executer.addCommand(m_folderNameCommand);
-			m_executer.updatePath("C:\\koko\\D_e_s_ktop\\b_o_b.java");
-			assert(m_executer.executeCommand(m_folderNameCommand) == false);
+			m_executer.updatePath(m_rootPath + "\\b_o_b.java");
+			try
+			{
+				m_executer.executeCommand(m_folderNameCommand);
+				fail("The command should not have been executed on a file");
+			}
+			catch(Exception e)
+			{
+				// Test pass
+			}
 		}
 		catch(Exception e)
 		{
@@ -150,7 +235,15 @@ public abstract class AbstractTest {
 		{
 			m_executer.addCommand(m_fileNameCommand);
 			m_executer.updatePath("C:\\koko\\D_e_s_ktop\\b_o_b");
-			assert(m_executer.executeCommand(m_folderNameCommand) == false);
+			try
+			{
+				m_executer.executeCommand(m_fileNameCommand);
+				fail("Not all command should have been executed");
+			}
+			catch(Exception e)
+			{
+				// Test pass
+			}
 		}
 		catch(Exception e)
 		{

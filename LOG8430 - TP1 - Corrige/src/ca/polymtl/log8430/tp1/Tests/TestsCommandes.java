@@ -2,6 +2,8 @@ package ca.polymtl.log8430.tp1.Tests;
 
 import static org.junit.Assert.*;
 
+import java.io.File;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -22,10 +24,22 @@ public class TestsCommandes extends AbstractTest{
 	 */
 	@Before
 	public void setUp() throws Exception {
+		super.setUp();
 		m_executer = new Executer();
 		m_absPathCommand = new AbsolutePathCommand(null);
 		m_fileNameCommand = new FileNameCommand(null);
 		m_folderNameCommand = new FolderNameCommand(null);
+		
+		try
+		{
+			(new File(m_rootPath + "\\LOG8430.java")).createNewFile();
+			(new File(m_rootPath + "\\b_o_b")).mkdir();
+			(new File(m_rootPath + "\\LOG8430")).mkdir();
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
 	}
 
 	

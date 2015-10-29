@@ -28,6 +28,7 @@ public class TestsClassLoader extends AbstractTest{
 	 */
 	@Before
 	public void setUp() throws Exception {
+		super.setUp();
 		m_executer = new Executer();
 		m_commandLoader = new DynamicCommandLoader();
 		ArrayList<Command> commands = m_commandLoader.load("ca.polymtl.log8430.tp1.Commands");

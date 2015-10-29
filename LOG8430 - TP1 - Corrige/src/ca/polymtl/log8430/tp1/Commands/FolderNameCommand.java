@@ -21,14 +21,14 @@ public class FolderNameCommand extends Command {
 	 */
 	@Override
 	public boolean canExecute() {
-		boolean canExecute = true;
+		boolean canExecute = false;
 		if(this.m_path == null || this.m_path.isEmpty()){
 			canExecute = false;
 		}
 		
 		TYPE pathType = getTypeOfPath();
-		if(pathType == TYPE.FILE){
-			canExecute = false;
+		if(pathType == TYPE.FOLDER){
+			canExecute = true;
 		}
 		
 		return canExecute;
@@ -38,9 +38,9 @@ public class FolderNameCommand extends Command {
 	 * {@inheritDoc}
 	 */
 	@Override
-	public boolean execute() {
+	public String execute() throws Exception{
 		if (!canExecute()) {
-			return false;
+			throw new Exception("Cannot execute folder name command");
 		}
 		int lastIndexOfBackslash = m_path.lastIndexOf("\\");
 		String subString = m_path;
@@ -49,6 +49,6 @@ public class FolderNameCommand extends Command {
 		
 		setResultAndNotify("Folder name is " + subString);
 
-		return true;
+		return getResult();
 	}
 }
