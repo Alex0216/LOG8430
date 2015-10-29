@@ -13,6 +13,9 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Permission Type</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
+ * <!-- begin-model-doc -->
+ * Types de permission possible pour une ressource.
+ * <!-- end-model-doc -->
  * @see ca.polymtl.log8430.model.TP2.TP2Package#getPermissionType()
  * @model
  * @generated

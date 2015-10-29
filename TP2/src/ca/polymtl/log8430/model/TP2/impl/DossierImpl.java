@@ -5,13 +5,16 @@ package ca.polymtl.log8430.model.TP2.impl;
 import ca.polymtl.log8430.model.TP2.AbstractCommand;
 import ca.polymtl.log8430.model.TP2.Dossier;
 import ca.polymtl.log8430.model.TP2.PermissionType;
+import ca.polymtl.log8430.model.TP2.RessourcesLocale;
 import ca.polymtl.log8430.model.TP2.TP2Package;
 import java.lang.reflect.InvocationTargetException;
+import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,6 +28,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link ca.polymtl.log8430.model.TP2.impl.DossierImpl#getPermission <em>Permission</em>}</li>
  *   <li>{@link ca.polymtl.log8430.model.TP2.impl.DossierImpl#getCheminAbsolu <em>Chemin Absolu</em>}</li>
  *   <li>{@link ca.polymtl.log8430.model.TP2.impl.DossierImpl#getNombreEnfant <em>Nombre Enfant</em>}</li>
+ *   <li>{@link ca.polymtl.log8430.model.TP2.impl.DossierImpl#getListEnfants <em>List Enfants</em>}</li>
  * </ul>
  * </p>
  *
@@ -132,6 +136,16 @@ public class DossierImpl extends MinimalEObjectImpl.Container implements Dossier
 	protected int nombreEnfant = NOMBRE_ENFANT_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getListEnfants() <em>List Enfants</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getListEnfants()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<RessourcesLocale> listEnfants;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -190,6 +204,18 @@ public class DossierImpl extends MinimalEObjectImpl.Container implements Dossier
 		nombreEnfant = newNombreEnfant;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TP2Package.DOSSIER__NOMBRE_ENFANT, oldNombreEnfant, nombreEnfant));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<RessourcesLocale> getListEnfants() {
+		if (listEnfants == null) {
+			listEnfants = new EObjectResolvingEList<RessourcesLocale>(RessourcesLocale.class, this, TP2Package.DOSSIER__LIST_ENFANTS);
+		}
+		return listEnfants;
 	}
 
 	/**
@@ -282,6 +308,8 @@ public class DossierImpl extends MinimalEObjectImpl.Container implements Dossier
 				return getCheminAbsolu();
 			case TP2Package.DOSSIER__NOMBRE_ENFANT:
 				return getNombreEnfant();
+			case TP2Package.DOSSIER__LIST_ENFANTS:
+				return getListEnfants();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -291,6 +319,7 @@ public class DossierImpl extends MinimalEObjectImpl.Container implements Dossier
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -308,6 +337,10 @@ public class DossierImpl extends MinimalEObjectImpl.Container implements Dossier
 				return;
 			case TP2Package.DOSSIER__NOMBRE_ENFANT:
 				setNombreEnfant((Integer)newValue);
+				return;
+			case TP2Package.DOSSIER__LIST_ENFANTS:
+				getListEnfants().clear();
+				getListEnfants().addAll((Collection<? extends RessourcesLocale>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -336,6 +369,9 @@ public class DossierImpl extends MinimalEObjectImpl.Container implements Dossier
 			case TP2Package.DOSSIER__NOMBRE_ENFANT:
 				setNombreEnfant(NOMBRE_ENFANT_EDEFAULT);
 				return;
+			case TP2Package.DOSSIER__LIST_ENFANTS:
+				getListEnfants().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -358,6 +394,8 @@ public class DossierImpl extends MinimalEObjectImpl.Container implements Dossier
 				return CHEMIN_ABSOLU_EDEFAULT == null ? cheminAbsolu != null : !CHEMIN_ABSOLU_EDEFAULT.equals(cheminAbsolu);
 			case TP2Package.DOSSIER__NOMBRE_ENFANT:
 				return nombreEnfant != NOMBRE_ENFANT_EDEFAULT;
+			case TP2Package.DOSSIER__LIST_ENFANTS:
+				return listEnfants != null && !listEnfants.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

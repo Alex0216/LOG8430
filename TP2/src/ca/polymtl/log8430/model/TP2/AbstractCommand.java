@@ -9,6 +9,10 @@ import org.eclipse.emf.ecore.EObject;
  * A representation of the model object '<em><b>Abstract Command</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * Classe abstraite représentant une commande.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -104,6 +108,9 @@ public interface AbstractCommand extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Efface le contenu du résultat et notifie tous les observers.
+	 * <!-- end-model-doc -->
 	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='setResult(\"\");'"
 	 * @generated
 	 */
@@ -112,6 +119,9 @@ public interface AbstractCommand extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Vérifie si la commande actuelle peut effectuer son exécution selon la ressource choisie.
+	 * <!-- end-model-doc -->
 	 * @model
 	 * @generated
 	 */
@@ -120,6 +130,9 @@ public interface AbstractCommand extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Visite la ressource de type Fichier.
+	 * <!-- end-model-doc -->
 	 * @model
 	 * @generated
 	 */
@@ -128,6 +141,9 @@ public interface AbstractCommand extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Visite la ressource de type Dossier.
+	 * <!-- end-model-doc -->
 	 * @model
 	 * @generated
 	 */
@@ -136,6 +152,9 @@ public interface AbstractCommand extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Visite la ressource de type Page.
+	 * <!-- end-model-doc -->
 	 * @model
 	 * @generated
 	 */
@@ -144,6 +163,9 @@ public interface AbstractCommand extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Exécute la commande selon le path actuel, met à jour le résultat et notifie les observers que ce dernier a été changé.
+	 * <!-- end-model-doc -->
 	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='if(ressource != null)\r\n\tressource.accept(this);'"
 	 * @generated
 	 */

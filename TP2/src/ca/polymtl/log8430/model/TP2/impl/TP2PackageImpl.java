@@ -223,6 +223,15 @@ public class TP2PackageImpl extends EPackageImpl implements TP2Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getDossier_ListEnfants() {
+		return (EReference)dossierEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getFichier() {
 		return fichierEClass;
 	}
@@ -590,6 +599,7 @@ public class TP2PackageImpl extends EPackageImpl implements TP2Package {
 		// Create classes and their features
 		dossierEClass = createEClass(DOSSIER);
 		createEAttribute(dossierEClass, DOSSIER__NOMBRE_ENFANT);
+		createEReference(dossierEClass, DOSSIER__LIST_ENFANTS);
 
 		fichierEClass = createEClass(FICHIER);
 
@@ -688,6 +698,7 @@ public class TP2PackageImpl extends EPackageImpl implements TP2Package {
 		// Initialize classes, features, and operations; add parameters
 		initEClass(dossierEClass, Dossier.class, "Dossier", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDossier_NombreEnfant(), ecorePackage.getEInt(), "nombreEnfant", null, 0, 1, Dossier.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDossier_ListEnfants(), this.getRessourcesLocale(), null, "ListEnfants", null, 0, -1, Dossier.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(fichierEClass, Fichier.class, "Fichier", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -765,6 +776,27 @@ public class TP2PackageImpl extends EPackageImpl implements TP2Package {
 
 		// Create resource
 		createResource(eNS_URI);
+
+		// Create annotations
+		// http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+		createExtendedMetaDataAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>http:///org/eclipse/emf/ecore/util/ExtendedMetaData</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createExtendedMetaDataAnnotations() {
+		String source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData";	
+		addAnnotation
+		  (getDossier_ListEnfants(), 
+		   source, 
+		   new String[] {
+			 "name", "ListEnfants",
+			 "kind", "attribute"
+		   });
 	}
 
 } //TP2PackageImpl

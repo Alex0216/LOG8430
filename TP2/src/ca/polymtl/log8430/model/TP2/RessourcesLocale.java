@@ -8,6 +8,10 @@ package ca.polymtl.log8430.model.TP2;
  * A representation of the model object '<em><b>Ressources Locale</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * Classe abstraite représentant une ressource locale.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>

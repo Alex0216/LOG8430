@@ -242,13 +242,22 @@ public interface TP2Package extends EPackage {
 	int DOSSIER__NOMBRE_ENFANT = RESSOURCES_LOCALE_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>List Enfants</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DOSSIER__LIST_ENFANTS = RESSOURCES_LOCALE_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Dossier</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DOSSIER_FEATURE_COUNT = RESSOURCES_LOCALE_FEATURE_COUNT + 1;
+	int DOSSIER_FEATURE_COUNT = RESSOURCES_LOCALE_FEATURE_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>Accept</em>' operation.
@@ -1365,6 +1374,17 @@ public interface TP2Package extends EPackage {
 	EAttribute getDossier_NombreEnfant();
 
 	/**
+	 * Returns the meta object for the reference list '{@link ca.polymtl.log8430.model.TP2.Dossier#getListEnfants <em>List Enfants</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>List Enfants</em>'.
+	 * @see ca.polymtl.log8430.model.TP2.Dossier#getListEnfants()
+	 * @see #getDossier()
+	 * @generated
+	 */
+	EReference getDossier_ListEnfants();
+
+	/**
 	 * Returns the meta object for class '{@link ca.polymtl.log8430.model.TP2.Fichier <em>Fichier</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1797,6 +1817,14 @@ public interface TP2Package extends EPackage {
 		 * @generated
 		 */
 		EAttribute DOSSIER__NOMBRE_ENFANT = eINSTANCE.getDossier_NombreEnfant();
+
+		/**
+		 * The meta object literal for the '<em><b>List Enfants</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DOSSIER__LIST_ENFANTS = eINSTANCE.getDossier_ListEnfants();
 
 		/**
 		 * The meta object literal for the '{@link ca.polymtl.log8430.model.TP2.impl.FichierImpl <em>Fichier</em>}' class.

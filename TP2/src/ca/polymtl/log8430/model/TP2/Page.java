@@ -8,6 +8,10 @@ package ca.polymtl.log8430.model.TP2;
  * A representation of the model object '<em><b>Page</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * Ressource de type page web.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>
