@@ -1015,115 +1015,6 @@ public interface TP2Package extends EPackage {
 	int ABSOLUTE_PATH_COMMAND_OPERATION_COUNT = ABSTRACT_COMMAND_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link ca.polymtl.log8430.model.TP2.impl.TailleCommandImpl <em>Taille Command</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see ca.polymtl.log8430.model.TP2.impl.TailleCommandImpl
-	 * @see ca.polymtl.log8430.model.TP2.impl.TP2PackageImpl#getTailleCommand()
-	 * @generated
-	 */
-	int TAILLE_COMMAND = 11;
-
-	/**
-	 * The feature id for the '<em><b>Command Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TAILLE_COMMAND__COMMAND_NAME = ABSTRACT_COMMAND__COMMAND_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Result</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TAILLE_COMMAND__RESULT = ABSTRACT_COMMAND__RESULT;
-
-	/**
-	 * The feature id for the '<em><b>Ressource</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TAILLE_COMMAND__RESSOURCE = ABSTRACT_COMMAND__RESSOURCE;
-
-	/**
-	 * The number of structural features of the '<em>Taille Command</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TAILLE_COMMAND_FEATURE_COUNT = ABSTRACT_COMMAND_FEATURE_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Clear</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TAILLE_COMMAND___CLEAR = ABSTRACT_COMMAND___CLEAR;
-
-	/**
-	 * The operation id for the '<em>Can Execute</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TAILLE_COMMAND___CAN_EXECUTE = ABSTRACT_COMMAND___CAN_EXECUTE;
-
-	/**
-	 * The operation id for the '<em>Visit</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TAILLE_COMMAND___VISIT__FICHIER = ABSTRACT_COMMAND___VISIT__FICHIER;
-
-	/**
-	 * The operation id for the '<em>Visit</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TAILLE_COMMAND___VISIT__DOSSIER = ABSTRACT_COMMAND___VISIT__DOSSIER;
-
-	/**
-	 * The operation id for the '<em>Visit</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TAILLE_COMMAND___VISIT__PAGE = ABSTRACT_COMMAND___VISIT__PAGE;
-
-	/**
-	 * The operation id for the '<em>Execute</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TAILLE_COMMAND___EXECUTE = ABSTRACT_COMMAND___EXECUTE;
-
-	/**
-	 * The number of operations of the '<em>Taille Command</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TAILLE_COMMAND_OPERATION_COUNT = ABSTRACT_COMMAND_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link ca.polymtl.log8430.model.TP2.impl.PermissionCommandImpl <em>Permission Command</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1132,6 +1023,125 @@ public interface TP2Package extends EPackage {
 	 * @generated
 	 */
 	int PERMISSION_COMMAND = 12;
+
+	/**
+	 * The meta object id for the '{@link ca.polymtl.log8430.model.TP2.impl.NbEnfantCommandImpl <em>Nb Enfant Command</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ca.polymtl.log8430.model.TP2.impl.NbEnfantCommandImpl
+	 * @see ca.polymtl.log8430.model.TP2.impl.TP2PackageImpl#getNbEnfantCommand()
+	 * @generated
+	 */
+	int NB_ENFANT_COMMAND = 13;
+
+	/**
+	 * The meta object id for the '{@link ca.polymtl.log8430.model.TP2.impl.TailleURLCommandImpl <em>Taille URL Command</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ca.polymtl.log8430.model.TP2.impl.TailleURLCommandImpl
+	 * @see ca.polymtl.log8430.model.TP2.impl.TP2PackageImpl#getTailleURLCommand()
+	 * @generated
+	 */
+	int TAILLE_URL_COMMAND = 11;
+
+	/**
+	 * The feature id for the '<em><b>Command Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TAILLE_URL_COMMAND__COMMAND_NAME = ABSTRACT_COMMAND__COMMAND_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Result</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TAILLE_URL_COMMAND__RESULT = ABSTRACT_COMMAND__RESULT;
+
+	/**
+	 * The feature id for the '<em><b>Ressource</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TAILLE_URL_COMMAND__RESSOURCE = ABSTRACT_COMMAND__RESSOURCE;
+
+	/**
+	 * The number of structural features of the '<em>Taille URL Command</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TAILLE_URL_COMMAND_FEATURE_COUNT = ABSTRACT_COMMAND_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Clear</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TAILLE_URL_COMMAND___CLEAR = ABSTRACT_COMMAND___CLEAR;
+
+	/**
+	 * The operation id for the '<em>Can Execute</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TAILLE_URL_COMMAND___CAN_EXECUTE = ABSTRACT_COMMAND___CAN_EXECUTE;
+
+	/**
+	 * The operation id for the '<em>Visit</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TAILLE_URL_COMMAND___VISIT__FICHIER = ABSTRACT_COMMAND___VISIT__FICHIER;
+
+	/**
+	 * The operation id for the '<em>Visit</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TAILLE_URL_COMMAND___VISIT__DOSSIER = ABSTRACT_COMMAND___VISIT__DOSSIER;
+
+	/**
+	 * The operation id for the '<em>Visit</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TAILLE_URL_COMMAND___VISIT__PAGE = ABSTRACT_COMMAND___VISIT__PAGE;
+
+	/**
+	 * The operation id for the '<em>Execute</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TAILLE_URL_COMMAND___EXECUTE = ABSTRACT_COMMAND___EXECUTE;
+
+	/**
+	 * The number of operations of the '<em>Taille URL Command</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TAILLE_URL_COMMAND_OPERATION_COUNT = ABSTRACT_COMMAND_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Command Name</b></em>' attribute.
@@ -1233,23 +1243,13 @@ public interface TP2Package extends EPackage {
 	int PERMISSION_COMMAND_OPERATION_COUNT = ABSTRACT_COMMAND_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link ca.polymtl.log8430.model.TP2.impl.TailleURLCommandImpl <em>Taille URL Command</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see ca.polymtl.log8430.model.TP2.impl.TailleURLCommandImpl
-	 * @see ca.polymtl.log8430.model.TP2.impl.TP2PackageImpl#getTailleURLCommand()
-	 * @generated
-	 */
-	int TAILLE_URL_COMMAND = 13;
-
-	/**
 	 * The feature id for the '<em><b>Command Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TAILLE_URL_COMMAND__COMMAND_NAME = ABSTRACT_COMMAND__COMMAND_NAME;
+	int NB_ENFANT_COMMAND__COMMAND_NAME = ABSTRACT_COMMAND__COMMAND_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Result</b></em>' attribute.
@@ -1258,7 +1258,7 @@ public interface TP2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TAILLE_URL_COMMAND__RESULT = ABSTRACT_COMMAND__RESULT;
+	int NB_ENFANT_COMMAND__RESULT = ABSTRACT_COMMAND__RESULT;
 
 	/**
 	 * The feature id for the '<em><b>Ressource</b></em>' reference.
@@ -1267,16 +1267,16 @@ public interface TP2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TAILLE_URL_COMMAND__RESSOURCE = ABSTRACT_COMMAND__RESSOURCE;
+	int NB_ENFANT_COMMAND__RESSOURCE = ABSTRACT_COMMAND__RESSOURCE;
 
 	/**
-	 * The number of structural features of the '<em>Taille URL Command</em>' class.
+	 * The number of structural features of the '<em>Nb Enfant Command</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TAILLE_URL_COMMAND_FEATURE_COUNT = ABSTRACT_COMMAND_FEATURE_COUNT + 0;
+	int NB_ENFANT_COMMAND_FEATURE_COUNT = ABSTRACT_COMMAND_FEATURE_COUNT + 0;
 
 	/**
 	 * The operation id for the '<em>Clear</em>' operation.
@@ -1285,7 +1285,7 @@ public interface TP2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TAILLE_URL_COMMAND___CLEAR = ABSTRACT_COMMAND___CLEAR;
+	int NB_ENFANT_COMMAND___CLEAR = ABSTRACT_COMMAND___CLEAR;
 
 	/**
 	 * The operation id for the '<em>Can Execute</em>' operation.
@@ -1294,7 +1294,7 @@ public interface TP2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TAILLE_URL_COMMAND___CAN_EXECUTE = ABSTRACT_COMMAND___CAN_EXECUTE;
+	int NB_ENFANT_COMMAND___CAN_EXECUTE = ABSTRACT_COMMAND___CAN_EXECUTE;
 
 	/**
 	 * The operation id for the '<em>Visit</em>' operation.
@@ -1303,7 +1303,7 @@ public interface TP2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TAILLE_URL_COMMAND___VISIT__FICHIER = ABSTRACT_COMMAND___VISIT__FICHIER;
+	int NB_ENFANT_COMMAND___VISIT__FICHIER = ABSTRACT_COMMAND___VISIT__FICHIER;
 
 	/**
 	 * The operation id for the '<em>Visit</em>' operation.
@@ -1312,7 +1312,7 @@ public interface TP2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TAILLE_URL_COMMAND___VISIT__DOSSIER = ABSTRACT_COMMAND___VISIT__DOSSIER;
+	int NB_ENFANT_COMMAND___VISIT__DOSSIER = ABSTRACT_COMMAND___VISIT__DOSSIER;
 
 	/**
 	 * The operation id for the '<em>Visit</em>' operation.
@@ -1321,7 +1321,7 @@ public interface TP2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TAILLE_URL_COMMAND___VISIT__PAGE = ABSTRACT_COMMAND___VISIT__PAGE;
+	int NB_ENFANT_COMMAND___VISIT__PAGE = ABSTRACT_COMMAND___VISIT__PAGE;
 
 	/**
 	 * The operation id for the '<em>Execute</em>' operation.
@@ -1330,16 +1330,16 @@ public interface TP2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TAILLE_URL_COMMAND___EXECUTE = ABSTRACT_COMMAND___EXECUTE;
+	int NB_ENFANT_COMMAND___EXECUTE = ABSTRACT_COMMAND___EXECUTE;
 
 	/**
-	 * The number of operations of the '<em>Taille URL Command</em>' class.
+	 * The number of operations of the '<em>Nb Enfant Command</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TAILLE_URL_COMMAND_OPERATION_COUNT = ABSTRACT_COMMAND_OPERATION_COUNT + 0;
+	int NB_ENFANT_COMMAND_OPERATION_COUNT = ABSTRACT_COMMAND_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link ca.polymtl.log8430.model.TP2.PermissionType <em>Permission Type</em>}' enum.
@@ -1738,16 +1738,6 @@ public interface TP2Package extends EPackage {
 	EClass getAbsolutePathCommand();
 
 	/**
-	 * Returns the meta object for class '{@link ca.polymtl.log8430.model.TP2.TailleCommand <em>Taille Command</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Taille Command</em>'.
-	 * @see ca.polymtl.log8430.model.TP2.TailleCommand
-	 * @generated
-	 */
-	EClass getTailleCommand();
-
-	/**
 	 * Returns the meta object for class '{@link ca.polymtl.log8430.model.TP2.PermissionCommand <em>Permission Command</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1756,6 +1746,16 @@ public interface TP2Package extends EPackage {
 	 * @generated
 	 */
 	EClass getPermissionCommand();
+
+	/**
+	 * Returns the meta object for class '{@link ca.polymtl.log8430.model.TP2.NbEnfantCommand <em>Nb Enfant Command</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Nb Enfant Command</em>'.
+	 * @see ca.polymtl.log8430.model.TP2.NbEnfantCommand
+	 * @generated
+	 */
+	EClass getNbEnfantCommand();
 
 	/**
 	 * Returns the meta object for class '{@link ca.polymtl.log8430.model.TP2.TailleURLCommand <em>Taille URL Command</em>}'.
@@ -2119,16 +2119,6 @@ public interface TP2Package extends EPackage {
 		EClass ABSOLUTE_PATH_COMMAND = eINSTANCE.getAbsolutePathCommand();
 
 		/**
-		 * The meta object literal for the '{@link ca.polymtl.log8430.model.TP2.impl.TailleCommandImpl <em>Taille Command</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see ca.polymtl.log8430.model.TP2.impl.TailleCommandImpl
-		 * @see ca.polymtl.log8430.model.TP2.impl.TP2PackageImpl#getTailleCommand()
-		 * @generated
-		 */
-		EClass TAILLE_COMMAND = eINSTANCE.getTailleCommand();
-
-		/**
 		 * The meta object literal for the '{@link ca.polymtl.log8430.model.TP2.impl.PermissionCommandImpl <em>Permission Command</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2137,6 +2127,16 @@ public interface TP2Package extends EPackage {
 		 * @generated
 		 */
 		EClass PERMISSION_COMMAND = eINSTANCE.getPermissionCommand();
+
+		/**
+		 * The meta object literal for the '{@link ca.polymtl.log8430.model.TP2.impl.NbEnfantCommandImpl <em>Nb Enfant Command</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see ca.polymtl.log8430.model.TP2.impl.NbEnfantCommandImpl
+		 * @see ca.polymtl.log8430.model.TP2.impl.TP2PackageImpl#getNbEnfantCommand()
+		 * @generated
+		 */
+		EClass NB_ENFANT_COMMAND = eINSTANCE.getNbEnfantCommand();
 
 		/**
 		 * The meta object literal for the '{@link ca.polymtl.log8430.model.TP2.impl.TailleURLCommandImpl <em>Taille URL Command</em>}' class.

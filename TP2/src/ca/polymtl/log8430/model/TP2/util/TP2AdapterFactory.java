@@ -112,16 +112,16 @@ public class TP2AdapterFactory extends AdapterFactoryImpl {
 				return createAbsolutePathCommandAdapter();
 			}
 			@Override
-			public Adapter caseTailleCommand(TailleCommand object) {
-				return createTailleCommandAdapter();
+			public Adapter caseTailleURLCommand(TailleURLCommand object) {
+				return createTailleURLCommandAdapter();
 			}
 			@Override
 			public Adapter casePermissionCommand(PermissionCommand object) {
 				return createPermissionCommandAdapter();
 			}
 			@Override
-			public Adapter caseTailleURLCommand(TailleURLCommand object) {
-				return createTailleURLCommandAdapter();
+			public Adapter caseNbEnfantCommand(NbEnfantCommand object) {
+				return createNbEnfantCommandAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -298,20 +298,6 @@ public class TP2AdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link ca.polymtl.log8430.model.TP2.TailleCommand <em>Taille Command</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see ca.polymtl.log8430.model.TP2.TailleCommand
-	 * @generated
-	 */
-	public Adapter createTailleCommandAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link ca.polymtl.log8430.model.TP2.PermissionCommand <em>Permission Command</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -322,6 +308,20 @@ public class TP2AdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createPermissionCommandAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link ca.polymtl.log8430.model.TP2.NbEnfantCommand <em>Nb Enfant Command</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see ca.polymtl.log8430.model.TP2.NbEnfantCommand
+	 * @generated
+	 */
+	public Adapter createNbEnfantCommandAdapter() {
 		return null;
 	}
 

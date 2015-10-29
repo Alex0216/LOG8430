@@ -3,7 +3,7 @@
   <commands xsi:type="TP2:FileNameCommand" commandName="File Name" result=""/>
   <commands xsi:type="TP2:FolderNameCommand" commandName="Folder Name" result=""/>
   <commands xsi:type="TP2:AbsolutePathCommand" commandName="Absolute Path" result="https://www.google.ca"/>
-  <commands xsi:type="TP2:TailleCommand" commandName="Taille" result="-1"/>
+  <commands xsi:type="TP2:TailleURLCommand" commandName="Taille URL" result="-1"/>
   <commands xsi:type="TP2:PermissionCommand" commandName="Permission" result=""/>
   <commands xsi:type="TP2:NbEnfantCommand" commandName="Nombre enfants" result=""/>
   <ressource xsi:type="TP2:Page" nom="" taillePage="-1" URL="https://www.google.ca"/>
