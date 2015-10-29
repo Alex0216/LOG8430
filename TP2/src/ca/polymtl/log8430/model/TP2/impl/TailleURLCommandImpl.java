@@ -198,12 +198,13 @@ public class TailleURLCommandImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public boolean canExecute() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		if ((ressource instanceof Page))
+			return true;
+		else
+			return false;
 	}
 
 	/**
@@ -231,12 +232,10 @@ public class TailleURLCommandImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void visit(Page page) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		this.setResult(String.valueOf(page.getURL().length()));
 	}
 
 	/**
