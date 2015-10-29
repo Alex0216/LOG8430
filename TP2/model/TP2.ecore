@@ -162,7 +162,7 @@
       <details key="documentation" value="Implémentation concrète de la classe Command. Cette commande donne le chemin absolue d'un fichier/dossier."/>
     </eAnnotations>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TailleCommand" eSuperTypes="#//AbstractCommand">
+  <eClassifiers xsi:type="ecore:EClass" name="TailleURLCommand" eSuperTypes="#//AbstractCommand">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Implémentation concrète de la classe Command. Cette commande donne la taille de la ressource sélectionnée."/>
     </eAnnotations>
@@ -172,7 +172,7 @@
       <details key="documentation" value="Implémentation concrète de la classe Command. Cette commande donne la permission requise pour utiliser la resource."/>
     </eAnnotations>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TailleURLCommand" eSuperTypes="#//AbstractCommand">
+  <eClassifiers xsi:type="ecore:EClass" name="NbEnfantCommand" eSuperTypes="#//AbstractCommand">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Implémentation concrète de la classe Command. Cette commande donne le nombre d'enfant de la ressource de type dossier."/>
     </eAnnotations>
