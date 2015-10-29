@@ -66,7 +66,7 @@ public class TP2FactoryImpl extends EFactoryImpl implements TP2Factory {
 			case TP2Package.ABSOLUTE_PATH_COMMAND: return createAbsolutePathCommand();
 			case TP2Package.TAILLE_COMMAND: return createTailleCommand();
 			case TP2Package.PERMISSION_COMMAND: return createPermissionCommand();
-			case TP2Package.NB_ENFANT_COMMAND: return createNbEnfantCommand();
+			case TP2Package.TAILLE_URL_COMMAND: return createTailleURLCommand();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -197,9 +197,9 @@ public class TP2FactoryImpl extends EFactoryImpl implements TP2Factory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NbEnfantCommand createNbEnfantCommand() {
-		NbEnfantCommandImpl nbEnfantCommand = new NbEnfantCommandImpl();
-		return nbEnfantCommand;
+	public TailleURLCommand createTailleURLCommand() {
+		TailleURLCommandImpl tailleURLCommand = new TailleURLCommandImpl();
+		return tailleURLCommand;
 	}
 
 	/**

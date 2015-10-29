@@ -1177,9 +1177,9 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_S50QAHw6EeWKwY6ZFa7nFQ" name="NbEnfantCommand" tooltipText="" outgoingEdges="_ZPxFcHw6EeWKwY6ZFa7nFQ" width="12" height="10">
-        <target xmi:type="ecore:EClass" href="TP2.ecore#//NbEnfantCommand"/>
-        <semanticElements xmi:type="ecore:EClass" href="TP2.ecore#//NbEnfantCommand"/>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_S50QAHw6EeWKwY6ZFa7nFQ" name="TailleURLCommand" tooltipText="" outgoingEdges="_ZPxFcHw6EeWKwY6ZFa7nFQ" width="12" height="10">
+        <target xmi:type="ecore:EClass" href="TP2.ecore#//TailleURLCommand"/>
+        <semanticElements xmi:type="ecore:EClass" href="TP2.ecore#//TailleURLCommand"/>
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
@@ -1193,8 +1193,8 @@
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_ZPxFcHw6EeWKwY6ZFa7nFQ" sourceNode="_S50QAHw6EeWKwY6ZFa7nFQ" targetNode="_WA0qsHptEeW3jqCr9VASFg">
-        <target xmi:type="ecore:EClass" href="TP2.ecore#//NbEnfantCommand"/>
-        <semanticElements xmi:type="ecore:EGenericType" href="TP2.ecore#//NbEnfantCommand/@eGenericSuperTypes.0"/>
+        <target xmi:type="ecore:EClass" href="TP2.ecore#//TailleURLCommand"/>
+        <semanticElements xmi:type="ecore:EGenericType" href="TP2.ecore#//TailleURLCommand/@eGenericSuperTypes.0"/>
         <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_ZPxFcXw6EeWKwY6ZFa7nFQ" lineStyle="dash" targetArrow="InputClosedArrow" routingStyle="tree">
           <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC%20ESupertypes']/@conditionnalStyles.0/@style"/>
           <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_ZPxFcnw6EeWKwY6ZFa7nFQ" red="136" green="136" blue="136"/>

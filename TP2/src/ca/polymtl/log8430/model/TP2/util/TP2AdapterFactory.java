@@ -120,8 +120,8 @@ public class TP2AdapterFactory extends AdapterFactoryImpl {
 				return createPermissionCommandAdapter();
 			}
 			@Override
-			public Adapter caseNbEnfantCommand(NbEnfantCommand object) {
-				return createNbEnfantCommandAdapter();
+			public Adapter caseTailleURLCommand(TailleURLCommand object) {
+				return createTailleURLCommandAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -326,16 +326,16 @@ public class TP2AdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link ca.polymtl.log8430.model.TP2.NbEnfantCommand <em>Nb Enfant Command</em>}'.
+	 * Creates a new adapter for an object of class '{@link ca.polymtl.log8430.model.TP2.TailleURLCommand <em>Taille URL Command</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see ca.polymtl.log8430.model.TP2.NbEnfantCommand
+	 * @see ca.polymtl.log8430.model.TP2.TailleURLCommand
 	 * @generated
 	 */
-	public Adapter createNbEnfantCommandAdapter() {
+	public Adapter createTailleURLCommandAdapter() {
 		return null;
 	}
 

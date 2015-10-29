@@ -9,7 +9,6 @@ import ca.polymtl.log8430.model.TP2.Fichier;
 import ca.polymtl.log8430.model.TP2.FileNameCommand;
 import ca.polymtl.log8430.model.TP2.FolderNameCommand;
 import ca.polymtl.log8430.model.TP2.Master;
-import ca.polymtl.log8430.model.TP2.NbEnfantCommand;
 import ca.polymtl.log8430.model.TP2.Page;
 import ca.polymtl.log8430.model.TP2.PermissionCommand;
 import ca.polymtl.log8430.model.TP2.PermissionType;
@@ -19,6 +18,7 @@ import ca.polymtl.log8430.model.TP2.RessourcesLocale;
 import ca.polymtl.log8430.model.TP2.TP2Factory;
 import ca.polymtl.log8430.model.TP2.TP2Package;
 import ca.polymtl.log8430.model.TP2.TailleCommand;
+import ca.polymtl.log8430.model.TP2.TailleURLCommand;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
@@ -130,7 +130,7 @@ public class TP2PackageImpl extends EPackageImpl implements TP2Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass nbEnfantCommandEClass = null;
+	private EClass tailleURLCommandEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -556,8 +556,8 @@ public class TP2PackageImpl extends EPackageImpl implements TP2Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getNbEnfantCommand() {
-		return nbEnfantCommandEClass;
+	public EClass getTailleURLCommand() {
+		return tailleURLCommandEClass;
 	}
 
 	/**
@@ -649,7 +649,7 @@ public class TP2PackageImpl extends EPackageImpl implements TP2Package {
 
 		permissionCommandEClass = createEClass(PERMISSION_COMMAND);
 
-		nbEnfantCommandEClass = createEClass(NB_ENFANT_COMMAND);
+		tailleURLCommandEClass = createEClass(TAILLE_URL_COMMAND);
 
 		// Create enums
 		permissionTypeEEnum = createEEnum(PERMISSION_TYPE);
@@ -693,7 +693,7 @@ public class TP2PackageImpl extends EPackageImpl implements TP2Package {
 		absolutePathCommandEClass.getESuperTypes().add(this.getAbstractCommand());
 		tailleCommandEClass.getESuperTypes().add(this.getAbstractCommand());
 		permissionCommandEClass.getESuperTypes().add(this.getAbstractCommand());
-		nbEnfantCommandEClass.getESuperTypes().add(this.getAbstractCommand());
+		tailleURLCommandEClass.getESuperTypes().add(this.getAbstractCommand());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(dossierEClass, Dossier.class, "Dossier", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -765,7 +765,7 @@ public class TP2PackageImpl extends EPackageImpl implements TP2Package {
 
 		initEClass(permissionCommandEClass, PermissionCommand.class, "PermissionCommand", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(nbEnfantCommandEClass, NbEnfantCommand.class, "NbEnfantCommand", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(tailleURLCommandEClass, TailleURLCommand.class, "TailleURLCommand", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Initialize enums and add enum literals
 		initEEnum(permissionTypeEEnum, PermissionType.class, "PermissionType");

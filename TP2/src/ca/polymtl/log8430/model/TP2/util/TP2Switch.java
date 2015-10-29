@@ -157,10 +157,10 @@ public class TP2Switch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case TP2Package.NB_ENFANT_COMMAND: {
-				NbEnfantCommand nbEnfantCommand = (NbEnfantCommand)theEObject;
-				T result = caseNbEnfantCommand(nbEnfantCommand);
-				if (result == null) result = caseAbstractCommand(nbEnfantCommand);
+			case TP2Package.TAILLE_URL_COMMAND: {
+				TailleURLCommand tailleURLCommand = (TailleURLCommand)theEObject;
+				T result = caseTailleURLCommand(tailleURLCommand);
+				if (result == null) result = caseAbstractCommand(tailleURLCommand);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -364,17 +364,17 @@ public class TP2Switch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Nb Enfant Command</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Taille URL Command</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Nb Enfant Command</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Taille URL Command</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseNbEnfantCommand(NbEnfantCommand object) {
+	public T caseTailleURLCommand(TailleURLCommand object) {
 		return null;
 	}
 

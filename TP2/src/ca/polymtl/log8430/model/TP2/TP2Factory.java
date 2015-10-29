@@ -103,13 +103,13 @@ public interface TP2Factory extends EFactory {
 	PermissionCommand createPermissionCommand();
 
 	/**
-	 * Returns a new object of class '<em>Nb Enfant Command</em>'.
+	 * Returns a new object of class '<em>Taille URL Command</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Nb Enfant Command</em>'.
+	 * @return a new object of class '<em>Taille URL Command</em>'.
 	 * @generated
 	 */
-	NbEnfantCommand createNbEnfantCommand();
+	TailleURLCommand createTailleURLCommand();
 
 	/**
 	 * Returns the package supported by this factory.
