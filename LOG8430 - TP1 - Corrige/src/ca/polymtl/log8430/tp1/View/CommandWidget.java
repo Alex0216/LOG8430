@@ -33,7 +33,7 @@ public class CommandWidget extends JPanel implements Observer {
 	 * Constructeur de la classe CommandWidget. Cree le panel
 	 * correspondantaux widgets d'une commande en particulier. La commande
 	 * sera l'observé, et CommandWidget sera l'observeur.
-	 * @param executer	La commande qui sera lié aux widgets. 
+	 * @param command	La commande qui sera lié aux widgets. 
 	 */
 	public CommandWidget(Command command) {
 		

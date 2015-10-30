@@ -1,6 +1,5 @@
 package ca.polymtl.log8430.tp1.Controller;
-import java.net.MalformedURLException;
-import java.net.URISyntaxException;
+
 import java.net.URL;
 import java.util.ArrayList;
 
@@ -19,8 +18,6 @@ public class Executer {
 	
 	/**
 	 * Constructeur de la classe Executer
-	 * @throws URISyntaxException 
-	 * @throws MalformedURLException 
 	 */
 	public Executer()
 	{

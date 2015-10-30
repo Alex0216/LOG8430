@@ -1,12 +1,7 @@
 package ca.polymtl.log8430.tp1.Tests;
 
-import static org.junit.Assert.*;
-
 import java.io.File;
-
-import org.junit.After;
 import org.junit.Before;
-import org.junit.Test;
 
 import ca.polymtl.log8430.tp1.Commands.*;
 import ca.polymtl.log8430.tp1.Controller.*;

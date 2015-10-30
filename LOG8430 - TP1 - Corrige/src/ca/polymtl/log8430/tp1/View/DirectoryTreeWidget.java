@@ -82,7 +82,7 @@ public class DirectoryTreeWidget extends JPanel {
 	/**
 	 * Met à jour le fichier/folder choisi actuel et le choisi comme
 	 * point d'arborescence pour le UI du directoryTree 
-	 * @param path
+	 * @param path Assigne le nouveau path
 	 */
 	public void setSelectedPath(final String path)
 	{

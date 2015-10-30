@@ -2,15 +2,10 @@ package ca.polymtl.log8430.tp1.Tests;
 
 import static org.junit.Assert.*;
 
-import java.io.File;
-
 import org.junit.Before;
 import org.junit.Test;
 
-import ca.polymtl.log8430.tp1.Commands.AbsolutePathCommand;
 import ca.polymtl.log8430.tp1.Commands.Command;
-import ca.polymtl.log8430.tp1.Commands.FileNameCommand;
-import ca.polymtl.log8430.tp1.Commands.FolderNameCommand;
 import ca.polymtl.log8430.tp1.Controller.Executer;
 
 /**

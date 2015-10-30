@@ -20,6 +20,7 @@ public class MainWindows {
 
 	/**
 	 * Launch the application.
+	 * @param args Parametres de depart pour l'application
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
