@@ -7,11 +7,11 @@
 <plugin>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated model -->
+      <!-- @generated TP2 -->
       <package
-            uri="http://www.example.org/model"
-            class="model.ModelPackage"
-            genModel="model/model.genmodel"/>
+            uri="TP2"
+            class="ca.polymtl.log8430.model.TP2.TP2Package"
+            genModel="model/TP2.genmodel"/>
    </extension>
 
 </plugin>

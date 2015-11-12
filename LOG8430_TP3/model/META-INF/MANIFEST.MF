@@ -1,15 +1,15 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
-Bundle-SymbolicName: model;singleton:=true
-Bundle-Version: 0.1.0.qualifier
+Bundle-SymbolicName: TP2;singleton:=true
+Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: model,
- model.impl,
- model.util
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Export-Package: ca.polymtl.log8430.model.TP2,
+ ca.polymtl.log8430.model.TP2.impl,
+ ca.polymtl.log8430.model.TP2.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport
 Bundle-ActivationPolicy: lazy
