@@ -20,7 +20,8 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link ca.polymtl.log8430.model.TP2.Master#getCommands <em>Commands</em>}</li>
  *   <li>{@link ca.polymtl.log8430.model.TP2.Master#isAutoRun <em>Auto Run</em>}</li>
- *   <li>{@link ca.polymtl.log8430.model.TP2.Master#getRessource <em>Ressource</em>}</li>
+ *   <li>{@link ca.polymtl.log8430.model.TP2.Master#getCurrentRessource <em>Current Ressource</em>}</li>
+ *   <li>{@link ca.polymtl.log8430.model.TP2.Master#getRessourcesAvailable <em>Ressources Available</em>}</li>
  * </ul>
  * </p>
  *
@@ -102,10 +103,10 @@ public interface Master extends EObject {
 	 * Met à jour toutes les commandes avec la ressource passée en paramètre.
 	 * @param ressource Resource a assigner aux commandes.
 	 * <!-- end-model-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='for(AbstractCommand c: commands){\r\n\tc.setRessource(ressource);\r\n}\r\nif(isAutoRun()){\r\n\texecuteAll();\r\n}\r\n\r\nsetRessource(ressource);'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='for(AbstractCommand c: commands){\r\n\tc.setRessource(ressource);\r\n}\r\nif(isAutoRun()){\r\n\texecuteAll();\r\n}\r\n\r\nsetCurrentRessource(ressource);'"
 	 * @generated
 	 */
-	void updateRessource(Ressource ressource);
+	void updateCurrentRessource(Ressource ressource);
 
 	/**
 	 * Sets the value of the '{@link ca.polymtl.log8430.model.TP2.Master#isAutoRun <em>Auto Run</em>}' attribute.
@@ -118,29 +119,45 @@ public interface Master extends EObject {
 	void setAutoRun(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Ressource</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Current Ressource</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Ressource</em>' reference isn't clear,
+	 * If the meaning of the '<em>Current Ressource</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Ressource</em>' containment reference.
-	 * @see #setRessource(Ressource)
-	 * @see ca.polymtl.log8430.model.TP2.TP2Package#getMaster_Ressource()
+	 * @return the value of the '<em>Current Ressource</em>' containment reference.
+	 * @see #setCurrentRessource(Ressource)
+	 * @see ca.polymtl.log8430.model.TP2.TP2Package#getMaster_CurrentRessource()
 	 * @model containment="true"
 	 * @generated
 	 */
-	Ressource getRessource();
+	Ressource getCurrentRessource();
 
 	/**
-	 * Sets the value of the '{@link ca.polymtl.log8430.model.TP2.Master#getRessource <em>Ressource</em>}' containment reference.
+	 * Sets the value of the '{@link ca.polymtl.log8430.model.TP2.Master#getCurrentRessource <em>Current Ressource</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Ressource</em>' containment reference.
-	 * @see #getRessource()
+	 * @param value the new value of the '<em>Current Ressource</em>' containment reference.
+	 * @see #getCurrentRessource()
 	 * @generated
 	 */
-	void setRessource(Ressource value);
+	void setCurrentRessource(Ressource value);
+
+	/**
+	 * Returns the value of the '<em><b>Ressources Available</b></em>' containment reference list.
+	 * The list contents are of type {@link ca.polymtl.log8430.model.TP2.Ressource}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Ressources Available</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Ressources Available</em>' containment reference list.
+	 * @see ca.polymtl.log8430.model.TP2.TP2Package#getMaster_RessourcesAvailable()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Ressource> getRessourcesAvailable();
 
 } // Master

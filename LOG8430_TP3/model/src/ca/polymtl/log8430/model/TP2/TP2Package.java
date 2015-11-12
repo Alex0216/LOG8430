@@ -625,13 +625,22 @@ public interface TP2Package extends EPackage {
 	int MASTER__AUTO_RUN = 1;
 
 	/**
-	 * The feature id for the '<em><b>Ressource</b></em>' containment reference.
+	 * The feature id for the '<em><b>Current Ressource</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MASTER__RESSOURCE = 2;
+	int MASTER__CURRENT_RESSOURCE = 2;
+
+	/**
+	 * The feature id for the '<em><b>Ressources Available</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MASTER__RESSOURCES_AVAILABLE = 3;
 
 	/**
 	 * The number of structural features of the '<em>Master</em>' class.
@@ -640,7 +649,7 @@ public interface TP2Package extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MASTER_FEATURE_COUNT = 3;
+	int MASTER_FEATURE_COUNT = 4;
 
 	/**
 	 * The operation id for the '<em>Clear</em>' operation.
@@ -670,13 +679,13 @@ public interface TP2Package extends EPackage {
 	int MASTER___EXECUTE_COMMAND__ABSTRACTCOMMAND = 2;
 
 	/**
-	 * The operation id for the '<em>Update Ressource</em>' operation.
+	 * The operation id for the '<em>Update Current Ressource</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MASTER___UPDATE_RESSOURCE__RESSOURCE = 3;
+	int MASTER___UPDATE_CURRENT_RESSOURCE__RESSOURCE = 3;
 
 	/**
 	 * The number of operations of the '<em>Master</em>' class.
@@ -1657,15 +1666,26 @@ public interface TP2Package extends EPackage {
 	EAttribute getMaster_AutoRun();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link ca.polymtl.log8430.model.TP2.Master#getRessource <em>Ressource</em>}'.
+	 * Returns the meta object for the containment reference '{@link ca.polymtl.log8430.model.TP2.Master#getCurrentRessource <em>Current Ressource</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Ressource</em>'.
-	 * @see ca.polymtl.log8430.model.TP2.Master#getRessource()
+	 * @return the meta object for the containment reference '<em>Current Ressource</em>'.
+	 * @see ca.polymtl.log8430.model.TP2.Master#getCurrentRessource()
 	 * @see #getMaster()
 	 * @generated
 	 */
-	EReference getMaster_Ressource();
+	EReference getMaster_CurrentRessource();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link ca.polymtl.log8430.model.TP2.Master#getRessourcesAvailable <em>Ressources Available</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Ressources Available</em>'.
+	 * @see ca.polymtl.log8430.model.TP2.Master#getRessourcesAvailable()
+	 * @see #getMaster()
+	 * @generated
+	 */
+	EReference getMaster_RessourcesAvailable();
 
 	/**
 	 * Returns the meta object for the '{@link ca.polymtl.log8430.model.TP2.Master#clear() <em>Clear</em>}' operation.
@@ -1698,14 +1718,14 @@ public interface TP2Package extends EPackage {
 	EOperation getMaster__ExecuteCommand__AbstractCommand();
 
 	/**
-	 * Returns the meta object for the '{@link ca.polymtl.log8430.model.TP2.Master#updateRessource(ca.polymtl.log8430.model.TP2.Ressource) <em>Update Ressource</em>}' operation.
+	 * Returns the meta object for the '{@link ca.polymtl.log8430.model.TP2.Master#updateCurrentRessource(ca.polymtl.log8430.model.TP2.Ressource) <em>Update Current Ressource</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Update Ressource</em>' operation.
-	 * @see ca.polymtl.log8430.model.TP2.Master#updateRessource(ca.polymtl.log8430.model.TP2.Ressource)
+	 * @return the meta object for the '<em>Update Current Ressource</em>' operation.
+	 * @see ca.polymtl.log8430.model.TP2.Master#updateCurrentRessource(ca.polymtl.log8430.model.TP2.Ressource)
 	 * @generated
 	 */
-	EOperation getMaster__UpdateRessource__Ressource();
+	EOperation getMaster__UpdateCurrentRessource__Ressource();
 
 	/**
 	 * Returns the meta object for class '{@link ca.polymtl.log8430.model.TP2.FileNameCommand <em>File Name Command</em>}'.
@@ -2049,12 +2069,20 @@ public interface TP2Package extends EPackage {
 		EAttribute MASTER__AUTO_RUN = eINSTANCE.getMaster_AutoRun();
 
 		/**
-		 * The meta object literal for the '<em><b>Ressource</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Current Ressource</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MASTER__RESSOURCE = eINSTANCE.getMaster_Ressource();
+		EReference MASTER__CURRENT_RESSOURCE = eINSTANCE.getMaster_CurrentRessource();
+
+		/**
+		 * The meta object literal for the '<em><b>Ressources Available</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MASTER__RESSOURCES_AVAILABLE = eINSTANCE.getMaster_RessourcesAvailable();
 
 		/**
 		 * The meta object literal for the '<em><b>Clear</b></em>' operation.
@@ -2081,12 +2109,12 @@ public interface TP2Package extends EPackage {
 		EOperation MASTER___EXECUTE_COMMAND__ABSTRACTCOMMAND = eINSTANCE.getMaster__ExecuteCommand__AbstractCommand();
 
 		/**
-		 * The meta object literal for the '<em><b>Update Ressource</b></em>' operation.
+		 * The meta object literal for the '<em><b>Update Current Ressource</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation MASTER___UPDATE_RESSOURCE__RESSOURCE = eINSTANCE.getMaster__UpdateRessource__Ressource();
+		EOperation MASTER___UPDATE_CURRENT_RESSOURCE__RESSOURCE = eINSTANCE.getMaster__UpdateCurrentRessource__Ressource();
 
 		/**
 		 * The meta object literal for the '{@link ca.polymtl.log8430.model.TP2.impl.FileNameCommandImpl <em>File Name Command</em>}' class.

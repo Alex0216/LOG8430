@@ -466,8 +466,17 @@ public class TP2PackageImpl extends EPackageImpl implements TP2Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getMaster_Ressource() {
+	public EReference getMaster_CurrentRessource() {
 		return (EReference)masterEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getMaster_RessourcesAvailable() {
+		return (EReference)masterEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -502,7 +511,7 @@ public class TP2PackageImpl extends EPackageImpl implements TP2Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getMaster__UpdateRessource__Ressource() {
+	public EOperation getMaster__UpdateCurrentRessource__Ressource() {
 		return masterEClass.getEOperations().get(3);
 	}
 
@@ -633,11 +642,12 @@ public class TP2PackageImpl extends EPackageImpl implements TP2Package {
 		masterEClass = createEClass(MASTER);
 		createEReference(masterEClass, MASTER__COMMANDS);
 		createEAttribute(masterEClass, MASTER__AUTO_RUN);
-		createEReference(masterEClass, MASTER__RESSOURCE);
+		createEReference(masterEClass, MASTER__CURRENT_RESSOURCE);
+		createEReference(masterEClass, MASTER__RESSOURCES_AVAILABLE);
 		createEOperation(masterEClass, MASTER___CLEAR);
 		createEOperation(masterEClass, MASTER___EXECUTE_ALL);
 		createEOperation(masterEClass, MASTER___EXECUTE_COMMAND__ABSTRACTCOMMAND);
-		createEOperation(masterEClass, MASTER___UPDATE_RESSOURCE__RESSOURCE);
+		createEOperation(masterEClass, MASTER___UPDATE_CURRENT_RESSOURCE__RESSOURCE);
 
 		fileNameCommandEClass = createEClass(FILE_NAME_COMMAND);
 
@@ -743,7 +753,8 @@ public class TP2PackageImpl extends EPackageImpl implements TP2Package {
 		initEClass(masterEClass, Master.class, "Master", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMaster_Commands(), this.getAbstractCommand(), null, "commands", null, 0, -1, Master.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMaster_AutoRun(), ecorePackage.getEBoolean(), "AutoRun", null, 0, 1, Master.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMaster_Ressource(), this.getRessource(), null, "ressource", null, 0, 1, Master.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMaster_CurrentRessource(), this.getRessource(), null, "currentRessource", null, 0, 1, Master.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMaster_RessourcesAvailable(), this.getRessource(), null, "ressourcesAvailable", null, 0, -1, Master.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEOperation(getMaster__Clear(), null, "clear", 0, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -752,7 +763,7 @@ public class TP2PackageImpl extends EPackageImpl implements TP2Package {
 		op = initEOperation(getMaster__ExecuteCommand__AbstractCommand(), null, "executeCommand", 0, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getAbstractCommand(), "command", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getMaster__UpdateRessource__Ressource(), null, "updateRessource", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getMaster__UpdateCurrentRessource__Ressource(), null, "updateCurrentRessource", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getRessource(), "ressource", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(fileNameCommandEClass, FileNameCommand.class, "FileNameCommand", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -789,14 +800,14 @@ public class TP2PackageImpl extends EPackageImpl implements TP2Package {
 	 * @generated
 	 */
 	protected void createExtendedMetaDataAnnotations() {
-		String source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData";			
+		String source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData";	
 		addAnnotation
 		  (getDossier_ListEnfants(), 
 		   source, 
 		   new String[] {
 			 "name", "ListEnfants",
 			 "kind", "attribute"
-		   });																										
+		   });
 	}
 
 } //TP2PackageImpl

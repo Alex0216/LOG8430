@@ -27,7 +27,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link ca.polymtl.log8430.model.TP2.impl.MasterImpl#getCommands <em>Commands</em>}</li>
  *   <li>{@link ca.polymtl.log8430.model.TP2.impl.MasterImpl#isAutoRun <em>Auto Run</em>}</li>
- *   <li>{@link ca.polymtl.log8430.model.TP2.impl.MasterImpl#getRessource <em>Ressource</em>}</li>
+ *   <li>{@link ca.polymtl.log8430.model.TP2.impl.MasterImpl#getCurrentRessource <em>Current Ressource</em>}</li>
+ *   <li>{@link ca.polymtl.log8430.model.TP2.impl.MasterImpl#getRessourcesAvailable <em>Ressources Available</em>}</li>
  * </ul>
  * </p>
  *
@@ -64,14 +65,24 @@ public class MasterImpl extends MinimalEObjectImpl.Container implements Master {
 	protected boolean autoRun = AUTO_RUN_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getRessource() <em>Ressource</em>}' containment reference.
+	 * The cached value of the '{@link #getCurrentRessource() <em>Current Ressource</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRessource()
+	 * @see #getCurrentRessource()
 	 * @generated
 	 * @ordered
 	 */
-	protected Ressource ressource;
+	protected Ressource currentRessource;
+
+	/**
+	 * The cached value of the '{@link #getRessourcesAvailable() <em>Ressources Available</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRessourcesAvailable()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Ressource> ressourcesAvailable;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -151,7 +162,7 @@ public class MasterImpl extends MinimalEObjectImpl.Container implements Master {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void updateRessource(final Ressource ressource) {
+	public void updateCurrentRessource(final Ressource ressource) {
 		for(AbstractCommand c: commands){
 			c.setRessource(ressource);
 		}
@@ -159,7 +170,7 @@ public class MasterImpl extends MinimalEObjectImpl.Container implements Master {
 			executeAll();
 		}
 		
-		setRessource(ressource);
+		setCurrentRessource(ressource);
 	}
 
 	/**
@@ -179,8 +190,8 @@ public class MasterImpl extends MinimalEObjectImpl.Container implements Master {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Ressource getRessource() {
-		return ressource;
+	public Ressource getCurrentRessource() {
+		return currentRessource;
 	}
 
 	/**
@@ -188,11 +199,11 @@ public class MasterImpl extends MinimalEObjectImpl.Container implements Master {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetRessource(Ressource newRessource, NotificationChain msgs) {
-		Ressource oldRessource = ressource;
-		ressource = newRessource;
+	public NotificationChain basicSetCurrentRessource(Ressource newCurrentRessource, NotificationChain msgs) {
+		Ressource oldCurrentRessource = currentRessource;
+		currentRessource = newCurrentRessource;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, TP2Package.MASTER__RESSOURCE, oldRessource, newRessource);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, TP2Package.MASTER__CURRENT_RESSOURCE, oldCurrentRessource, newCurrentRessource);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -203,18 +214,30 @@ public class MasterImpl extends MinimalEObjectImpl.Container implements Master {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setRessource(Ressource newRessource) {
-		if (newRessource != ressource) {
+	public void setCurrentRessource(Ressource newCurrentRessource) {
+		if (newCurrentRessource != currentRessource) {
 			NotificationChain msgs = null;
-			if (ressource != null)
-				msgs = ((InternalEObject)ressource).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - TP2Package.MASTER__RESSOURCE, null, msgs);
-			if (newRessource != null)
-				msgs = ((InternalEObject)newRessource).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - TP2Package.MASTER__RESSOURCE, null, msgs);
-			msgs = basicSetRessource(newRessource, msgs);
+			if (currentRessource != null)
+				msgs = ((InternalEObject)currentRessource).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - TP2Package.MASTER__CURRENT_RESSOURCE, null, msgs);
+			if (newCurrentRessource != null)
+				msgs = ((InternalEObject)newCurrentRessource).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - TP2Package.MASTER__CURRENT_RESSOURCE, null, msgs);
+			msgs = basicSetCurrentRessource(newCurrentRessource, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TP2Package.MASTER__RESSOURCE, newRessource, newRessource));
+			eNotify(new ENotificationImpl(this, Notification.SET, TP2Package.MASTER__CURRENT_RESSOURCE, newCurrentRessource, newCurrentRessource));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Ressource> getRessourcesAvailable() {
+		if (ressourcesAvailable == null) {
+			ressourcesAvailable = new EObjectContainmentEList<Ressource>(Ressource.class, this, TP2Package.MASTER__RESSOURCES_AVAILABLE);
+		}
+		return ressourcesAvailable;
 	}
 
 	/**
@@ -227,8 +250,10 @@ public class MasterImpl extends MinimalEObjectImpl.Container implements Master {
 		switch (featureID) {
 			case TP2Package.MASTER__COMMANDS:
 				return ((InternalEList<?>)getCommands()).basicRemove(otherEnd, msgs);
-			case TP2Package.MASTER__RESSOURCE:
-				return basicSetRessource(null, msgs);
+			case TP2Package.MASTER__CURRENT_RESSOURCE:
+				return basicSetCurrentRessource(null, msgs);
+			case TP2Package.MASTER__RESSOURCES_AVAILABLE:
+				return ((InternalEList<?>)getRessourcesAvailable()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -245,8 +270,10 @@ public class MasterImpl extends MinimalEObjectImpl.Container implements Master {
 				return getCommands();
 			case TP2Package.MASTER__AUTO_RUN:
 				return isAutoRun();
-			case TP2Package.MASTER__RESSOURCE:
-				return getRessource();
+			case TP2Package.MASTER__CURRENT_RESSOURCE:
+				return getCurrentRessource();
+			case TP2Package.MASTER__RESSOURCES_AVAILABLE:
+				return getRessourcesAvailable();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -267,8 +294,12 @@ public class MasterImpl extends MinimalEObjectImpl.Container implements Master {
 			case TP2Package.MASTER__AUTO_RUN:
 				setAutoRun((Boolean)newValue);
 				return;
-			case TP2Package.MASTER__RESSOURCE:
-				setRessource((Ressource)newValue);
+			case TP2Package.MASTER__CURRENT_RESSOURCE:
+				setCurrentRessource((Ressource)newValue);
+				return;
+			case TP2Package.MASTER__RESSOURCES_AVAILABLE:
+				getRessourcesAvailable().clear();
+				getRessourcesAvailable().addAll((Collection<? extends Ressource>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -288,8 +319,11 @@ public class MasterImpl extends MinimalEObjectImpl.Container implements Master {
 			case TP2Package.MASTER__AUTO_RUN:
 				setAutoRun(AUTO_RUN_EDEFAULT);
 				return;
-			case TP2Package.MASTER__RESSOURCE:
-				setRessource((Ressource)null);
+			case TP2Package.MASTER__CURRENT_RESSOURCE:
+				setCurrentRessource((Ressource)null);
+				return;
+			case TP2Package.MASTER__RESSOURCES_AVAILABLE:
+				getRessourcesAvailable().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -307,8 +341,10 @@ public class MasterImpl extends MinimalEObjectImpl.Container implements Master {
 				return commands != null && !commands.isEmpty();
 			case TP2Package.MASTER__AUTO_RUN:
 				return autoRun != AUTO_RUN_EDEFAULT;
-			case TP2Package.MASTER__RESSOURCE:
-				return ressource != null;
+			case TP2Package.MASTER__CURRENT_RESSOURCE:
+				return currentRessource != null;
+			case TP2Package.MASTER__RESSOURCES_AVAILABLE:
+				return ressourcesAvailable != null && !ressourcesAvailable.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -330,8 +366,8 @@ public class MasterImpl extends MinimalEObjectImpl.Container implements Master {
 			case TP2Package.MASTER___EXECUTE_COMMAND__ABSTRACTCOMMAND:
 				executeCommand((AbstractCommand)arguments.get(0));
 				return null;
-			case TP2Package.MASTER___UPDATE_RESSOURCE__RESSOURCE:
-				updateRessource((Ressource)arguments.get(0));
+			case TP2Package.MASTER___UPDATE_CURRENT_RESSOURCE__RESSOURCE:
+				updateCurrentRessource((Ressource)arguments.get(0));
 				return null;
 		}
 		return super.eInvoke(operationID, arguments);

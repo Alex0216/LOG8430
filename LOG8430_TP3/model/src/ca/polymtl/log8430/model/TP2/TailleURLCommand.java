@@ -9,7 +9,7 @@ package ca.polymtl.log8430.model.TP2;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * Implémentation concrète de la classe Command. Cette commande donne la taille de la ressource sélectionnée.
+ * Implémentation concrète de la classe Command. Cette commande donne la taille de l'url de la page sélectionnée.
  * <!-- end-model-doc -->
  *
  *
