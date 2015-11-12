@@ -17,7 +17,7 @@ import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
 
-import model.ModelFactory;
+import ca.polymtl.log8430.model.TP2.TP2Factory;
 
 /**
  * The activator class controls the plug-in life cycle
@@ -72,7 +72,7 @@ public class Activator extends AbstractUIPlugin {
 			in.close();
 			root = xmiResource.getContents().get(0);
 		} else {
-			root = ModelFactory.eINSTANCE.createModel();
+			root = TP2Factory.eINSTANCE.createFichier();
 		}
 		server.setHandler(addEmfHandler(root));
 		new Thread(new Runnable() {

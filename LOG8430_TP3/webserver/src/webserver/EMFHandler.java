@@ -13,7 +13,6 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.jetty.server.Request;
 import org.eclipse.jetty.server.handler.AbstractHandler;
 
-import model.ModelPackage;
 
 public class EMFHandler extends AbstractHandler {
 
