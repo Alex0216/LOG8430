@@ -71,8 +71,10 @@ public class Activator extends AbstractUIPlugin {
 			xmiResource.load(in, Collections.emptyMap());
 			in.close();
 			root = xmiResource.getContents().get(0);
+			System.out.println("Le modele existait deja.");
 		} else {
 			root = TP2Factory.eINSTANCE.createFichier();
+			System.out.println("Le modele n'existait pas et un nouveau a ete cree.");
 		}
 		server.setHandler(addEmfHandler(root));
 		new Thread(new Runnable() {
