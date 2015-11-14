@@ -52,12 +52,19 @@ public class EMFHandler extends AbstractHandler {
 		EStructuralFeature feature = eobject.eClass().getEStructuralFeature(typeInfo.mainType.getModeleName());
 		// call reflexively
 		context  = eobject.eGet(feature);
-		
-			if(context instanceof EList) {
-				EList list = (EList) context;
-				list = filterList(list, typeInfo.subType);
+
+		if(context instanceof EList) {
+			EList list = (EList) context;
+			list = filterList(list, typeInfo.subType);
+
+			if(typeInfo.position == -1) {
 				context = list;
 			}
+			else {
+				context = list.get(typeInfo.position);
+			}
+
+		}
 
 		httpResp.setStatus(HttpServletResponse.SC_OK);
 		httpResp.getWriter().print(context);
@@ -75,13 +82,26 @@ public class EMFHandler extends AbstractHandler {
 		
 		info = new RequestTypeInfo();
 		info.mainType = RequestType.fromString(fragments[1]);
+		info.subType = RequestType.fromString(fragments[1]);
 		for(int i = 1; i < fragments.length; i++){
 			info.subType = RequestType.fromString(fragments[i]);
 			
-			// Error in the path
+			// Error in the path, check if its due to an index. If not it means the path is not valid.
 			if (info.subType == null) {
-				return null;
+				try {
+					info.position = Integer.parseInt(fragments[fragments.length - 1]);
+					info.subType = RequestType.fromString(fragments[i-1]); // Bring the last valid one
+				} catch (NumberFormatException e) {
+					return null;
+				}
 			}
+		}
+		
+		// Check for index at the end
+		try {
+			info.position = Integer.parseInt(fragments[fragments.length - 1]);
+		} catch (NumberFormatException e) {
+			info.position = -1;
 		}
 		
 		return info;
