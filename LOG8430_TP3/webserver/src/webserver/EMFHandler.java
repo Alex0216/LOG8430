@@ -120,12 +120,6 @@ public class EMFHandler extends AbstractHandler {
 			}
 		}
 		
-/*		list.removeIf(new Predicate<EObject>() {
-			@Override
-			public boolean test(EObject arg0) {
-				return !isClassValidForRequest(arg0, type);
-			}
-		});*/
 		return newList;
 	}
 	
@@ -136,7 +130,10 @@ public class EMFHandler extends AbstractHandler {
 		boolean isDossier = o instanceof Dossier;
 		boolean isPage = o instanceof Page;
 		
-		if (type == RequestType.RESSOURCES) {
+		if (type == RequestType.COMMANDS) {
+			isValid = true; // Une seule sorte de commande
+		}
+		else if (type == RequestType.RESSOURCES) {
 			isValid = isFichier || isDossier || isPage;
 		}
 		else if (type == RequestType.RESSOURCES_DISTANT) {
