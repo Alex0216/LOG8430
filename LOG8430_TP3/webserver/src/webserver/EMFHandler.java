@@ -7,6 +7,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.emf.common.util.TreeIterator;
@@ -55,6 +56,7 @@ public class EMFHandler extends AbstractHandler {
 			if(context instanceof EList) {
 				EList list = (EList) context;
 				list = filterList(list, typeInfo.subType);
+				context = list;
 			}
 
 		httpResp.setStatus(HttpServletResponse.SC_OK);
@@ -89,16 +91,22 @@ public class EMFHandler extends AbstractHandler {
 		if (list == null || list.size() == 0) {
 			return null;
 		}
+
+		EList newList = new BasicEList();
 		
-		for(int i = 0; i < list.size(); i++){
-			list.removeIf(new Predicate<EObject>() {
-					@Override
-					public boolean test(EObject arg0) {
-						return !isClassValidForRequest(arg0, type);
-					}
-				});
+		for(int i=0; i < list.size(); i++) {
+			if(isClassValidForRequest(list.get(i), type)) {
+				newList.add(list.get(i));
+			}
 		}
-		return list;
+		
+/*		list.removeIf(new Predicate<EObject>() {
+			@Override
+			public boolean test(EObject arg0) {
+				return !isClassValidForRequest(arg0, type);
+			}
+		});*/
+		return newList;
 	}
 	
 	private boolean isClassValidForRequest(EObject o, RequestType type) {
