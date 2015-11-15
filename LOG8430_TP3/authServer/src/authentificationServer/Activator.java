@@ -1,5 +1,11 @@
 package authentificationServer;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.net.URLDecoder;
+import java.util.HashMap;
+import java.util.Map;
+
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.jetty.server.Server;
@@ -19,6 +25,8 @@ public class Activator extends AbstractUIPlugin {
 	private static Activator plugin;
 
 	private Server server;
+	
+	private Map<String, String> usersPwd;
 
 	/**
 	 * The constructor
@@ -42,9 +50,23 @@ public class Activator extends AbstractUIPlugin {
 	public void start(BundleContext context) throws Exception {
 		super.start(context);
 		plugin = this;
+		
+		usersPwd = new HashMap<String, String>();
 
 		server = new Server(3306);
+		String path = Activator.class.getProtectionDomain().getCodeSource().getLocation().getPath();
+		String decodedPath = URLDecoder.decode(path, "UTF-8");
+		System.out.println("The users file path is :" + decodedPath);
+		try(BufferedReader br = new BufferedReader(new FileReader(decodedPath + "users.txt"))) {
+		    String line = null;
 
+		    while ((line = br.readLine()) != null) {
+		        String[] tokens = line.split("\\s+");
+		        usersPwd.put(tokens[0], tokens[1]);
+		    }
+		}
+
+		server.setHandler(new AuthHandler(usersPwd));
 		System.out.println("Auth server up");
 		new Thread(new Runnable() {
 			@Override
@@ -53,7 +75,7 @@ public class Activator extends AbstractUIPlugin {
 					server.start();
 					server.join();
 				} catch (Exception e) {
-					getLog().log(new Status(IStatus.ERROR, PLUGIN_ID, "Failed to start webserver"));
+					getLog().log(new Status(IStatus.ERROR, PLUGIN_ID, "Failed to start auth server"));
 				}
 			}
 		}).start();

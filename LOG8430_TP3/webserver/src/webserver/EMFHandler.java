@@ -1,6 +1,13 @@
 package webserver;
 
 import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeoutException;
 import java.util.function.Predicate;
 
 import javax.servlet.ServletException;
@@ -13,7 +20,10 @@ import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.jetty.client.HttpClient;
+import org.eclipse.jetty.client.api.ContentResponse;
 import org.eclipse.jetty.server.Request;
+import org.eclipse.jetty.server.Response;
 import org.eclipse.jetty.server.handler.AbstractHandler;
 
 import ca.polymtl.log8430.model.TP2.Dossier;
@@ -39,36 +49,69 @@ public class EMFHandler extends AbstractHandler {
 	@Override
 	public void handle(String path, Request req, HttpServletRequest httpReq, HttpServletResponse httpResp)
 			throws IOException, ServletException {
-		String method = httpReq.getMethod();
-
-		String[] fragments = path.split("/");
-		Object context = root;
-
-		RequestTypeInfo typeInfo = getRequestTypeInfo(fragments);
 		
-		// match feature
-		EObject eobject = (EObject) context;
-		//find the feature
-		EStructuralFeature feature = eobject.eClass().getEStructuralFeature(typeInfo.mainType.getModeleName());
-		// call reflexively
-		context  = eobject.eGet(feature);
-
-		if(context instanceof EList) {
-			EList list = (EList) context;
-			list = filterList(list, typeInfo.subType);
-
-			if(typeInfo.position == -1) {
-				context = list;
+		boolean authenticated = false;
+		HttpClient httpClient = new HttpClient();
+		try {
+			String user = httpReq.getParameter("user").toString();
+			String pwd = httpReq.getParameter("pwd").toString();
+			httpClient.start();
+			String test = String.format("http://localhost:3306/?user=%s&pwd=%s", user, pwd);
+			ContentResponse response = httpClient.GET(String.format("http://localhost:3306/?user=%s&pwd=%s", user, pwd));
+			if(response.getStatus() == HttpServletResponse.SC_OK){
+				authenticated = true;
 			}
-			else {
-				context = list.get(typeInfo.position);
+		} catch (Exception e) {
+			System.out.println("Could not authenticate");
+		} finally{
+			try {
+				httpClient.stop();
+			} catch (Exception e) {
+				e.printStackTrace();
 			}
-
 		}
+		
+		if(authenticated){
+			String[] fragments = path.split("/");
+			Object context = root;
 
-		httpResp.setStatus(HttpServletResponse.SC_OK);
-		httpResp.getWriter().print(context);
-		httpResp.flushBuffer();
+			RequestTypeInfo typeInfo = getRequestTypeInfo(fragments);
+			
+			try {
+				// match feature
+				EObject eobject = (EObject) context;
+				//find the feature
+				EStructuralFeature feature = eobject.eClass().getEStructuralFeature(typeInfo.mainType.getModeleName());
+				// call reflexively
+				context  = eobject.eGet(feature);
+			} catch (Exception e) {
+				System.out.println("Error while parsing modele");
+			}
+
+
+			if(context instanceof EList) {
+				EList list = (EList) context;
+				list = filterList(list, typeInfo.subType);
+
+				if(typeInfo.position == -1) {
+					context = list;
+				}
+				else {
+					context = list.get(typeInfo.position);
+				}
+
+			}
+			
+			httpResp.setStatus(HttpServletResponse.SC_OK);
+			httpResp.getWriter().println("Welcome to TP3");
+			httpResp.getWriter().println(context);
+			httpResp.flushBuffer();
+			
+		} else {
+			httpResp.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+			httpResp.getWriter().println("Better luck next time.");
+			httpResp.flushBuffer();
+		}
 	}
 	
 	private RequestTypeInfo getRequestTypeInfo(String[] fragments) {
