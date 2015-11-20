@@ -3,6 +3,7 @@ package webserver;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.net.URLDecoder;
 import java.util.Collections;
 
 import org.eclipse.core.runtime.IPath;
@@ -31,7 +32,7 @@ public class Activator extends AbstractUIPlugin {
 	private static Activator plugin;
 
 	private Server server;
-	private File savedModel = new File("localData.xmi");
+	private File savedModel = new File(Activator.class.getProtectionDomain().getCodeSource().getLocation().getPath() +"savedModel.xml");
 
 	private EObject root;
 
@@ -58,20 +59,17 @@ public class Activator extends AbstractUIPlugin {
 		super.start(context);
 		plugin = this;
 
-		server = new Server(8080);
+		server = new Server(5002);
 		XMIResource xmiResource = new XMIResourceImpl();
-		
-		IPath stateLocation = Activator.getDefault().getStateLocation();
-		IPath model = stateLocation.append("savedModel.xml");
-		File savedFile = model.toFile();
-		System.out.println("Le modele est enregistré dans le fichier: " + savedFile.getAbsolutePath());
-		if (savedFile.exists()) {
+
+		System.out.println("Le modele est enregistré dans le fichier: " + savedModel.getAbsolutePath());
+		if (savedModel.exists()) {
 			// load from plug-in specific location
-			FileInputStream in = new FileInputStream(savedFile);
+			FileInputStream in = new FileInputStream(savedModel);
 			xmiResource.load(in, Collections.emptyMap());
 			in.close();
 			root = xmiResource.getContents().get(0);
-			System.out.println("Le modele existait deja.");
+			System.out.println("Le modele existait deja, on le charge.");
 		} else {
 			root = TP2Factory.eINSTANCE.createFichier();
 			System.out.println("Le modele n'existait pas et un nouveau a ete cree.");

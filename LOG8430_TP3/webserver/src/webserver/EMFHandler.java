@@ -56,8 +56,8 @@ public class EMFHandler extends AbstractHandler {
 			String user = httpReq.getParameter("user").toString();
 			String pwd = httpReq.getParameter("pwd").toString();
 			httpClient.start();
-			String test = String.format("http://localhost:3306/?user=%s&pwd=%s", user, pwd);
-			ContentResponse response = httpClient.GET(String.format("http://localhost:3306/?user=%s&pwd=%s", user, pwd));
+			String test = String.format("http://localhost:5003/?user=%s&pwd=%s", user, pwd);
+			ContentResponse response = httpClient.GET(String.format("http://localhost:5003/?user=%s&pwd=%s", user, pwd));
 			if(response.getStatus() == HttpServletResponse.SC_OK){
 				authenticated = true;
 			}

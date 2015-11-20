@@ -53,7 +53,7 @@ public class Activator extends AbstractUIPlugin {
 		
 		usersPwd = new HashMap<String, String>();
 
-		server = new Server(3306);
+		server = new Server(5003);
 		String path = Activator.class.getProtectionDomain().getCodeSource().getLocation().getPath();
 		String decodedPath = URLDecoder.decode(path, "UTF-8");
 		System.out.println("The users file path is :" + decodedPath);
