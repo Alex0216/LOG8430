@@ -1,16 +1,20 @@
 package webserver;
 
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeoutException;
 import java.util.function.Predicate;
 
 import javax.servlet.ServletException;
+import javax.servlet.ServletInputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -29,6 +33,8 @@ import org.eclipse.jetty.server.handler.AbstractHandler;
 import ca.polymtl.log8430.model.TP2.Dossier;
 import ca.polymtl.log8430.model.TP2.Fichier;
 import ca.polymtl.log8430.model.TP2.Page;
+import ca.polymtl.log8430.model.TP2.TP2Factory;
+import ca.polymtl.log8430.model.TP2.TP2Package;
 
 
 public class EMFHandler extends AbstractHandler {
@@ -41,9 +47,11 @@ public class EMFHandler extends AbstractHandler {
 	 };
 
 	private final EObject root;
+	private Map<String, List<EObject>> userObjects;
 
 	public EMFHandler(EObject root) {
 		this.root = root;
+		this.userObjects = new HashMap<String, List<EObject>>();
 	}
 
 	@Override
@@ -52,11 +60,11 @@ public class EMFHandler extends AbstractHandler {
 		
 		boolean authenticated = false;
 		HttpClient httpClient = new HttpClient();
+		String user = null;
 		try {
-			String user = httpReq.getParameter("user").toString();
+			user = httpReq.getParameter("user").toString();
 			String pwd = httpReq.getParameter("pwd").toString();
 			httpClient.start();
-			String test = String.format("http://localhost:5003/?user=%s&pwd=%s", user, pwd);
 			ContentResponse response = httpClient.GET(String.format("http://localhost:5003/?user=%s&pwd=%s", user, pwd));
 			if(response.getStatus() == HttpServletResponse.SC_OK){
 				authenticated = true;
@@ -72,36 +80,58 @@ public class EMFHandler extends AbstractHandler {
 		}
 		
 		if(authenticated){
+			String method = httpReq.getMethod();
+			
 			String[] fragments = path.split("/");
 			Object context = root;
 
 			RequestTypeInfo typeInfo = getRequestTypeInfo(fragments);
+			// match feature
+			EObject eobject = (EObject) context;
+			//find the feature
+			EStructuralFeature feature;
+			EObject newObject = null;
+			if(method.equals("PUT")){
+				newObject = handlePut(httpReq);
+				feature = eobject.eClass().getEStructuralFeature(RequestType.RESSOURCES.getModeleName());
+			}
+			else {
+				feature = eobject.eClass().getEStructuralFeature(typeInfo.mainType.getModeleName());
+			}
 			
 			try {
-				// match feature
-				EObject eobject = (EObject) context;
-				//find the feature
-				EStructuralFeature feature = eobject.eClass().getEStructuralFeature(typeInfo.mainType.getModeleName());
 				// call reflexively
 				context  = eobject.eGet(feature);
+				
+				if(context instanceof EList) {
+					EList list = (EList) context;
+					
+					if(method.equals("PUT")){
+						list.add(newObject);
+						
+						List<EObject> listObjects = userObjects.get(user);
+						if (listObjects == null) {
+							listObjects = new ArrayList<EObject>();
+						}
+						listObjects.add(newObject);
+						userObjects.put(user, listObjects);
+						context = list;
+					}
+					else {
+						list = filterList(list, typeInfo.subType, user);
+						if(typeInfo.position == -1) {
+							context = list;
+						}
+						else {
+							context = list.get(typeInfo.position);
+						}
+					}
+				}	
+				
 			} catch (Exception e) {
 				System.out.println("Error while parsing modele");
 			}
 
-
-			if(context instanceof EList) {
-				EList list = (EList) context;
-				list = filterList(list, typeInfo.subType);
-
-				if(typeInfo.position == -1) {
-					context = list;
-				}
-				else {
-					context = list.get(typeInfo.position);
-				}
-
-			}
-			
 			httpResp.setStatus(HttpServletResponse.SC_OK);
 			httpResp.getWriter().println("Welcome to TP3");
 			httpResp.getWriter().println(context);
@@ -150,7 +180,7 @@ public class EMFHandler extends AbstractHandler {
 		return info;
 	}
 
-	private EList filterList(EList<EObject> list, RequestType type) {
+	private EList filterList(EList<EObject> list, RequestType type, String user) {
 		if (list == null || list.size() == 0) {
 			return null;
 		}
@@ -159,7 +189,14 @@ public class EMFHandler extends AbstractHandler {
 		
 		for(int i=0; i < list.size(); i++) {
 			if(isClassValidForRequest(list.get(i), type)) {
-				newList.add(list.get(i));
+				
+				// Validate if the Object was inserted from the user
+				if(userObjects.get(user) != null){
+					List<EObject> listValids = userObjects.get(user);
+					if(listValids.contains(list.get(i))) {
+						newList.add(list.get(i));
+					}
+				}
 			}
 		}
 		
@@ -193,5 +230,15 @@ public class EMFHandler extends AbstractHandler {
 		}
 		
 		return isValid;
+	}
+	
+	private EObject handlePut(HttpServletRequest httpReq){
+		Dossier newDossier = (Dossier)TP2Factory.eINSTANCE.create(TP2Package.eINSTANCE.getDossier());
+		newDossier.setNom("New Dossier");
+		newDossier.setNombreEnfant(3);
+		
+		return newDossier;
+		
+
 	}
 }
