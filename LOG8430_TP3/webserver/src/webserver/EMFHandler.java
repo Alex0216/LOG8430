@@ -2,32 +2,25 @@ package webserver;
 
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.TimeoutException;
-import java.util.function.Predicate;
 
 import javax.servlet.ServletException;
-import javax.servlet.ServletInputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.common.util.Enumerator;
-import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.jetty.client.HttpClient;
 import org.eclipse.jetty.client.api.ContentResponse;
 import org.eclipse.jetty.server.Request;
-import org.eclipse.jetty.server.Response;
 import org.eclipse.jetty.server.handler.AbstractHandler;
 
 import ca.polymtl.log8430.model.TP2.Dossier;
@@ -233,12 +226,27 @@ public class EMFHandler extends AbstractHandler {
 	}
 	
 	private EObject handlePut(HttpServletRequest httpReq){
-		Dossier newDossier = (Dossier)TP2Factory.eINSTANCE.create(TP2Package.eINSTANCE.getDossier());
-		newDossier.setNom("New Dossier");
-		newDossier.setNombreEnfant(3);
 		
-		return newDossier;
-		
-
+		try {
+			BufferedReader br = httpReq.getReader();
+			StringBuilder responseStrBuilder = new StringBuilder();
+			
+			String line = null;
+		    while ((line = br.readLine()) != null) {
+		    	responseStrBuilder.append(line);
+		    }
+		    br.close();
+		    
+		    JSONParser jsonParser = new JSONParser();
+		    JSONObject object = (JSONObject)jsonParser.parse(responseStrBuilder.toString());
+			
+		    EMFParserJSON emfParser = new EMFParserJSON();
+		    return emfParser.createObjectFromJSON(object);
+		} catch (IOException | ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			System.out.println("Error while parsing the JSON from put method");
+		}
+		return null;
 	}
 }
