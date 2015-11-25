@@ -9,7 +9,7 @@ package ca.polymtl.log8430.model.TP2;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * Implémentation concrète de la classe Command. Cette commande donne le nombre d'enfant de la ressource de type dossier.
+ * ImplÃ©mentation concrÃ¨te de la classe Command. Cette commande donne le nombre d'enfant de la ressource de type dossier.
  * <!-- end-model-doc -->
  *
  *

@@ -9,16 +9,16 @@ package ca.polymtl.log8430.model.TP2;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * Classe abstraite représentant une ressource locale.
+ * Classe abstraite reprÃ©sentant une ressource locale.
  * <!-- end-model-doc -->
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link ca.polymtl.log8430.model.TP2.RessourcesLocale#getPermission <em>Permission</em>}</li>
  *   <li>{@link ca.polymtl.log8430.model.TP2.RessourcesLocale#getCheminAbsolu <em>Chemin Absolu</em>}</li>
  * </ul>
- * </p>
  *
  * @see ca.polymtl.log8430.model.TP2.TP2Package#getRessourcesLocale()
  * @model interface="true" abstract="true"

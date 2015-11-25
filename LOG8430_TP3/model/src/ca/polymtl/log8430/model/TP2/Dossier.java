@@ -11,16 +11,16 @@ import org.eclipse.emf.common.util.EList;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * Ressource qui représente un dossier. Un dossier peut contenir d'autres ressources.
+ * Ressource qui reprÃ©sente un dossier. Un dossier peut contenir d'autres ressources.
  * <!-- end-model-doc -->
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link ca.polymtl.log8430.model.TP2.Dossier#getNombreEnfant <em>Nombre Enfant</em>}</li>
  *   <li>{@link ca.polymtl.log8430.model.TP2.Dossier#getListEnfants <em>List Enfants</em>}</li>
  * </ul>
- * </p>
  *
  * @see ca.polymtl.log8430.model.TP2.TP2Package#getDossier()
  * @model

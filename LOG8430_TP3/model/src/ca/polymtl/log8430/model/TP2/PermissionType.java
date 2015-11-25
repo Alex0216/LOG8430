@@ -147,6 +147,8 @@ public enum PermissionType implements Enumerator {
 	 * Returns the '<em><b>Permission Type</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @param literal the literal.
+	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static PermissionType get(String literal) {
@@ -163,6 +165,8 @@ public enum PermissionType implements Enumerator {
 	 * Returns the '<em><b>Permission Type</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @param name the name.
+	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static PermissionType getByName(String name) {
@@ -179,6 +183,8 @@ public enum PermissionType implements Enumerator {
 	 * Returns the '<em><b>Permission Type</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @param value the integer value.
+	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static PermissionType get(int value) {

@@ -10,17 +10,17 @@ import org.eclipse.emf.ecore.EObject;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * Classe abstraite représentant une commande.
+ * Classe abstraite reprÃ©sentant une commande.
  * <!-- end-model-doc -->
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link ca.polymtl.log8430.model.TP2.AbstractCommand#getCommandName <em>Command Name</em>}</li>
  *   <li>{@link ca.polymtl.log8430.model.TP2.AbstractCommand#getResult <em>Result</em>}</li>
  *   <li>{@link ca.polymtl.log8430.model.TP2.AbstractCommand#getRessource <em>Ressource</em>}</li>
  * </ul>
- * </p>
  *
  * @see ca.polymtl.log8430.model.TP2.TP2Package#getAbstractCommand()
  * @model interface="true" abstract="true"
@@ -109,7 +109,7 @@ public interface AbstractCommand extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Efface le contenu du résultat et notifie tous les observers.
+	 * Efface le contenu du rÃ©sultat et notifie tous les observers.
 	 * <!-- end-model-doc -->
 	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='setResult(\"\");'"
 	 * @generated
@@ -120,7 +120,7 @@ public interface AbstractCommand extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Vérifie si la commande actuelle peut effectuer son exécution selon la ressource choisie.
+	 * VÃ©rifie si la commande actuelle peut effectuer son exÃ©cution selon la ressource choisie.
 	 * <!-- end-model-doc -->
 	 * @model
 	 * @generated
@@ -164,7 +164,7 @@ public interface AbstractCommand extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Exécute la commande selon le path actuel, met à jour le résultat et notifie les observers que ce dernier a été changé.
+	 * ExÃ©cute la commande selon le path actuel, met Ã  jour le rÃ©sultat et notifie les observers que ce dernier a Ã©tÃ© changÃ©.
 	 * <!-- end-model-doc -->
 	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='if(ressource != null)\r\n\tressource.accept(this);'"
 	 * @generated

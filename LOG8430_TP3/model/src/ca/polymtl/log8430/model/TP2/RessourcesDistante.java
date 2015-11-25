@@ -9,7 +9,7 @@ package ca.polymtl.log8430.model.TP2;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * Classe abstraite représentant une ressource externe. Cette ressource ne se trouve pas localement.
+ * Classe abstraite reprÃ©sentant une ressource externe. Cette ressource ne se trouve pas localement.
  * <!-- end-model-doc -->
  *
  *

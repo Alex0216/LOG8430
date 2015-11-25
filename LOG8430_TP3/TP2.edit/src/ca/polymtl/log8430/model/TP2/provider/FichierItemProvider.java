@@ -62,6 +62,7 @@ public class FichierItemProvider
 
 			addNomPropertyDescriptor(object);
 			addTailleOctetPropertyDescriptor(object);
+			addProprietairePropertyDescriptor(object);
 			addPermissionPropertyDescriptor(object);
 			addCheminAbsoluPropertyDescriptor(object);
 		}
@@ -108,6 +109,28 @@ public class FichierItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Proprietaire feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addProprietairePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Ressource_proprietaire_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Ressource_proprietaire_feature", "_UI_Ressource_type"),
+				 TP2Package.Literals.RESSOURCE__PROPRIETAIRE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -196,6 +219,7 @@ public class FichierItemProvider
 		switch (notification.getFeatureID(Fichier.class)) {
 			case TP2Package.FICHIER__NOM:
 			case TP2Package.FICHIER__TAILLE_OCTET:
+			case TP2Package.FICHIER__PROPRIETAIRE:
 			case TP2Package.FICHIER__PERMISSION:
 			case TP2Package.FICHIER__CHEMIN_ABSOLU:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));

@@ -27,12 +27,12 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link ca.polymtl.log8430.model.TP2.impl.TailleURLCommandImpl#getCommandName <em>Command Name</em>}</li>
  *   <li>{@link ca.polymtl.log8430.model.TP2.impl.TailleURLCommandImpl#getResult <em>Result</em>}</li>
  *   <li>{@link ca.polymtl.log8430.model.TP2.impl.TailleURLCommandImpl#getRessource <em>Ressource</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

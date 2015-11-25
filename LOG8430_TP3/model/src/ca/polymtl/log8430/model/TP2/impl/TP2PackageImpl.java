@@ -340,6 +340,15 @@ public class TP2PackageImpl extends EPackageImpl implements TP2Package {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getRessource_Proprietaire() {
+		return (EAttribute)ressourceEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EOperation getRessource__Accept__AbstractCommand() {
 		return ressourceEClass.getEOperations().get(0);
 	}
@@ -626,6 +635,7 @@ public class TP2PackageImpl extends EPackageImpl implements TP2Package {
 		ressourceEClass = createEClass(RESSOURCE);
 		createEAttribute(ressourceEClass, RESSOURCE__NOM);
 		createEAttribute(ressourceEClass, RESSOURCE__TAILLE_OCTET);
+		createEAttribute(ressourceEClass, RESSOURCE__PROPRIETAIRE);
 		createEOperation(ressourceEClass, RESSOURCE___ACCEPT__ABSTRACTCOMMAND);
 
 		abstractCommandEClass = createEClass(ABSTRACT_COMMAND);
@@ -726,6 +736,7 @@ public class TP2PackageImpl extends EPackageImpl implements TP2Package {
 		initEClass(ressourceEClass, Ressource.class, "Ressource", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRessource_Nom(), ecorePackage.getEString(), "nom", null, 0, 1, Ressource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRessource_TailleOctet(), ecorePackage.getELong(), "tailleOctet", null, 0, 1, Ressource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRessource_Proprietaire(), ecorePackage.getEString(), "proprietaire", null, 0, 1, Ressource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		EOperation op = initEOperation(getRessource__Accept__AbstractCommand(), null, "accept", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getAbstractCommand(), "commandVisitor", 0, 1, IS_UNIQUE, IS_ORDERED);

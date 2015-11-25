@@ -19,13 +19,14 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link ca.polymtl.log8430.model.TP2.impl.FichierImpl#getNom <em>Nom</em>}</li>
  *   <li>{@link ca.polymtl.log8430.model.TP2.impl.FichierImpl#getTailleOctet <em>Taille Octet</em>}</li>
+ *   <li>{@link ca.polymtl.log8430.model.TP2.impl.FichierImpl#getProprietaire <em>Proprietaire</em>}</li>
  *   <li>{@link ca.polymtl.log8430.model.TP2.impl.FichierImpl#getPermission <em>Permission</em>}</li>
  *   <li>{@link ca.polymtl.log8430.model.TP2.impl.FichierImpl#getCheminAbsolu <em>Chemin Absolu</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -69,6 +70,26 @@ public class FichierImpl extends MinimalEObjectImpl.Container implements Fichier
 	 * @ordered
 	 */
 	protected long tailleOctet = TAILLE_OCTET_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getProprietaire() <em>Proprietaire</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProprietaire()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String PROPRIETAIRE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getProprietaire() <em>Proprietaire</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProprietaire()
+	 * @generated
+	 * @ordered
+	 */
+	protected String proprietaire = PROPRIETAIRE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getPermission() <em>Permission</em>}' attribute.
@@ -197,6 +218,27 @@ public class FichierImpl extends MinimalEObjectImpl.Container implements Fichier
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getProprietaire() {
+		return proprietaire;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setProprietaire(String newProprietaire) {
+		String oldProprietaire = proprietaire;
+		proprietaire = newProprietaire;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TP2Package.FICHIER__PROPRIETAIRE, oldProprietaire, proprietaire));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getCheminAbsolu() {
 		return cheminAbsolu;
 	}
@@ -234,6 +276,8 @@ public class FichierImpl extends MinimalEObjectImpl.Container implements Fichier
 				return getNom();
 			case TP2Package.FICHIER__TAILLE_OCTET:
 				return getTailleOctet();
+			case TP2Package.FICHIER__PROPRIETAIRE:
+				return getProprietaire();
 			case TP2Package.FICHIER__PERMISSION:
 				return getPermission();
 			case TP2Package.FICHIER__CHEMIN_ABSOLU:
@@ -255,6 +299,9 @@ public class FichierImpl extends MinimalEObjectImpl.Container implements Fichier
 				return;
 			case TP2Package.FICHIER__TAILLE_OCTET:
 				setTailleOctet((Long)newValue);
+				return;
+			case TP2Package.FICHIER__PROPRIETAIRE:
+				setProprietaire((String)newValue);
 				return;
 			case TP2Package.FICHIER__PERMISSION:
 				setPermission((PermissionType)newValue);
@@ -280,6 +327,9 @@ public class FichierImpl extends MinimalEObjectImpl.Container implements Fichier
 			case TP2Package.FICHIER__TAILLE_OCTET:
 				setTailleOctet(TAILLE_OCTET_EDEFAULT);
 				return;
+			case TP2Package.FICHIER__PROPRIETAIRE:
+				setProprietaire(PROPRIETAIRE_EDEFAULT);
+				return;
 			case TP2Package.FICHIER__PERMISSION:
 				setPermission(PERMISSION_EDEFAULT);
 				return;
@@ -302,6 +352,8 @@ public class FichierImpl extends MinimalEObjectImpl.Container implements Fichier
 				return NOM_EDEFAULT == null ? nom != null : !NOM_EDEFAULT.equals(nom);
 			case TP2Package.FICHIER__TAILLE_OCTET:
 				return tailleOctet != TAILLE_OCTET_EDEFAULT;
+			case TP2Package.FICHIER__PROPRIETAIRE:
+				return PROPRIETAIRE_EDEFAULT == null ? proprietaire != null : !PROPRIETAIRE_EDEFAULT.equals(proprietaire);
 			case TP2Package.FICHIER__PERMISSION:
 				return permission != PERMISSION_EDEFAULT;
 			case TP2Package.FICHIER__CHEMIN_ABSOLU:
@@ -339,6 +391,8 @@ public class FichierImpl extends MinimalEObjectImpl.Container implements Fichier
 		result.append(nom);
 		result.append(", tailleOctet: ");
 		result.append(tailleOctet);
+		result.append(", proprietaire: ");
+		result.append(proprietaire);
 		result.append(", permission: ");
 		result.append(permission);
 		result.append(", cheminAbsolu: ");

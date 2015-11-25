@@ -8,7 +8,7 @@ package ca.polymtl.log8430.model.TP2;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * Implémentation concrète de la classe Command. Cette commande donne le chemin absolue d'un fichier/dossier.
+ * ImplÃ©mentation concrÃ¨te de la classe Command. Cette commande donne le chemin absolue d'un fichier/dossier.
  * <!-- end-model-doc -->
  *
  *

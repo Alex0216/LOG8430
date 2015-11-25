@@ -62,6 +62,7 @@ public class DossierItemProvider
 
 			addNomPropertyDescriptor(object);
 			addTailleOctetPropertyDescriptor(object);
+			addProprietairePropertyDescriptor(object);
 			addPermissionPropertyDescriptor(object);
 			addCheminAbsoluPropertyDescriptor(object);
 			addNombreEnfantPropertyDescriptor(object);
@@ -110,6 +111,28 @@ public class DossierItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Proprietaire feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addProprietairePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Ressource_proprietaire_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Ressource_proprietaire_feature", "_UI_Ressource_type"),
+				 TP2Package.Literals.RESSOURCE__PROPRIETAIRE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -242,6 +265,7 @@ public class DossierItemProvider
 		switch (notification.getFeatureID(Dossier.class)) {
 			case TP2Package.DOSSIER__NOM:
 			case TP2Package.DOSSIER__TAILLE_OCTET:
+			case TP2Package.DOSSIER__PROPRIETAIRE:
 			case TP2Package.DOSSIER__PERMISSION:
 			case TP2Package.DOSSIER__CHEMIN_ABSOLU:
 			case TP2Package.DOSSIER__NOMBRE_ENFANT:

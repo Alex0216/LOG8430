@@ -22,15 +22,16 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link ca.polymtl.log8430.model.TP2.impl.DossierImpl#getNom <em>Nom</em>}</li>
  *   <li>{@link ca.polymtl.log8430.model.TP2.impl.DossierImpl#getTailleOctet <em>Taille Octet</em>}</li>
+ *   <li>{@link ca.polymtl.log8430.model.TP2.impl.DossierImpl#getProprietaire <em>Proprietaire</em>}</li>
  *   <li>{@link ca.polymtl.log8430.model.TP2.impl.DossierImpl#getPermission <em>Permission</em>}</li>
  *   <li>{@link ca.polymtl.log8430.model.TP2.impl.DossierImpl#getCheminAbsolu <em>Chemin Absolu</em>}</li>
  *   <li>{@link ca.polymtl.log8430.model.TP2.impl.DossierImpl#getNombreEnfant <em>Nombre Enfant</em>}</li>
  *   <li>{@link ca.polymtl.log8430.model.TP2.impl.DossierImpl#getListEnfants <em>List Enfants</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -74,6 +75,26 @@ public class DossierImpl extends MinimalEObjectImpl.Container implements Dossier
 	 * @ordered
 	 */
 	protected long tailleOctet = TAILLE_OCTET_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getProprietaire() <em>Proprietaire</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProprietaire()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String PROPRIETAIRE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getProprietaire() <em>Proprietaire</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProprietaire()
+	 * @generated
+	 * @ordered
+	 */
+	protected String proprietaire = PROPRIETAIRE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getPermission() <em>Permission</em>}' attribute.
@@ -265,6 +286,27 @@ public class DossierImpl extends MinimalEObjectImpl.Container implements Dossier
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getProprietaire() {
+		return proprietaire;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setProprietaire(String newProprietaire) {
+		String oldProprietaire = proprietaire;
+		proprietaire = newProprietaire;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TP2Package.DOSSIER__PROPRIETAIRE, oldProprietaire, proprietaire));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getCheminAbsolu() {
 		return cheminAbsolu;
 	}
@@ -302,6 +344,8 @@ public class DossierImpl extends MinimalEObjectImpl.Container implements Dossier
 				return getNom();
 			case TP2Package.DOSSIER__TAILLE_OCTET:
 				return getTailleOctet();
+			case TP2Package.DOSSIER__PROPRIETAIRE:
+				return getProprietaire();
 			case TP2Package.DOSSIER__PERMISSION:
 				return getPermission();
 			case TP2Package.DOSSIER__CHEMIN_ABSOLU:
@@ -328,6 +372,9 @@ public class DossierImpl extends MinimalEObjectImpl.Container implements Dossier
 				return;
 			case TP2Package.DOSSIER__TAILLE_OCTET:
 				setTailleOctet((Long)newValue);
+				return;
+			case TP2Package.DOSSIER__PROPRIETAIRE:
+				setProprietaire((String)newValue);
 				return;
 			case TP2Package.DOSSIER__PERMISSION:
 				setPermission((PermissionType)newValue);
@@ -360,6 +407,9 @@ public class DossierImpl extends MinimalEObjectImpl.Container implements Dossier
 			case TP2Package.DOSSIER__TAILLE_OCTET:
 				setTailleOctet(TAILLE_OCTET_EDEFAULT);
 				return;
+			case TP2Package.DOSSIER__PROPRIETAIRE:
+				setProprietaire(PROPRIETAIRE_EDEFAULT);
+				return;
 			case TP2Package.DOSSIER__PERMISSION:
 				setPermission(PERMISSION_EDEFAULT);
 				return;
@@ -388,6 +438,8 @@ public class DossierImpl extends MinimalEObjectImpl.Container implements Dossier
 				return NOM_EDEFAULT == null ? nom != null : !NOM_EDEFAULT.equals(nom);
 			case TP2Package.DOSSIER__TAILLE_OCTET:
 				return tailleOctet != TAILLE_OCTET_EDEFAULT;
+			case TP2Package.DOSSIER__PROPRIETAIRE:
+				return PROPRIETAIRE_EDEFAULT == null ? proprietaire != null : !PROPRIETAIRE_EDEFAULT.equals(proprietaire);
 			case TP2Package.DOSSIER__PERMISSION:
 				return permission != PERMISSION_EDEFAULT;
 			case TP2Package.DOSSIER__CHEMIN_ABSOLU:
@@ -429,6 +481,8 @@ public class DossierImpl extends MinimalEObjectImpl.Container implements Dossier
 		result.append(nom);
 		result.append(", tailleOctet: ");
 		result.append(tailleOctet);
+		result.append(", proprietaire: ");
+		result.append(proprietaire);
 		result.append(", permission: ");
 		result.append(permission);
 		result.append(", cheminAbsolu: ");

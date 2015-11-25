@@ -9,7 +9,7 @@ package ca.polymtl.log8430.model.TP2;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * Ressource représentant un fichier.
+ * Ressource reprÃ©sentant un fichier.
  * <!-- end-model-doc -->
  *
  *

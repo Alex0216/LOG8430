@@ -87,13 +87,22 @@ public interface TP2Package extends EPackage {
 	int RESSOURCE__TAILLE_OCTET = 1;
 
 	/**
+	 * The feature id for the '<em><b>Proprietaire</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESSOURCE__PROPRIETAIRE = 2;
+
+	/**
 	 * The number of structural features of the '<em>Ressource</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RESSOURCE_FEATURE_COUNT = 2;
+	int RESSOURCE_FEATURE_COUNT = 3;
 
 	/**
 	 * The operation id for the '<em>Accept</em>' operation.
@@ -140,6 +149,15 @@ public interface TP2Package extends EPackage {
 	 * @ordered
 	 */
 	int RESSOURCES_LOCALE__TAILLE_OCTET = RESSOURCE__TAILLE_OCTET;
+
+	/**
+	 * The feature id for the '<em><b>Proprietaire</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESSOURCES_LOCALE__PROPRIETAIRE = RESSOURCE__PROPRIETAIRE;
 
 	/**
 	 * The feature id for the '<em><b>Permission</b></em>' attribute.
@@ -213,6 +231,15 @@ public interface TP2Package extends EPackage {
 	 * @ordered
 	 */
 	int DOSSIER__TAILLE_OCTET = RESSOURCES_LOCALE__TAILLE_OCTET;
+
+	/**
+	 * The feature id for the '<em><b>Proprietaire</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DOSSIER__PROPRIETAIRE = RESSOURCES_LOCALE__PROPRIETAIRE;
 
 	/**
 	 * The feature id for the '<em><b>Permission</b></em>' attribute.
@@ -306,6 +333,15 @@ public interface TP2Package extends EPackage {
 	int FICHIER__TAILLE_OCTET = RESSOURCES_LOCALE__TAILLE_OCTET;
 
 	/**
+	 * The feature id for the '<em><b>Proprietaire</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FICHIER__PROPRIETAIRE = RESSOURCES_LOCALE__PROPRIETAIRE;
+
+	/**
 	 * The feature id for the '<em><b>Permission</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -379,6 +415,15 @@ public interface TP2Package extends EPackage {
 	int RESSOURCES_DISTANTE__TAILLE_OCTET = RESSOURCE__TAILLE_OCTET;
 
 	/**
+	 * The feature id for the '<em><b>Proprietaire</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESSOURCES_DISTANTE__PROPRIETAIRE = RESSOURCE__PROPRIETAIRE;
+
+	/**
 	 * The number of structural features of the '<em>Ressources Distante</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -432,6 +477,15 @@ public interface TP2Package extends EPackage {
 	 * @ordered
 	 */
 	int PAGE__TAILLE_OCTET = RESSOURCES_DISTANTE__TAILLE_OCTET;
+
+	/**
+	 * The feature id for the '<em><b>Proprietaire</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAGE__PROPRIETAIRE = RESSOURCES_DISTANTE__PROPRIETAIRE;
 
 	/**
 	 * The feature id for the '<em><b>Titre Page</b></em>' attribute.
@@ -1521,6 +1575,17 @@ public interface TP2Package extends EPackage {
 	EAttribute getRessource_TailleOctet();
 
 	/**
+	 * Returns the meta object for the attribute '{@link ca.polymtl.log8430.model.TP2.Ressource#getProprietaire <em>Proprietaire</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Proprietaire</em>'.
+	 * @see ca.polymtl.log8430.model.TP2.Ressource#getProprietaire()
+	 * @see #getRessource()
+	 * @generated
+	 */
+	EAttribute getRessource_Proprietaire();
+
+	/**
 	 * Returns the meta object for the '{@link ca.polymtl.log8430.model.TP2.Ressource#accept(ca.polymtl.log8430.model.TP2.AbstractCommand) <em>Accept</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1951,6 +2016,14 @@ public interface TP2Package extends EPackage {
 		 * @generated
 		 */
 		EAttribute RESSOURCE__TAILLE_OCTET = eINSTANCE.getRessource_TailleOctet();
+
+		/**
+		 * The meta object literal for the '<em><b>Proprietaire</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute RESSOURCE__PROPRIETAIRE = eINSTANCE.getRessource_Proprietaire();
 
 		/**
 		 * The meta object literal for the '<em><b>Accept</b></em>' operation.

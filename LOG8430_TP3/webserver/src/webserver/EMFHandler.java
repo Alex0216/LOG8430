@@ -29,7 +29,11 @@ import ca.polymtl.log8430.model.TP2.Page;
 import ca.polymtl.log8430.model.TP2.TP2Factory;
 import ca.polymtl.log8430.model.TP2.TP2Package;
 
-
+/**
+ * The class EMFHandler is responsible for handling HTTP
+ * requests from the webserver. (ex: get Dossier)
+ *
+ */
 public class EMFHandler extends AbstractHandler {
 	
 	public class RequestTypeInfo
@@ -46,7 +50,12 @@ public class EMFHandler extends AbstractHandler {
 		this.root = root;
 		this.userObjects = new HashMap<String, List<EObject>>();
 	}
-
+	/**
+	 * The handle method parse the http request and do the requested
+	 * operation. For exemple, if the user want to see the folders,
+	 * it'll communicate with the auth server and valdie the username
+	 * and password.
+	 */
 	@Override
 	public void handle(String path, Request req, HttpServletRequest httpReq, HttpServletResponse httpResp)
 			throws IOException, ServletException {
@@ -71,7 +80,7 @@ public class EMFHandler extends AbstractHandler {
 				e.printStackTrace();
 			}
 		}
-		
+		// Authentification was successfull
 		if(authenticated){
 			String method = httpReq.getMethod();
 			

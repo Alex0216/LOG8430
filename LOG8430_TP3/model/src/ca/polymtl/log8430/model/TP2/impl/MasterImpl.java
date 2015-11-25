@@ -24,13 +24,13 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link ca.polymtl.log8430.model.TP2.impl.MasterImpl#getCommands <em>Commands</em>}</li>
  *   <li>{@link ca.polymtl.log8430.model.TP2.impl.MasterImpl#isAutoRun <em>Auto Run</em>}</li>
  *   <li>{@link ca.polymtl.log8430.model.TP2.impl.MasterImpl#getCurrentRessource <em>Current Ressource</em>}</li>
  *   <li>{@link ca.polymtl.log8430.model.TP2.impl.MasterImpl#getRessourcesAvailable <em>Ressources Available</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

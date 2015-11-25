@@ -10,16 +10,17 @@ import org.eclipse.emf.ecore.EObject;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * Classe abstraite représentant une ressource.
+ * Classe abstraite reprÃ©sentant une ressource.
  * <!-- end-model-doc -->
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link ca.polymtl.log8430.model.TP2.Ressource#getNom <em>Nom</em>}</li>
  *   <li>{@link ca.polymtl.log8430.model.TP2.Ressource#getTailleOctet <em>Taille Octet</em>}</li>
+ *   <li>{@link ca.polymtl.log8430.model.TP2.Ressource#getProprietaire <em>Proprietaire</em>}</li>
  * </ul>
- * </p>
  *
  * @see ca.polymtl.log8430.model.TP2.TP2Package#getRessource()
  * @model interface="true" abstract="true"
@@ -77,6 +78,32 @@ public interface Ressource extends EObject {
 	 * @generated
 	 */
 	void setTailleOctet(long value);
+
+	/**
+	 * Returns the value of the '<em><b>Proprietaire</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Proprietaire</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Proprietaire</em>' attribute.
+	 * @see #setProprietaire(String)
+	 * @see ca.polymtl.log8430.model.TP2.TP2Package#getRessource_Proprietaire()
+	 * @model
+	 * @generated
+	 */
+	String getProprietaire();
+
+	/**
+	 * Sets the value of the '{@link ca.polymtl.log8430.model.TP2.Ressource#getProprietaire <em>Proprietaire</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Proprietaire</em>' attribute.
+	 * @see #getProprietaire()
+	 * @generated
+	 */
+	void setProprietaire(String value);
 
 	/**
 	 * <!-- begin-user-doc -->

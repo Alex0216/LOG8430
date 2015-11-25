@@ -62,6 +62,7 @@ public class PageItemProvider
 
 			addNomPropertyDescriptor(object);
 			addTailleOctetPropertyDescriptor(object);
+			addProprietairePropertyDescriptor(object);
 			addTitrePagePropertyDescriptor(object);
 			addTaillePagePropertyDescriptor(object);
 			addURLPropertyDescriptor(object);
@@ -109,6 +110,28 @@ public class PageItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Proprietaire feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addProprietairePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Ressource_proprietaire_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Ressource_proprietaire_feature", "_UI_Ressource_type"),
+				 TP2Package.Literals.RESSOURCE__PROPRIETAIRE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -219,6 +242,7 @@ public class PageItemProvider
 		switch (notification.getFeatureID(Page.class)) {
 			case TP2Package.PAGE__NOM:
 			case TP2Package.PAGE__TAILLE_OCTET:
+			case TP2Package.PAGE__PROPRIETAIRE:
 			case TP2Package.PAGE__TITRE_PAGE:
 			case TP2Package.PAGE__TAILLE_PAGE:
 			case TP2Package.PAGE__URL:

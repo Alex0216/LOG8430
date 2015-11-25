@@ -12,18 +12,18 @@ import org.eclipse.emf.ecore.EObject;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * Classe contrôleur qui s'occupe de mettre à jour les ressources des commandes, d'effacer leur résultat ou de tous les exécuter.
+ * Classe contrÃ´leur qui s'occupe de mettre Ã  jour les ressources des commandes, d'effacer leur rÃ©sultat ou de tous les exÃ©cuter.
  * <!-- end-model-doc -->
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link ca.polymtl.log8430.model.TP2.Master#getCommands <em>Commands</em>}</li>
  *   <li>{@link ca.polymtl.log8430.model.TP2.Master#isAutoRun <em>Auto Run</em>}</li>
  *   <li>{@link ca.polymtl.log8430.model.TP2.Master#getCurrentRessource <em>Current Ressource</em>}</li>
  *   <li>{@link ca.polymtl.log8430.model.TP2.Master#getRessourcesAvailable <em>Ressources Available</em>}</li>
  * </ul>
- * </p>
  *
  * @see ca.polymtl.log8430.model.TP2.TP2Package#getMaster()
  * @model
@@ -77,7 +77,7 @@ public interface Master extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Exécute toutes les commandes, met à jour les résultats et notifie les observers que ce dernier a été changé.
+	 * ExÃ©cute toutes les commandes, met Ã  jour les rÃ©sultats et notifie les observers que ce dernier a Ã©tÃ© changÃ©.
 	 * <!-- end-model-doc -->
 	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='for(AbstractCommand c: commands){\r\n\tif(c.canExecute()){\r\n\t\tc.execute();\r\n\t}\t\t\r\n}'"
 	 * @generated
@@ -88,7 +88,7 @@ public interface Master extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Exécute la commande passée en paramètre, met à jour le résultat et notifie les observers que ce dernier a été changé.
+	 * ExÃ©cute la commande passÃ©e en paramÃ¨tre, met Ã  jour le rÃ©sultat et notifie les observers que ce dernier a Ã©tÃ© changÃ©.
 	 * @param command Commande a executer.
 	 * <!-- end-model-doc -->
 	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='command.execute();'"
@@ -100,7 +100,7 @@ public interface Master extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Met à jour toutes les commandes avec la ressource passée en paramètre.
+	 * Met Ã  jour toutes les commandes avec la ressource passÃ©e en paramÃ¨tre.
 	 * @param ressource Resource a assigner aux commandes.
 	 * <!-- end-model-doc -->
 	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='for(AbstractCommand c: commands){\r\n\tc.setRessource(ressource);\r\n}\r\nif(isAutoRun()){\r\n\texecuteAll();\r\n}\r\n\r\nsetCurrentRessource(ressource);'"

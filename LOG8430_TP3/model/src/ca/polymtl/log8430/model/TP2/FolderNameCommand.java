@@ -8,7 +8,7 @@ package ca.polymtl.log8430.model.TP2;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * Implémentation concrète de la classe Command. Cette commande donne le nom d'un dossier. S'il s'agit d'une autre ressource une exception est lancée.
+ * ImplÃ©mentation concrÃ¨te de la classe Command. Cette commande donne le nom d'un dossier. S'il s'agit d'une autre ressource une exception est lancÃ©e.
  * <!-- end-model-doc -->
  *
  *

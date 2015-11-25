@@ -14,12 +14,12 @@ package ca.polymtl.log8430.model.TP2;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link ca.polymtl.log8430.model.TP2.Page#getTitrePage <em>Titre Page</em>}</li>
  *   <li>{@link ca.polymtl.log8430.model.TP2.Page#getTaillePage <em>Taille Page</em>}</li>
  *   <li>{@link ca.polymtl.log8430.model.TP2.Page#getURL <em>URL</em>}</li>
  * </ul>
- * </p>
  *
  * @see ca.polymtl.log8430.model.TP2.TP2Package#getPage()
  * @model

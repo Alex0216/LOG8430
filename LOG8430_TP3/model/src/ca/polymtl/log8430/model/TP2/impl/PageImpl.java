@@ -18,14 +18,15 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link ca.polymtl.log8430.model.TP2.impl.PageImpl#getNom <em>Nom</em>}</li>
  *   <li>{@link ca.polymtl.log8430.model.TP2.impl.PageImpl#getTailleOctet <em>Taille Octet</em>}</li>
+ *   <li>{@link ca.polymtl.log8430.model.TP2.impl.PageImpl#getProprietaire <em>Proprietaire</em>}</li>
  *   <li>{@link ca.polymtl.log8430.model.TP2.impl.PageImpl#getTitrePage <em>Titre Page</em>}</li>
  *   <li>{@link ca.polymtl.log8430.model.TP2.impl.PageImpl#getTaillePage <em>Taille Page</em>}</li>
  *   <li>{@link ca.polymtl.log8430.model.TP2.impl.PageImpl#getURL <em>URL</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -69,6 +70,26 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 	 * @ordered
 	 */
 	protected long tailleOctet = TAILLE_OCTET_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getProprietaire() <em>Proprietaire</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProprietaire()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String PROPRIETAIRE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getProprietaire() <em>Proprietaire</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProprietaire()
+	 * @generated
+	 * @ordered
+	 */
+	protected String proprietaire = PROPRIETAIRE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getTitrePage() <em>Titre Page</em>}' attribute.
@@ -259,6 +280,27 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getProprietaire() {
+		return proprietaire;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setProprietaire(String newProprietaire) {
+		String oldProprietaire = proprietaire;
+		proprietaire = newProprietaire;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TP2Package.PAGE__PROPRIETAIRE, oldProprietaire, proprietaire));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public void accept(final AbstractCommand commandVisitor) {
 		commandVisitor.visit(this);
 	}
@@ -275,6 +317,8 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 				return getNom();
 			case TP2Package.PAGE__TAILLE_OCTET:
 				return getTailleOctet();
+			case TP2Package.PAGE__PROPRIETAIRE:
+				return getProprietaire();
 			case TP2Package.PAGE__TITRE_PAGE:
 				return getTitrePage();
 			case TP2Package.PAGE__TAILLE_PAGE:
@@ -298,6 +342,9 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 				return;
 			case TP2Package.PAGE__TAILLE_OCTET:
 				setTailleOctet((Long)newValue);
+				return;
+			case TP2Package.PAGE__PROPRIETAIRE:
+				setProprietaire((String)newValue);
 				return;
 			case TP2Package.PAGE__TITRE_PAGE:
 				setTitrePage((String)newValue);
@@ -326,6 +373,9 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 			case TP2Package.PAGE__TAILLE_OCTET:
 				setTailleOctet(TAILLE_OCTET_EDEFAULT);
 				return;
+			case TP2Package.PAGE__PROPRIETAIRE:
+				setProprietaire(PROPRIETAIRE_EDEFAULT);
+				return;
 			case TP2Package.PAGE__TITRE_PAGE:
 				setTitrePage(TITRE_PAGE_EDEFAULT);
 				return;
@@ -351,6 +401,8 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 				return NOM_EDEFAULT == null ? nom != null : !NOM_EDEFAULT.equals(nom);
 			case TP2Package.PAGE__TAILLE_OCTET:
 				return tailleOctet != TAILLE_OCTET_EDEFAULT;
+			case TP2Package.PAGE__PROPRIETAIRE:
+				return PROPRIETAIRE_EDEFAULT == null ? proprietaire != null : !PROPRIETAIRE_EDEFAULT.equals(proprietaire);
 			case TP2Package.PAGE__TITRE_PAGE:
 				return TITRE_PAGE_EDEFAULT == null ? titrePage != null : !TITRE_PAGE_EDEFAULT.equals(titrePage);
 			case TP2Package.PAGE__TAILLE_PAGE:
@@ -390,6 +442,8 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 		result.append(nom);
 		result.append(", tailleOctet: ");
 		result.append(tailleOctet);
+		result.append(", proprietaire: ");
+		result.append(proprietaire);
 		result.append(", titrePage: ");
 		result.append(titrePage);
 		result.append(", taillePage: ");
