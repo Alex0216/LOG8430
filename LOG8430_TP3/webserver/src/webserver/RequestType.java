@@ -5,8 +5,8 @@ package webserver;
 	    RESSOURCES("ressources", "ressourcesAvailable"),
 	    RESSOURCES_LOCAL("locales", "ressourcesAvailable"),
 	    RESSOURCES_DISTANT("distantes", "ressourcesAvailable"),
-	    RESSOURCES_DOSSIER("dossiers", "ressourcesAvailabledossier"),
-	    RESSOURCES_FICHIER("fichiers", "ressourcesAvailablefichier")
+	    RESSOURCES_DOSSIER("dossiers", "ressourcesAvailable"),
+	    RESSOURCES_FICHIER("fichiers", "ressourcesAvailable")
 	    ;
 
 	    private final String text;
