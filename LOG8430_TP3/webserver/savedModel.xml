@@ -6,11 +6,11 @@
   <commands xsi:type="TP2:PermissionCommand"/>
   <commands xsi:type="TP2:NbEnfantCommand"/>
   <commands xsi:type="TP2:FileNameCommand"/>
-  <currentRessource xsi:type="TP2:Fichier" nom="Aloah"/>
-  <ressourcesAvailable xsi:type="TP2:Dossier" nom="root" nombreEnfant="1" ListEnfants="//@ressourcesAvailable.1"/>
-  <ressourcesAvailable xsi:type="TP2:Dossier" nom="SubFolder" cheminAbsolu="/sub" nombreEnfant="1" ListEnfants="//@ressourcesAvailable.2"/>
-  <ressourcesAvailable xsi:type="TP2:Fichier" nom="MyResume" tailleOctet="18" permission="ReadAndWrite" cheminAbsolu="/home/julien/resume.pml"/>
-  <ressourcesAvailable xsi:type="TP2:Page" nom="Google" tailleOctet="2000" titrePage="Search me now" taillePage="56" URL="www.google.ca"/>
-  <ressourcesAvailable xsi:type="TP2:Page" nom="Youtube" tailleOctet="36" titrePage="Video everywhere" taillePage="45" URL="www.youtube.com"/>
-  <ressourcesAvailable xsi:type="TP2:Page" nom="Restaurant Roberto" tailleOctet="56" titrePage="The BEST !" taillePage="20" URL="www.roberto.com"/>
+  <ressourcesAvailable xsi:type="TP2:Fichier" nom="Aloah" proprietaire="julien"/>
+  <ressourcesAvailable xsi:type="TP2:Dossier" nom="root" nombreEnfant="1" ListEnfants="//@ressourcesAvailable.1" proprietaire="mathieu"/>
+  <ressourcesAvailable xsi:type="TP2:Dossier" nom="SubFolder" cheminAbsolu="/sub" nombreEnfant="1" ListEnfants="//@ressourcesAvailable.2" proprietaire="julien"/>
+  <ressourcesAvailable xsi:type="TP2:Fichier" nom="MyResume" tailleOctet="18" permission="ReadAndWrite" cheminAbsolu="/home/julien/resume.pml" proprietaire="julien"/>
+  <ressourcesAvailable xsi:type="TP2:Page" nom="Google" tailleOctet="2000" titrePage="Search me now" taillePage="56" URL="www.google.ca" proprietaire="julien"/>
+  <ressourcesAvailable xsi:type="TP2:Page" nom="Youtube" tailleOctet="36" titrePage="Video everywhere" taillePage="45" URL="www.youtube.com" proprietaire="mathieu"/>
+  <ressourcesAvailable xsi:type="TP2:Page" nom="Restaurant Roberto" tailleOctet="56" titrePage="The BEST !" taillePage="20" URL="www.roberto.com" proprietaire="julien"/>
 </TP2:Master>

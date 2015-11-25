@@ -26,6 +26,7 @@ import org.eclipse.jetty.server.handler.AbstractHandler;
 import ca.polymtl.log8430.model.TP2.Dossier;
 import ca.polymtl.log8430.model.TP2.Fichier;
 import ca.polymtl.log8430.model.TP2.Page;
+import ca.polymtl.log8430.model.TP2.Ressource;
 import ca.polymtl.log8430.model.TP2.TP2Factory;
 import ca.polymtl.log8430.model.TP2.TP2Package;
 
@@ -44,11 +45,9 @@ public class EMFHandler extends AbstractHandler {
 	 };
 
 	private final EObject root;
-	private Map<String, List<EObject>> userObjects;
 
 	public EMFHandler(EObject root) {
 		this.root = root;
-		this.userObjects = new HashMap<String, List<EObject>>();
 	}
 	/**
 	 * The handle method parse the http request and do the requested
@@ -95,6 +94,7 @@ public class EMFHandler extends AbstractHandler {
 			EObject newObject = null;
 			if(method.equals("PUT")){
 				newObject = handlePut(httpReq);
+				
 				feature = eobject.eClass().getEStructuralFeature(RequestType.RESSOURCES.getModeleName());
 			}
 			else {
@@ -109,14 +109,10 @@ public class EMFHandler extends AbstractHandler {
 					EList list = (EList) context;
 					
 					if(method.equals("PUT")){
+						Ressource r = (Ressource)newObject;
+						r.setProprietaire(user);
 						list.add(newObject);
 						
-						List<EObject> listObjects = userObjects.get(user);
-						if (listObjects == null) {
-							listObjects = new ArrayList<EObject>();
-						}
-						listObjects.add(newObject);
-						userObjects.put(user, listObjects);
 						context = list;
 					}
 					else {
@@ -191,13 +187,11 @@ public class EMFHandler extends AbstractHandler {
 		
 		for(int i=0; i < list.size(); i++) {
 			if(isClassValidForRequest(list.get(i), type)) {
-				
+				Ressource currentRes = (Ressource)list.get(i);
 				// Validate if the Object was inserted from the user
-				if(userObjects.get(user) != null){
-					List<EObject> listValids = userObjects.get(user);
-					if(listValids.contains(list.get(i))) {
+				if(currentRes != null && currentRes.getProprietaire() != null && 
+						currentRes.getProprietaire().equals(user)){
 						newList.add(list.get(i));
-					}
 				}
 			}
 		}
