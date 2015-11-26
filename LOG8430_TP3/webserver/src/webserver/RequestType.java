@@ -1,5 +1,7 @@
 package webserver;
-
+/**
+ * Enum for the requests types localhost:XXXX/ressources/ etc..
+ */
 	public enum RequestType {
 	    COMMANDS("commands", "commands"),
 	    RESSOURCES("ressources", "ressourcesAvailable"),

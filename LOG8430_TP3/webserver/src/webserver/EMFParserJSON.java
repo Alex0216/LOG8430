@@ -8,13 +8,18 @@ import ca.polymtl.log8430.model.TP2.Fichier;
 import ca.polymtl.log8430.model.TP2.Page;
 import ca.polymtl.log8430.model.TP2.TP2Factory;
 import ca.polymtl.log8430.model.TP2.TP2Package;
-
+/**
+ * EMFPArserJSON is responsible of parsing the JSON
+ */
 public class EMFParserJSON {
 	
 	public EMFParserJSON() {
 		
 	}
-	
+	/**
+	 * Create a EMF object of the correct type based on the json
+	 * parameter
+	 */
 	public EObject createObjectFromJSON(JSONObject o) {
 		if(o == null) {
 			return null;
@@ -36,7 +41,9 @@ public class EMFParserJSON {
 		}
 		return null;
 	}
-	
+	/**
+	 * Create a folder from JSON
+	 */
 	private EObject createDossierFromJSON(JSONObject o) {
 		Dossier newDossier = (Dossier)TP2Factory.eINSTANCE.create(TP2Package.eINSTANCE.getDossier());
 		
@@ -51,7 +58,9 @@ public class EMFParserJSON {
 			return null;
 		}
 	}
-	
+	/**
+	 * Create a file from JSON
+	 */
 	private EObject createFichierFromJSON(JSONObject o) {
 		Fichier newFichier = (Fichier)TP2Factory.eINSTANCE.create(TP2Package.eINSTANCE.getFichier());
 		
@@ -65,7 +74,9 @@ public class EMFParserJSON {
 			return null;
 		}
 	}
-	
+	/**
+	 * Create a page from JSOn
+	 */
 	private EObject createPageFromJSON(JSONObject o) {
 		Page newPage = (Page)TP2Factory.eINSTANCE.create(TP2Package.eINSTANCE.getPage());
 		

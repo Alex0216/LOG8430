@@ -1,8 +1,10 @@
 package webserver;
 
 import java.io.BufferedReader;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -18,6 +20,8 @@ import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.xmi.XMIResource;
+import org.eclipse.emf.ecore.xmi.impl.XMIResourceImpl;
 import org.eclipse.jetty.client.HttpClient;
 import org.eclipse.jetty.client.api.ContentResponse;
 import org.eclipse.jetty.server.Request;
@@ -112,7 +116,12 @@ public class EMFHandler extends AbstractHandler {
 						Ressource r = (Ressource)newObject;
 						r.setProprietaire(user);
 						list.add(newObject);
-						
+						XMIResource xmiResource = new XMIResourceImpl();
+						xmiResource.getContents().add(root);
+						FileOutputStream out = new FileOutputStream(Activator.savedModel);
+						xmiResource.save(out, Collections.emptyMap());
+						out.close();
+		
 						context = list;
 					}
 					else {
@@ -120,8 +129,10 @@ public class EMFHandler extends AbstractHandler {
 						if(typeInfo.position == -1) {
 							context = list;
 						}
-						else {
+						else if(typeInfo.position >=0 && typeInfo.position < list.size()){
 							context = list.get(typeInfo.position);
+						} else {
+							context = new BasicEList();
 						}
 					}
 				}	
@@ -141,7 +152,10 @@ public class EMFHandler extends AbstractHandler {
 			httpResp.flushBuffer();
 		}
 	}
-	
+	/**
+	 * This method parse the request to see if it is correct and if it
+	 * has an index inside.
+	 */
 	private RequestTypeInfo getRequestTypeInfo(String[] fragments) {
 		
 		RequestTypeInfo info = null;
@@ -177,7 +191,10 @@ public class EMFHandler extends AbstractHandler {
 		
 		return info;
 	}
-
+	/**
+	 * Given a request, this method filter the ressources that a user
+	 * has the right to access.
+	 */
 	private EList filterList(EList<EObject> list, RequestType type, String user) {
 		if (list == null || list.size() == 0) {
 			return null;
@@ -198,7 +215,10 @@ public class EMFHandler extends AbstractHandler {
 		
 		return newList;
 	}
-	
+	/**
+	 * This method handle is called to determine if the object
+	 * is of class folder, file etc..
+	 */
 	private boolean isClassValidForRequest(EObject o, RequestType type) {
 		boolean isValid = false;
 		
@@ -227,7 +247,9 @@ public class EMFHandler extends AbstractHandler {
 		
 		return isValid;
 	}
-	
+	/**
+	 * This method handles the adding of new files via JSON request
+	 */
 	private EObject handlePut(HttpServletRequest httpReq){
 		
 		try {

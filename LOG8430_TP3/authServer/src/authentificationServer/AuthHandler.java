@@ -9,7 +9,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.eclipse.jetty.server.Request;
 import org.eclipse.jetty.server.handler.AbstractHandler;
-
+/**
+ * Server handler for the authentification server
+ */
 public class AuthHandler extends AbstractHandler {
 
 	private Map<String, String> usersPwd;
@@ -17,7 +19,10 @@ public class AuthHandler extends AbstractHandler {
 	public AuthHandler(Map<String, String> map) {
 		usersPwd = map;
 	}
-
+	/**
+	 * Given a request, determine if a user is valid given his username
+	 * and password.
+	 */
 	@Override
 	public void handle(String path, Request req, HttpServletRequest httpReq, HttpServletResponse httpResp)
 			throws IOException, ServletException {

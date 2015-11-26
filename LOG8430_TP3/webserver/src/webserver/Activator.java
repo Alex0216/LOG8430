@@ -32,7 +32,7 @@ public class Activator extends AbstractUIPlugin {
 	private static Activator plugin;
 
 	private Server server;
-	private File savedModel = new File(Activator.class.getProtectionDomain().getCodeSource().getLocation().getPath() +"savedModel.xml");
+	public static File savedModel = new File(Activator.class.getProtectionDomain().getCodeSource().getLocation().getPath() +"savedModel.xml");
 
 	private EObject root;
 
@@ -94,8 +94,9 @@ public class Activator extends AbstractUIPlugin {
 	 * @see org.eclipse.ui.plugin.AbstractUIPlugin#stop(org.osgi.framework.
 	 * BundleContext)
 	 */
+	@ Override
 	public void stop(BundleContext context) throws Exception {
-
+		System.out.println("Roberto");
 		XMIResource xmiResource = new XMIResourceImpl();
 		xmiResource.getContents().add(root);
 		FileOutputStream out = new FileOutputStream(savedModel);

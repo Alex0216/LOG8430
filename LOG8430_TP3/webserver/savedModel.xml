@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ASCII"?>
 <TP2:Master xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TP2="TP2">
   <commands xsi:type="TP2:FileNameCommand"/>
   <commands xsi:type="TP2:AbsolutePathCommand"/>
@@ -7,10 +7,13 @@
   <commands xsi:type="TP2:NbEnfantCommand"/>
   <commands xsi:type="TP2:FileNameCommand"/>
   <ressourcesAvailable xsi:type="TP2:Fichier" nom="Aloah" proprietaire="julien"/>
-  <ressourcesAvailable xsi:type="TP2:Dossier" nom="root" nombreEnfant="1" ListEnfants="//@ressourcesAvailable.1" proprietaire="mathieu"/>
-  <ressourcesAvailable xsi:type="TP2:Dossier" nom="SubFolder" cheminAbsolu="/sub" nombreEnfant="1" ListEnfants="//@ressourcesAvailable.2" proprietaire="julien"/>
-  <ressourcesAvailable xsi:type="TP2:Fichier" nom="MyResume" tailleOctet="18" permission="ReadAndWrite" cheminAbsolu="/home/julien/resume.pml" proprietaire="julien"/>
-  <ressourcesAvailable xsi:type="TP2:Page" nom="Google" tailleOctet="2000" titrePage="Search me now" taillePage="56" URL="www.google.ca" proprietaire="julien"/>
-  <ressourcesAvailable xsi:type="TP2:Page" nom="Youtube" tailleOctet="36" titrePage="Video everywhere" taillePage="45" URL="www.youtube.com" proprietaire="mathieu"/>
-  <ressourcesAvailable xsi:type="TP2:Page" nom="Restaurant Roberto" tailleOctet="56" titrePage="The BEST !" taillePage="20" URL="www.roberto.com" proprietaire="julien"/>
+  <ressourcesAvailable xsi:type="TP2:Dossier" nom="root" proprietaire="mathieu" nombreEnfant="1" ListEnfants="//@ressourcesAvailable.1"/>
+  <ressourcesAvailable xsi:type="TP2:Dossier" nom="SubFolder" proprietaire="julien" cheminAbsolu="/sub" nombreEnfant="1" ListEnfants="//@ressourcesAvailable.2"/>
+  <ressourcesAvailable xsi:type="TP2:Fichier" nom="MyResume" tailleOctet="18" proprietaire="julien" permission="ReadAndWrite" cheminAbsolu="/home/julien/resume.pml"/>
+  <ressourcesAvailable xsi:type="TP2:Page" nom="Google" tailleOctet="2000" proprietaire="julien" titrePage="Search me now" taillePage="56" URL="www.google.ca"/>
+  <ressourcesAvailable xsi:type="TP2:Page" nom="Youtube" tailleOctet="36" proprietaire="mathieu" titrePage="Video everywhere" taillePage="45" URL="www.youtube.com"/>
+  <ressourcesAvailable xsi:type="TP2:Page" nom="Restaurant Roberto" tailleOctet="56" proprietaire="julien" titrePage="The BEST !" taillePage="20" URL="www.roberto.com"/>
+  <ressourcesAvailable xsi:type="TP2:Dossier" nom="nouveau dossier" tailleOctet="10" proprietaire="julien" cheminAbsolu="/src/" nombreEnfant="8"/>
+  <ressourcesAvailable xsi:type="TP2:Page" nom="YYY" tailleOctet="10" proprietaire="julien" titrePage="XXX" taillePage="10" URL="www.jeuxvideo.com"/>
+  <ressourcesAvailable xsi:type="TP2:Fichier" nom="nouveau fichier" tailleOctet="10" proprietaire="julien" cheminAbsolu="/lo.txt"/>
 </TP2:Master>
